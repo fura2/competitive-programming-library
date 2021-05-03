@@ -303,6 +303,9 @@ data:
   - name: .
     pages:
     - icon: ':warning:'
+      path: template.hpp
+      title: template.hpp
+    - icon: ':warning:'
       path: tmp.cpp
       title: tmp.cpp
   verificationCategories: []
