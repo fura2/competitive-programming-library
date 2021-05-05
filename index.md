@@ -6,9 +6,9 @@ data:
     - icon: ':warning:'
       path: data_structure/Cartesian_tree.hpp
       title: data_structure/Cartesian_tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/Fenwick_tree.hpp
-      title: data_structure/Fenwick_tree.hpp
+      title: Fenwick tree
     - icon: ':warning:'
       path: data_structure/Fenwick_tree_dual.hpp
       title: data_structure/Fenwick_tree_dual.hpp
@@ -300,16 +300,20 @@ data:
     - icon: ':warning:'
       path: string/z.hpp
       title: string/z.hpp
-  verificationCategories: []
+  - name: .
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: template.hpp
+      title: template.hpp
+  verificationCategories:
+  - name: verify/data_structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/Fenwick_tree.test.cpp
+      title: verify/data_structure/Fenwick_tree.test.cpp
 layout: toppage
 ---
-# fura2's Library
-
-[![Actions Status](https://github.com/fura2/competitive-programming-library/workflows/verify/badge.svg)](https://github.com/fura2/competitive-programming-library/actions)
 [![fura2](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Ffura2)](https://atcoder.jp/users/fura2)
 
-fura2 の競技プログラミングライブラリです。
-
-一部のライブラリでは GNU 拡張 (``__int128``) を使用しています。
-
-このドキュメントは [Online Judge Verification Helper](https://github.com/online-judge-tools/verification-helper) によって生成されています。
+fura2 の競技プログラミングライブラリです。  
+一部のライブラリでは GNU 拡張 (``__int128``) を使用しています。  
