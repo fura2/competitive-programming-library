@@ -13,6 +13,7 @@
 #include <numeric>
 #include <queue>
 #include <set>
+#include <sstream>
 #include <stack>
 #include <string>
 #include <utility>
@@ -23,3 +24,4 @@
 #define rep(i,n) for(int i=0;i<(n);i++)
 
 using namespace std;
+using lint=long long;
