@@ -43,6 +43,8 @@ data:
 
     #include <set>
 
+    #include <sstream>
+
     #include <stack>
 
     #include <string>
@@ -60,6 +62,8 @@ data:
 
 
     using namespace std;
+
+    using lint=long long;
 
     '
   code: '#include <cassert>
@@ -92,6 +96,8 @@ data:
 
     #include <set>
 
+    #include <sstream>
+
     #include <stack>
 
     #include <string>
@@ -110,12 +116,14 @@ data:
 
     using namespace std;
 
+    using lint=long long;
+
     '
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2021-05-05 20:54:00+09:00'
+  timestamp: '2021-05-06 03:35:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/Fenwick_tree.test.cpp
