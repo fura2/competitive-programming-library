@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/Fenwick_tree_dual.test.cpp
     title: verify/data_structure/Fenwick_tree_dual.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/sparse_table.test.cpp
+    title: verify/data_structure/sparse_table.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -132,6 +135,7 @@ data:
   timestamp: '2021-05-08 16:32:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/Fenwick_tree_1.test.cpp
   - verify/data_structure/Fenwick_tree_2.test.cpp
   - verify/data_structure/Fenwick_tree_dual.test.cpp

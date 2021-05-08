@@ -19,23 +19,23 @@ data:
       path: library/data_structure/lca.hpp
       title: library/data_structure/lca.hpp
     - icon: ':warning:'
-      path: library/data_structure/persistent_union_find.hpp
-      title: library/data_structure/persistent_union_find.hpp
+      path: library/data_structure/persistent_union-find.hpp
+      title: library/data_structure/persistent_union-find.hpp
     - icon: ':warning:'
       path: library/data_structure/segment_tree.hpp
       title: library/data_structure/segment_tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data_structure/sparse_table.hpp
-      title: library/data_structure/sparse_table.hpp
+      title: Sparse Table
     - icon: ':warning:'
       path: library/data_structure/starry_sky_tree.hpp
       title: library/data_structure/starry_sky_tree.hpp
     - icon: ':warning:'
-      path: library/data_structure/union_find.hpp
-      title: library/data_structure/union_find.hpp
+      path: library/data_structure/union-find.hpp
+      title: library/data_structure/union-find.hpp
     - icon: ':warning:'
-      path: library/data_structure/union_find_with_data.hpp
-      title: library/data_structure/union_find_with_data.hpp
+      path: library/data_structure/union-find_with_data.hpp
+      title: library/data_structure/union-find_with_data.hpp
   - name: library/flow
     pages:
     - icon: ':warning:'
@@ -317,6 +317,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/Fenwick_tree_dual.test.cpp
       title: verify/data_structure/Fenwick_tree_dual.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/sparse_table.test.cpp
+      title: verify/data_structure/sparse_table.test.cpp
 layout: toppage
 ---
 [![fura2](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Ffura2)](https://atcoder.jp/users/fura2)

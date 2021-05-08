@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/data_structure/union_find.hpp\"\n/* Union-Find */\n\
+  bundledCode: "#line 1 \"library/data_structure/union-find.hpp\"\n/* Union-Find */\n\
     /*\n\t\u8AAC\u660E\n\t\t\u4E92\u3044\u306B\u7D20\u306A\u96C6\u5408\u3092\u7BA1\
     \u7406\u3059\u308B\u30C7\u30FC\u30BF\u69CB\u9020\n\t\t- find(u) : u \u304C\u542B\
     \u307E\u308C\u308B\u96C6\u5408\u306E\u4EE3\u8868\u5143\u3092\u6C42\u3081\u308B\
@@ -47,15 +47,15 @@ data:
     \ -p[find(u)]; }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/data_structure/union_find.hpp
+  path: library/data_structure/union-find.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
+  timestamp: '2021-05-08 17:56:20+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/data_structure/union_find.hpp
+documentation_of: library/data_structure/union-find.hpp
 layout: document
 redirect_from:
-- /library/library/data_structure/union_find.hpp
-- /library/library/data_structure/union_find.hpp.html
-title: library/data_structure/union_find.hpp
+- /library/library/data_structure/union-find.hpp
+- /library/library/data_structure/union-find.hpp.html
+title: library/data_structure/union-find.hpp
 ---

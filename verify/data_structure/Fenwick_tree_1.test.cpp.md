@@ -26,7 +26,7 @@ data:
     \ <queue>\n#include <set>\n#include <sstream>\n#include <stack>\n#include <string>\n\
     #include <tuple>\n#include <utility>\n#include <vector>\n\n#define rep(i,n) for(int\
     \ i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long long;\n#line 1 \"library/data_structure/Fenwick_tree.hpp\"\
-    \ntemplate<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree(){}\n\
+    \ntemplate<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree()=default;\n\
     \tFenwick_tree(int n){ build(n); }\n\tFenwick_tree(const vector<G>& a){ build(a);\
     \ }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>&\
     \ a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size())\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/Fenwick_tree_1.test.cpp
   requiredBy: []
-  timestamp: '2021-05-08 16:32:46+09:00'
+  timestamp: '2021-05-08 17:56:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/Fenwick_tree_1.test.cpp

@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/data_structure/union_find_with_data.hpp\"\n/* Union-Find\
+  bundledCode: "#line 1 \"library/data_structure/union-find_with_data.hpp\"\n/* Union-Find\
     \ with data */\n/*\n\t\u8AAC\u660E\n\t\t\u4E92\u3044\u306B\u7D20\u306A\u96C6\u5408\
     \u3092\u7BA1\u7406\u3059\u308B\u30C7\u30FC\u30BF\u69CB\u9020 (\u9023\u7D50\u6210\
     \u5206\u306E\u60C5\u5831\u3092\u967D\u306B\u6301\u3064)\n\t\t- find(u) : u \u304C\
@@ -61,15 +61,15 @@ data:
     \tvector<int> connected_component(int u){ return C[find(u)]; }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/data_structure/union_find_with_data.hpp
+  path: library/data_structure/union-find_with_data.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
+  timestamp: '2021-05-08 17:56:20+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/data_structure/union_find_with_data.hpp
+documentation_of: library/data_structure/union-find_with_data.hpp
 layout: document
 redirect_from:
-- /library/library/data_structure/union_find_with_data.hpp
-- /library/library/data_structure/union_find_with_data.hpp.html
-title: library/data_structure/union_find_with_data.hpp
+- /library/library/data_structure/union-find_with_data.hpp
+- /library/library/data_structure/union-find_with_data.hpp.html
+title: library/data_structure/union-find_with_data.hpp
 ---

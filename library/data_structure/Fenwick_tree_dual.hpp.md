@@ -12,30 +12,28 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data_structure/Fenwick_tree_dual.hpp\"\ntemplate<class\
-    \ G>\nclass Fenwick_tree_dual{\n\tvector<G> a;\npublic:\n\tFenwick_tree_dual(){}\n\
+    \ G>\nclass Fenwick_tree_dual{\n\tvector<G> a;\npublic:\n\tFenwick_tree_dual()=default;\n\
     \tFenwick_tree_dual(int n){ build(n); }\n\tFenwick_tree_dual(const vector<G>&\
     \ a){ build(a); }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const\
     \ vector<G>& a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size())\
     \ (this->a)[i-1]-=(this->a)[i+(i&-i)-1];\n\t}\n\tvoid add(int l,int r,const G&\
     \ val){\n\t\tif(l==0){\n\t\t\tfor(;r>0;r-=r&-r) a[r-1]+=val;\n\t\t\treturn;\n\t\
     \t}\n\t\tadd(0,r,val);\n\t\tadd(0,l,-val);\n\t}\n\tG get(int i)const{\n\t\tG res{};\n\
-    \t\tfor(i++;i<=a.size();i+=i&-i) res+=a[i-1];\n\t\treturn res;\n\t}\n\tvoid f(){\n\
-    \t\trep(i,a.size()) printf(\"%d: %d\\n\",i+1,a[i]);\n\t}\n};\n"
+    \t\tfor(i++;i<=a.size();i+=i&-i) res+=a[i-1];\n\t\treturn res;\n\t}\n};\n"
   code: "template<class G>\nclass Fenwick_tree_dual{\n\tvector<G> a;\npublic:\n\t\
-    Fenwick_tree_dual(){}\n\tFenwick_tree_dual(int n){ build(n); }\n\tFenwick_tree_dual(const\
+    Fenwick_tree_dual()=default;\n\tFenwick_tree_dual(int n){ build(n); }\n\tFenwick_tree_dual(const\
     \ vector<G>& a){ build(a); }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\
     \tvoid build(const vector<G>& a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++)\
     \ if(i+(i&-i)<=a.size()) (this->a)[i-1]-=(this->a)[i+(i&-i)-1];\n\t}\n\tvoid add(int\
     \ l,int r,const G& val){\n\t\tif(l==0){\n\t\t\tfor(;r>0;r-=r&-r) a[r-1]+=val;\n\
     \t\t\treturn;\n\t\t}\n\t\tadd(0,r,val);\n\t\tadd(0,l,-val);\n\t}\n\tG get(int\
     \ i)const{\n\t\tG res{};\n\t\tfor(i++;i<=a.size();i+=i&-i) res+=a[i-1];\n\t\t\
-    return res;\n\t}\n\tvoid f(){\n\t\trep(i,a.size()) printf(\"%d: %d\\n\",i+1,a[i]);\n\
-    \t}\n};\n"
+    return res;\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/data_structure/Fenwick_tree_dual.hpp
   requiredBy: []
-  timestamp: '2021-05-08 16:32:46+09:00'
+  timestamp: '2021-05-08 17:56:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/Fenwick_tree_dual.test.cpp
@@ -45,7 +43,7 @@ title: Dual Fenwick Tree
 ---
 
 ## Description
-Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，区間加算と一点取得を $O(\log n)$ で処理できるデータ構造．  
+Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，区間加算と一点取得を $O(\log n)$ で処理するデータ構造．  
 以下では，$G$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
 
 ### (constructor)
@@ -64,7 +62,7 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，区間加算と一
 
 #### Complexity
 - (1) $O(1)$
-- (2)(3) $O(n)$
+- (2), (3) $O(n)$
 
 ### build
 ```
@@ -81,7 +79,6 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，区間加算と一
 - $O(n)$
 
 ### add
-
 ```
 void add(int l, int r, const G& val)
 ```
