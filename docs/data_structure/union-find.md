@@ -1,50 +1,89 @@
 ---
 title: Union-Find
-documentation_of: ../../library/data_structure/union_find.hpp
+documentation_of: ../../library/data_structure/union-find.hpp
 ---
 
 ## Description
-数列 $a_0,\ldots,a_{n-1}$ に対して，[RMQ](https://en.wikipedia.org/wiki/Range_minimum_query) を構築 $O(n\log n)$ / 区間最小値クエリ $O(1)$ で処理するデータ構造．  
-素直に [Band](https://en.wikipedia.org/wiki/Band_(algebra)) (冪等半群) の元の列に一般化できるが，ここでは RMQ に特化した形で実装した．
+互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ がある状態から始めて，次の操作を $O(\alpha(n))$ で処理するデータ構造 ([素集合データ構造](https://en.wikipedia.org/wiki/Disjoint-set_data_structure))．
+- 要素がどの集合に属するかを求める
+- 二つの集合をマージする
+
+union by size と path compression を実装した．
 
 ### (constructor)
 ```
-(1) sparse_table<T>()
-(2) sparse_table<T>(const vector<T>& a)
+(1) union_find()
+(2) union_find(int n)
 ```
-- (1) 空の列で初期化する
-- (2) $a$ で初期化する
+- (1) 空集合で初期化する
+- (2) 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
 
 #### Constraints
-- $T$ は整数型 (``int``, ``long long`` など) または実数型 (``double``, ``long double`` など)．
+- (2) $n\ge0$
 
 #### Complexity
 - (1) $O(1)$
-- (2) $O(n\log n)$
+- (2) $O(n)$
 
 ### build
 ```
-void build(const vector<T>& a)
+void build(int n)
 ```
-- $a$ で初期化する
+- 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
 
 #### Constraints
-- なし
+- $n\ge0$
 
 #### Complexity
-- $O(n\log n)$
+- $O(n)$
 
-### fold
+### find
 ```
-T fold(int l, int r)
+int find(int u)
 ```
-$\min\{a_l,\cdots,a_{r-1}\}$ を求める
+$u$ が含まれる集合の代表元を求める
 
 #### Constraints
-- $0\le l\lt r\le n$
+- $0\le u\lt n$
 
 #### Complexity
-- $O(1)$
+- $O(\alpha(n))$
 
-## References
-- [Sparse Table - scrapbox.io/data-structures](https://scrapbox.io/data-structures/Sparse_Table)
+### unite
+```
+void unite(int u, int v)
+```
+$u$ が含まれる集合と $v$ が含まれる集合をマージする
+
+#### Constraints
+- $0\le u,v\lt n$
+
+#### Complexity
+- $O(\alpha(n))$
+
+### is_same
+```
+bool is_same(int u, int v)
+```
+$u$ と $v$ が同じ集合に含まれるかどうかを判定する
+
+#### Constraints
+- $0\le u,v\lt n$
+
+#### Complexity
+- $O(\alpha(n))$
+
+### size
+```
+(1) int size()
+(2) int size(int u)
+```
+- (1) 集合の個数を求める
+- (2) $u$ が含まれる集合の要素数を求める
+
+#### Constraints
+- $0\le u,v\lt n$
+
+#### Complexity
+- (1) $O(1)$
+- (2) $O(\alpha(n))$
