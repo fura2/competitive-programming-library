@@ -24,6 +24,6 @@ cnt++;
 			}
 		}
 	}
-if(n==49000 && s==0) printf("cnt = %d\n",cnt);
+printf("n = %d, s = %d: cnt = %d\n",n,s,cnt);
 	return d;
 }
