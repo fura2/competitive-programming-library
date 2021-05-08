@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/data_structure/Fenwick_tree.hpp
-    title: Fenwick tree
+    title: Fenwick Tree
   - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
@@ -19,17 +19,17 @@ data:
     - https://judge.yosupo.jp/problem/point_add_range_sum
   bundledCode: "#line 1 \"verify/data_structure/Fenwick_tree_2.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#line 1 \"\
-    library/template.hpp\"\n#include <cassert>\n#include <cctype>\n#include <cmath>\n\
-    #include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include <ctime>\n\
-    #include <algorithm>\n#include <deque>\n#include <functional>\n#include <iostream>\n\
-    #include <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include\
-    \ <sstream>\n#include <stack>\n#include <string>\n#include <utility>\n#include\
-    \ <vector>\n#include <chrono>\n#include <tuple>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\
+    library/template.hpp\"\n#include <cassert>\n#include <cctype>\n#include <chrono>\n\
+    #include <cmath>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n\
+    #include <ctime>\n#include <algorithm>\n#include <deque>\n#include <functional>\n\
+    #include <iostream>\n#include <map>\n#include <numeric>\n#include <queue>\n#include\
+    \ <set>\n#include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n\
+    #include <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\
     \nusing namespace std;\nusing lint=long long;\n#line 1 \"library/data_structure/Fenwick_tree.hpp\"\
     \ntemplate<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree(){}\n\
     \tFenwick_tree(int n){ build(n); }\n\tFenwick_tree(const vector<G>& a){ build(a);\
     \ }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>&\
-    \ a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<a.size();i++) if(i+(i&-i)-1<a.size())\
+    \ a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size())\
     \ (this->a)[i+(i&-i)-1]+=(this->a)[i-1];\n\t}\n\tvoid add(int i,const G& val){\n\
     \t\tfor(i++;i<=a.size();i+=i&-i) a[i-1]+=val;\n\t}\n\tG sum(int l,int r)const{\n\
     \t\tif(l==0){\n\t\t\tG res{};\n\t\t\tfor(;r>0;r-=r&-r) res+=a[r-1];\n\t\t\treturn\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/Fenwick_tree_2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-08 15:39:58+09:00'
+  timestamp: '2021-05-08 16:32:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/Fenwick_tree_2.test.cpp

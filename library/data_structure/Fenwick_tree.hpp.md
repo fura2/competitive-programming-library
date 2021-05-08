@@ -18,7 +18,7 @@ data:
     \ G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree(){}\n\tFenwick_tree(int\
     \ n){ build(n); }\n\tFenwick_tree(const vector<G>& a){ build(a); }\n\tvoid build(int\
     \ n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>& a){\n\t\tthis->a=a;\n\
-    \t\tfor(int i=1;i<a.size();i++) if(i+(i&-i)-1<a.size()) (this->a)[i+(i&-i)-1]+=(this->a)[i-1];\n\
+    \t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size()) (this->a)[i+(i&-i)-1]+=(this->a)[i-1];\n\
     \t}\n\tvoid add(int i,const G& val){\n\t\tfor(i++;i<=a.size();i+=i&-i) a[i-1]+=val;\n\
     \t}\n\tG sum(int l,int r)const{\n\t\tif(l==0){\n\t\t\tG res{};\n\t\t\tfor(;r>0;r-=r&-r)\
     \ res+=a[r-1];\n\t\t\treturn res;\n\t\t}\n\t\treturn sum(0,r)-sum(0,l);\n\t}\n\
@@ -31,7 +31,7 @@ data:
   code: "template<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree(){}\n\
     \tFenwick_tree(int n){ build(n); }\n\tFenwick_tree(const vector<G>& a){ build(a);\
     \ }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>&\
-    \ a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<a.size();i++) if(i+(i&-i)-1<a.size())\
+    \ a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size())\
     \ (this->a)[i+(i&-i)-1]+=(this->a)[i-1];\n\t}\n\tvoid add(int i,const G& val){\n\
     \t\tfor(i++;i<=a.size();i+=i&-i) a[i-1]+=val;\n\t}\n\tG sum(int l,int r)const{\n\
     \t\tif(l==0){\n\t\t\tG res{};\n\t\t\tfor(;r>0;r-=r&-r) res+=a[r-1];\n\t\t\treturn\
@@ -45,14 +45,14 @@ data:
   isVerificationFile: false
   path: library/data_structure/Fenwick_tree.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
+  timestamp: '2021-05-08 16:32:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/Fenwick_tree_1.test.cpp
   - verify/data_structure/Fenwick_tree_2.test.cpp
 documentation_of: library/data_structure/Fenwick_tree.hpp
 layout: document
-title: Fenwick tree
+title: Fenwick Tree
 ---
 
 ## Description
@@ -63,9 +63,11 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区
 ```
 (1) Fenwick_tree<G>()
 (2) Fenwick_tree<G>(int n)
+(3) Fenwick_tree<G>(const vector<G>& a)
 ```
 - (1) 空の列で初期化する
 - (2) $G$ の単位元 $e$ のみからなる長さ $n$ の列で初期化する
+- (3) $a$ で初期化する
 
 #### Constraints
 - $(G,+)$ は Abel 群 (デフォルトコンストラクタが $G$ の単位元を生成し，$-$ は $+$ の逆演算)
@@ -73,7 +75,7 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区
 
 #### Complexity
 - (1) $O(1)$
-- (2) $O(n)$
+- (2), (3) $O(n)$
 
 ### build
 ```
@@ -104,7 +106,7 @@ $a_i$ に $\mathrm{val}$ を加える
 
 ### sum
 ```
-G sum(int l, int r) const
+G sum(int l, int r)
 ```
 $a_l+a_{l+1}+\cdots+a_{r-1}$ を求める
 
@@ -116,7 +118,7 @@ $a_l+a_{l+1}+\cdots+a_{r-1}$ を求める
 
 ### lower_bound
 ```
-int lower_bound(G val) const
+int lower_bound(G val)
 ```
 $a_0+a_1+\cdots+a_i\ge\mathrm{val}$ をみたす最小の $i$ を求める．  
 ただし，$a_0+\cdots+a_{n-1}\lt\mathrm{val}$ のときは $n$ を返す．
@@ -130,7 +132,7 @@ $a_0+a_1+\cdots+a_i\ge\mathrm{val}$ をみたす最小の $i$ を求める．
 
 ### upper_bound
 ```
-int upper_bound(G val) const
+int upper_bound(G val)
 ```
 $a_0+a_1+\cdots+a_i\gt\mathrm{val}$ をみたす最小の $i$ を求める．  
 ただし，$a_0+\cdots+a_{n-1}\le\mathrm{val}$ のときは $n$ を返す．

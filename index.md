@@ -8,10 +8,10 @@ data:
       title: library/data_structure/Cartesian_tree.hpp
     - icon: ':heavy_check_mark:'
       path: library/data_structure/Fenwick_tree.hpp
-      title: Fenwick tree
-    - icon: ':warning:'
+      title: Fenwick Tree
+    - icon: ':heavy_check_mark:'
       path: library/data_structure/Fenwick_tree_dual.hpp
-      title: library/data_structure/Fenwick_tree_dual.hpp
+      title: Dual Fenwick Tree
     - icon: ':warning:'
       path: library/data_structure/bit_vector.hpp
       title: library/data_structure/bit_vector.hpp
@@ -314,6 +314,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/Fenwick_tree_2.test.cpp
       title: verify/data_structure/Fenwick_tree_2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/Fenwick_tree_dual.test.cpp
+      title: verify/data_structure/Fenwick_tree_dual.test.cpp
 layout: toppage
 ---
 [![fura2](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Ffura2)](https://atcoder.jp/users/fura2)

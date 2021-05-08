@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/Fenwick_tree_2.test.cpp
     title: verify/data_structure/Fenwick_tree_2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/Fenwick_tree_dual.test.cpp
+    title: verify/data_structure/Fenwick_tree_dual.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -19,6 +22,8 @@ data:
     #include <cassert>
 
     #include <cctype>
+
+    #include <chrono>
 
     #include <cmath>
 
@@ -52,13 +57,11 @@ data:
 
     #include <string>
 
+    #include <tuple>
+
     #include <utility>
 
     #include <vector>
-
-    #include <chrono>
-
-    #include <tuple>
 
 
     #define rep(i,n) for(int i=0;i<(n);i++)
@@ -73,6 +76,8 @@ data:
 
     #include <cctype>
 
+    #include <chrono>
+
     #include <cmath>
 
     #include <cstdio>
@@ -105,13 +110,11 @@ data:
 
     #include <string>
 
+    #include <tuple>
+
     #include <utility>
 
     #include <vector>
-
-    #include <chrono>
-
-    #include <tuple>
 
 
     #define rep(i,n) for(int i=0;i<(n);i++)
@@ -126,11 +129,12 @@ data:
   isVerificationFile: false
   path: library/template.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
+  timestamp: '2021-05-08 16:32:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/Fenwick_tree_1.test.cpp
   - verify/data_structure/Fenwick_tree_2.test.cpp
+  - verify/data_structure/Fenwick_tree_dual.test.cpp
 documentation_of: library/template.hpp
 layout: document
 redirect_from:
