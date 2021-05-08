@@ -2,45 +2,26 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/union-find.test.cpp
+    title: verify/data_structure/union-find.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/data_structure/union-find.hpp\"\n/* Union-Find */\n\
-    /*\n\t\u8AAC\u660E\n\t\t\u4E92\u3044\u306B\u7D20\u306A\u96C6\u5408\u3092\u7BA1\
-    \u7406\u3059\u308B\u30C7\u30FC\u30BF\u69CB\u9020\n\t\t- find(u) : u \u304C\u542B\
-    \u307E\u308C\u308B\u96C6\u5408\u306E\u4EE3\u8868\u5143\u3092\u6C42\u3081\u308B\
-    \n\t\t- unite(u,v) : u \u304C\u542B\u307E\u308C\u308B\u96C6\u5408\u3068 v \u304C\
-    \u542B\u307E\u308C\u308B\u96C6\u5408\u3092\u5408\u4F75\u3059\u308B\n\t\t- is_same(u,v)\
-    \ : u \u3068 v \u304C\u540C\u3058\u96C6\u5408\u306B\u542B\u307E\u308C\u308B\u304B\
-    \u3069\u3046\u304B\u3092\u5224\u5B9A\u3059\u308B\n\t\t- size() : \u96C6\u5408\u304C\
-    \u5168\u90E8\u3067\u3044\u304F\u3064\u3042\u308B\u304B\u3092\u6C42\u3081\u308B\
-    \n\t\t- size(u) : u \u304C\u542B\u307E\u308C\u308B\u96C6\u5408\u306E\u8981\u7D20\
-    \u6570\u3092\u6C42\u3081\u308B\n\t\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF\n\
-    \t\tn : \u96C6\u5408\u306E\u8981\u7D20\u6570\n\t\u5236\u7D04\n\t\tn >= 0\n\t\u8A08\
-    \u7B97\u91CF\n\t\t\u3059\u3079\u3066\u307B\u307C O(1)\n*/\n\nclass union_find{\n\
-    \tint n;\n\tvector<int> p;\npublic:\n\tunion_find(int n):n(n),p(n,-1){}\n\tint\
-    \ find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int v){\n\
-    \t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\t\t\
-    \tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return find(u)==find(v);\
-    \ }\n\tint size()const{ return n; }\n\tint size(int u){ return -p[find(u)]; }\n\
-    };\n"
-  code: "/* Union-Find */\n/*\n\t\u8AAC\u660E\n\t\t\u4E92\u3044\u306B\u7D20\u306A\u96C6\
-    \u5408\u3092\u7BA1\u7406\u3059\u308B\u30C7\u30FC\u30BF\u69CB\u9020\n\t\t- find(u)\
-    \ : u \u304C\u542B\u307E\u308C\u308B\u96C6\u5408\u306E\u4EE3\u8868\u5143\u3092\
-    \u6C42\u3081\u308B\n\t\t- unite(u,v) : u \u304C\u542B\u307E\u308C\u308B\u96C6\u5408\
-    \u3068 v \u304C\u542B\u307E\u308C\u308B\u96C6\u5408\u3092\u5408\u4F75\u3059\u308B\
-    \n\t\t- is_same(u,v) : u \u3068 v \u304C\u540C\u3058\u96C6\u5408\u306B\u542B\u307E\
-    \u308C\u308B\u304B\u3069\u3046\u304B\u3092\u5224\u5B9A\u3059\u308B\n\t\t- size()\
-    \ : \u96C6\u5408\u304C\u5168\u90E8\u3067\u3044\u304F\u3064\u3042\u308B\u304B\u3092\
-    \u6C42\u3081\u308B\n\t\t- size(u) : u \u304C\u542B\u307E\u308C\u308B\u96C6\u5408\
-    \u306E\u8981\u7D20\u6570\u3092\u6C42\u3081\u308B\n\t\u30B3\u30F3\u30B9\u30C8\u30E9\
-    \u30AF\u30BF\n\t\tn : \u96C6\u5408\u306E\u8981\u7D20\u6570\n\t\u5236\u7D04\n\t\
-    \tn >= 0\n\t\u8A08\u7B97\u91CF\n\t\t\u3059\u3079\u3066\u307B\u307C O(1)\n*/\n\n\
-    class union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find(int n):n(n),p(n,-1){}\n\
-    \tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
+  bundledCode: "#line 1 \"library/data_structure/union-find.hpp\"\nclass union_find{\n\
+    \tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\tunion_find(int\
+    \ n){ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\
+    \t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
+    \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
+    \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
+    \ find(u)==find(v); }\n\tint size()const{ return n; }\n\tint size(int u){ return\
+    \ -p[find(u)]; }\n};\n"
+  code: "class union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\
+    \tunion_find(int n){ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\
+    \t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
     \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
     \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
     \ find(u)==find(v); }\n\tint size()const{ return n; }\n\tint size(int u){ return\
@@ -49,13 +30,96 @@ data:
   isVerificationFile: false
   path: library/data_structure/union-find.hpp
   requiredBy: []
-  timestamp: '2021-05-08 17:56:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-05-08 18:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/data_structure/union-find.test.cpp
 documentation_of: library/data_structure/union-find.hpp
 layout: document
-redirect_from:
-- /library/library/data_structure/union-find.hpp
-- /library/library/data_structure/union-find.hpp.html
-title: library/data_structure/union-find.hpp
+title: Union-Find
 ---
+
+## Description
+互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ がある状態から始めて，次の操作を $O(\alpha(n))$ で処理するデータ構造 ([素集合データ構造](https://en.wikipedia.org/wiki/Disjoint-set_data_structure))．
+- 要素がどの集合に属するかを求める
+- 二つの集合をマージする
+
+union by size と path compression を実装した．
+
+### (constructor)
+```
+(1) union_find()
+(2) union_find(int n)
+```
+- (1) 空集合で初期化する
+- (2) 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
+
+#### Constraints
+- (2) $n\ge0$
+
+#### Complexity
+- (1) $O(1)$
+- (2) $O(n)$
+
+### build
+```
+void build(int n)
+```
+- 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
+
+#### Constraints
+- $n\ge0$
+
+#### Complexity
+- $O(n)$
+
+### find
+```
+int find(int u)
+```
+$u$ が含まれる集合の代表元を求める
+
+#### Constraints
+- $0\le u\lt n$
+
+#### Complexity
+- $O(\alpha(n))$
+
+### unite
+```
+void unite(int u, int v)
+```
+$u$ が含まれる集合と $v$ が含まれる集合をマージする
+
+#### Constraints
+- $0\le u,v\lt n$
+
+#### Complexity
+- $O(\alpha(n))$
+
+### is_same
+```
+bool is_same(int u, int v)
+```
+$u$ と $v$ が同じ集合に含まれるかどうかを判定する
+
+#### Constraints
+- $0\le u,v\lt n$
+
+#### Complexity
+- $O(\alpha(n))$
+
+### size
+```
+(1) int size()
+(2) int size(int u)
+```
+- (1) 集合の個数を求める
+- (2) $u$ が含まれる集合の要素数を求める
+
+#### Constraints
+- $0\le u,v\lt n$
+
+#### Complexity
+- (1) $O(1)$
+- (2) $O(\alpha(n))$

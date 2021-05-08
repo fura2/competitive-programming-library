@@ -30,9 +30,9 @@ data:
     - icon: ':warning:'
       path: library/data_structure/starry_sky_tree.hpp
       title: library/data_structure/starry_sky_tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data_structure/union-find.hpp
-      title: library/data_structure/union-find.hpp
+      title: Union-Find
     - icon: ':warning:'
       path: library/data_structure/union-find_with_data.hpp
       title: library/data_structure/union-find_with_data.hpp
@@ -309,17 +309,17 @@ data:
   - name: verify/data_structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/data_structure/Fenwick_tree_1.test.cpp
-      title: verify/data_structure/Fenwick_tree_1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/data_structure/Fenwick_tree_2.test.cpp
-      title: verify/data_structure/Fenwick_tree_2.test.cpp
+      path: verify/data_structure/Fenwick_tree.test.cpp
+      title: verify/data_structure/Fenwick_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/Fenwick_tree_dual.test.cpp
       title: verify/data_structure/Fenwick_tree_dual.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/sparse_table.test.cpp
       title: verify/data_structure/sparse_table.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/union-find.test.cpp
+      title: verify/data_structure/union-find.test.cpp
 layout: toppage
 ---
 [![fura2](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Ffura2)](https://atcoder.jp/users/fura2)

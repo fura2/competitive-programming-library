@@ -4,11 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/data_structure/Fenwick_tree_1.test.cpp
-    title: verify/data_structure/Fenwick_tree_1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/data_structure/Fenwick_tree_2.test.cpp
-    title: verify/data_structure/Fenwick_tree_2.test.cpp
+    path: verify/data_structure/Fenwick_tree.test.cpp
+    title: verify/data_structure/Fenwick_tree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -48,8 +45,7 @@ data:
   timestamp: '2021-05-08 17:56:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/data_structure/Fenwick_tree_1.test.cpp
-  - verify/data_structure/Fenwick_tree_2.test.cpp
+  - verify/data_structure/Fenwick_tree.test.cpp
 documentation_of: library/data_structure/Fenwick_tree.hpp
 layout: document
 title: Fenwick Tree
