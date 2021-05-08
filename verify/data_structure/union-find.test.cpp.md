@@ -7,9 +7,6 @@ data:
   - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
-  - icon: ':question:'
-    path: library/template.hpp
-    title: library/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -21,18 +18,16 @@ data:
     links:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"verify/data_structure/union-find.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#line 1 \"library/template.hpp\"\
+    \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#line 2 \"library/template.hpp\"\
     \n#include <cassert>\n#include <cctype>\n#include <chrono>\n#include <climits>\n\
     #include <cmath>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n\
     #include <ctime>\n#include <algorithm>\n#include <deque>\n#include <functional>\n\
-    #include <iostream>\n#include <map>\n#include <numeric>\n#include <queue>\n#include\
-    \ <set>\n#include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n\
-    #include <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\
-    \nusing namespace std;\nusing lint=long long;\n#line 24 \"library/template.hpp\"\
-    \n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long\
-    \ long;\n#line 3 \"library/data_structure/union-find.hpp\"\n\nclass union_find{\n\
-    \tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\tunion_find(int\
-    \ n){ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\
+    #include <iostream>\n#include <limits>\n#include <map>\n#include <numeric>\n#include\
+    \ <queue>\n#include <set>\n#include <sstream>\n#include <stack>\n#include <string>\n\
+    #include <tuple>\n#include <utility>\n#include <vector>\n\n#define rep(i,n) for(int\
+    \ i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/union-find.hpp\"\
+    \n\nclass union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\
+    \tunion_find(int n){ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\
     \t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
     \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
     \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
@@ -51,11 +46,10 @@ data:
   dependsOn:
   - library/template.hpp
   - library/data_structure/union-find.hpp
-  - library/template.hpp
   isVerificationFile: true
   path: verify/data_structure/union-find.test.cpp
   requiredBy: []
-  timestamp: '2021-05-09 02:26:00+09:00'
+  timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/union-find.test.cpp

@@ -89,7 +89,7 @@ data:
       title: library/graph/Bellman-Ford.hpp
     - icon: ':x:'
       path: library/graph/Dijkstra.hpp
-      title: Dijkstra
+      title: Dijkstra's Algorithm
     - icon: ':warning:'
       path: library/graph/Euler_tour_path.hpp
       title: library/graph/Euler_tour_path.hpp

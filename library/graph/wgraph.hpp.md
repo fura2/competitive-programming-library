@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy:
   - icon: ':x:'
     path: library/graph/Dijkstra.hpp
-    title: Dijkstra
+    title: Dijkstra's Algorithm
   _extendedVerifiedWith:
   - icon: ':x:'
     path: verify/graph/Dijkstra.test.cpp
@@ -17,19 +17,20 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
+  bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
-    \ <deque>\n#include <functional>\n#include <iostream>\n#include <map>\n#include\
-    \ <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n#include <stack>\n\
-    #include <string>\n#include <tuple>\n#include <utility>\n#include <vector>\n\n\
-    #define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long\
-    \ long;\n#line 3 \"library/graph/wgraph.hpp\"\n\ntemplate<class T> struct edge{\n\
-    \tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n};\ntemplate<class\
-    \ T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class T>\nvoid\
-    \ add_undirected_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
-    \tG[v].emplace_back(u,wt);\n}\n\ntemplate<class T>\nvoid add_directed_edge(weighted_graph<T>&\
-    \ G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n}\n"
+    \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
+    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
+    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
+    using lint=long long;\n#line 3 \"library/graph/wgraph.hpp\"\n\ntemplate<class\
+    \ T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n\
+    };\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class\
+    \ T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\
+    \tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class T>\n\
+    void add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
+    }\n"
   code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class T> struct edge{\n\
     \tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n};\ntemplate<class\
     \ T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class T>\nvoid\
@@ -42,7 +43,7 @@ data:
   path: library/graph/wgraph.hpp
   requiredBy:
   - library/graph/Dijkstra.hpp
-  timestamp: '2021-05-09 02:26:00+09:00'
+  timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/graph/Dijkstra.test.cpp

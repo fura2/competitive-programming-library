@@ -7,9 +7,6 @@ data:
   - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
-  - icon: ':question:'
-    path: library/template.hpp
-    title: library/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -21,17 +18,15 @@ data:
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
   bundledCode: "#line 1 \"verify/data_structure/Fenwick_tree.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#line 1 \"library/template.hpp\"\
+    \ \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#line 2 \"library/template.hpp\"\
     \n#include <cassert>\n#include <cctype>\n#include <chrono>\n#include <climits>\n\
     #include <cmath>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n\
     #include <ctime>\n#include <algorithm>\n#include <deque>\n#include <functional>\n\
-    #include <iostream>\n#include <map>\n#include <numeric>\n#include <queue>\n#include\
-    \ <set>\n#include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n\
-    #include <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\
-    \nusing namespace std;\nusing lint=long long;\n#line 24 \"library/template.hpp\"\
-    \n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long\
-    \ long;\n#line 3 \"library/data_structure/Fenwick_tree.hpp\"\n\ntemplate<class\
-    \ G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree()=default;\n\
+    #include <iostream>\n#include <limits>\n#include <map>\n#include <numeric>\n#include\
+    \ <queue>\n#include <set>\n#include <sstream>\n#include <stack>\n#include <string>\n\
+    #include <tuple>\n#include <utility>\n#include <vector>\n\n#define rep(i,n) for(int\
+    \ i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/Fenwick_tree.hpp\"\
+    \n\ntemplate<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree()=default;\n\
     \tFenwick_tree(int n){ build(n); }\n\tFenwick_tree(const vector<G>& a){ build(a);\
     \ }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>&\
     \ a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size())\
@@ -58,11 +53,10 @@ data:
   dependsOn:
   - library/template.hpp
   - library/data_structure/Fenwick_tree.hpp
-  - library/template.hpp
   isVerificationFile: true
   path: verify/data_structure/Fenwick_tree.test.cpp
   requiredBy: []
-  timestamp: '2021-05-09 02:26:00+09:00'
+  timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/Fenwick_tree.test.cpp
