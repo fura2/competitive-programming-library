@@ -87,9 +87,9 @@ data:
     - icon: ':warning:'
       path: library/graph/Bellman-Ford.hpp
       title: library/graph/Bellman-Ford.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graph/Dijkstra.hpp
-      title: library/graph/Dijkstra.hpp
+      title: Dijkstra
     - icon: ':warning:'
       path: library/graph/Euler_tour_path.hpp
       title: library/graph/Euler_tour_path.hpp
@@ -113,7 +113,7 @@ data:
       title: library/graph/functional_graph.hpp
     - icon: ':warning:'
       path: library/graph/graph.hpp
-      title: library/graph/graph.hpp
+      title: Graph
     - icon: ':warning:'
       path: library/graph/is_DAG.hpp
       title: library/graph/is_DAG.hpp
@@ -135,9 +135,9 @@ data:
     - icon: ':warning:'
       path: library/graph/two_coloring.hpp
       title: library/graph/two_coloring.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graph/wgraph.hpp
-      title: library/graph/wgraph.hpp
+      title: Weighted Graph
   - name: library/linear_algebra
     pages:
     - icon: ':warning:'
@@ -302,7 +302,7 @@ data:
       title: library/string/z.hpp
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/template.hpp
       title: library/template.hpp
   verificationCategories:
@@ -320,9 +320,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/union-find.test.cpp
       title: verify/data_structure/union-find.test.cpp
+  - name: verify/graph
+    pages:
+    - icon: ':x:'
+      path: verify/graph/Dijkstra.test.cpp
+      title: verify/graph/Dijkstra.test.cpp
 layout: toppage
 ---
 [![fura2](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Ffura2)](https://atcoder.jp/users/fura2)
 
-fura2 の競技プログラミングライブラリです。  
-一部のライブラリでは GNU 拡張 (``__int128``) を使用しています。  
+fura2 の競技プログラミングライブラリです．  
+g++ (C++17) で動作します．
+一部のライブラリでは GNU 拡張 (``__int128``) を使用しています．

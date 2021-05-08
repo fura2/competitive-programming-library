@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/template.hpp
+    title: library/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -11,8 +14,14 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/data_structure/Fenwick_tree_dual.hpp\"\ntemplate<class\
-    \ G>\nclass Fenwick_tree_dual{\n\tvector<G> a;\npublic:\n\tFenwick_tree_dual()=default;\n\
+  bundledCode: "#line 1 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
+    #include <chrono>\n#include <cmath>\n#include <cstdio>\n#include <cstdlib>\n#include\
+    \ <cstring>\n#include <ctime>\n#include <algorithm>\n#include <deque>\n#include\
+    \ <functional>\n#include <iostream>\n#include <map>\n#include <numeric>\n#include\
+    \ <queue>\n#include <set>\n#include <sstream>\n#include <stack>\n#include <string>\n\
+    #include <tuple>\n#include <utility>\n#include <vector>\n\n#define rep(i,n) for(int\
+    \ i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/Fenwick_tree_dual.hpp\"\
+    \n\ntemplate<class G>\nclass Fenwick_tree_dual{\n\tvector<G> a;\npublic:\n\tFenwick_tree_dual()=default;\n\
     \tFenwick_tree_dual(int n){ build(n); }\n\tFenwick_tree_dual(const vector<G>&\
     \ a){ build(a); }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const\
     \ vector<G>& a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size())\
@@ -20,20 +29,21 @@ data:
     \ val){\n\t\tif(l==0){\n\t\t\tfor(;r>0;r-=r&-r) a[r-1]+=val;\n\t\t\treturn;\n\t\
     \t}\n\t\tadd(0,r,val);\n\t\tadd(0,l,-val);\n\t}\n\tG get(int i)const{\n\t\tG res{};\n\
     \t\tfor(i++;i<=a.size();i+=i&-i) res+=a[i-1];\n\t\treturn res;\n\t}\n};\n"
-  code: "template<class G>\nclass Fenwick_tree_dual{\n\tvector<G> a;\npublic:\n\t\
-    Fenwick_tree_dual()=default;\n\tFenwick_tree_dual(int n){ build(n); }\n\tFenwick_tree_dual(const\
-    \ vector<G>& a){ build(a); }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\
-    \tvoid build(const vector<G>& a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++)\
-    \ if(i+(i&-i)<=a.size()) (this->a)[i-1]-=(this->a)[i+(i&-i)-1];\n\t}\n\tvoid add(int\
-    \ l,int r,const G& val){\n\t\tif(l==0){\n\t\t\tfor(;r>0;r-=r&-r) a[r-1]+=val;\n\
-    \t\t\treturn;\n\t\t}\n\t\tadd(0,r,val);\n\t\tadd(0,l,-val);\n\t}\n\tG get(int\
-    \ i)const{\n\t\tG res{};\n\t\tfor(i++;i<=a.size();i+=i&-i) res+=a[i-1];\n\t\t\
-    return res;\n\t}\n};\n"
-  dependsOn: []
+  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class G>\nclass Fenwick_tree_dual{\n\
+    \tvector<G> a;\npublic:\n\tFenwick_tree_dual()=default;\n\tFenwick_tree_dual(int\
+    \ n){ build(n); }\n\tFenwick_tree_dual(const vector<G>& a){ build(a); }\n\tvoid\
+    \ build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>& a){\n\
+    \t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size()) (this->a)[i-1]-=(this->a)[i+(i&-i)-1];\n\
+    \t}\n\tvoid add(int l,int r,const G& val){\n\t\tif(l==0){\n\t\t\tfor(;r>0;r-=r&-r)\
+    \ a[r-1]+=val;\n\t\t\treturn;\n\t\t}\n\t\tadd(0,r,val);\n\t\tadd(0,l,-val);\n\t\
+    }\n\tG get(int i)const{\n\t\tG res{};\n\t\tfor(i++;i<=a.size();i+=i&-i) res+=a[i-1];\n\
+    \t\treturn res;\n\t}\n};\n"
+  dependsOn:
+  - library/template.hpp
   isVerificationFile: false
   path: library/data_structure/Fenwick_tree_dual.hpp
   requiredBy: []
-  timestamp: '2021-05-08 17:56:20+09:00'
+  timestamp: '2021-05-09 00:49:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/Fenwick_tree_dual.test.cpp

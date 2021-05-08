@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/template.hpp
+    title: library/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -11,26 +14,34 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/data_structure/union-find.hpp\"\nclass union_find{\n\
-    \tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\tunion_find(int\
-    \ n){ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\
-    \t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
-    \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
-    \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
-    \ find(u)==find(v); }\n\tint size()const{ return n; }\n\tint size(int u){ return\
-    \ -p[find(u)]; }\n};\n"
-  code: "class union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\
+  bundledCode: "#line 1 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
+    #include <chrono>\n#include <cmath>\n#include <cstdio>\n#include <cstdlib>\n#include\
+    \ <cstring>\n#include <ctime>\n#include <algorithm>\n#include <deque>\n#include\
+    \ <functional>\n#include <iostream>\n#include <map>\n#include <numeric>\n#include\
+    \ <queue>\n#include <set>\n#include <sstream>\n#include <stack>\n#include <string>\n\
+    #include <tuple>\n#include <utility>\n#include <vector>\n\n#define rep(i,n) for(int\
+    \ i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/union-find.hpp\"\
+    \n\nclass union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\
     \tunion_find(int n){ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\
     \t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
     \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
     \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
     \ find(u)==find(v); }\n\tint size()const{ return n; }\n\tint size(int u){ return\
     \ -p[find(u)]; }\n};\n"
-  dependsOn: []
+  code: "#pragma once\n#include \"../template.hpp\"\n\nclass union_find{\n\tint n;\n\
+    \tvector<int> p;\npublic:\n\tunion_find()=default;\n\tunion_find(int n){ build(n);\
+    \ }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\t}\n\tint find(int\
+    \ u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int v){\n\t\tu=find(u);\
+    \ v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\t\t\tp[u]+=p[v];\
+    \ p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return find(u)==find(v);\
+    \ }\n\tint size()const{ return n; }\n\tint size(int u){ return -p[find(u)]; }\n\
+    };\n"
+  dependsOn:
+  - library/template.hpp
   isVerificationFile: false
   path: library/data_structure/union-find.hpp
   requiredBy: []
-  timestamp: '2021-05-08 18:43:48+09:00'
+  timestamp: '2021-05-09 00:49:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/union-find.test.cpp
@@ -40,7 +51,7 @@ title: Union-Find
 ---
 
 ## Description
-互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ がある状態から始めて，次の操作を $O(\alpha(n))$ で処理するデータ構造 ([素集合データ構造](https://en.wikipedia.org/wiki/Disjoint-set_data_structure))．
+互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ がある状態から始めて，次の操作を amortized $O(\alpha(n))$ で処理するデータ構造 ([素集合データ構造](https://en.wikipedia.org/wiki/Disjoint-set_data_structure))．
 - 要素がどの集合に属するかを求める
 - 二つの集合をマージする
 
@@ -83,7 +94,7 @@ $u$ が含まれる集合の代表元を求める
 - $0\le u\lt n$
 
 #### Complexity
-- $O(\alpha(n))$
+- amortized $O(\alpha(n))$
 
 ### unite
 ```
@@ -95,7 +106,7 @@ $u$ が含まれる集合と $v$ が含まれる集合をマージする
 - $0\le u,v\lt n$
 
 #### Complexity
-- $O(\alpha(n))$
+- amortized $O(\alpha(n))$
 
 ### is_same
 ```
@@ -107,7 +118,7 @@ $u$ と $v$ が同じ集合に含まれるかどうかを判定する
 - $0\le u,v\lt n$
 
 #### Complexity
-- $O(\alpha(n))$
+- amortized $O(\alpha(n))$
 
 ### size
 ```
@@ -122,4 +133,4 @@ $u$ と $v$ が同じ集合に含まれるかどうかを判定する
 
 #### Complexity
 - (1) $O(1)$
-- (2) $O(\alpha(n))$
+- (2) amortized $O(\alpha(n))$

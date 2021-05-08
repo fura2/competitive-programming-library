@@ -1,8 +1,32 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/data_structure/Fenwick_tree.hpp
+    title: Fenwick Tree
+  - icon: ':heavy_check_mark:'
+    path: library/data_structure/Fenwick_tree_dual.hpp
+    title: Dual Fenwick Tree
+  - icon: ':heavy_check_mark:'
+    path: library/data_structure/sparse_table.hpp
+    title: Sparse Table
+  - icon: ':heavy_check_mark:'
+    path: library/data_structure/union-find.hpp
+    title: Union-Find
+  - icon: ':x:'
+    path: library/graph/Dijkstra.hpp
+    title: Dijkstra
+  - icon: ':warning:'
+    path: library/graph/graph.hpp
+    title: Graph
+  - icon: ':x:'
+    path: library/graph/wgraph.hpp
+    title: Weighted Graph
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/Fenwick_tree.test.cpp
+    title: verify/data_structure/Fenwick_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/Fenwick_tree.test.cpp
     title: verify/data_structure/Fenwick_tree.test.cpp
@@ -10,14 +34,26 @@ data:
     path: verify/data_structure/Fenwick_tree_dual.test.cpp
     title: verify/data_structure/Fenwick_tree_dual.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/data_structure/Fenwick_tree_dual.test.cpp
+    title: verify/data_structure/Fenwick_tree_dual.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/sparse_table.test.cpp
+    title: verify/data_structure/sparse_table.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/data_structure/sparse_table.test.cpp
     title: verify/data_structure/sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/union-find.test.cpp
     title: verify/data_structure/union-find.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/union-find.test.cpp
+    title: verify/data_structure/union-find.test.cpp
+  - icon: ':x:'
+    path: verify/graph/Dijkstra.test.cpp
+    title: verify/graph/Dijkstra.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "library/template.hpp"
@@ -131,13 +167,25 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/template.hpp
-  requiredBy: []
+  requiredBy:
+  - library/graph/wgraph.hpp
+  - library/graph/Dijkstra.hpp
+  - library/graph/graph.hpp
+  - library/data_structure/Fenwick_tree_dual.hpp
+  - library/data_structure/Fenwick_tree.hpp
+  - library/data_structure/union-find.hpp
+  - library/data_structure/sparse_table.hpp
   timestamp: '2021-05-08 16:32:46+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/graph/Dijkstra.test.cpp
+  - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/sparse_table.test.cpp
+  - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/union-find.test.cpp
+  - verify/data_structure/union-find.test.cpp
+  - verify/data_structure/Fenwick_tree_dual.test.cpp
   - verify/data_structure/Fenwick_tree_dual.test.cpp
 documentation_of: library/template.hpp
 layout: document
