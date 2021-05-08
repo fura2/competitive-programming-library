@@ -1,3 +1,6 @@
+#pragma once
+#include "../template.hpp"
+
 template<class G>
 class Fenwick_tree_dual{
 	vector<G> a;

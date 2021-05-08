@@ -16,7 +16,7 @@ documentation_of: ../../library/data_structure/sparse_table.hpp
 - (2) $a$ で初期化する
 
 #### Constraints
-- $T$ は整数型 (``int``, ``long long`` など) または実数型 (``double``, ``long double`` など)．
+- $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
 
 #### Complexity
 - (1) $O(1)$

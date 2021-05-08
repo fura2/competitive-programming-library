@@ -1,3 +1,6 @@
+#pragma once
+#include "../template.hpp"
+
 using graph=vector<vector<int>>;
 
 void add_undirected_edge(graph& G,int u,int v){

@@ -1,3 +1,7 @@
+#pragma once
+#include "../template.hpp"
+#include "wgraph.hpp"
+
 template<class T>
 vector<T> Dijkstra(const weighted_graph<T>& G,int s){
 	constexpr T INF=numeric_limits<T>::max();

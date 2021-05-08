@@ -4,7 +4,7 @@ documentation_of: ../../library/data_structure/union-find.hpp
 ---
 
 ## Description
-互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ がある状態から始めて，次の操作を $O(\alpha(n))$ で処理するデータ構造 ([素集合データ構造](https://en.wikipedia.org/wiki/Disjoint-set_data_structure))．
+互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ がある状態から始めて，次の操作を amortized $O(\alpha(n))$ で処理するデータ構造 ([素集合データ構造](https://en.wikipedia.org/wiki/Disjoint-set_data_structure))．
 - 要素がどの集合に属するかを求める
 - 二つの集合をマージする
 
@@ -47,7 +47,7 @@ $u$ が含まれる集合の代表元を求める
 - $0\le u\lt n$
 
 #### Complexity
-- $O(\alpha(n))$
+- amortized $O(\alpha(n))$
 
 ### unite
 ```
@@ -59,7 +59,7 @@ $u$ が含まれる集合と $v$ が含まれる集合をマージする
 - $0\le u,v\lt n$
 
 #### Complexity
-- $O(\alpha(n))$
+- amortized $O(\alpha(n))$
 
 ### is_same
 ```
@@ -71,7 +71,7 @@ $u$ と $v$ が同じ集合に含まれるかどうかを判定する
 - $0\le u,v\lt n$
 
 #### Complexity
-- $O(\alpha(n))$
+- amortized $O(\alpha(n))$
 
 ### size
 ```
@@ -86,4 +86,4 @@ $u$ と $v$ が同じ集合に含まれるかどうかを判定する
 
 #### Complexity
 - (1) $O(1)$
-- (2) $O(\alpha(n))$
+- (2) amortized $O(\alpha(n))$

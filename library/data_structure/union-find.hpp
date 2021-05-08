@@ -1,3 +1,6 @@
+#pragma once
+#include "../template.hpp"
+
 class union_find{
 	int n;
 	vector<int> p;

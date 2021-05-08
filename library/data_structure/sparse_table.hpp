@@ -1,3 +1,6 @@
+#pragma once
+#include "../template.hpp"
+
 template<class T>
 class sparse_table{
 	vector<vector<T>> st;
