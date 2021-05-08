@@ -1,6 +1,6 @@
 {
-"verify/data_structure/Fenwick_tree_1.test.cpp": "2021-05-08 17:56:20 +0900",
-"verify/data_structure/Fenwick_tree_2.test.cpp": "2021-05-08 17:56:20 +0900",
+"verify/data_structure/Fenwick_tree.test.cpp": "2021-05-08 18:43:48 +0900",
 "verify/data_structure/Fenwick_tree_dual.test.cpp": "2021-05-08 17:56:20 +0900",
-"verify/data_structure/sparse_table.test.cpp": "2021-05-08 17:56:20 +0900"
+"verify/data_structure/sparse_table.test.cpp": "2021-05-08 17:56:20 +0900",
+"verify/data_structure/union-find.test.cpp": "2021-05-08 18:43:48 +0900"
 }
