@@ -297,9 +297,9 @@ data:
     - icon: ':warning:'
       path: library/string/trie.hpp
       title: library/string/trie.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/string/z.hpp
-      title: library/string/z.hpp
+      title: Z Algorithm
   - name: library
     pages:
     - icon: ':question:'
@@ -325,6 +325,14 @@ data:
     - icon: ':x:'
       path: verify/graph/Dijkstra.test.cpp
       title: verify/graph/Dijkstra.test.cpp
+  - name: verify/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/string/z.1.test.cpp
+      title: verify/string/z.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/string/z.2.test.cpp
+      title: verify/string/z.2.test.cpp
 layout: toppage
 ---
 [![fura2](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Ffura2)](https://atcoder.jp/users/fura2)

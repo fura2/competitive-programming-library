@@ -1,54 +1,80 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/template.hpp
+    title: library/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/string/z.1.test.cpp
+    title: verify/string/z.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/string/z.2.test.cpp
+    title: verify/string/z.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/string/z.hpp\"\n/* Z-algorithm */\n/*\n\t\u8AAC\u660E\
-    \n\t\t\u6587\u5B57\u5217 s \u306E\u5404 suffix \u306B\u5BFE\u3057\u3066, \u305D\
-    \u308C\u3068 s \u3068\u306E\u6700\u9577\u5171\u901A\u63A5\u982D\u8F9E\u3092\u6C42\
-    \u3081\u308B\n\t\u5F15\u6570\n\t\ts : \u6587\u5B57\u5217\n\t\u5236\u7D04\n\t\t\
-    \u306A\u3057\n\t\u623B\u308A\u5024\n\t\t\u914D\u5217 z[0..|S|)\n\t\u8A08\u7B97\
-    \u91CF\n\t\tO(|s|)\n\t\u5099\u8003\n\t\tz[i] = (s \u3068 s[i..) \u306E\u6700\u9577\
-    \u5171\u901A\u63A5\u982D\u8F9E\u306E\u9577\u3055)\n*/\n\nvector<int> Z_algorithm(const\
+  bundledCode: "#line 1 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
+    #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
+    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
+    \ <deque>\n#include <functional>\n#include <iostream>\n#include <map>\n#include\
+    \ <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n#include <stack>\n\
+    #include <string>\n#include <tuple>\n#include <utility>\n#include <vector>\n\n\
+    #define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long\
+    \ long;\n#line 3 \"library/string/z.hpp\"\n\nvector<int> Z_algorithm(const string&\
+    \ s){\n\tint n=s.length();\n\tvector<int> z(n);\n\tfor(int i=1,pre=0;i<n;i++){\n\
+    \t\tif(z[pre]>(i-pre)+z[i-pre]){\n\t\t\tz[i]=z[i-pre];\n\t\t}\n\t\telse{\n\t\t\
+    \tint j=max(pre+z[pre]-i,0);\n\t\t\twhile(i+j<n && s[j]==s[i+j]) j++;\n\t\t\t\
+    z[i]=j;\n\t\t\tpre=i;\n\t\t}\n\t}\n\tz[0]=n;\n\treturn z;\n}\n\ntemplate<class\
+    \ T>\nvector<int> Z_algorithm(const vector<T>& a){\n\tint n=a.size();\n\tvector<int>\
+    \ z(n);\n\tfor(int i=1,pre=0;i<n;i++){\n\t\tif(z[pre]>(i-pre)+z[i-pre]){\n\t\t\
+    \tz[i]=z[i-pre];\n\t\t}\n\t\telse{\n\t\t\tint j=max(pre+z[pre]-i,0);\n\t\t\twhile(i+j<n\
+    \ && a[j]==a[i+j]) j++;\n\t\t\tz[i]=j;\n\t\t\tpre=i;\n\t\t}\n\t}\n\tz[0]=n;\n\t\
+    return z;\n}\n"
+  code: "#pragma once\n#include \"../template.hpp\"\n\nvector<int> Z_algorithm(const\
     \ string& s){\n\tint n=s.length();\n\tvector<int> z(n);\n\tfor(int i=1,pre=0;i<n;i++){\n\
     \t\tif(z[pre]>(i-pre)+z[i-pre]){\n\t\t\tz[i]=z[i-pre];\n\t\t}\n\t\telse{\n\t\t\
     \tint j=max(pre+z[pre]-i,0);\n\t\t\twhile(i+j<n && s[j]==s[i+j]) j++;\n\t\t\t\
-    z[i]=j;\n\t\t\tpre=i;\n\t\t}\n\t}\n\tz[0]=n;\n\treturn z;\n}\n\nvector<int> Z_algorithm(const\
-    \ vector<int>& a){\n\tint n=a.size();\n\tvector<int> z(n);\n\tfor(int i=1,pre=0;i<n;i++){\n\
-    \t\tif(z[pre]>(i-pre)+z[i-pre]){\n\t\t\tz[i]=z[i-pre];\n\t\t}\n\t\telse{\n\t\t\
-    \tint j=max(pre+z[pre]-i,0);\n\t\t\twhile(i+j<n && a[j]==a[i+j]) j++;\n\t\t\t\
-    z[i]=j;\n\t\t\tpre=i;\n\t\t}\n\t}\n\tz[0]=n;\n\treturn z;\n}\n"
-  code: "/* Z-algorithm */\n/*\n\t\u8AAC\u660E\n\t\t\u6587\u5B57\u5217 s \u306E\u5404\
-    \ suffix \u306B\u5BFE\u3057\u3066, \u305D\u308C\u3068 s \u3068\u306E\u6700\u9577\
-    \u5171\u901A\u63A5\u982D\u8F9E\u3092\u6C42\u3081\u308B\n\t\u5F15\u6570\n\t\ts\
-    \ : \u6587\u5B57\u5217\n\t\u5236\u7D04\n\t\t\u306A\u3057\n\t\u623B\u308A\u5024\
-    \n\t\t\u914D\u5217 z[0..|S|)\n\t\u8A08\u7B97\u91CF\n\t\tO(|s|)\n\t\u5099\u8003\
-    \n\t\tz[i] = (s \u3068 s[i..) \u306E\u6700\u9577\u5171\u901A\u63A5\u982D\u8F9E\
-    \u306E\u9577\u3055)\n*/\n\nvector<int> Z_algorithm(const string& s){\n\tint n=s.length();\n\
-    \tvector<int> z(n);\n\tfor(int i=1,pre=0;i<n;i++){\n\t\tif(z[pre]>(i-pre)+z[i-pre]){\n\
-    \t\t\tz[i]=z[i-pre];\n\t\t}\n\t\telse{\n\t\t\tint j=max(pre+z[pre]-i,0);\n\t\t\
-    \twhile(i+j<n && s[j]==s[i+j]) j++;\n\t\t\tz[i]=j;\n\t\t\tpre=i;\n\t\t}\n\t}\n\
-    \tz[0]=n;\n\treturn z;\n}\n\nvector<int> Z_algorithm(const vector<int>& a){\n\t\
-    int n=a.size();\n\tvector<int> z(n);\n\tfor(int i=1,pre=0;i<n;i++){\n\t\tif(z[pre]>(i-pre)+z[i-pre]){\n\
-    \t\t\tz[i]=z[i-pre];\n\t\t}\n\t\telse{\n\t\t\tint j=max(pre+z[pre]-i,0);\n\t\t\
-    \twhile(i+j<n && a[j]==a[i+j]) j++;\n\t\t\tz[i]=j;\n\t\t\tpre=i;\n\t\t}\n\t}\n\
-    \tz[0]=n;\n\treturn z;\n}\n"
-  dependsOn: []
+    z[i]=j;\n\t\t\tpre=i;\n\t\t}\n\t}\n\tz[0]=n;\n\treturn z;\n}\n\ntemplate<class\
+    \ T>\nvector<int> Z_algorithm(const vector<T>& a){\n\tint n=a.size();\n\tvector<int>\
+    \ z(n);\n\tfor(int i=1,pre=0;i<n;i++){\n\t\tif(z[pre]>(i-pre)+z[i-pre]){\n\t\t\
+    \tz[i]=z[i-pre];\n\t\t}\n\t\telse{\n\t\t\tint j=max(pre+z[pre]-i,0);\n\t\t\twhile(i+j<n\
+    \ && a[j]==a[i+j]) j++;\n\t\t\tz[i]=j;\n\t\t\tpre=i;\n\t\t}\n\t}\n\tz[0]=n;\n\t\
+    return z;\n}\n"
+  dependsOn:
+  - library/template.hpp
   isVerificationFile: false
   path: library/string/z.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-05-09 02:26:00+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/string/z.2.test.cpp
+  - verify/string/z.1.test.cpp
 documentation_of: library/string/z.hpp
 layout: document
-redirect_from:
-- /library/library/string/z.hpp
-- /library/library/string/z.hpp.html
-title: library/string/z.hpp
+title: Z Algorithm
 ---
+
+## Description
+文字列 $s=s_0\cdots s_{n-1}$ に対して，数列 $z=(z_0,\ldots,z_{n-1})$ を次のように定める．
+\begin{align*}
+	z_i=(\text{$s$ と $s_i\cdots s_{n-1}$ との最長共通接頭辞の長さ})
+\end{align*}
+Z algorithm は数列 $z$ を $O(n)$ で求めるアルゴリズムである．
+
+```
+(1) vector<int> Z_algorithm(const string& s)
+(2) vector<int> Z_algorithm(const vector<T>& a)
+```
+- (1) $s$ に対して数列 $z$ を求める
+- (2) 要素の型が $T$ である列 $a$ に対して数列 $z$ を求める
+
+#### Constraints
+- なし
+
+#### Complexity
+- $O(n)$

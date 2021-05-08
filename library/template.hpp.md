@@ -23,6 +23,9 @@ data:
   - icon: ':x:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
+  - icon: ':heavy_check_mark:'
+    path: library/string/z.hpp
+    title: Z Algorithm
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/Fenwick_tree.test.cpp
@@ -51,6 +54,21 @@ data:
   - icon: ':x:'
     path: verify/graph/Dijkstra.test.cpp
     title: verify/graph/Dijkstra.test.cpp
+  - icon: ':x:'
+    path: verify/graph/Dijkstra.test.cpp
+    title: verify/graph/Dijkstra.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/string/z.1.test.cpp
+    title: verify/string/z.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/string/z.1.test.cpp
+    title: verify/string/z.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/string/z.2.test.cpp
+    title: verify/string/z.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/string/z.2.test.cpp
+    title: verify/string/z.2.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -63,6 +81,8 @@ data:
     #include <cctype>
 
     #include <chrono>
+
+    #include <climits>
 
     #include <cmath>
 
@@ -117,6 +137,8 @@ data:
 
     #include <chrono>
 
+    #include <climits>
+
     #include <cmath>
 
     #include <cstdio>
@@ -168,6 +190,7 @@ data:
   isVerificationFile: false
   path: library/template.hpp
   requiredBy:
+  - library/string/z.hpp
   - library/graph/wgraph.hpp
   - library/graph/Dijkstra.hpp
   - library/graph/graph.hpp
@@ -175,9 +198,14 @@ data:
   - library/data_structure/Fenwick_tree.hpp
   - library/data_structure/union-find.hpp
   - library/data_structure/sparse_table.hpp
-  timestamp: '2021-05-08 16:32:46+09:00'
+  timestamp: '2021-05-09 02:26:00+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/string/z.2.test.cpp
+  - verify/string/z.2.test.cpp
+  - verify/string/z.1.test.cpp
+  - verify/string/z.1.test.cpp
+  - verify/graph/Dijkstra.test.cpp
   - verify/graph/Dijkstra.test.cpp
   - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/Fenwick_tree.test.cpp
