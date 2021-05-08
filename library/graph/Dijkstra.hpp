@@ -9,7 +9,9 @@ vector<T> Dijkstra(const weighted_graph<T>& G,int s){
 	vector<T> d(n,INF); d[s]=0;
 	priority_queue<pair<T,int>,vector<pair<T,int>>,greater<>> Q;
 	Q.emplace(0,s);
+int cnt=0;
 	while(!Q.empty()){
+cnt++;
 		T d0;
 		int u; tie(d0,u)=Q.top();
 		Q.pop();
@@ -22,5 +24,6 @@ vector<T> Dijkstra(const weighted_graph<T>& G,int s){
 			}
 		}
 	}
+if(n==49000 && s==0) printf("cnt = %d\n",cnt);
 	return d;
 }
