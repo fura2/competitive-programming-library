@@ -4,11 +4,8 @@ documentation_of: ../../library/string/z.hpp
 ---
 
 ## Description
-文字列 $s=s_0\cdots s_{n-1}$ に対して，数列 $z=(z_0,\ldots,z_{n-1})$ を次のように定める．
-\begin{align*}
-	z_i=(\text{$s$ と $s_i\cdots s_{n-1}$ との最長共通接頭辞の長さ})
-\end{align*}
-Z algorithm は数列 $z$ を $O(n)$ で求めるアルゴリズムである．
+文字列 $s=s_0\cdots s_{n-1}$ に対して，$z_i=(s$ と $s_i\cdots s_{n-1}$ の最長共通接頭辞の長さ$)$ と定める．  
+Z algorithm は数列 $z=(z_0,\ldots,z_{n-1})$ を $O(n)$ で求めるアルゴリズムである．
 
 ```
 (1) vector<int> Z_algorithm(const string& s)

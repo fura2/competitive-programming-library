@@ -1,5 +1,5 @@
 ---
-title: Dijkstra
+title: Dijkstra's Algorithm
 documentation_of: ../../library/graph/Dijkstra.hpp
 ---
 
@@ -9,6 +9,7 @@ documentation_of: ../../library/graph/Dijkstra.hpp
 vector<T> Dijkstra(const weighted_graph<T>& G, int s)
 ```
 重みつきグラフ $G$ において，頂点 $s$ から各頂点までの最短距離を求める．
+$s$ から到達できない場合は ``numeric_limits<T>::max()`` が格納される．
 
 #### Constraints
 - $0\le s\lt n$

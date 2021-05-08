@@ -1,3 +1,4 @@
+#pragma once
 #include <cassert>
 #include <cctype>
 #include <chrono>
@@ -11,6 +12,7 @@
 #include <deque>
 #include <functional>
 #include <iostream>
+#include <limits>
 #include <map>
 #include <numeric>
 #include <queue>
