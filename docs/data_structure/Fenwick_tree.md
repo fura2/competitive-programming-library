@@ -1,11 +1,11 @@
 ---
 title: Fenwick tree
-documentation_of: //data_structure/Fenwick_tree.hpp
+documentation_of: ../../library/data_structure/Fenwick_tree.hpp
 ---
 
 ## Description
-Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して, 一点加算と区間和を $O(\log n)$ で処理できるデータ構造.  
-以下では, $G$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している.
+Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区間和を $O(\log n)$ で処理できるデータ構造．  
+以下では，$G$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
 
 ### (constructor)
 ```
@@ -16,7 +16,7 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して, 一点加算と区�
 - (2) $G$ の単位元 $e$ のみからなる長さ $n$ の列で初期化する
 
 #### Constraints
-- $(G,+)$ は Abel 群 (デフォルトコンストラクタが $G$ の単位元を生成し, $-$ は $+$ の逆演算)
+- $(G,+)$ は Abel 群 (デフォルトコンストラクタが $G$ の単位元を生成し，$-$ は $+$ の逆演算)
 - (2) $n\ge0$
 
 #### Complexity
@@ -66,11 +66,11 @@ $a_l+a_{l+1}+\cdots+a_{r-1}$ を求める
 ```
 int lower_bound(G val) const
 ```
-$a_0+a_1+\cdots+a_i\ge\mathrm{val}$ をみたす最小の $i$ を求める.  
-ただし, $a_0+\cdots+a_{n-1}\lt\mathrm{val}$ のときは $n$ を返す.
+$a_0+a_1+\cdots+a_i\ge\mathrm{val}$ をみたす最小の $i$ を求める．  
+ただし，$a_0+\cdots+a_{n-1}\lt\mathrm{val}$ のときは $n$ を返す．
 
 #### Constraints
-- $G$ 上の比較演算子 $<$ が定義されていて, これについて $G$ は全順序集合
+- $G$ 上の比較演算子 $<$ が定義されていて，これについて $G$ は[全順序群](https://en.wikipedia.org/wiki/Linearly_ordered_group)．
 - $a_i\ge e\quad(i=0,\ldots,n-1)$
 
 #### Complexity
@@ -80,12 +80,15 @@ $a_0+a_1+\cdots+a_i\ge\mathrm{val}$ をみたす最小の $i$ を求める.
 ```
 int upper_bound(G val) const
 ```
-$a_0+a_1+\cdots+a_i\gt\mathrm{val}$ をみたす最小の $i$ を求める.  
-ただし, $a_0+\cdots+a_{n-1}\le\mathrm{val}$ のときは $n$ を返す.
+$a_0+a_1+\cdots+a_i\gt\mathrm{val}$ をみたす最小の $i$ を求める．  
+ただし，$a_0+\cdots+a_{n-1}\le\mathrm{val}$ のときは $n$ を返す．
 
 #### Constraints
-- $G$ 上の比較演算子 $<$ が定義されていて, これについて $G$ は全順序集合
+- $G$ 上の比較演算子 $<$ が定義されていて，これについて $G$ は[全順序群](https://en.wikipedia.org/wiki/Linearly_ordered_group)．
 - $a_i\ge e\quad(i=0,\ldots,n-1)$
 
 #### Complexity
 - $O(\log n)$
+
+## References
+- [Binary Indexed Tree のはなし](http://hos.ac/slides/20140319_bit.pdf)

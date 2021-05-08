@@ -1,7 +1,7 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
-#include "../../template.hpp"
-#include "../../data_structure/Fenwick_tree.hpp"
+#include "../../library/template.hpp"
+#include "../../library/data_structure/Fenwick_tree.hpp"
 
 int main(){
 	int n,q; scanf("%d%d",&n,&q);
