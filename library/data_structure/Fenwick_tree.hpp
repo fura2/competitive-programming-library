@@ -10,7 +10,7 @@ public:
 	}
 	void build(const vector<G>& a){
 		this->a=a;
-		for(int i=1;i<a.size();i++) if(i+(i&-i)-1<a.size()) (this->a)[i+(i&-i)-1]+=(this->a)[i-1];
+		for(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size()) (this->a)[i+(i&-i)-1]+=(this->a)[i-1];
 	}
 	void add(int i,const G& val){
 		for(i++;i<=a.size();i+=i&-i) a[i-1]+=val;

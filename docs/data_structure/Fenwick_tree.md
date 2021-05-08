@@ -1,5 +1,5 @@
 ---
-title: Fenwick tree
+title: Fenwick Tree
 documentation_of: ../../library/data_structure/Fenwick_tree.hpp
 ---
 
@@ -11,9 +11,11 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区
 ```
 (1) Fenwick_tree<G>()
 (2) Fenwick_tree<G>(int n)
+(3) Fenwick_tree<G>(const vector<G>& a)
 ```
 - (1) 空の列で初期化する
 - (2) $G$ の単位元 $e$ のみからなる長さ $n$ の列で初期化する
+- (3) $a$ で初期化する
 
 #### Constraints
 - $(G,+)$ は Abel 群 (デフォルトコンストラクタが $G$ の単位元を生成し，$-$ は $+$ の逆演算)
@@ -21,7 +23,7 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区
 
 #### Complexity
 - (1) $O(1)$
-- (2) $O(n)$
+- (2), (3) $O(n)$
 
 ### build
 ```
@@ -52,7 +54,7 @@ $a_i$ に $\mathrm{val}$ を加える
 
 ### sum
 ```
-G sum(int l, int r) const
+G sum(int l, int r)
 ```
 $a_l+a_{l+1}+\cdots+a_{r-1}$ を求める
 
@@ -64,7 +66,7 @@ $a_l+a_{l+1}+\cdots+a_{r-1}$ を求める
 
 ### lower_bound
 ```
-int lower_bound(G val) const
+int lower_bound(G val)
 ```
 $a_0+a_1+\cdots+a_i\ge\mathrm{val}$ をみたす最小の $i$ を求める．  
 ただし，$a_0+\cdots+a_{n-1}\lt\mathrm{val}$ のときは $n$ を返す．
@@ -78,7 +80,7 @@ $a_0+a_1+\cdots+a_i\ge\mathrm{val}$ をみたす最小の $i$ を求める．
 
 ### upper_bound
 ```
-int upper_bound(G val) const
+int upper_bound(G val)
 ```
 $a_0+a_1+\cdots+a_i\gt\mathrm{val}$ をみたす最小の $i$ を求める．  
 ただし，$a_0+\cdots+a_{n-1}\le\mathrm{val}$ のときは $n$ を返す．
