@@ -2,7 +2,7 @@ template<class G>
 class Fenwick_tree{
 	vector<G> a;
 public:
-	Fenwick_tree(){}
+	Fenwick_tree()=default;
 	Fenwick_tree(int n){ build(n); }
 	Fenwick_tree(const vector<G>& a){ build(a); }
 	void build(int n){

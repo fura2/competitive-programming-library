@@ -2,7 +2,7 @@ template<class G>
 class Fenwick_tree_dual{
 	vector<G> a;
 public:
-	Fenwick_tree_dual(){}
+	Fenwick_tree_dual()=default;
 	Fenwick_tree_dual(int n){ build(n); }
 	Fenwick_tree_dual(const vector<G>& a){ build(a); }
 	void build(int n){
@@ -24,8 +24,5 @@ public:
 		G res{};
 		for(i++;i<=a.size();i+=i&-i) res+=a[i-1];
 		return res;
-	}
-	void f(){
-		rep(i,a.size()) printf("%d: %d\n",i+1,a[i]);
 	}
 };

@@ -4,7 +4,7 @@ documentation_of: ../../library/data_structure/Fenwick_tree.hpp
 ---
 
 ## Description
-Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区間和を $O(\log n)$ で処理できるデータ構造．  
+Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区間和を $O(\log n)$ で処理するデータ構造．  
 以下では，$G$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
 
 ### (constructor)
@@ -40,7 +40,6 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区
 - $O(n)$
 
 ### add
-
 ```
 void add(int i, const G& val)
 ```
