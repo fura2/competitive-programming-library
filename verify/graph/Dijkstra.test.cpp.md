@@ -39,22 +39,18 @@ data:
     int n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
     \ Q;\n\tQ.emplace(0,s);\n\twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\
     \t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const auto& e:G[u]){\n\t\t\t\
-    int v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\t\t\t\tQ.emplace(d[v],v);\n\
+    int v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\t\t\t\t// Q.emplace(d[v],v);\n\
     \t\t\t}\n\t\t}\n\t}\n\treturn d;\n}\n#line 5 \"verify/graph/Dijkstra.test.cpp\"\
     \n\nint main(){\n\tint n,m,s; scanf(\"%d%d%d\",&n,&m,&s);\n\tweighted_graph<int>\
     \ G(n);\n\trep(i,m){\n\t\tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\t\tadd_directed_edge(G,u,v,c);\n\
-    \t}\n\treturn 0;\n// fprintf(stdout,\"n = %d, m = %d, s = %d: max = %d, INT_MAX\
-    \ = %d\\n\",n,m,s,numeric_limits<int>::max(),INT_MAX);\n// if(n==49000 && m==200000\
-    \ && s==0) return 0;\n\n\tfor(auto d:Dijkstra(G,s)){\n\t\tif(d<INT_MAX) printf(\"\
-    %d\\n\",d);\n\t\telse          puts(\"INF\");\n\t}\n\n\treturn 0;\n}\n"
+    \t}\n\n\tfor(auto d:Dijkstra(G,s)){\n\t\tif(d<INT_MAX) printf(\"%d\\n\",d);\n\t\
+    \telse          puts(\"INF\");\n\t}\n\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
     \n\n#include \"../../library/template.hpp\"\n#include \"../../library/graph/Dijkstra.hpp\"\
     \n\nint main(){\n\tint n,m,s; scanf(\"%d%d%d\",&n,&m,&s);\n\tweighted_graph<int>\
     \ G(n);\n\trep(i,m){\n\t\tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\t\tadd_directed_edge(G,u,v,c);\n\
-    \t}\n\treturn 0;\n// fprintf(stdout,\"n = %d, m = %d, s = %d: max = %d, INT_MAX\
-    \ = %d\\n\",n,m,s,numeric_limits<int>::max(),INT_MAX);\n// if(n==49000 && m==200000\
-    \ && s==0) return 0;\n\n\tfor(auto d:Dijkstra(G,s)){\n\t\tif(d<INT_MAX) printf(\"\
-    %d\\n\",d);\n\t\telse          puts(\"INF\");\n\t}\n\n\treturn 0;\n}\n"
+    \t}\n\n\tfor(auto d:Dijkstra(G,s)){\n\t\tif(d<INT_MAX) printf(\"%d\\n\",d);\n\t\
+    \telse          puts(\"INF\");\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
   - library/template.hpp
   - library/graph/Dijkstra.hpp
@@ -62,7 +58,7 @@ data:
   isVerificationFile: true
   path: verify/graph/Dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2021-05-09 18:34:22+09:00'
+  timestamp: '2021-05-09 18:51:29+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/graph/Dijkstra.test.cpp
