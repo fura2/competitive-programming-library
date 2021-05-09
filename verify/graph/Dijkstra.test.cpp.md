@@ -37,11 +37,11 @@ data:
     }\n#line 4 \"library/graph/Dijkstra.hpp\"\n\ntemplate<class T>\nvector<T> Dijkstra(const\
     \ weighted_graph<T>& G,int s){\n\tconstexpr T INF=numeric_limits<T>::max();\n\t\
     int n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
-    \ Q;\n\tQ.emplace(0,s);\nint cnt=0;\n\twhile(!Q.empty()){\ncnt++;\n\t\tT d0;\n\
-    \t\tint u; tie(d0,u)=Q.top();\n\t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const\
-    \ auto& e:G[u]){\n\t\t\tint v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\
-    \t\t\t\tQ.emplace(d[v],v);\n\t\t\t}\n\t\t}\n\t}\nprintf(\"n = %d, s = %d: cnt\
-    \ = %d\\n\",n,s,cnt);\n\treturn d;\n}\n#line 5 \"verify/graph/Dijkstra.test.cpp\"\
+    \ Q;\n\tQ.emplace(0,s);\nint cnt=0;\n\twhile(!Q.empty()){\ncnt++;\nif(cnt>1e8)\
+    \ break;\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\t\tQ.pop();\n\t\tif(d0>d[u])\
+    \ continue;\n\t\tfor(const auto& e:G[u]){\n\t\t\tint v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\
+    \t\t\t\td[v]=d[u]+e.wt;\n\t\t\t\tQ.emplace(d[v],v);\n\t\t\t}\n\t\t}\n\t}\nprintf(\"\
+    n = %d, s = %d: cnt = %d\\n\",n,s,cnt);\n\treturn d;\n}\n#line 5 \"verify/graph/Dijkstra.test.cpp\"\
     \n\nint main(){\n\tint n,m,s; scanf(\"%d%d%d\",&n,&m,&s);\n\tweighted_graph<int>\
     \ G(n);\n\trep(i,m){\n\t\tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\t\tadd_directed_edge(G,u,v,c);\n\
     \t}\n// fprintf(stdout,\"n = %d, m = %d, s = %d: max = %d, INT_MAX = %d\\n\",n,m,s,numeric_limits<int>::max(),INT_MAX);\n\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: verify/graph/Dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2021-05-09 04:40:12+09:00'
+  timestamp: '2021-05-09 15:59:40+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/graph/Dijkstra.test.cpp
