@@ -9,10 +9,7 @@ vector<T> Dijkstra(const weighted_graph<T>& G,int s){
 	vector<T> d(n,INF); d[s]=0;
 	priority_queue<pair<T,int>,vector<pair<T,int>>,greater<>> Q;
 	Q.emplace(0,s);
-int cnt=0;
 	while(!Q.empty()){
-cnt++;
-if(cnt>1e8) break;
 		T d0;
 		int u; tie(d0,u)=Q.top();
 		Q.pop();
@@ -25,6 +22,5 @@ if(cnt>1e8) break;
 			}
 		}
 	}
-printf("n = %d, s = %d: cnt = %d\n",n,s,cnt);
 	return d;
 }

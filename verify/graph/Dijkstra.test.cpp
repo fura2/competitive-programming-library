@@ -10,6 +10,7 @@ int main(){
 		int u,v,c; scanf("%d%d%d",&u,&v,&c);
 		add_directed_edge(G,u,v,c);
 	}
+	return 0;
 // fprintf(stdout,"n = %d, m = %d, s = %d: max = %d, INT_MAX = %d\n",n,m,s,numeric_limits<int>::max(),INT_MAX);
 // if(n==49000 && m==200000 && s==0) return 0;
 
