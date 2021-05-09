@@ -10,8 +10,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: verify/graph/Dijkstra.test.cpp
-    title: verify/graph/Dijkstra.test.cpp
+    path: verify/graph/Dijkstra.1.test.cpp
+    title: verify/graph/Dijkstra.1.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
@@ -32,32 +32,28 @@ data:
     void add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
     }\n#line 4 \"library/graph/Dijkstra.hpp\"\n\ntemplate<class T>\nvector<T> Dijkstra(const\
     \ weighted_graph<T>& G,int s){\n\tconstexpr T INF=numeric_limits<T>::max();\n\t\
-    int n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\t// priority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
-    \ Q;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>> Q;\n\tQ.emplace(0,s);\n\
-    \twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\t\tQ.pop();\n\
-    \t\t// if(d0>d[u]) continue;\n\t\tif(-d0>d[u]) continue;\n\t\tfor(const auto&\
-    \ e:G[u]){\n\t\t\tint v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\
-    \t\t\t\t// Q.emplace(d[v],v);\n\t\t\t\tQ.emplace(-d[v],v);\n\t\t\t}\n\t\t}\n\t\
-    }\n\treturn d;\n}\n"
+    int n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
+    \ Q;\n\tQ.emplace(0,s);\n\twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\
+    \t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const auto& e:G[u]){\n\t\t\t\
+    int v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\t\t\t\tQ.emplace(d[v],v);\n\
+    \t\t\t}\n\t\t}\n\t}\n\treturn d;\n}\n"
   code: "#pragma once\n#include \"../template.hpp\"\n#include \"wgraph.hpp\"\n\ntemplate<class\
     \ T>\nvector<T> Dijkstra(const weighted_graph<T>& G,int s){\n\tconstexpr T INF=numeric_limits<T>::max();\n\
-    \tint n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\t// priority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
-    \ Q;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>> Q;\n\tQ.emplace(0,s);\n\
-    \twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\t\tQ.pop();\n\
-    \t\t// if(d0>d[u]) continue;\n\t\tif(-d0>d[u]) continue;\n\t\tfor(const auto&\
-    \ e:G[u]){\n\t\t\tint v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\
-    \t\t\t\t// Q.emplace(d[v],v);\n\t\t\t\tQ.emplace(-d[v],v);\n\t\t\t}\n\t\t}\n\t\
-    }\n\treturn d;\n}\n"
+    \tint n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
+    \ Q;\n\tQ.emplace(0,s);\n\twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\
+    \t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const auto& e:G[u]){\n\t\t\t\
+    int v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\t\t\t\tQ.emplace(d[v],v);\n\
+    \t\t\t}\n\t\t}\n\t}\n\treturn d;\n}\n"
   dependsOn:
   - library/template.hpp
   - library/graph/wgraph.hpp
   isVerificationFile: false
   path: library/graph/Dijkstra.hpp
   requiredBy: []
-  timestamp: '2021-05-09 19:05:39+09:00'
+  timestamp: '2021-05-10 00:54:23+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/graph/Dijkstra.test.cpp
+  - verify/graph/Dijkstra.1.test.cpp
 documentation_of: library/graph/Dijkstra.hpp
 layout: document
 title: Dijkstra's Algorithm

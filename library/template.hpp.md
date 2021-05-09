@@ -40,8 +40,8 @@ data:
     path: verify/data_structure/union-find.test.cpp
     title: verify/data_structure/union-find.test.cpp
   - icon: ':x:'
-    path: verify/graph/Dijkstra.test.cpp
-    title: verify/graph/Dijkstra.test.cpp
+    path: verify/graph/Dijkstra.1.test.cpp
+    title: verify/graph/Dijkstra.1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/string/z.1.test.cpp
     title: verify/string/z.1.test.cpp
@@ -188,7 +188,7 @@ data:
   verifiedWith:
   - verify/string/z.2.test.cpp
   - verify/string/z.1.test.cpp
-  - verify/graph/Dijkstra.test.cpp
+  - verify/graph/Dijkstra.1.test.cpp
   - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/union-find.test.cpp

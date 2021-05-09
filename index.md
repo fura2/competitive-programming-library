@@ -323,8 +323,11 @@ data:
   - name: verify/graph
     pages:
     - icon: ':x:'
-      path: verify/graph/Dijkstra.test.cpp
-      title: verify/graph/Dijkstra.test.cpp
+      path: verify/graph/Dijkstra.1.test.cpp
+      title: verify/graph/Dijkstra.1.test.cpp
+    - icon: ':x:'
+      path: verify/graph/Dijkstra.2.test.cpp
+      title: Dijkstra ($O((E + V) \log V)$)
   - name: verify/string
     pages:
     - icon: ':heavy_check_mark:'

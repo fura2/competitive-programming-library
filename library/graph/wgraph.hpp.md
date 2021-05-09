@@ -10,8 +10,8 @@ data:
     title: Dijkstra's Algorithm
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: verify/graph/Dijkstra.test.cpp
-    title: verify/graph/Dijkstra.test.cpp
+    path: verify/graph/Dijkstra.1.test.cpp
+    title: verify/graph/Dijkstra.1.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
@@ -46,7 +46,7 @@ data:
   timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/graph/Dijkstra.test.cpp
+  - verify/graph/Dijkstra.1.test.cpp
 documentation_of: library/graph/wgraph.hpp
 layout: document
 title: Weighted Graph
