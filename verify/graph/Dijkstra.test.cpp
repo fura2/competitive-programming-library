@@ -10,7 +10,6 @@ int main(){
 		int u,v,c; scanf("%d%d%d",&u,&v,&c);
 		add_directed_edge(G,u,v,c);
 	}
-	return 0;
 
 	for(auto d:Dijkstra(G,s)){
 		if(d<INT_MAX) printf("%d\n",d);
