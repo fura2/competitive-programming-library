@@ -12,6 +12,7 @@ vector<T> Dijkstra(const weighted_graph<T>& G,int s){
 int cnt=0;
 	while(!Q.empty()){
 cnt++;
+if(cnt>1e8) break;
 		T d0;
 		int u; tie(d0,u)=Q.top();
 		Q.pop();
