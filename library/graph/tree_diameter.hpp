@@ -1,6 +1,7 @@
-/*
-	n>0 を仮定
-*/
+#pragma once
+#include "../template.hpp"
+#include "graph.hpp"
+#include "wgraph.hpp"
 
 pair<int,vector<int>> tree_diameter(const graph& T){
 	int n=T.size();
@@ -29,12 +30,6 @@ pair<int,vector<int>> tree_diameter(const graph& T){
 
 	return {diam,P};
 }
-
-/*
-	重みつきバージョン
-	辺の重みの型 W は整数または実数を想定
-	n>0 と辺の重みが非負を仮定
-*/
 
 template<class W>
 pair<W,vector<int>> tree_diameter(const weighted_graph<W>& T){
