@@ -1,22 +1,5 @@
 // どのモノイドについても, 引数を持たないコンストラクタが単位元を生成するものとする
 
-// 台集合 : T の元全体
-// 積 : min
-// 仮定 : T 上の全順序が定義されていて numeric_limits<T>::max() が最大元
-
-template<class T>
-class min_monoid{
-	T a;
-public:
-	min_monoid():a(numeric_limits<T>::max()){}
-	min_monoid(const T& val):a(val){}
-	min_monoid operator*(const min_monoid& x)const{
-		return min(a,x.a);
-	}
-	T& get(){ return a; }
-	const T& get()const{ return a; }
-};
-
 // 台集合 : T1 の元と T2 の元のペア全体
 // 積 : min (辞書順)
 // 仮定 : i = 1, 2 に対して, Ti 上の全順序が定義されていて numeric_limits<Ti>::max() が最大元
