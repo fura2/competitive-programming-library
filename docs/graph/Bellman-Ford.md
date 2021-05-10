@@ -9,9 +9,9 @@ documentation_of: ../../library/graph/Bellman-Ford.hpp
 ```
 vector<T> Bellman_Ford(const weighted_graph<T>& G, int s)
 ```
-重みつきグラフ $G$ において，頂点 $s$ から各頂点 $u$ までの最短距離 $d(u)$ を求める．
-$s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()`` となる．
-また，$s$ から $u$ にいくらでも小さいコストで到達できる場合は $d(u)=$ ``numeric_limits<T>::min()`` となる．
+重みつきグラフ $G$ において，頂点 $s$ から各頂点 $u$ までの最短距離 $d(u)$ を求める．  
+$s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()`` となる．  
+また，$s$ から $u$ にいくらでも小さいコストで到達できる場合は $d(u)=$ ``numeric_limits<T>::min()`` となる．  
 このようなケースは，$G$ において $s$ から到達できる負閉路が存在する場合に起こりうる．
 
 #### Constraints
