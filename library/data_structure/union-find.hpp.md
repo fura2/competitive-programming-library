@@ -56,7 +56,7 @@ title: Union-Find
 - 要素がどの集合に属するかを求める
 - 二つの集合をマージする
 
-union by size と path compression を実装した．
+union by size と path compression を実装している．
 
 ### (constructor)
 ```
