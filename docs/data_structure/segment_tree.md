@@ -96,7 +96,7 @@ $M$ における積の計算量が大きく，$N$ における積と $f$ を作�
 ```
 int max_right(int l, const F& f)
 ```
-$f:M\to\mathrm{bool}$　に対して，次の二つの条件をみたす $r\ (l\le r\le n)$ を一つ求める．
+$f:M\to\mathrm{bool}$ に対して，次の二つの条件をみたす $r\ (l\le r\le n)$ を一つ求める．
 - $r=l$ または $f(a_l\ast a_{l+1}\ast\cdots\ast a_{r-1})=\mathrm{true}$
 - $r=n$ または $f(a_l\ast a_{l+1}\ast\cdots\ast a_r)=\mathrm{false}$
 
@@ -111,7 +111,7 @@ $f:M\to\mathrm{bool}$　に対して，次の二つの条件をみたす $r\ (l\
 ```
 int min_left(int r, const F& f)
 ```
-$f:M\to\mathrm{bool}$　に対して，次の二つの条件をみたす $l\ (0\le l\le r)$ を一つ求める．
+$f:M\to\mathrm{bool}$ に対して，次の二つの条件をみたす $l\ (0\le l\le r)$ を一つ求める．
 - $l=r$ または $f(a_l\ast a_{l+1}\ast\cdots\ast a_{r-1})=\mathrm{true}$
 - $l=0$ または $f(a_{l-1}\ast a_l\ast\cdots\ast a_{r-1})=\mathrm{false}$
 
