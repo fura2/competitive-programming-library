@@ -69,7 +69,7 @@ title: Dijkstra's Algorithm
 ```
 vector<T> Dijkstra(const weighted_graph<T>& G, int s)
 ```
-重みつきグラフ $G$ において，頂点 $s$ から各頂点 $u$ までの最短距離 $d(u)$ を求める．
+重みつきグラフ $G$ において，頂点 $s$ から各頂点 $u$ までの最短距離 $d(u)$ を求める．  
 $s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()`` となる．
 
 #### Constraints
