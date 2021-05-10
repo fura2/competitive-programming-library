@@ -6,6 +6,8 @@
 "verify/graph/Bellman-Ford.test.cpp": "2021-05-10 17:31:54 +0900",
 "verify/graph/Dijkstra.1.test.cpp": "2021-05-10 16:28:04 +0900",
 "verify/graph/Dijkstra.2.test.cpp": "2021-05-10 17:31:54 +0900",
+"verify/graph/tree_diameter.1.test.cpp": "2021-05-10 17:57:03 +0900",
+"verify/graph/tree_diameter.2.test.cpp": "2021-05-10 17:57:03 +0900",
 "verify/string/z.1.test.cpp": "2021-05-09 03:26:47 +0900",
 "verify/string/z.2.test.cpp": "2021-05-09 03:26:47 +0900"
 }
