@@ -25,27 +25,26 @@ data:
     #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
     \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
     using lint=long long;\n#line 3 \"library/data_structure/union-find.hpp\"\n\nclass\
-    \ union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\t\
-    union_find(int n){ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\
-    \t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
-    \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
-    \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
-    \ find(u)==find(v); }\n\tint size()const{ return n; }\n\tint size(int u){ return\
-    \ -p[find(u)]; }\n};\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n\nclass union_find{\n\tint n;\n\
-    \tvector<int> p;\npublic:\n\tunion_find()=default;\n\tunion_find(int n){ build(n);\
+    \ union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find(int n=0){ build(n);\
     \ }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\t}\n\tint find(int\
     \ u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int v){\n\t\tu=find(u);\
     \ v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\t\t\tp[u]+=p[v];\
     \ p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return find(u)==find(v);\
     \ }\n\tint size()const{ return n; }\n\tint size(int u){ return -p[find(u)]; }\n\
     };\n"
+  code: "#pragma once\n#include \"../template.hpp\"\n\nclass union_find{\n\tint n;\n\
+    \tvector<int> p;\npublic:\n\tunion_find(int n=0){ build(n); }\n\tvoid build(int\
+    \ n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]);\
+    \ }\n\tvoid unite(int u,int v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\
+    \tif(p[v]<p[u]) swap(u,v);\n\t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool\
+    \ is_same(int u,int v){ return find(u)==find(v); }\n\tint size()const{ return\
+    \ n; }\n\tint size(int u){ return -p[find(u)]; }\n};\n"
   dependsOn:
   - library/template.hpp
   isVerificationFile: false
   path: library/data_structure/union-find.hpp
   requiredBy: []
-  timestamp: '2021-05-09 03:26:47+09:00'
+  timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/union-find.test.1.cpp
@@ -64,18 +63,15 @@ union by size と path compression を実装している．
 
 ### (constructor)
 ```
-(1) union_find()
-(2) union_find(int n)
+union_find(int n = 0)
 ```
-- (1) 空集合で初期化する
-- (2) 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
+- 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
 
 #### Constraints
-- (2) $n\ge0$
+- $n\ge0$
 
 #### Complexity
-- (1) $O(1)$
-- (2) $O(n)$
+- $O(n)$
 
 ### build
 ```

@@ -5,8 +5,8 @@ data:
     path: library/data_structure/segment_tree.hpp
     title: Segment Tree
   - icon: ':heavy_check_mark:'
-    path: library/monoid/min_monoid.hpp
-    title: Minimum Monoid
+    path: library/monoid/add_monoid.hpp
+    title: Additive Monoid
   - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
@@ -17,11 +17,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
-  bundledCode: "#line 1 \"verify/data_structure/segment_tree.1.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
+  bundledCode: "#line 1 \"verify/data_structure/segment_tree.3.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
@@ -57,36 +57,35 @@ data:
     }\n\t\t\tif(b<=r && f(seg[u]*cum)){\n\t\t\t\tcum=seg[u]*cum;\n\t\t\t\treturn a;\n\
     \t\t\t}\n\n\t\t\tint idx=dfs(dfs,c,b,2*u+1);\n\t\t\tif(idx>c) return idx;\n\t\t\
     \treturn dfs(dfs,a,c,2*u);\n\t\t};\n\t\treturn dfs(dfs,0,sz,1);\n\t}\n};\n#line\
-    \ 3 \"library/monoid/min_monoid.hpp\"\n\ntemplate<class T>\nclass min_monoid{\n\
-    \tT a;\npublic:\n\tmin_monoid(const T& val=numeric_limits<T>::max()):a(val){}\n\
-    \tmin_monoid operator*(const min_monoid& x)const{\n\t\treturn min(a,x.a);\n\t\
-    }\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n#line 6 \"\
-    verify/data_structure/segment_tree.1.test.cpp\"\n\nint main(){\n\tint n,q; scanf(\"\
-    %d%d\",&n,&q);\n\n\tsegment_tree<min_monoid<int>> S(n);\n\trep(_,q){\n\t\tint\
-    \ type,x,y; scanf(\"%d%d%d\",&type,&x,&y);\n\t\tif(type==0){\n\t\t\tS.update(x,y);\n\
-    \t\t}\n\t\telse{\n\t\t\ty++;\n\t\t\tprintf(\"%d\\n\",S.product(x,y).get());\n\t\
-    \t}\n\t}\n\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
+    \ 3 \"library/monoid/add_monoid.hpp\"\n\ntemplate<class T>\nclass add_monoid{\n\
+    \tT a;\npublic:\n\tadd_monoid(const T& val=T()):a(val){}\n\tadd_monoid operator*(const\
+    \ add_monoid& x)const{\n\t\treturn a+x.a;\n\t}\n\tT& get(){ return a; }\n\tconst\
+    \ T& get()const{ return a; }\n};\n#line 6 \"verify/data_structure/segment_tree.3.test.cpp\"\
+    \n\nint main(){\n\tint n,q; scanf(\"%d%d\",&n,&q);\n\n\tsegment_tree<add_monoid<int>>\
+    \ S(n);\n\trep(_,q){\n\t\tint type,x,y; scanf(\"%d%d%d\",&type,&x,&y); x--;\n\t\
+    \tif(type==0){\n\t\t\tS.update(x,S[x].get()+y);\n\t\t}\n\t\telse{\n\t\t\tprintf(\"\
+    %d\\n\",S.product(x,y).get());\n\t\t}\n\t}\n\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include \"../../library/template.hpp\"\n#include \"../../library/data_structure/segment_tree.hpp\"\
-    \n#include \"../../library/monoid/min_monoid.hpp\"\n\nint main(){\n\tint n,q;\
-    \ scanf(\"%d%d\",&n,&q);\n\n\tsegment_tree<min_monoid<int>> S(n);\n\trep(_,q){\n\
-    \t\tint type,x,y; scanf(\"%d%d%d\",&type,&x,&y);\n\t\tif(type==0){\n\t\t\tS.update(x,y);\n\
-    \t\t}\n\t\telse{\n\t\t\ty++;\n\t\t\tprintf(\"%d\\n\",S.product(x,y).get());\n\t\
-    \t}\n\t}\n\n\treturn 0;\n}\n"
+    \n#include \"../../library/monoid/add_monoid.hpp\"\n\nint main(){\n\tint n,q;\
+    \ scanf(\"%d%d\",&n,&q);\n\n\tsegment_tree<add_monoid<int>> S(n);\n\trep(_,q){\n\
+    \t\tint type,x,y; scanf(\"%d%d%d\",&type,&x,&y); x--;\n\t\tif(type==0){\n\t\t\t\
+    S.update(x,S[x].get()+y);\n\t\t}\n\t\telse{\n\t\t\tprintf(\"%d\\n\",S.product(x,y).get());\n\
+    \t\t}\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
   - library/template.hpp
   - library/data_structure/segment_tree.hpp
-  - library/monoid/min_monoid.hpp
+  - library/monoid/add_monoid.hpp
   isVerificationFile: true
-  path: verify/data_structure/segment_tree.1.test.cpp
+  path: verify/data_structure/segment_tree.3.test.cpp
   requiredBy: []
   timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/data_structure/segment_tree.1.test.cpp
+documentation_of: verify/data_structure/segment_tree.3.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/data_structure/segment_tree.1.test.cpp
-- /verify/verify/data_structure/segment_tree.1.test.cpp.html
-title: verify/data_structure/segment_tree.1.test.cpp
+- /verify/verify/data_structure/segment_tree.3.test.cpp
+- /verify/verify/data_structure/segment_tree.3.test.cpp.html
+title: verify/data_structure/segment_tree.3.test.cpp
 ---

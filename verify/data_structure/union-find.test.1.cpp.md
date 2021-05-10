@@ -26,9 +26,9 @@ data:
     \ <queue>\n#include <set>\n#include <sstream>\n#include <stack>\n#include <string>\n\
     #include <tuple>\n#include <utility>\n#include <vector>\n\n#define rep(i,n) for(int\
     \ i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/union-find.hpp\"\
-    \n\nclass union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find()=default;\n\
-    \tunion_find(int n){ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\
-    \t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
+    \n\nclass union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find(int n=0){\
+    \ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\t}\n\
+    \tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
     \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
     \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
     \ find(u)==find(v); }\n\tint size()const{ return n; }\n\tint size(int u){ return\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/union-find.test.1.cpp
   requiredBy: []
-  timestamp: '2021-05-10 20:40:40+09:00'
+  timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/union-find.test.1.cpp

@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/data_structure/segment_tree.1.test.cpp
-    title: verify/data_structure/segment_tree.1.test.cpp
+    path: verify/data_structure/segment_tree.3.test.cpp
+    title: verify/data_structure/segment_tree.3.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -21,48 +21,48 @@ data:
     \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
     #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
     \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/monoid/min_monoid.hpp\"\n\ntemplate<class\
-    \ T>\nclass min_monoid{\n\tT a;\npublic:\n\tmin_monoid(const T& val=numeric_limits<T>::max()):a(val){}\n\
-    \tmin_monoid operator*(const min_monoid& x)const{\n\t\treturn min(a,x.a);\n\t\
-    }\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class T>\nclass min_monoid{\n\
-    \tT a;\npublic:\n\tmin_monoid(const T& val=numeric_limits<T>::max()):a(val){}\n\
-    \tmin_monoid operator*(const min_monoid& x)const{\n\t\treturn min(a,x.a);\n\t\
-    }\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n"
+    using lint=long long;\n#line 3 \"library/monoid/add_monoid.hpp\"\n\ntemplate<class\
+    \ T>\nclass add_monoid{\n\tT a;\npublic:\n\tadd_monoid(const T& val=T()):a(val){}\n\
+    \tadd_monoid operator*(const add_monoid& x)const{\n\t\treturn a+x.a;\n\t}\n\t\
+    T& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n"
+  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class T>\nclass add_monoid{\n\
+    \tT a;\npublic:\n\tadd_monoid(const T& val=T()):a(val){}\n\tadd_monoid operator*(const\
+    \ add_monoid& x)const{\n\t\treturn a+x.a;\n\t}\n\tT& get(){ return a; }\n\tconst\
+    \ T& get()const{ return a; }\n};\n"
   dependsOn:
   - library/template.hpp
   isVerificationFile: false
-  path: library/monoid/min_monoid.hpp
+  path: library/monoid/add_monoid.hpp
   requiredBy: []
   timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/data_structure/segment_tree.1.test.cpp
-documentation_of: library/monoid/min_monoid.hpp
+  - verify/data_structure/segment_tree.3.test.cpp
+documentation_of: library/monoid/add_monoid.hpp
 layout: document
-title: Minimum Monoid
+title: Additive Monoid
 ---
 
 ## Description
-$T$ の元全体を台集合とし，積を $a\ast b=\min\lbrace a,b\rbrace$ と定めることで得られるモノイド．\\
-``numeric_limits<T>::max()`` が単位元となる．
+$T$ の元全体を台集合とし，積を $a\ast b=a+b$ と定めることで得られるモノイド．\\
+``T()`` が単位元となる．
 
 ### (constructor)
 ```
-min_monoid<T>(const T& val = numeric_limits<T>::max())
+add_monoid<T>(const T& val = T())
 ```
 - $\mathrm{val}$ で初期化する
 
 #### Constraints
-- $T$ 上の比較演算子 $<$ が定義されていて，これについて $T$ は全順序集合
-- ``numeric_limits<T>::max()`` が $T$ の最大元
+- $T$ 上の結合的な二項演算 $+$ が定義されている
+- ``T()`` が加法単位元
 
 #### Complexity
 - $O(1)$
 
 ### operator*
 ```
-min_monoid operator*(const min_monoid& x)
+add_monoid operator*(const add_monoid& x)
 ```
 - モノイドの積
 
@@ -70,7 +70,7 @@ min_monoid operator*(const min_monoid& x)
 - なし
 
 #### Complexity
-- $O(1)$ ($T$ の元の比較が $O(1)$ でできることを仮定)
+- $O(1)$ ($T$ の演算 $+$ が $O(1)$ でできることを仮定)
 
 ### get
 ```

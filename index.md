@@ -243,6 +243,9 @@ data:
   - name: library/monoid
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/monoid/add_monoid.hpp
+      title: Additive Monoid
+    - icon: ':heavy_check_mark:'
       path: library/monoid/max_monoid.hpp
       title: Maximum Monoid
     - icon: ':heavy_check_mark:'
@@ -330,6 +333,9 @@ data:
       path: verify/data_structure/segment_tree.2.test.cpp
       title: verify/data_structure/segment_tree.2.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/data_structure/segment_tree.3.test.cpp
+      title: verify/data_structure/segment_tree.3.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/data_structure/sparse_table.test.cpp
       title: verify/data_structure/sparse_table.test.cpp
     - icon: ':heavy_check_mark:'
@@ -370,6 +376,6 @@ layout: toppage
 ---
 [![fura2](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Ffura2)](https://atcoder.jp/users/fura2)
 
-fura2 の競技プログラミングライブラリです．  
+fura2 の競技プログラミングライブラリです．\\
 g++ (C++17) で動作します．
 一部のライブラリでは GNU 拡張 (``__int128``) を使用しています．

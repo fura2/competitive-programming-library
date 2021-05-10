@@ -27,9 +27,9 @@ data:
     #include <tuple>\n#include <utility>\n#include <vector>\n\n#define rep(i,n) for(int\
     \ i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/sparse_table.hpp\"\
     \n\ntemplate<class T>\nclass sparse_table{\n\tvector<vector<T>> st;\n\tvector<int>\
-    \ h;\npublic:\n\tsparse_table()=default;\n\tsparse_table(const vector<T>& a){\
-    \ build(a); }\n\tvoid build(const vector<T>& a){\n\t\tint n=a.size();\n\t\th.assign(n+1,0);\n\
-    \t\tfor(int i=2;i<=n;i++) h[i]=h[i>>1]+1;\n\t\tst.resize(h[n]+1);\n\t\tst[0]=a;\n\
+    \ h;\npublic:\n\tsparse_table(const vector<T>& a=vector<T>()){ build(a); }\n\t\
+    void build(const vector<T>& a){\n\t\tint n=a.size();\n\t\th.assign(n+1,0);\n\t\
+    \tfor(int i=2;i<=n;i++) h[i]=h[i>>1]+1;\n\t\tst.resize(h[n]+1);\n\t\tst[0]=a;\n\
     \t\tfor(int i=1;i<h[n]+1;i++){\n\t\t\tst[i].resize(n-(1<<i)+1);\n\t\t\trep(j,n-(1<<i)+1)\
     \ st[i][j]=min(st[i-1][j],st[i-1][j+(1<<(i-1))]);\n\t\t}\n\t}\n\tT fold(int l,int\
     \ r)const{\n\t\tint i=h[r-l];\n\t\treturn min(st[i][l],st[i][r-(1<<i)]);\n\t}\n\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/sparse_table.test.cpp
   requiredBy: []
-  timestamp: '2021-05-09 03:26:47+09:00'
+  timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/sparse_table.test.cpp

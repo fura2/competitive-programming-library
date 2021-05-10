@@ -22,21 +22,19 @@ data:
     #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
     \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
     using lint=long long;\n#line 3 \"library/monoid/max_monoid.hpp\"\n\ntemplate<class\
-    \ T>\nclass max_monoid{\n\tT a;\npublic:\n\tmax_monoid():a(numeric_limits<T>::min()){}\n\
-    \tmax_monoid(const T& val):a(val){}\n\tmax_monoid operator*(const max_monoid&\
-    \ x)const{\n\t\treturn max(a,x.a);\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{\
-    \ return a; }\n};\n"
+    \ T>\nclass max_monoid{\n\tT a;\npublic:\n\tmax_monoid(const T& val=numeric_limits<T>::min()):a(val){}\n\
+    \tmax_monoid operator*(const max_monoid& x)const{\n\t\treturn max(a,x.a);\n\t\
+    }\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n"
   code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class T>\nclass max_monoid{\n\
-    \tT a;\npublic:\n\tmax_monoid():a(numeric_limits<T>::min()){}\n\tmax_monoid(const\
-    \ T& val):a(val){}\n\tmax_monoid operator*(const max_monoid& x)const{\n\t\treturn\
-    \ max(a,x.a);\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{ return a;\
-    \ }\n};\n"
+    \tT a;\npublic:\n\tmax_monoid(const T& val=numeric_limits<T>::min()):a(val){}\n\
+    \tmax_monoid operator*(const max_monoid& x)const{\n\t\treturn max(a,x.a);\n\t\
+    }\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n"
   dependsOn:
   - library/template.hpp
   isVerificationFile: false
   path: library/monoid/max_monoid.hpp
   requiredBy: []
-  timestamp: '2021-05-10 21:01:53+09:00'
+  timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/segment_tree.2.test.cpp
@@ -51,11 +49,9 @@ $T$ の元全体を台集合とし，積を $a\ast b=\max\lbrace a,b\rbrace$ と
 
 ### (constructor)
 ```
-(1) max_monoid<T>()
-(2) max_monoid<T>(const T& val)
+max_monoid<T>(const T& val = numeric_limits<T>::min())
 ```
-- (1) 単位元で初期化する
-- (2) $\mathrm{val}$ で初期化する
+- $\mathrm{val}$ で初期化する
 
 #### Constraints
 - $T$ 上の比較演算子 $<$ が定義されていて，これについて $T$ は全順序集合

@@ -27,23 +27,23 @@ data:
     #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
     \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
     using lint=long long;\n#line 3 \"library/data_structure/Fenwick_tree.hpp\"\n\n\
-    template<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree()=default;\n\
-    \tFenwick_tree(int n){ build(n); }\n\tFenwick_tree(const vector<G>& a){ build(a);\
-    \ }\n\tvoid build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>&\
-    \ a){\n\t\tthis->a=a;\n\t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size())\
-    \ (this->a)[i+(i&-i)-1]+=(this->a)[i-1];\n\t}\n\tvoid add(int i,const G& val){\n\
-    \t\tfor(i++;i<=a.size();i+=i&-i) a[i-1]+=val;\n\t}\n\tG sum(int l,int r)const{\n\
-    \t\tif(l==0){\n\t\t\tG res{};\n\t\t\tfor(;r>0;r-=r&-r) res+=a[r-1];\n\t\t\treturn\
-    \ res;\n\t\t}\n\t\treturn sum(0,r)-sum(0,l);\n\t}\n\tint lower_bound(G val)const{\n\
-    \t\tif(!(G{}<val)) return 0;\n\t\tint x=0,k;\n\t\tfor(k=1;k<=a.size();k<<=1);\n\
-    \t\tfor(k>>=1;k>0;k>>=1) if(x+k<=a.size() && a[x+k-1]<val) val-=a[x+k-1], x+=k;\n\
-    \t\treturn x;\n\t}\n\tint upper_bound(G val)const{\n\t\tif(val<G{}) return 0;\n\
-    \t\tint x=0,k;\n\t\tfor(k=1;k<=a.size();k<<=1);\n\t\tfor(k>>=1;k>0;k>>=1) if(x+k<=a.size()\
-    \ && !(val<a[x+k-1])) val-=a[x+k-1], x+=k;\n\t\treturn x;\n\t}\n};\n#line 5 \"\
-    verify/data_structure/Fenwick_tree.2.test.cpp\"\n\nint main(){\n\tint n,q; scanf(\"\
-    %d%d\",&n,&q);\n\n\tFenwick_tree<int> F(n);\n\trep(_,q){\n\t\tint type,x,y; scanf(\"\
-    %d%d%d\",&type,&x,&y); x--;\n\t\tif(type==0){\n\t\t\tF.add(x,y);\n\t\t}\n\t\t\
-    else{\n\t\t\tprintf(\"%d\\n\",F.sum(x,y));\n\t\t}\n\t}\n\n\treturn 0;\n}\n"
+    template<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree(int\
+    \ n=0){ build(n); }\n\tFenwick_tree(const vector<G>& a){ build(a); }\n\tvoid build(int\
+    \ n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>& a){\n\t\tthis->a=a;\n\
+    \t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size()) (this->a)[i+(i&-i)-1]+=(this->a)[i-1];\n\
+    \t}\n\tvoid add(int i,const G& val){\n\t\tfor(i++;i<=a.size();i+=i&-i) a[i-1]+=val;\n\
+    \t}\n\tG sum(int l,int r)const{\n\t\tif(l==0){\n\t\t\tG res{};\n\t\t\tfor(;r>0;r-=r&-r)\
+    \ res+=a[r-1];\n\t\t\treturn res;\n\t\t}\n\t\treturn sum(0,r)-sum(0,l);\n\t}\n\
+    \tint lower_bound(G val)const{\n\t\tif(!(G{}<val)) return 0;\n\t\tint x=0,k;\n\
+    \t\tfor(k=1;k<=a.size();k<<=1);\n\t\tfor(k>>=1;k>0;k>>=1) if(x+k<=a.size() &&\
+    \ a[x+k-1]<val) val-=a[x+k-1], x+=k;\n\t\treturn x;\n\t}\n\tint upper_bound(G\
+    \ val)const{\n\t\tif(val<G{}) return 0;\n\t\tint x=0,k;\n\t\tfor(k=1;k<=a.size();k<<=1);\n\
+    \t\tfor(k>>=1;k>0;k>>=1) if(x+k<=a.size() && !(val<a[x+k-1])) val-=a[x+k-1], x+=k;\n\
+    \t\treturn x;\n\t}\n};\n#line 5 \"verify/data_structure/Fenwick_tree.2.test.cpp\"\
+    \n\nint main(){\n\tint n,q; scanf(\"%d%d\",&n,&q);\n\n\tFenwick_tree<int> F(n);\n\
+    \trep(_,q){\n\t\tint type,x,y; scanf(\"%d%d%d\",&type,&x,&y); x--;\n\t\tif(type==0){\n\
+    \t\t\tF.add(x,y);\n\t\t}\n\t\telse{\n\t\t\tprintf(\"%d\\n\",F.sum(x,y));\n\t\t\
+    }\n\t}\n\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include \"../../library/template.hpp\"\n#include \"../../library/data_structure/Fenwick_tree.hpp\"\
     \n\nint main(){\n\tint n,q; scanf(\"%d%d\",&n,&q);\n\n\tFenwick_tree<int> F(n);\n\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/Fenwick_tree.2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-10 20:48:02+09:00'
+  timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/Fenwick_tree.2.test.cpp

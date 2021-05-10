@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/segment_tree.2.test.cpp
     title: verify/data_structure/segment_tree.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/segment_tree.3.test.cpp
+    title: verify/data_structure/segment_tree.3.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -26,38 +29,9 @@ data:
     \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
     using lint=long long;\n#line 3 \"library/data_structure/segment_tree.hpp\"\n\n\
     template<class M>\nclass segment_tree{\n\tint n,sz;\n\tvector<M> seg;\npublic:\n\
-    \tsegment_tree()=default;\n\tsegment_tree(int n){ build(n); }\n\ttemplate<class\
-    \ T>\n\tsegment_tree(const vector<T>& a){ build(a); }\n\n\tvoid build(int n){\n\
-    \t\tthis->n=n;\n\t\tfor(sz=1;sz<n;sz<<=1);\n\t\tseg.assign(2*sz,M());\n\t}\n\n\
-    \ttemplate<class T>\n\tvoid build(const vector<T>& a){\n\t\tbuild(a.size());\n\
-    \t\trep(i,a.size()) seg[sz+i]=a[i];\n\t\tfor(int i=sz-1;i>0;i--){\n\t\t\tseg[i]=seg[2*i]*seg[2*i+1];\n\
-    \t\t}\n\t}\n\n\tconst M& operator[](int i)const{\n\t\treturn seg[sz+i];\n\t}\n\
-    \n\tvoid update(int i,const M& x){\n\t\ti+=sz;\n\t\tseg[i]=x;\n\t\tfor(i>>=1;i>0;i>>=1)\
-    \ seg[i]=seg[2*i]*seg[2*i+1];\n\t}\n\n\tM product(int l,int r)const{\n\t\tM lcum,rcum;\n\
-    \t\tfor(int a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\t\t\tif(a&1) lcum=lcum*seg[a++];\n\
-    \t\t\tif(b&1) rcum=seg[--b]*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\n\ttemplate<class\
-    \ N,class F>\n\tN operate(int l,int r,const F& f){\n\t\tN lcum,rcum;\n\t\tfor(int\
-    \ a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\t\t\tif(a&1) lcum=lcum*f(seg[a++]);\n\t\t\t\
-    if(b&1) rcum=f(seg[--b])*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\n\ttemplate<class\
-    \ F>\n\tint max_right(int l,const F& f)const{\n\t\tif(l==n) return n;\n\t\tM cum;\n\
-    \t\tauto dfs=[&](auto&& dfs,int a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=cum*seg[u];\n\
-    \t\t\t\treturn f(cum)?b:a;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(c<=l){\n\
-    \t\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t\t}\n\t\t\tif(l<=a && f(cum*seg[u])){\n\
-    \t\t\t\tcum=cum*seg[u];\n\t\t\t\treturn b;\n\t\t\t}\n\n\t\t\tint idx=dfs(dfs,a,c,2*u);\n\
-    \t\t\tif(idx<c) return idx;\n\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t};\n\t\treturn\
-    \ min(dfs(dfs,0,sz,1),n);\n\t}\n\n\ttemplate<class F>\n\tint min_left(int r,const\
-    \ F& f)const{\n\t\tif(r==0) return 0;\n\t\tM cum;\n\t\tauto dfs=[&](auto&& dfs,int\
-    \ a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=seg[u]*cum;\n\t\t\t\treturn\
-    \ f(cum)?a:b;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(r<=c){\n\t\t\t\treturn\
-    \ dfs(dfs,a,c,2*u);\n\t\t\t}\n\t\t\tif(b<=r && f(seg[u]*cum)){\n\t\t\t\tcum=seg[u]*cum;\n\
-    \t\t\t\treturn a;\n\t\t\t}\n\n\t\t\tint idx=dfs(dfs,c,b,2*u+1);\n\t\t\tif(idx>c)\
-    \ return idx;\n\t\t\treturn dfs(dfs,a,c,2*u);\n\t\t};\n\t\treturn dfs(dfs,0,sz,1);\n\
-    \t}\n};\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class M>\nclass segment_tree{\n\
-    \tint n,sz;\n\tvector<M> seg;\npublic:\n\tsegment_tree()=default;\n\tsegment_tree(int\
-    \ n){ build(n); }\n\ttemplate<class T>\n\tsegment_tree(const vector<T>& a){ build(a);\
-    \ }\n\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tfor(sz=1;sz<n;sz<<=1);\n\t\t\
-    seg.assign(2*sz,M());\n\t}\n\n\ttemplate<class T>\n\tvoid build(const vector<T>&\
+    \tsegment_tree(int n=0){ build(n); }\n\ttemplate<class T>\n\tsegment_tree(const\
+    \ vector<T>& a){ build(a); }\n\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tfor(sz=1;sz<n;sz<<=1);\n\
+    \t\tseg.assign(2*sz,M());\n\t}\n\n\ttemplate<class T>\n\tvoid build(const vector<T>&\
     \ a){\n\t\tbuild(a.size());\n\t\trep(i,a.size()) seg[sz+i]=a[i];\n\t\tfor(int\
     \ i=sz-1;i>0;i--){\n\t\t\tseg[i]=seg[2*i]*seg[2*i+1];\n\t\t}\n\t}\n\n\tconst M&\
     \ operator[](int i)const{\n\t\treturn seg[sz+i];\n\t}\n\n\tvoid update(int i,const\
@@ -81,14 +55,43 @@ data:
     }\n\t\t\tif(b<=r && f(seg[u]*cum)){\n\t\t\t\tcum=seg[u]*cum;\n\t\t\t\treturn a;\n\
     \t\t\t}\n\n\t\t\tint idx=dfs(dfs,c,b,2*u+1);\n\t\t\tif(idx>c) return idx;\n\t\t\
     \treturn dfs(dfs,a,c,2*u);\n\t\t};\n\t\treturn dfs(dfs,0,sz,1);\n\t}\n};\n"
+  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class M>\nclass segment_tree{\n\
+    \tint n,sz;\n\tvector<M> seg;\npublic:\n\tsegment_tree(int n=0){ build(n); }\n\
+    \ttemplate<class T>\n\tsegment_tree(const vector<T>& a){ build(a); }\n\n\tvoid\
+    \ build(int n){\n\t\tthis->n=n;\n\t\tfor(sz=1;sz<n;sz<<=1);\n\t\tseg.assign(2*sz,M());\n\
+    \t}\n\n\ttemplate<class T>\n\tvoid build(const vector<T>& a){\n\t\tbuild(a.size());\n\
+    \t\trep(i,a.size()) seg[sz+i]=a[i];\n\t\tfor(int i=sz-1;i>0;i--){\n\t\t\tseg[i]=seg[2*i]*seg[2*i+1];\n\
+    \t\t}\n\t}\n\n\tconst M& operator[](int i)const{\n\t\treturn seg[sz+i];\n\t}\n\
+    \n\tvoid update(int i,const M& x){\n\t\ti+=sz;\n\t\tseg[i]=x;\n\t\tfor(i>>=1;i>0;i>>=1)\
+    \ seg[i]=seg[2*i]*seg[2*i+1];\n\t}\n\n\tM product(int l,int r)const{\n\t\tM lcum,rcum;\n\
+    \t\tfor(int a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\t\t\tif(a&1) lcum=lcum*seg[a++];\n\
+    \t\t\tif(b&1) rcum=seg[--b]*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\n\ttemplate<class\
+    \ N,class F>\n\tN operate(int l,int r,const F& f){\n\t\tN lcum,rcum;\n\t\tfor(int\
+    \ a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\t\t\tif(a&1) lcum=lcum*f(seg[a++]);\n\t\t\t\
+    if(b&1) rcum=f(seg[--b])*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\n\ttemplate<class\
+    \ F>\n\tint max_right(int l,const F& f)const{\n\t\tif(l==n) return n;\n\t\tM cum;\n\
+    \t\tauto dfs=[&](auto&& dfs,int a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=cum*seg[u];\n\
+    \t\t\t\treturn f(cum)?b:a;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(c<=l){\n\
+    \t\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t\t}\n\t\t\tif(l<=a && f(cum*seg[u])){\n\
+    \t\t\t\tcum=cum*seg[u];\n\t\t\t\treturn b;\n\t\t\t}\n\n\t\t\tint idx=dfs(dfs,a,c,2*u);\n\
+    \t\t\tif(idx<c) return idx;\n\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t};\n\t\treturn\
+    \ min(dfs(dfs,0,sz,1),n);\n\t}\n\n\ttemplate<class F>\n\tint min_left(int r,const\
+    \ F& f)const{\n\t\tif(r==0) return 0;\n\t\tM cum;\n\t\tauto dfs=[&](auto&& dfs,int\
+    \ a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=seg[u]*cum;\n\t\t\t\treturn\
+    \ f(cum)?a:b;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(r<=c){\n\t\t\t\treturn\
+    \ dfs(dfs,a,c,2*u);\n\t\t\t}\n\t\t\tif(b<=r && f(seg[u]*cum)){\n\t\t\t\tcum=seg[u]*cum;\n\
+    \t\t\t\treturn a;\n\t\t\t}\n\n\t\t\tint idx=dfs(dfs,c,b,2*u+1);\n\t\t\tif(idx>c)\
+    \ return idx;\n\t\t\treturn dfs(dfs,a,c,2*u);\n\t\t};\n\t\treturn dfs(dfs,0,sz,1);\n\
+    \t}\n};\n"
   dependsOn:
   - library/template.hpp
   isVerificationFile: false
   path: library/data_structure/segment_tree.hpp
   requiredBy: []
-  timestamp: '2021-05-10 19:36:11+09:00'
+  timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/data_structure/segment_tree.3.test.cpp
   - verify/data_structure/segment_tree.2.test.cpp
   - verify/data_structure/segment_tree.1.test.cpp
 documentation_of: library/data_structure/segment_tree.hpp
@@ -97,27 +100,24 @@ title: Segment Tree
 ---
 
 ## Description
-モノイド $(M,\ast)$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点更新と区間積を $O(\log n)$ で処理するデータ構造．  
+モノイド $(M,\ast)$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点更新と区間積を $O(\log n)$ で処理するデータ構造．\\
 以下では，$M$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
 
 ### (constructor)
 ```
-(1) segment_tree<M>()
-(2) segment_tree<M>(int n)
-(3) segment_tree<M>(const vector<T>& a)
+(1) segment_tree<M>(int n=0)
+(2) segment_tree<M>(const vector<T>& a)
 ```
-- (1) 空の列で初期化する
-- (2) $M$ の単位元 $e$ のみからなる長さ $n$ の列で初期化する
-- (3) $a$ で初期化する
+- (1) $M$ の単位元 $e$ のみからなる長さ $n$ の列で初期化する
+- (2) $a$ で初期化する
 
 #### Constraints
 - $(M,\ast)$ はモノイド (デフォルトコンストラクタが $M$ の単位元を生成する)
-- (2) $n\ge0$
-- (3) $T$ は $M$ にキャストできる ($T$ と $M$ が一致していなくてもよい)．
+- (1) $n\ge0$
+- (2) $T$ は $M$ にキャストできる ($T$ と $M$ が一致していなくてもよい)．
 
 #### Complexity
-- (1) $O(1)$
-- (2), (3) $O(n)$
+- $O(n)$
 
 ### build
 ```
