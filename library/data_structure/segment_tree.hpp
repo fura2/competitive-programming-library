@@ -1,44 +1,12 @@
-/*
-	セグメント木
-		(M, *) : モノイド
-		x_1, ..., x_n : M の元の列
-
-		update(i,x) : x_i の値を x に書き換える.
-		product(l,r) : x_l * x_{l+1} * ... * x_{r-1} を求める.
-
-		operate(l,r,f) : f(x_l * x_{l+1} * ... * x_{r-1}) を求める.
-			ここで, (N, *) はモノイド, f M → N は準同型.
-			operate<N>(l,r,[&](M& x)->N{
-				return ...;
-			});
-			のように使う.
-			x_l * x_{l+1} * ... * x_{r-1} を陽に求めると計算量がかかりすぎるが
-			N における積と f の作用の計算量がどちらも小さいときに有効.
-
-	max_right(l,f) :
-		仮定
-			0 <= l <= n
-			f : M -> bool は f(e) = true をみたす
-		次の二つの条件をみたす r (l <= r <= n) を一つ求める.
-		- r = l または f(x_l * x_{l+1} * ... * x_{r-1}) = true
-		- r = n または f(x_l * x_{l+1} * ... * x_r) = false
-		f の計算にかかる時間を O(1) として, 計算量は O(log n).
-	min_left(r,f) :
-		仮定
-			0 <= r <= n
-			f : M -> bool は f(e) = true をみたす
-		次の二つの条件をみたす l (0 <= l <= r) を一つ求める.
-		- l = r または f(x_l * x_{l+1} * ... * x_{r-1}) = true
-		- l = 0 または f(x_{l-1} * x_l * ... * x_{r-1}) = false
-		f の計算にかかる時間を O(1) として, 計算量は O(log n).
-*/
+#pragma once
+#include "../template.hpp"
 
 template<class M>
 class segment_tree{
 	int n,sz;
 	vector<M> seg;
 public:
-	segment_tree(){}
+	segment_tree()=default;
 	segment_tree(int n){ build(n); }
 	template<class T>
 	segment_tree(const vector<T>& a){ build(a); }

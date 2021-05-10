@@ -9,7 +9,7 @@ DAG のトポロジカルソート
 (1) vector<int> topological_sort(const graph& D)
 (2) vector<int> topological_sort(const weighted_graph<T>& D)
 ```
-(1) DAG $D$ のトポロジカル順序の一つを求める．
+(1) DAG $D$ のトポロジカル順序の一つを求める．  
 (2) 重みつき DAG $D$ のトポロジカル順序の一つを求める．
 
 #### Constraints
