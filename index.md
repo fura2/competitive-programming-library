@@ -243,6 +243,9 @@ data:
   - name: library/monoid
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/monoid/max_monoid.hpp
+      title: Maximum Monoid
+    - icon: ':heavy_check_mark:'
       path: library/monoid/min_monoid.hpp
       title: Minimum Monoid
     - icon: ':warning:'
@@ -323,6 +326,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/segment_tree.1.test.cpp
       title: verify/data_structure/segment_tree.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/segment_tree.2.test.cpp
+      title: verify/data_structure/segment_tree.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/sparse_table.test.cpp
       title: verify/data_structure/sparse_table.test.cpp

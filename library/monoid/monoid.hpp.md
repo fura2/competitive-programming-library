@@ -21,39 +21,32 @@ data:
     \tmin_monoid(const pair<T1,T2>& val):a(val){}\n\tmin_monoid operator*(const min_monoid&\
     \ x)const{\n\t\treturn min(a,x.a);\n\t}\n\tpair<T1,T2>& get(){ return a; }\n\t\
     const pair<T1,T2>& get()const{ return a; }\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\
-    \u5143\u5168\u4F53\n// \u7A4D : max\n// \u4EEE\u5B9A : T \u4E0A\u306E\u5168\u9806\
-    \u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066 numeric_limits<T>::min()\
-    \ \u304C\u6700\u5C0F\u5143\n\ntemplate<class T>\nclass max_monoid{\n\tT a;\npublic:\n\
-    \tmax_monoid():a(numeric_limits<T>::min()){}\n\tmax_monoid(const T& val):a(val){}\n\
-    \tmax_monoid operator*(const max_monoid& x)const{\n\t\treturn max(a,x.a);\n\t\
-    }\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\n// \u53F0\
-    \u96C6\u5408 : T \u306E\u5143\u5168\u4F53\n// \u7A4D : +\n// \u4EEE\u5B9A : T\
-    \ \u4E0A\u306E\u7D50\u5408\u7684\u306A\u4E8C\u9805\u6F14\u7B97 + \u304C\u5B9A\u7FA9\
-    \u3055\u308C\u3066\u3044\u3066 T() \u304C\u52A0\u6CD5\u5358\u4F4D\u5143\n\ntemplate<class\
-    \ T>\nclass add_monoid{\n\tT a;\npublic:\n\tadd_monoid():a(){}\n\tadd_monoid(const\
-    \ T& val):a(val){}\n\tadd_monoid operator*(const add_monoid& x)const{\n\t\treturn\
-    \ a+x.a;\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\
-    \n// \u53F0\u96C6\u5408 : T \u306E\u5143\u5168\u4F53\n// \u7A4D : bitwise OR\n\
-    // \u4EEE\u5B9A : T \u306F int \u307E\u305F\u306F lint \u3092\u60F3\u5B9A\n\n\
-    template<class T>\nclass or_monoid{\n\tT a;\npublic:\n\tor_monoid():a(){}\n\t\
-    or_monoid(const T& val):a(val){}\n\tor_monoid operator*(const or_monoid& x)const{\n\
-    \t\treturn a|x.a;\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{ return\
-    \ a; }\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\u5143\u306E\u30BD\u30FC\u30C8\u3055\
-    \u308C\u305F\u5217\u5168\u4F53\n// \u7A4D : \u5217\u306E\u30DE\u30FC\u30B8\n//\
-    \ \u4EEE\u5B9A : T \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\
-    \u3066\u3044\u308B\n\ntemplate<class T>\nclass sequence_monoid{\n\tvector<T> a;\n\
-    public:\n\tsequence_monoid(){}\n\tsequence_monoid(const T& val):a(1,val){}\n\t\
-    sequence_monoid(const vector<T>& x):a(x){\n\t\tsort(a.begin(),a.end());\n\t}\n\
-    \tsequence_monoid operator*(const sequence_monoid& x)const{\n\t\tvector<T> res;\n\
-    \t\tmerge(a.begin(),a.end(),x.a.begin(),x.a.end(),back_inserter(res));\n\t\treturn\
-    \ res;\n\t}\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\u5143\u306E\u30BD\u30FC\u30C8\
-    \u3055\u308C\u305F\u5217\u3068\u305D\u306E\u7D2F\u7A4D\u548C\u306E\u30DA\u30A2\
-    \u5168\u4F53\n// \u7A4D : \u5217\u306E\u30DE\u30FC\u30B8\n// \u4EEE\u5B9A : T\
-    \ \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u308B\
-    \n//       T \u4E0A\u306E\u7D50\u5408\u7684\u306A\u4E8C\u9805\u6F14\u7B97 + \u304C\
-    \u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066 T() \u304C\u52A0\u6CD5\u5358\u4F4D\u5143\
-    \n\ntemplate<class T>\nclass sequence_sum_monoid{\n\tvector<T> a,cum;\npublic:\n\
-    \tsequence_sum_monoid():cum(1){}\n\tsequence_sum_monoid(const T& val):a(1,val),cum{T(),val}{}\n\
+    \u5143\u5168\u4F53\n// \u7A4D : +\n// \u4EEE\u5B9A : T \u4E0A\u306E\u7D50\u5408\
+    \u7684\u306A\u4E8C\u9805\u6F14\u7B97 + \u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\
+    \u3066 T() \u304C\u52A0\u6CD5\u5358\u4F4D\u5143\n\ntemplate<class T>\nclass add_monoid{\n\
+    \tT a;\npublic:\n\tadd_monoid():a(){}\n\tadd_monoid(const T& val):a(val){}\n\t\
+    add_monoid operator*(const add_monoid& x)const{\n\t\treturn a+x.a;\n\t}\n\tT&\
+    \ get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\n// \u53F0\u96C6\
+    \u5408 : T \u306E\u5143\u5168\u4F53\n// \u7A4D : bitwise OR\n// \u4EEE\u5B9A :\
+    \ T \u306F int \u307E\u305F\u306F lint \u3092\u60F3\u5B9A\n\ntemplate<class T>\n\
+    class or_monoid{\n\tT a;\npublic:\n\tor_monoid():a(){}\n\tor_monoid(const T& val):a(val){}\n\
+    \tor_monoid operator*(const or_monoid& x)const{\n\t\treturn a|x.a;\n\t}\n\tT&\
+    \ get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\n// \u53F0\u96C6\
+    \u5408 : T \u306E\u5143\u306E\u30BD\u30FC\u30C8\u3055\u308C\u305F\u5217\u5168\u4F53\
+    \n// \u7A4D : \u5217\u306E\u30DE\u30FC\u30B8\n// \u4EEE\u5B9A : T \u4E0A\u306E\
+    \u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u308B\n\ntemplate<class\
+    \ T>\nclass sequence_monoid{\n\tvector<T> a;\npublic:\n\tsequence_monoid(){}\n\
+    \tsequence_monoid(const T& val):a(1,val){}\n\tsequence_monoid(const vector<T>&\
+    \ x):a(x){\n\t\tsort(a.begin(),a.end());\n\t}\n\tsequence_monoid operator*(const\
+    \ sequence_monoid& x)const{\n\t\tvector<T> res;\n\t\tmerge(a.begin(),a.end(),x.a.begin(),x.a.end(),back_inserter(res));\n\
+    \t\treturn res;\n\t}\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\u5143\u306E\u30BD\
+    \u30FC\u30C8\u3055\u308C\u305F\u5217\u3068\u305D\u306E\u7D2F\u7A4D\u548C\u306E\
+    \u30DA\u30A2\u5168\u4F53\n// \u7A4D : \u5217\u306E\u30DE\u30FC\u30B8\n// \u4EEE\
+    \u5B9A : T \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\
+    \u308B\n//       T \u4E0A\u306E\u7D50\u5408\u7684\u306A\u4E8C\u9805\u6F14\u7B97\
+    \ + \u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066 T() \u304C\u52A0\u6CD5\u5358\
+    \u4F4D\u5143\n\ntemplate<class T>\nclass sequence_sum_monoid{\n\tvector<T> a,cum;\n\
+    public:\n\tsequence_sum_monoid():cum(1){}\n\tsequence_sum_monoid(const T& val):a(1,val),cum{T(),val}{}\n\
     \tsequence_sum_monoid(const vector<T>& x):a(x),cum(x.size()+1){\n\t\tsort(a.begin(),a.end());\n\
     \t\trep(i,x.size()) cum[i+1]=cum[i]+a[i];\n\t}\n\tsequence_sum_monoid operator*(const\
     \ sequence_sum_monoid& x)const{\n\t\tvector<T> res;\n\t\tmerge(a.begin(),a.end(),x.a.begin(),x.a.end(),back_inserter(res));\n\
@@ -94,39 +87,32 @@ data:
     \tmin_monoid(const pair<T1,T2>& val):a(val){}\n\tmin_monoid operator*(const min_monoid&\
     \ x)const{\n\t\treturn min(a,x.a);\n\t}\n\tpair<T1,T2>& get(){ return a; }\n\t\
     const pair<T1,T2>& get()const{ return a; }\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\
-    \u5143\u5168\u4F53\n// \u7A4D : max\n// \u4EEE\u5B9A : T \u4E0A\u306E\u5168\u9806\
-    \u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066 numeric_limits<T>::min()\
-    \ \u304C\u6700\u5C0F\u5143\n\ntemplate<class T>\nclass max_monoid{\n\tT a;\npublic:\n\
-    \tmax_monoid():a(numeric_limits<T>::min()){}\n\tmax_monoid(const T& val):a(val){}\n\
-    \tmax_monoid operator*(const max_monoid& x)const{\n\t\treturn max(a,x.a);\n\t\
-    }\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\n// \u53F0\
-    \u96C6\u5408 : T \u306E\u5143\u5168\u4F53\n// \u7A4D : +\n// \u4EEE\u5B9A : T\
-    \ \u4E0A\u306E\u7D50\u5408\u7684\u306A\u4E8C\u9805\u6F14\u7B97 + \u304C\u5B9A\u7FA9\
-    \u3055\u308C\u3066\u3044\u3066 T() \u304C\u52A0\u6CD5\u5358\u4F4D\u5143\n\ntemplate<class\
-    \ T>\nclass add_monoid{\n\tT a;\npublic:\n\tadd_monoid():a(){}\n\tadd_monoid(const\
-    \ T& val):a(val){}\n\tadd_monoid operator*(const add_monoid& x)const{\n\t\treturn\
-    \ a+x.a;\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\
-    \n// \u53F0\u96C6\u5408 : T \u306E\u5143\u5168\u4F53\n// \u7A4D : bitwise OR\n\
-    // \u4EEE\u5B9A : T \u306F int \u307E\u305F\u306F lint \u3092\u60F3\u5B9A\n\n\
-    template<class T>\nclass or_monoid{\n\tT a;\npublic:\n\tor_monoid():a(){}\n\t\
-    or_monoid(const T& val):a(val){}\n\tor_monoid operator*(const or_monoid& x)const{\n\
-    \t\treturn a|x.a;\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{ return\
-    \ a; }\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\u5143\u306E\u30BD\u30FC\u30C8\u3055\
-    \u308C\u305F\u5217\u5168\u4F53\n// \u7A4D : \u5217\u306E\u30DE\u30FC\u30B8\n//\
-    \ \u4EEE\u5B9A : T \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\
-    \u3066\u3044\u308B\n\ntemplate<class T>\nclass sequence_monoid{\n\tvector<T> a;\n\
-    public:\n\tsequence_monoid(){}\n\tsequence_monoid(const T& val):a(1,val){}\n\t\
-    sequence_monoid(const vector<T>& x):a(x){\n\t\tsort(a.begin(),a.end());\n\t}\n\
-    \tsequence_monoid operator*(const sequence_monoid& x)const{\n\t\tvector<T> res;\n\
-    \t\tmerge(a.begin(),a.end(),x.a.begin(),x.a.end(),back_inserter(res));\n\t\treturn\
-    \ res;\n\t}\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\u5143\u306E\u30BD\u30FC\u30C8\
-    \u3055\u308C\u305F\u5217\u3068\u305D\u306E\u7D2F\u7A4D\u548C\u306E\u30DA\u30A2\
-    \u5168\u4F53\n// \u7A4D : \u5217\u306E\u30DE\u30FC\u30B8\n// \u4EEE\u5B9A : T\
-    \ \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u308B\
-    \n//       T \u4E0A\u306E\u7D50\u5408\u7684\u306A\u4E8C\u9805\u6F14\u7B97 + \u304C\
-    \u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066 T() \u304C\u52A0\u6CD5\u5358\u4F4D\u5143\
-    \n\ntemplate<class T>\nclass sequence_sum_monoid{\n\tvector<T> a,cum;\npublic:\n\
-    \tsequence_sum_monoid():cum(1){}\n\tsequence_sum_monoid(const T& val):a(1,val),cum{T(),val}{}\n\
+    \u5143\u5168\u4F53\n// \u7A4D : +\n// \u4EEE\u5B9A : T \u4E0A\u306E\u7D50\u5408\
+    \u7684\u306A\u4E8C\u9805\u6F14\u7B97 + \u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\
+    \u3066 T() \u304C\u52A0\u6CD5\u5358\u4F4D\u5143\n\ntemplate<class T>\nclass add_monoid{\n\
+    \tT a;\npublic:\n\tadd_monoid():a(){}\n\tadd_monoid(const T& val):a(val){}\n\t\
+    add_monoid operator*(const add_monoid& x)const{\n\t\treturn a+x.a;\n\t}\n\tT&\
+    \ get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\n// \u53F0\u96C6\
+    \u5408 : T \u306E\u5143\u5168\u4F53\n// \u7A4D : bitwise OR\n// \u4EEE\u5B9A :\
+    \ T \u306F int \u307E\u305F\u306F lint \u3092\u60F3\u5B9A\n\ntemplate<class T>\n\
+    class or_monoid{\n\tT a;\npublic:\n\tor_monoid():a(){}\n\tor_monoid(const T& val):a(val){}\n\
+    \tor_monoid operator*(const or_monoid& x)const{\n\t\treturn a|x.a;\n\t}\n\tT&\
+    \ get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\n// \u53F0\u96C6\
+    \u5408 : T \u306E\u5143\u306E\u30BD\u30FC\u30C8\u3055\u308C\u305F\u5217\u5168\u4F53\
+    \n// \u7A4D : \u5217\u306E\u30DE\u30FC\u30B8\n// \u4EEE\u5B9A : T \u4E0A\u306E\
+    \u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u308B\n\ntemplate<class\
+    \ T>\nclass sequence_monoid{\n\tvector<T> a;\npublic:\n\tsequence_monoid(){}\n\
+    \tsequence_monoid(const T& val):a(1,val){}\n\tsequence_monoid(const vector<T>&\
+    \ x):a(x){\n\t\tsort(a.begin(),a.end());\n\t}\n\tsequence_monoid operator*(const\
+    \ sequence_monoid& x)const{\n\t\tvector<T> res;\n\t\tmerge(a.begin(),a.end(),x.a.begin(),x.a.end(),back_inserter(res));\n\
+    \t\treturn res;\n\t}\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\u5143\u306E\u30BD\
+    \u30FC\u30C8\u3055\u308C\u305F\u5217\u3068\u305D\u306E\u7D2F\u7A4D\u548C\u306E\
+    \u30DA\u30A2\u5168\u4F53\n// \u7A4D : \u5217\u306E\u30DE\u30FC\u30B8\n// \u4EEE\
+    \u5B9A : T \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\
+    \u308B\n//       T \u4E0A\u306E\u7D50\u5408\u7684\u306A\u4E8C\u9805\u6F14\u7B97\
+    \ + \u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066 T() \u304C\u52A0\u6CD5\u5358\
+    \u4F4D\u5143\n\ntemplate<class T>\nclass sequence_sum_monoid{\n\tvector<T> a,cum;\n\
+    public:\n\tsequence_sum_monoid():cum(1){}\n\tsequence_sum_monoid(const T& val):a(1,val),cum{T(),val}{}\n\
     \tsequence_sum_monoid(const vector<T>& x):a(x),cum(x.size()+1){\n\t\tsort(a.begin(),a.end());\n\
     \t\trep(i,x.size()) cum[i+1]=cum[i]+a[i];\n\t}\n\tsequence_sum_monoid operator*(const\
     \ sequence_sum_monoid& x)const{\n\t\tvector<T> res;\n\t\tmerge(a.begin(),a.end(),x.a.begin(),x.a.end(),back_inserter(res));\n\
@@ -159,7 +145,7 @@ data:
   isVerificationFile: false
   path: library/monoid/monoid.hpp
   requiredBy: []
-  timestamp: '2021-05-10 20:40:40+09:00'
+  timestamp: '2021-05-10 21:01:53+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/monoid/monoid.hpp

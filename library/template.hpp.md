@@ -36,6 +36,9 @@ data:
     path: library/graph/wgraph.hpp
     title: Weighted Graph
   - icon: ':heavy_check_mark:'
+    path: library/monoid/max_monoid.hpp
+    title: Maximum Monoid
+  - icon: ':heavy_check_mark:'
     path: library/monoid/min_monoid.hpp
     title: Minimum Monoid
   - icon: ':heavy_check_mark:'
@@ -54,6 +57,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/segment_tree.1.test.cpp
     title: verify/data_structure/segment_tree.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/segment_tree.2.test.cpp
+    title: verify/data_structure/segment_tree.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/sparse_table.test.cpp
     title: verify/data_structure/sparse_table.test.cpp
@@ -218,6 +224,7 @@ data:
   - library/graph/Dijkstra.hpp
   - library/graph/graph.hpp
   - library/graph/topological_sort.hpp
+  - library/monoid/max_monoid.hpp
   - library/monoid/min_monoid.hpp
   - library/data_structure/Fenwick_tree_dual.hpp
   - library/data_structure/Fenwick_tree.hpp
@@ -237,6 +244,7 @@ data:
   - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/Fenwick_tree.1.test.cpp
   - verify/data_structure/Fenwick_tree.2.test.cpp
+  - verify/data_structure/segment_tree.2.test.cpp
   - verify/data_structure/union-find.test.1.cpp
   - verify/data_structure/segment_tree.1.test.cpp
   - verify/data_structure/Fenwick_tree_dual.test.cpp
