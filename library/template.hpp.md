@@ -43,8 +43,11 @@ data:
     title: Z Algorithm
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/data_structure/Fenwick_tree.test.cpp
-    title: verify/data_structure/Fenwick_tree.test.cpp
+    path: verify/data_structure/Fenwick_tree.1.test.cpp
+    title: verify/data_structure/Fenwick_tree.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/Fenwick_tree.2.test.cpp
+    title: verify/data_structure/Fenwick_tree.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/Fenwick_tree_dual.test.cpp
     title: verify/data_structure/Fenwick_tree_dual.test.cpp
@@ -231,8 +234,9 @@ data:
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
   - verify/graph/tree_diameter.2.test.cpp
-  - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/sparse_table.test.cpp
+  - verify/data_structure/Fenwick_tree.1.test.cpp
+  - verify/data_structure/Fenwick_tree.2.test.cpp
   - verify/data_structure/union-find.test.1.cpp
   - verify/data_structure/segment_tree.1.test.cpp
   - verify/data_structure/Fenwick_tree_dual.test.cpp

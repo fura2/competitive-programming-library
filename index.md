@@ -312,8 +312,11 @@ data:
   - name: verify/data_structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/data_structure/Fenwick_tree.test.cpp
-      title: verify/data_structure/Fenwick_tree.test.cpp
+      path: verify/data_structure/Fenwick_tree.1.test.cpp
+      title: verify/data_structure/Fenwick_tree.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/Fenwick_tree.2.test.cpp
+      title: verify/data_structure/Fenwick_tree.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/Fenwick_tree_dual.test.cpp
       title: verify/data_structure/Fenwick_tree_dual.test.cpp
