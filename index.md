@@ -21,7 +21,7 @@ data:
     - icon: ':warning:'
       path: library/data_structure/persistent_union-find.hpp
       title: library/data_structure/persistent_union-find.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data_structure/segment_tree.hpp
       title: Segment Tree
     - icon: ':heavy_check_mark:'
@@ -242,6 +242,9 @@ data:
       title: library/misc/zeta.hpp
   - name: library/monoid
     pages:
+    - icon: ':heavy_check_mark:'
+      path: library/monoid/min_monoid.hpp
+      title: library/monoid/min_monoid.hpp
     - icon: ':warning:'
       path: library/monoid/monoid.hpp
       title: library/monoid/monoid.hpp
@@ -314,6 +317,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/Fenwick_tree_dual.test.cpp
       title: verify/data_structure/Fenwick_tree_dual.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/segment_tree.1.test.cpp
+      title: verify/data_structure/segment_tree.1.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/sparse_table.test.cpp
       title: verify/data_structure/sparse_table.test.cpp

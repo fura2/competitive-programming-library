@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data_structure/Fenwick_tree_dual.hpp
     title: Dual Fenwick Tree
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/data_structure/segment_tree.hpp
     title: Segment Tree
   - icon: ':heavy_check_mark:'
@@ -36,6 +36,9 @@ data:
     path: library/graph/wgraph.hpp
     title: Weighted Graph
   - icon: ':heavy_check_mark:'
+    path: library/monoid/min_monoid.hpp
+    title: library/monoid/min_monoid.hpp
+  - icon: ':heavy_check_mark:'
     path: library/string/z.hpp
     title: Z Algorithm
   _extendedVerifiedWith:
@@ -45,6 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/Fenwick_tree_dual.test.cpp
     title: verify/data_structure/Fenwick_tree_dual.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/segment_tree.1.test.cpp
+    title: verify/data_structure/segment_tree.1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/sparse_table.test.cpp
     title: verify/data_structure/sparse_table.test.cpp
@@ -206,6 +212,7 @@ data:
   - library/graph/Dijkstra.hpp
   - library/graph/graph.hpp
   - library/graph/topological_sort.hpp
+  - library/monoid/min_monoid.hpp
   - library/data_structure/Fenwick_tree_dual.hpp
   - library/data_structure/Fenwick_tree.hpp
   - library/data_structure/union-find.hpp
@@ -224,6 +231,7 @@ data:
   - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/union-find.test.cpp
+  - verify/data_structure/segment_tree.1.test.cpp
   - verify/data_structure/Fenwick_tree_dual.test.cpp
 documentation_of: library/template.hpp
 layout: document

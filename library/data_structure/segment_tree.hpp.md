@@ -5,10 +5,13 @@ data:
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/segment_tree.1.test.cpp
+    title: verify/data_structure/segment_tree.1.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
@@ -21,25 +24,25 @@ data:
     using lint=long long;\n#line 3 \"library/data_structure/segment_tree.hpp\"\n\n\
     template<class M>\nclass segment_tree{\n\tint n,sz;\n\tvector<M> seg;\npublic:\n\
     \tsegment_tree()=default;\n\tsegment_tree(int n){ build(n); }\n\ttemplate<class\
-    \ T>\n\tsegment_tree(const vector<T>& a){ build(a); }\n\tvoid build(int n){\n\t\
-    \tthis->n=n;\n\t\tfor(sz=1;sz<n;sz<<=1);\n\t\tseg.assign(2*sz,M());\n\t}\n\ttemplate<class\
-    \ T>\n\tvoid build(const vector<T>& a){\n\t\tbuild(a.size());\n\t\trep(i,a.size())\
-    \ seg[sz+i]=a[i];\n\t\tfor(int i=sz-1;i>0;i--){\n\t\t\tseg[i]=seg[2*i]*seg[2*i+1];\n\
-    \t\t}\n\t}\n\tconst M& operator[](int i)const{\n\t\treturn seg[sz+i];\n\t}\n\t\
-    void update(int i,const M& x){\n\t\ti+=sz;\n\t\tseg[i]=x;\n\t\tfor(i>>=1;i>0;i>>=1)\
-    \ seg[i]=seg[2*i]*seg[2*i+1];\n\t}\n\tM product(int l,int r)const{\n\t\tM lcum,rcum;\n\
+    \ T>\n\tsegment_tree(const vector<T>& a){ build(a); }\n\n\tvoid build(int n){\n\
+    \t\tthis->n=n;\n\t\tfor(sz=1;sz<n;sz<<=1);\n\t\tseg.assign(2*sz,M());\n\t}\n\n\
+    \ttemplate<class T>\n\tvoid build(const vector<T>& a){\n\t\tbuild(a.size());\n\
+    \t\trep(i,a.size()) seg[sz+i]=a[i];\n\t\tfor(int i=sz-1;i>0;i--){\n\t\t\tseg[i]=seg[2*i]*seg[2*i+1];\n\
+    \t\t}\n\t}\n\n\tconst M& operator[](int i)const{\n\t\treturn seg[sz+i];\n\t}\n\
+    \n\tvoid update(int i,const M& x){\n\t\ti+=sz;\n\t\tseg[i]=x;\n\t\tfor(i>>=1;i>0;i>>=1)\
+    \ seg[i]=seg[2*i]*seg[2*i+1];\n\t}\n\n\tM product(int l,int r)const{\n\t\tM lcum,rcum;\n\
     \t\tfor(int a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\t\t\tif(a&1) lcum=lcum*seg[a++];\n\
-    \t\t\tif(b&1) rcum=seg[--b]*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\ttemplate<class\
+    \t\t\tif(b&1) rcum=seg[--b]*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\n\ttemplate<class\
     \ N,class F>\n\tN operate(int l,int r,const F& f){\n\t\tN lcum,rcum;\n\t\tfor(int\
     \ a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\t\t\tif(a&1) lcum=lcum*f(seg[a++]);\n\t\t\t\
-    if(b&1) rcum=f(seg[--b])*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\ttemplate<class\
+    if(b&1) rcum=f(seg[--b])*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\n\ttemplate<class\
     \ F>\n\tint max_right(int l,const F& f)const{\n\t\tif(l==n) return n;\n\t\tM cum;\n\
     \t\tauto dfs=[&](auto&& dfs,int a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=cum*seg[u];\n\
     \t\t\t\treturn f(cum)?b:a;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(c<=l){\n\
     \t\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t\t}\n\t\t\tif(l<=a && f(cum*seg[u])){\n\
     \t\t\t\tcum=cum*seg[u];\n\t\t\t\treturn b;\n\t\t\t}\n\n\t\t\tint idx=dfs(dfs,a,c,2*u);\n\
     \t\t\tif(idx<c) return idx;\n\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t};\n\t\treturn\
-    \ min(dfs(dfs,0,sz,1),n);\n\t}\n\ttemplate<class F>\n\tint min_left(int r,const\
+    \ min(dfs(dfs,0,sz,1),n);\n\t}\n\n\ttemplate<class F>\n\tint min_left(int r,const\
     \ F& f)const{\n\t\tif(r==0) return 0;\n\t\tM cum;\n\t\tauto dfs=[&](auto&& dfs,int\
     \ a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=seg[u]*cum;\n\t\t\t\treturn\
     \ f(cum)?a:b;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(r<=c){\n\t\t\t\treturn\
@@ -50,39 +53,40 @@ data:
   code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class M>\nclass segment_tree{\n\
     \tint n,sz;\n\tvector<M> seg;\npublic:\n\tsegment_tree()=default;\n\tsegment_tree(int\
     \ n){ build(n); }\n\ttemplate<class T>\n\tsegment_tree(const vector<T>& a){ build(a);\
-    \ }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tfor(sz=1;sz<n;sz<<=1);\n\t\tseg.assign(2*sz,M());\n\
-    \t}\n\ttemplate<class T>\n\tvoid build(const vector<T>& a){\n\t\tbuild(a.size());\n\
-    \t\trep(i,a.size()) seg[sz+i]=a[i];\n\t\tfor(int i=sz-1;i>0;i--){\n\t\t\tseg[i]=seg[2*i]*seg[2*i+1];\n\
-    \t\t}\n\t}\n\tconst M& operator[](int i)const{\n\t\treturn seg[sz+i];\n\t}\n\t\
-    void update(int i,const M& x){\n\t\ti+=sz;\n\t\tseg[i]=x;\n\t\tfor(i>>=1;i>0;i>>=1)\
-    \ seg[i]=seg[2*i]*seg[2*i+1];\n\t}\n\tM product(int l,int r)const{\n\t\tM lcum,rcum;\n\
-    \t\tfor(int a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\t\t\tif(a&1) lcum=lcum*seg[a++];\n\
-    \t\t\tif(b&1) rcum=seg[--b]*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\ttemplate<class\
-    \ N,class F>\n\tN operate(int l,int r,const F& f){\n\t\tN lcum,rcum;\n\t\tfor(int\
-    \ a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\t\t\tif(a&1) lcum=lcum*f(seg[a++]);\n\t\t\t\
-    if(b&1) rcum=f(seg[--b])*rcum;\n\t\t}\n\t\treturn lcum*rcum;\n\t}\n\ttemplate<class\
-    \ F>\n\tint max_right(int l,const F& f)const{\n\t\tif(l==n) return n;\n\t\tM cum;\n\
-    \t\tauto dfs=[&](auto&& dfs,int a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=cum*seg[u];\n\
-    \t\t\t\treturn f(cum)?b:a;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(c<=l){\n\
-    \t\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t\t}\n\t\t\tif(l<=a && f(cum*seg[u])){\n\
-    \t\t\t\tcum=cum*seg[u];\n\t\t\t\treturn b;\n\t\t\t}\n\n\t\t\tint idx=dfs(dfs,a,c,2*u);\n\
-    \t\t\tif(idx<c) return idx;\n\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t};\n\t\treturn\
-    \ min(dfs(dfs,0,sz,1),n);\n\t}\n\ttemplate<class F>\n\tint min_left(int r,const\
-    \ F& f)const{\n\t\tif(r==0) return 0;\n\t\tM cum;\n\t\tauto dfs=[&](auto&& dfs,int\
-    \ a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=seg[u]*cum;\n\t\t\t\treturn\
-    \ f(cum)?a:b;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(r<=c){\n\t\t\t\treturn\
-    \ dfs(dfs,a,c,2*u);\n\t\t\t}\n\t\t\tif(b<=r && f(seg[u]*cum)){\n\t\t\t\tcum=seg[u]*cum;\n\
-    \t\t\t\treturn a;\n\t\t\t}\n\n\t\t\tint idx=dfs(dfs,c,b,2*u+1);\n\t\t\tif(idx>c)\
-    \ return idx;\n\t\t\treturn dfs(dfs,a,c,2*u);\n\t\t};\n\t\treturn dfs(dfs,0,sz,1);\n\
-    \t}\n};\n"
+    \ }\n\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tfor(sz=1;sz<n;sz<<=1);\n\t\t\
+    seg.assign(2*sz,M());\n\t}\n\n\ttemplate<class T>\n\tvoid build(const vector<T>&\
+    \ a){\n\t\tbuild(a.size());\n\t\trep(i,a.size()) seg[sz+i]=a[i];\n\t\tfor(int\
+    \ i=sz-1;i>0;i--){\n\t\t\tseg[i]=seg[2*i]*seg[2*i+1];\n\t\t}\n\t}\n\n\tconst M&\
+    \ operator[](int i)const{\n\t\treturn seg[sz+i];\n\t}\n\n\tvoid update(int i,const\
+    \ M& x){\n\t\ti+=sz;\n\t\tseg[i]=x;\n\t\tfor(i>>=1;i>0;i>>=1) seg[i]=seg[2*i]*seg[2*i+1];\n\
+    \t}\n\n\tM product(int l,int r)const{\n\t\tM lcum,rcum;\n\t\tfor(int a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\
+    \t\t\tif(a&1) lcum=lcum*seg[a++];\n\t\t\tif(b&1) rcum=seg[--b]*rcum;\n\t\t}\n\t\
+    \treturn lcum*rcum;\n\t}\n\n\ttemplate<class N,class F>\n\tN operate(int l,int\
+    \ r,const F& f){\n\t\tN lcum,rcum;\n\t\tfor(int a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){\n\
+    \t\t\tif(a&1) lcum=lcum*f(seg[a++]);\n\t\t\tif(b&1) rcum=f(seg[--b])*rcum;\n\t\
+    \t}\n\t\treturn lcum*rcum;\n\t}\n\n\ttemplate<class F>\n\tint max_right(int l,const\
+    \ F& f)const{\n\t\tif(l==n) return n;\n\t\tM cum;\n\t\tauto dfs=[&](auto&& dfs,int\
+    \ a,int b,int u){\n\t\t\tif(a==b-1){\n\t\t\t\tcum=cum*seg[u];\n\t\t\t\treturn\
+    \ f(cum)?b:a;\n\t\t\t}\n\n\t\t\tint c=(a+b)/2;\n\t\t\tif(c<=l){\n\t\t\t\treturn\
+    \ dfs(dfs,c,b,2*u+1);\n\t\t\t}\n\t\t\tif(l<=a && f(cum*seg[u])){\n\t\t\t\tcum=cum*seg[u];\n\
+    \t\t\t\treturn b;\n\t\t\t}\n\n\t\t\tint idx=dfs(dfs,a,c,2*u);\n\t\t\tif(idx<c)\
+    \ return idx;\n\t\t\treturn dfs(dfs,c,b,2*u+1);\n\t\t};\n\t\treturn min(dfs(dfs,0,sz,1),n);\n\
+    \t}\n\n\ttemplate<class F>\n\tint min_left(int r,const F& f)const{\n\t\tif(r==0)\
+    \ return 0;\n\t\tM cum;\n\t\tauto dfs=[&](auto&& dfs,int a,int b,int u){\n\t\t\
+    \tif(a==b-1){\n\t\t\t\tcum=seg[u]*cum;\n\t\t\t\treturn f(cum)?a:b;\n\t\t\t}\n\n\
+    \t\t\tint c=(a+b)/2;\n\t\t\tif(r<=c){\n\t\t\t\treturn dfs(dfs,a,c,2*u);\n\t\t\t\
+    }\n\t\t\tif(b<=r && f(seg[u]*cum)){\n\t\t\t\tcum=seg[u]*cum;\n\t\t\t\treturn a;\n\
+    \t\t\t}\n\n\t\t\tint idx=dfs(dfs,c,b,2*u+1);\n\t\t\tif(idx>c) return idx;\n\t\t\
+    \treturn dfs(dfs,a,c,2*u);\n\t\t};\n\t\treturn dfs(dfs,0,sz,1);\n\t}\n};\n"
   dependsOn:
   - library/template.hpp
   isVerificationFile: false
   path: library/data_structure/segment_tree.hpp
   requiredBy: []
-  timestamp: '2021-05-10 18:53:30+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-05-10 19:36:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/data_structure/segment_tree.1.test.cpp
 documentation_of: library/data_structure/segment_tree.hpp
 layout: document
 title: Segment Tree
