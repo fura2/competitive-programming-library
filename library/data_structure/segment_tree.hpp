@@ -10,11 +10,13 @@ public:
 	segment_tree(int n){ build(n); }
 	template<class T>
 	segment_tree(const vector<T>& a){ build(a); }
+
 	void build(int n){
 		this->n=n;
 		for(sz=1;sz<n;sz<<=1);
 		seg.assign(2*sz,M());
 	}
+
 	template<class T>
 	void build(const vector<T>& a){
 		build(a.size());
@@ -23,14 +25,17 @@ public:
 			seg[i]=seg[2*i]*seg[2*i+1];
 		}
 	}
+
 	const M& operator[](int i)const{
 		return seg[sz+i];
 	}
+
 	void update(int i,const M& x){
 		i+=sz;
 		seg[i]=x;
 		for(i>>=1;i>0;i>>=1) seg[i]=seg[2*i]*seg[2*i+1];
 	}
+
 	M product(int l,int r)const{
 		M lcum,rcum;
 		for(int a=l+sz,b=r+sz;a<b;a>>=1,b>>=1){
@@ -39,6 +44,7 @@ public:
 		}
 		return lcum*rcum;
 	}
+
 	template<class N,class F>
 	N operate(int l,int r,const F& f){
 		N lcum,rcum;
@@ -48,6 +54,7 @@ public:
 		}
 		return lcum*rcum;
 	}
+
 	template<class F>
 	int max_right(int l,const F& f)const{
 		if(l==n) return n;
@@ -73,6 +80,7 @@ public:
 		};
 		return min(dfs(dfs,0,sz,1),n);
 	}
+
 	template<class F>
 	int min_left(int r,const F& f)const{
 		if(r==0) return 0;
