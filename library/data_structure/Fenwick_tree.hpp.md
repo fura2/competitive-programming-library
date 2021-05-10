@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
@@ -135,7 +135,7 @@ $a_0+a_1+\cdots+a_i\ge\mathrm{val}$ をみたす最小の $i$ を求める．
 - $a_i\ge e\quad(i=0,\ldots,n-1)$
 
 #### Complexity
-- $O(\log n)$
+- $O(\log n)$ ($G$ の元の比較が $O(1)$ でできることを仮定)
 
 ### upper_bound
 ```
@@ -149,7 +149,7 @@ $a_0+a_1+\cdots+a_i\gt\mathrm{val}$ をみたす最小の $i$ を求める．
 - $a_i\ge e\quad(i=0,\ldots,n-1)$
 
 #### Complexity
-- $O(\log n)$
+- $O(\log n)$ ($G$ の元の比較が $O(1)$ でできることを仮定)
 
 ## References
 - [Binary Indexed Tree のはなし](http://hos.ac/slides/20140319_bit.pdf)

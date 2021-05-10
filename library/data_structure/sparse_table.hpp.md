@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
@@ -87,7 +87,7 @@ void build(const vector<T>& a)
 ```
 T fold(int l, int r)
 ```
-$\min\lbrace a_l,\ldots,a_{r-1}\rbrace$ を求める
+$\min\lbrace a_l,a_{l+1},\ldots,a_{r-1}\rbrace$ を求める
 
 #### Constraints
 - $0\le l\lt r\le n$

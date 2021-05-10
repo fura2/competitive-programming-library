@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
     title: Dijkstra's Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []

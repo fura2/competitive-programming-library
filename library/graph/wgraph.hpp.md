@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy:
@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
     title: Dijkstra's Algorithm
+  - icon: ':x:'
+    path: library/graph/topological_sort.hpp
+    title: Topological Sort
   - icon: ':heavy_check_mark:'
     path: library/graph/tree_diameter.hpp
     title: Diameter of a Tree
@@ -24,15 +27,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.2.test.cpp
     title: verify/graph/Dijkstra.2.test.cpp
+  - icon: ':x:'
+    path: verify/graph/topological_sort.1.test.cpp
+    title: verify/graph/topological_sort.1.test.cpp
+  - icon: ':x:'
+    path: verify/graph/topological_sort.2.test.cpp
+    title: verify/graph/topological_sort.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter.1.test.cpp
     title: verify/graph/tree_diameter.1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter.2.test.cpp
     title: verify/graph/tree_diameter.2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
@@ -63,14 +72,17 @@ data:
   - library/graph/tree_diameter.hpp
   - library/graph/Bellman-Ford.hpp
   - library/graph/Dijkstra.hpp
+  - library/graph/topological_sort.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/graph/tree_diameter.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
+  - verify/graph/topological_sort.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
   - verify/graph/tree_diameter.2.test.cpp
+  - verify/graph/topological_sort.2.test.cpp
 documentation_of: library/graph/wgraph.hpp
 layout: document
 title: Weighted Graph

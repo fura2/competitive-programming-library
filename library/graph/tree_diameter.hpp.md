@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/graph.hpp
     title: Graph
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
@@ -94,14 +94,14 @@ title: Diameter of a Tree
 (1) pair<int,vector<int>> tree_diameter(const graph& T)
 (2) pair<W,vector<int>> tree_diameter(const weighted_graph<W>& T)
 ```
-(1) 木 $T$ の直径と，直径を達成するパスの一つを求める．
+(1) 木 $T$ の直径と，直径を達成するパスの一つを求める．  
 (2) 重みつきの木 $T$ の直径と，直径を達成するパスの一つを求める．
 
 #### Constraints
 - $T$ は木
 - $V>0$
-- (2) $G$ の辺の重みの型 $W$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
-- (2) $G$ の辺の重みは非負
+- (2) $T$ の辺の重みの型 $W$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
+- (2) $T$ の辺の重みは非負
 
 #### Complexity
 - $O(V)$

@@ -23,7 +23,7 @@ data:
       title: library/data_structure/persistent_union-find.hpp
     - icon: ':warning:'
       path: library/data_structure/segment_tree.hpp
-      title: library/data_structure/segment_tree.hpp
+      title: Segment Tree
     - icon: ':heavy_check_mark:'
       path: library/data_structure/sparse_table.hpp
       title: Sparse Table
@@ -111,7 +111,7 @@ data:
     - icon: ':warning:'
       path: library/graph/functional_graph.hpp
       title: library/graph/functional_graph.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/graph/graph.hpp
       title: Graph
     - icon: ':warning:'
@@ -126,16 +126,16 @@ data:
     - icon: ':warning:'
       path: library/graph/tecc.hpp
       title: library/graph/tecc.hpp
-    - icon: ':warning:'
-      path: library/graph/topological_order.hpp
-      title: library/graph/topological_order.hpp
+    - icon: ':x:'
+      path: library/graph/topological_sort.hpp
+      title: Topological Sort
     - icon: ':heavy_check_mark:'
       path: library/graph/tree_diameter.hpp
       title: Diameter of a Tree
     - icon: ':warning:'
       path: library/graph/two_coloring.hpp
       title: library/graph/two_coloring.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/graph/wgraph.hpp
       title: Weighted Graph
   - name: library/linear_algebra
@@ -302,7 +302,7 @@ data:
       title: Z Algorithm
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/template.hpp
       title: library/template.hpp
   verificationCategories:
@@ -331,6 +331,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.2.test.cpp
       title: verify/graph/Dijkstra.2.test.cpp
+    - icon: ':x:'
+      path: verify/graph/topological_sort.1.test.cpp
+      title: verify/graph/topological_sort.1.test.cpp
+    - icon: ':x:'
+      path: verify/graph/topological_sort.2.test.cpp
+      title: verify/graph/topological_sort.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter.1.test.cpp
       title: verify/graph/tree_diameter.1.test.cpp

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/graph.hpp
     title: Graph
   - icon: ':heavy_check_mark:'
     path: library/graph/tree_diameter.hpp
     title: Diameter of a Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
