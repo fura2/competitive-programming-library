@@ -27,9 +27,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data_structure/sparse_table.hpp
       title: Sparse Table
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data_structure/starry_sky_tree.hpp
-      title: library/data_structure/starry_sky_tree.hpp
+      title: Starry Sky Tree
     - icon: ':heavy_check_mark:'
       path: library/data_structure/union-find.hpp
       title: Union-Find
@@ -332,6 +332,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/sparse_table.test.cpp
       title: verify/data_structure/sparse_table.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/starry_sky_tree.test.cpp
+      title: verify/data_structure/starry_sky_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/union-find.test.1.cpp
       title: verify/data_structure/union-find.test.1.cpp

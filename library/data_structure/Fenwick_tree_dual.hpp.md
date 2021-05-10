@@ -93,10 +93,10 @@ Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，区間加算と一
 ```
 void add(int l, int r, const G& val)
 ```
-$a_l,\ldots,a_{r-1}$ に $\mathrm{val}$ を加える
+$a_l,a_{l+1},\ldots,a_{r-1}$ に $\mathrm{val}$ を加える
 
 #### Constraints
-- $0\le l\le r\lt n$
+- $0\le l\le r\le n$
 
 #### Complexity
 - $O(\log n)$

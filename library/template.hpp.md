@@ -64,6 +64,9 @@ data:
     path: verify/data_structure/sparse_table.test.cpp
     title: verify/data_structure/sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/data_structure/starry_sky_tree.test.cpp
+    title: verify/data_structure/starry_sky_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/data_structure/union-find.test.1.cpp
     title: verify/data_structure/union-find.test.1.cpp
   - icon: ':heavy_check_mark:'
@@ -243,6 +246,7 @@ data:
   - verify/graph/tree_diameter.2.test.cpp
   - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/Fenwick_tree.1.test.cpp
+  - verify/data_structure/starry_sky_tree.test.cpp
   - verify/data_structure/Fenwick_tree.2.test.cpp
   - verify/data_structure/segment_tree.2.test.cpp
   - verify/data_structure/union-find.test.1.cpp
