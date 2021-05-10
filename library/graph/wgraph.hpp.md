@@ -6,9 +6,15 @@ data:
     title: library/template.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: library/graph/Bellman-Ford.hpp
+    title: Bellman-Ford Algorithm
+  - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
     title: Dijkstra's Algorithm
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/Bellman-Ford.test.cpp
+    title: verify/graph/Bellman-Ford.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.1.test.cpp
     title: verify/graph/Dijkstra.1.test.cpp
@@ -45,12 +51,14 @@ data:
   isVerificationFile: false
   path: library/graph/wgraph.hpp
   requiredBy:
+  - library/graph/Bellman-Ford.hpp
   - library/graph/Dijkstra.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
+  - verify/graph/Bellman-Ford.test.cpp
 documentation_of: library/graph/wgraph.hpp
 layout: document
 title: Weighted Graph

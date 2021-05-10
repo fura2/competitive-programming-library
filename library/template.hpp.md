@@ -15,6 +15,9 @@ data:
     path: library/data_structure/union-find.hpp
     title: Union-Find
   - icon: ':heavy_check_mark:'
+    path: library/graph/Bellman-Ford.hpp
+    title: Bellman-Ford Algorithm
+  - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
     title: Dijkstra's Algorithm
   - icon: ':warning:'
@@ -39,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/union-find.test.cpp
     title: verify/data_structure/union-find.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/Bellman-Ford.test.cpp
+    title: verify/graph/Bellman-Ford.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.1.test.cpp
     title: verify/graph/Dijkstra.1.test.cpp
@@ -180,6 +186,7 @@ data:
   requiredBy:
   - library/string/z.hpp
   - library/graph/wgraph.hpp
+  - library/graph/Bellman-Ford.hpp
   - library/graph/Dijkstra.hpp
   - library/graph/graph.hpp
   - library/data_structure/Fenwick_tree_dual.hpp
@@ -193,6 +200,7 @@ data:
   - verify/string/z.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
+  - verify/graph/Bellman-Ford.test.cpp
   - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/union-find.test.cpp

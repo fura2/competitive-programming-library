@@ -84,9 +84,9 @@ data:
       title: library/geometry/intersect.hpp
   - name: library/graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/Bellman-Ford.hpp
-      title: library/graph/Bellman-Ford.hpp
+      title: Bellman-Ford Algorithm
     - icon: ':heavy_check_mark:'
       path: library/graph/Dijkstra.hpp
       title: Dijkstra's Algorithm
@@ -322,6 +322,9 @@ data:
       title: verify/data_structure/union-find.test.cpp
   - name: verify/graph
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/Bellman-Ford.test.cpp
+      title: verify/graph/Bellman-Ford.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.1.test.cpp
       title: verify/graph/Dijkstra.1.test.cpp
