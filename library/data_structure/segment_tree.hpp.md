@@ -105,7 +105,7 @@ title: Segment Tree
 
 ### (constructor)
 ```
-(1) segment_tree<M>(int n=0)
+(1) segment_tree<M>(int n = 0)
 (2) segment_tree<M>(const vector<T>& a)
 ```
 - (1) $M$ の単位元 $e$ のみからなる長さ $n$ の列で初期化する
