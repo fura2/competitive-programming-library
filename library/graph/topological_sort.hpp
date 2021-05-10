@@ -1,6 +1,9 @@
-// D は DAG
+#pragma once
+#include "../template.hpp"
+#include "graph.hpp"
+#include "wgraph.hpp"
 
-vector<int> topological_order(const graph& D){
+vector<int> topological_sort(const graph& D){
 	int n=D.size();
 	vector<int> deg(n);
 	rep(u,n) for(int v:D[u]) deg[v]++;
@@ -17,7 +20,7 @@ vector<int> topological_order(const graph& D){
 }
 
 template<class T>
-vector<int> topological_order(const weighted_graph<T>& D){
+vector<int> topological_sort(const weighted_graph<T>& D){
 	int n=D.size();
 	vector<int> deg(n);
 	rep(u,n) for(const auto& e:D[u]) deg[e.to]++;
