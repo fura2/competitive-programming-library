@@ -87,7 +87,7 @@ data:
     - icon: ':warning:'
       path: library/graph/Bellman-Ford.hpp
       title: library/graph/Bellman-Ford.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/Dijkstra.hpp
       title: Dijkstra's Algorithm
     - icon: ':warning:'
@@ -135,7 +135,7 @@ data:
     - icon: ':warning:'
       path: library/graph/two_coloring.hpp
       title: library/graph/two_coloring.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/wgraph.hpp
       title: Weighted Graph
   - name: library/linear_algebra
@@ -302,7 +302,7 @@ data:
       title: Z Algorithm
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/template.hpp
       title: library/template.hpp
   verificationCategories:
@@ -322,10 +322,10 @@ data:
       title: verify/data_structure/union-find.test.cpp
   - name: verify/graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.1.test.cpp
       title: verify/graph/Dijkstra.1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.2.test.cpp
       title: Dijkstra ($O((E + V) \log V)$)
   - name: verify/string

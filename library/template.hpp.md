@@ -14,13 +14,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data_structure/union-find.hpp
     title: Union-Find
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
     title: Dijkstra's Algorithm
   - icon: ':warning:'
     path: library/graph/graph.hpp
     title: Graph
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
   - icon: ':heavy_check_mark:'
@@ -39,10 +39,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/union-find.test.cpp
     title: verify/data_structure/union-find.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.1.test.cpp
     title: verify/graph/Dijkstra.1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.2.test.cpp
     title: Dijkstra ($O((E + V) \log V)$)
   - icon: ':heavy_check_mark:'
@@ -51,9 +51,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/string/z.2.test.cpp
     title: verify/string/z.2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 2 "library/template.hpp"
@@ -187,7 +187,7 @@ data:
   - library/data_structure/union-find.hpp
   - library/data_structure/sparse_table.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/string/z.2.test.cpp
   - verify/string/z.1.test.cpp
