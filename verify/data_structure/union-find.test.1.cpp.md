@@ -17,7 +17,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
     - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"verify/data_structure/union-find.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"verify/data_structure/union-find.test.1.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#line 2 \"library/template.hpp\"\
     \n#include <cassert>\n#include <cctype>\n#include <chrono>\n#include <climits>\n\
     #include <cmath>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n\
@@ -32,8 +32,8 @@ data:
     \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
     \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
     \ find(u)==find(v); }\n\tint size()const{ return n; }\n\tint size(int u){ return\
-    \ -p[find(u)]; }\n};\n#line 5 \"verify/data_structure/union-find.test.cpp\"\n\n\
-    int main(){\n\tint n,q; scanf(\"%d%d\",&n,&q);\n\n\tunion_find U(n);\n\trep(_,q){\n\
+    \ -p[find(u)]; }\n};\n#line 5 \"verify/data_structure/union-find.test.1.cpp\"\n\
+    \nint main(){\n\tint n,q; scanf(\"%d%d\",&n,&q);\n\n\tunion_find U(n);\n\trep(_,q){\n\
     \t\tint type,u,v; scanf(\"%d%d%d\",&type,&u,&v);\n\t\tif(type==0){\n\t\t\tU.unite(u,v);\n\
     \t\t}\n\t\telse{\n\t\t\tprintf(\"%d\\n\",U.is_same(u,v)?1:0);\n\t\t}\n\t}\n\n\t\
     return 0;\n}\n"
@@ -47,15 +47,15 @@ data:
   - library/template.hpp
   - library/data_structure/union-find.hpp
   isVerificationFile: true
-  path: verify/data_structure/union-find.test.cpp
+  path: verify/data_structure/union-find.test.1.cpp
   requiredBy: []
-  timestamp: '2021-05-09 03:26:47+09:00'
+  timestamp: '2021-05-10 20:40:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/data_structure/union-find.test.cpp
+documentation_of: verify/data_structure/union-find.test.1.cpp
 layout: document
 redirect_from:
-- /verify/verify/data_structure/union-find.test.cpp
-- /verify/verify/data_structure/union-find.test.cpp.html
-title: verify/data_structure/union-find.test.cpp
+- /verify/verify/data_structure/union-find.test.1.cpp
+- /verify/verify/data_structure/union-find.test.1.cpp.html
+title: verify/data_structure/union-find.test.1.cpp
 ---

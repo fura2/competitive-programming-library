@@ -55,8 +55,11 @@ data:
     path: verify/data_structure/sparse_table.test.cpp
     title: verify/data_structure/sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/data_structure/union-find.test.cpp
-    title: verify/data_structure/union-find.test.cpp
+    path: verify/data_structure/union-find.test.1.cpp
+    title: verify/data_structure/union-find.test.1.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/union-find.test.2.cpp
+    title: verify/data_structure/union-find.test.2.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/Bellman-Ford.test.cpp
     title: verify/graph/Bellman-Ford.test.cpp
@@ -230,9 +233,10 @@ data:
   - verify/graph/tree_diameter.2.test.cpp
   - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/sparse_table.test.cpp
-  - verify/data_structure/union-find.test.cpp
+  - verify/data_structure/union-find.test.1.cpp
   - verify/data_structure/segment_tree.1.test.cpp
   - verify/data_structure/Fenwick_tree_dual.test.cpp
+  - verify/data_structure/union-find.test.2.cpp
 documentation_of: library/template.hpp
 layout: document
 redirect_from:

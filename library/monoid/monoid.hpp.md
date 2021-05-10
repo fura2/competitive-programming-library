@@ -12,18 +12,12 @@ data:
     \u30A4\u30C9\u306B\u3064\u3044\u3066\u3082, \u5F15\u6570\u3092\u6301\u305F\u306A\
     \u3044\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF\u304C\u5358\u4F4D\u5143\u3092\
     \u751F\u6210\u3059\u308B\u3082\u306E\u3068\u3059\u308B\n\n// \u53F0\u96C6\u5408\
-    \ : T \u306E\u5143\u5168\u4F53\n// \u7A4D : min\n// \u4EEE\u5B9A : T \u4E0A\u306E\
-    \u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066 numeric_limits<T>::max()\
-    \ \u304C\u6700\u5927\u5143\n\ntemplate<class T>\nclass min_monoid{\n\tT a;\npublic:\n\
-    \tmin_monoid():a(numeric_limits<T>::max()){}\n\tmin_monoid(const T& val):a(val){}\n\
-    \tmin_monoid operator*(const min_monoid& x)const{\n\t\treturn min(a,x.a);\n\t\
-    }\n\tT& get(){ return a; }\n\tconst T& get()const{ return a; }\n};\n\n// \u53F0\
-    \u96C6\u5408 : T1 \u306E\u5143\u3068 T2 \u306E\u5143\u306E\u30DA\u30A2\u5168\u4F53\
-    \n// \u7A4D : min (\u8F9E\u66F8\u9806)\n// \u4EEE\u5B9A : i = 1, 2 \u306B\u5BFE\
-    \u3057\u3066, Ti \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\
-    \u3044\u3066 numeric_limits<Ti>::max() \u304C\u6700\u5927\u5143\n\ntemplate<class\
-    \ T> class min_monoid;\ntemplate<class T1,class T2>\nclass min_monoid<pair<T1,T2>>{\n\
-    \tpair<T1,T2> a;\npublic:\n\tmin_monoid():a(numeric_limits<T1>::max(),numeric_limits<T2>::max()){}\n\
+    \ : T1 \u306E\u5143\u3068 T2 \u306E\u5143\u306E\u30DA\u30A2\u5168\u4F53\n// \u7A4D\
+    \ : min (\u8F9E\u66F8\u9806)\n// \u4EEE\u5B9A : i = 1, 2 \u306B\u5BFE\u3057\u3066\
+    , Ti \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066\
+    \ numeric_limits<Ti>::max() \u304C\u6700\u5927\u5143\n\ntemplate<class T> class\
+    \ min_monoid;\ntemplate<class T1,class T2>\nclass min_monoid<pair<T1,T2>>{\n\t\
+    pair<T1,T2> a;\npublic:\n\tmin_monoid():a(numeric_limits<T1>::max(),numeric_limits<T2>::max()){}\n\
     \tmin_monoid(const pair<T1,T2>& val):a(val){}\n\tmin_monoid operator*(const min_monoid&\
     \ x)const{\n\t\treturn min(a,x.a);\n\t}\n\tpair<T1,T2>& get(){ return a; }\n\t\
     const pair<T1,T2>& get()const{ return a; }\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\
@@ -91,18 +85,12 @@ data:
   code: "// \u3069\u306E\u30E2\u30CE\u30A4\u30C9\u306B\u3064\u3044\u3066\u3082, \u5F15\
     \u6570\u3092\u6301\u305F\u306A\u3044\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF\
     \u304C\u5358\u4F4D\u5143\u3092\u751F\u6210\u3059\u308B\u3082\u306E\u3068\u3059\
-    \u308B\n\n// \u53F0\u96C6\u5408 : T \u306E\u5143\u5168\u4F53\n// \u7A4D : min\n\
-    // \u4EEE\u5B9A : T \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\u7FA9\u3055\u308C\
-    \u3066\u3044\u3066 numeric_limits<T>::max() \u304C\u6700\u5927\u5143\n\ntemplate<class\
-    \ T>\nclass min_monoid{\n\tT a;\npublic:\n\tmin_monoid():a(numeric_limits<T>::max()){}\n\
-    \tmin_monoid(const T& val):a(val){}\n\tmin_monoid operator*(const min_monoid&\
-    \ x)const{\n\t\treturn min(a,x.a);\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{\
-    \ return a; }\n};\n\n// \u53F0\u96C6\u5408 : T1 \u306E\u5143\u3068 T2 \u306E\u5143\
-    \u306E\u30DA\u30A2\u5168\u4F53\n// \u7A4D : min (\u8F9E\u66F8\u9806)\n// \u4EEE\
-    \u5B9A : i = 1, 2 \u306B\u5BFE\u3057\u3066, Ti \u4E0A\u306E\u5168\u9806\u5E8F\u304C\
-    \u5B9A\u7FA9\u3055\u308C\u3066\u3044\u3066 numeric_limits<Ti>::max() \u304C\u6700\
-    \u5927\u5143\n\ntemplate<class T> class min_monoid;\ntemplate<class T1,class T2>\n\
-    class min_monoid<pair<T1,T2>>{\n\tpair<T1,T2> a;\npublic:\n\tmin_monoid():a(numeric_limits<T1>::max(),numeric_limits<T2>::max()){}\n\
+    \u308B\n\n// \u53F0\u96C6\u5408 : T1 \u306E\u5143\u3068 T2 \u306E\u5143\u306E\u30DA\
+    \u30A2\u5168\u4F53\n// \u7A4D : min (\u8F9E\u66F8\u9806)\n// \u4EEE\u5B9A : i\
+    \ = 1, 2 \u306B\u5BFE\u3057\u3066, Ti \u4E0A\u306E\u5168\u9806\u5E8F\u304C\u5B9A\
+    \u7FA9\u3055\u308C\u3066\u3044\u3066 numeric_limits<Ti>::max() \u304C\u6700\u5927\
+    \u5143\n\ntemplate<class T> class min_monoid;\ntemplate<class T1,class T2>\nclass\
+    \ min_monoid<pair<T1,T2>>{\n\tpair<T1,T2> a;\npublic:\n\tmin_monoid():a(numeric_limits<T1>::max(),numeric_limits<T2>::max()){}\n\
     \tmin_monoid(const pair<T1,T2>& val):a(val){}\n\tmin_monoid operator*(const min_monoid&\
     \ x)const{\n\t\treturn min(a,x.a);\n\t}\n\tpair<T1,T2>& get(){ return a; }\n\t\
     const pair<T1,T2>& get()const{ return a; }\n};\n\n// \u53F0\u96C6\u5408 : T \u306E\
@@ -171,7 +159,7 @@ data:
   isVerificationFile: false
   path: library/monoid/monoid.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
+  timestamp: '2021-05-10 20:40:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/monoid/monoid.hpp

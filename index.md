@@ -324,8 +324,11 @@ data:
       path: verify/data_structure/sparse_table.test.cpp
       title: verify/data_structure/sparse_table.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/data_structure/union-find.test.cpp
-      title: verify/data_structure/union-find.test.cpp
+      path: verify/data_structure/union-find.test.1.cpp
+      title: verify/data_structure/union-find.test.1.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/union-find.test.2.cpp
+      title: verify/data_structure/union-find.test.2.cpp
   - name: verify/graph
     pages:
     - icon: ':heavy_check_mark:'
