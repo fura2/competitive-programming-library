@@ -12,6 +12,9 @@ data:
   - icon: ':x:'
     path: verify/graph/Dijkstra.1.test.cpp
     title: verify/graph/Dijkstra.1.test.cpp
+  - icon: ':x:'
+    path: verify/graph/Dijkstra.2.test.cpp
+    title: Dijkstra ($O((E + V) \log V)$)
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
@@ -47,6 +50,7 @@ data:
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/graph/Dijkstra.1.test.cpp
+  - verify/graph/Dijkstra.2.test.cpp
 documentation_of: library/graph/wgraph.hpp
 layout: document
 title: Weighted Graph

@@ -42,6 +42,9 @@ data:
   - icon: ':x:'
     path: verify/graph/Dijkstra.1.test.cpp
     title: verify/graph/Dijkstra.1.test.cpp
+  - icon: ':x:'
+    path: verify/graph/Dijkstra.2.test.cpp
+    title: Dijkstra ($O((E + V) \log V)$)
   - icon: ':heavy_check_mark:'
     path: verify/string/z.1.test.cpp
     title: verify/string/z.1.test.cpp
@@ -189,6 +192,7 @@ data:
   - verify/string/z.2.test.cpp
   - verify/string/z.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
+  - verify/graph/Dijkstra.2.test.cpp
   - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/union-find.test.cpp
