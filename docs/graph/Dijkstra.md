@@ -4,12 +4,13 @@ documentation_of: ../../library/graph/Dijkstra.hpp
 ---
 
 ## Description
-重みつきグラフの単一始点最短路を求める Dijkstra のアルゴリズム
+重みつきグラフの単一始点最短路を求める Dijkstra のアルゴリズム．
+辺の重みが非負であることを仮定する．
 ```
 vector<T> Dijkstra(const weighted_graph<T>& G, int s)
 ```
-重みつきグラフ $G$ において，頂点 $s$ から各頂点までの最短距離を求める．
-$s$ から到達できない場合は ``numeric_limits<T>::max()`` が格納される．
+重みつきグラフ $G$ において，頂点 $s$ から各頂点 $u$ までの最短距離 $d(u)$ を求める．
+$s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()`` となる．
 
 #### Constraints
 - $0\le s\lt n$

@@ -7,6 +7,10 @@
 	G が負閉路をもつ場合に, s からいくらでも小さいコストで到達できる頂点の距離は NINF となる (-INF ではないので注意)
 */
 
+#pragma once
+#include "../template.hpp"
+#include "wgraph.hpp"
+
 template<class T>
 vector<T> Bellman_Ford(const weighted_graph<T>& G,int s){
 	const T INF=numeric_limits<T>::max();
