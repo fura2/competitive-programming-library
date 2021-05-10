@@ -4,6 +4,9 @@
 #include "../../library/template.hpp"
 #include "../../library/graph/Dijkstra.hpp"
 
+// T が double 型のケース
+// ライブラリの要件を満たしていないが実用上問題なく動く
+
 int main(){
 	int n,m,s,t; scanf("%d%d%d%d",&n,&m,&s,&t); s--; t--;
 	vector<double> x(n),y(n);

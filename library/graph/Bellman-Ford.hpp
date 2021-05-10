@@ -1,12 +1,3 @@
-/*
-	単一始点最短路
-	負の重みがあってもよい
-	T = int, lint を想定している (double だと不等号に EPS を考慮しないとまずいかも)
-
-	s から到達できない頂点の距離は INF となる (ある負閉路から到達可能であっても)
-	G が負閉路をもつ場合に, s からいくらでも小さいコストで到達できる頂点の距離は NINF となる (-INF ではないので注意)
-*/
-
 #pragma once
 #include "../template.hpp"
 #include "wgraph.hpp"
