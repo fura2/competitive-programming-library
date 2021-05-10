@@ -19,23 +19,6 @@ public:
 };
 
 // 台集合 : T の元全体
-// 積 : max
-// 仮定 : T 上の全順序が定義されていて numeric_limits<T>::min() が最小元
-
-template<class T>
-class max_monoid{
-	T a;
-public:
-	max_monoid():a(numeric_limits<T>::min()){}
-	max_monoid(const T& val):a(val){}
-	max_monoid operator*(const max_monoid& x)const{
-		return max(a,x.a);
-	}
-	T& get(){ return a; }
-	const T& get()const{ return a; }
-};
-
-// 台集合 : T の元全体
 // 積 : +
 // 仮定 : T 上の結合的な二項演算 + が定義されていて T() が加法単位元
 
