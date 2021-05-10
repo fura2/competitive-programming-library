@@ -50,7 +50,7 @@ $a_l,a_{l+1},\ldots,a_{r-1}$ に $\mathrm{val}$ を加える
 ```
 T max(int l, int r)
 ```
-$\max\lbrace a_l,a_{l+1},\cdots,a_{r-1}\rbrace$ を求める．\\
+$\max\lbrace a_l,a_{l+1},\cdots,a_{r-1}\rbrace$ を求める．
 $l=r$ のときは ``numeric_limits<T>::min()`` が返る．
 
 #### Constraints
