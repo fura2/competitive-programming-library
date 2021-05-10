@@ -5,8 +5,7 @@ class union_find{
 	int n;
 	vector<int> p;
 public:
-	union_find()=default;
-	union_find(int n){ build(n); }
+	union_find(int n=0){ build(n); }
 	void build(int n){
 		this->n=n;
 		p.assign(n,-1);

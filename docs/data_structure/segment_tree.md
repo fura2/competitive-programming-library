@@ -4,27 +4,24 @@ documentation_of: ../../library/data_structure/segment_tree.hpp
 ---
 
 ## Description
-モノイド $(M,\ast)$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点更新と区間積を $O(\log n)$ で処理するデータ構造．  
+モノイド $(M,\ast)$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点更新と区間積を $O(\log n)$ で処理するデータ構造．\\
 以下では，$M$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
 
 ### (constructor)
 ```
-(1) segment_tree<M>()
-(2) segment_tree<M>(int n)
-(3) segment_tree<M>(const vector<T>& a)
+(1) segment_tree<M>(int n=0)
+(2) segment_tree<M>(const vector<T>& a)
 ```
-- (1) 空の列で初期化する
-- (2) $M$ の単位元 $e$ のみからなる長さ $n$ の列で初期化する
-- (3) $a$ で初期化する
+- (1) $M$ の単位元 $e$ のみからなる長さ $n$ の列で初期化する
+- (2) $a$ で初期化する
 
 #### Constraints
 - $(M,\ast)$ はモノイド (デフォルトコンストラクタが $M$ の単位元を生成する)
-- (2) $n\ge0$
-- (3) $T$ は $M$ にキャストできる ($T$ と $M$ が一致していなくてもよい)．
+- (1) $n\ge0$
+- (2) $T$ は $M$ にキャストできる ($T$ と $M$ が一致していなくてもよい)．
 
 #### Complexity
-- (1) $O(1)$
-- (2), (3) $O(n)$
+- $O(n)$
 
 ### build
 ```

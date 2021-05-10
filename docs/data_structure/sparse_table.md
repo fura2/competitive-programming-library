@@ -4,23 +4,20 @@ documentation_of: ../../library/data_structure/sparse_table.hpp
 ---
 
 ## Description
-数列 $a_0,\ldots,a_{n-1}$ に対して，[RMQ](https://en.wikipedia.org/wiki/Range_minimum_query) を構築 $O(n\log n)$ / 区間 min クエリ $O(1)$ で処理するデータ構造．  
+数列 $a_0,\ldots,a_{n-1}$ に対して，[RMQ](https://en.wikipedia.org/wiki/Range_minimum_query) を構築 $O(n\log n)$ / 区間 min クエリ $O(1)$ で処理するデータ構造．\\
 素直に [band](https://en.wikipedia.org/wiki/Band_(algebra)) (冪等半群) の元の列に一般化できるが，ここでは RMQ に特化した形で実装した．
 
 ### (constructor)
 ```
-(1) sparse_table<T>()
-(2) sparse_table<T>(const vector<T>& a)
+sparse_table<T>(const vector<T>& a = vector<T>())
 ```
-- (1) 空の列で初期化する
-- (2) $a$ で初期化する
+- $a$ で初期化する
 
 #### Constraints
 - $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
 
 #### Complexity
-- (1) $O(1)$
-- (2) $O(n\log n)$
+- $O(n\log n)$
 
 ### build
 ```

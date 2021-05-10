@@ -12,18 +12,15 @@ union by size と path compression を実装している．
 
 ### (constructor)
 ```
-(1) union_find()
-(2) union_find(int n)
+union_find(int n = 0)
 ```
-- (1) 空集合で初期化する
-- (2) 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
+- 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
 
 #### Constraints
-- (2) $n\ge0$
+- $n\ge0$
 
 #### Complexity
-- (1) $O(1)$
-- (2) $O(n)$
+- $O(n)$
 
 ### build
 ```

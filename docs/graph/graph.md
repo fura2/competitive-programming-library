@@ -11,7 +11,7 @@ documentation_of: ../../library/graph/graph.hpp
 ```
 void add_undirected_edge(graph& G, int u, int v)
 ```
-グラフ $G$ の頂点 $u$ と $v$ の間に無向辺を張る．
+グラフ $G$ の頂点 $u$ と $v$ の間に無向辺を張る
 
 #### Constraints
 - $0\le u,v\lt n$
@@ -23,7 +23,7 @@ void add_undirected_edge(graph& G, int u, int v)
 ```
 void add_directed_edge(graph& G, int u, int v)
 ```
-グラフ $G$ の頂点 $u$ から $v$ へ有向辺を張る．
+グラフ $G$ の頂点 $u$ から $v$ へ有向辺を張る
 
 #### Constraints
 - $0\le u,v\lt n$

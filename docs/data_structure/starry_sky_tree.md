@@ -8,19 +8,16 @@ documentation_of: ../../library/data_structure/starry_sky_tree.hpp
 
 ### (constructor)
 ```
-(1) starry_sky_tree<T>()
-(2) starry_sky_tree<T>(int n)
+starry_sky_tree<T>(int n = 0)
 ```
-- (1) 空の列で初期化する
-- (2) $0$ のみからなる長さ $n$ の列で初期化する
+- $0$ のみからなる長さ $n$ の列で初期化する
 
 #### Constraints
 - $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
-- (2) $n\ge0$
+- $n\ge0$
 
 #### Complexity
-- (1) $O(1)$
-- (2) $O(n)$
+- $O(n)$
 
 ### build
 ```

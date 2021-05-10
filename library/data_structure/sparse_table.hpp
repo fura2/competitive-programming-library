@@ -6,8 +6,7 @@ class sparse_table{
 	vector<vector<T>> st;
 	vector<int> h;
 public:
-	sparse_table()=default;
-	sparse_table(const vector<T>& a){ build(a); }
+	sparse_table(const vector<T>& a=vector<T>()){ build(a); }
 	void build(const vector<T>& a){
 		int n=a.size();
 		h.assign(n+1,0);

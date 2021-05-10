@@ -19,8 +19,7 @@ class starry_sky_tree{
 		return std::max(lmax,rmax);
 	}
 public:
-	starry_sky_tree()=default;
-	starry_sky_tree(int n){ build(n); }
+	starry_sky_tree(int n=0){ build(n); }
 	void build(int n){
 		for(sz=1;sz<n;sz<<=1);
 		seg.assign(2*sz,T());

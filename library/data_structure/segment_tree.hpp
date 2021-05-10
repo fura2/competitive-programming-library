@@ -6,8 +6,7 @@ class segment_tree{
 	int n,sz;
 	vector<M> seg;
 public:
-	segment_tree()=default;
-	segment_tree(int n){ build(n); }
+	segment_tree(int n=0){ build(n); }
 	template<class T>
 	segment_tree(const vector<T>& a){ build(a); }
 

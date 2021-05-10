@@ -12,7 +12,7 @@ documentation_of: ../../library/graph/wgraph.hpp
 ```
 void add_undirected_edge(weighted_graph<T>& G, int u, int v, const T& wt)
 ```
-グラフ $G$ の頂点 $u$ と $v$ の間に重み $\mathrm{wt}$ の無向辺を張る．
+グラフ $G$ の頂点 $u$ と $v$ の間に重み $\mathrm{wt}$ の無向辺を張る
 
 #### Constraints
 - $0\le u,v\lt n$
@@ -24,7 +24,7 @@ void add_undirected_edge(weighted_graph<T>& G, int u, int v, const T& wt)
 ```
 void add_directed_edge(weighted_graph<T>& G, int u, int v, const T& wt)
 ```
-グラフ $G$ の頂点 $u$ から $v$ へ重み $\mathrm{wt}$ の有向辺を張る．
+グラフ $G$ の頂点 $u$ から $v$ へ重み $\mathrm{wt}$ の有向辺を張る
 
 #### Constraints
 - $0\le u,v\lt n$

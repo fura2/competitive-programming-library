@@ -9,11 +9,9 @@ $T$ の元全体を台集合とし，積を $a\ast b=\min\lbrace a,b\rbrace$ と
 
 ### (constructor)
 ```
-(1) min_monoid<T>()
-(2) min_monoid<T>(const T& val)
+min_monoid<T>(const T& val = numeric_limits<T>::max())
 ```
-- (1) 単位元で初期化する
-- (2) $\mathrm{val}$ で初期化する
+- $\mathrm{val}$ で初期化する
 
 #### Constraints
 - $T$ 上の比較演算子 $<$ が定義されていて，これについて $T$ は全順序集合

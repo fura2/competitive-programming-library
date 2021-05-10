@@ -19,23 +19,6 @@ public:
 };
 
 // 台集合 : T の元全体
-// 積 : +
-// 仮定 : T 上の結合的な二項演算 + が定義されていて T() が加法単位元
-
-template<class T>
-class add_monoid{
-	T a;
-public:
-	add_monoid():a(){}
-	add_monoid(const T& val):a(val){}
-	add_monoid operator*(const add_monoid& x)const{
-		return a+x.a;
-	}
-	T& get(){ return a; }
-	const T& get()const{ return a; }
-};
-
-// 台集合 : T の元全体
 // 積 : bitwise OR
 // 仮定 : T は int または lint を想定
 

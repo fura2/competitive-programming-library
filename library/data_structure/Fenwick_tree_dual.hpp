@@ -5,8 +5,7 @@ template<class G>
 class Fenwick_tree_dual{
 	vector<G> a;
 public:
-	Fenwick_tree_dual()=default;
-	Fenwick_tree_dual(int n){ build(n); }
+	Fenwick_tree_dual(int n=0){ build(n); }
 	Fenwick_tree_dual(const vector<G>& a){ build(a); }
 	void build(int n){
 		a.assign(n,G{});
