@@ -11,10 +11,10 @@ int main(){
 		add_directed_edge(G,u,v,c);
 	}
 
-	// for(auto d:Dijkstra(G,s)){
-	// 	if(d<INT_MAX) printf("%d\n",d);
-	// 	else          puts("INF");
-	// }
+	for(auto d:Dijkstra(G,s)){
+		if(d<INT_MAX) printf("%d\n",d);
+		else          puts("INF");
+	}
 
 	return 0;
 }

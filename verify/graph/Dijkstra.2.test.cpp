@@ -15,7 +15,7 @@ int main(){
 		add_undirected_edge(G,u,v,hypot(x[u]-x[v],y[u]-y[v]));
 	}
 
-	// printf("%.9f\n",Dijkstra(G,s)[t]);
+	printf("%.9f\n",Dijkstra(G,s)[t]);
 
 	return 0;
 }
