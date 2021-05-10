@@ -74,7 +74,7 @@ $s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()
 
 #### Constraints
 - $0\le s\lt n$
-- $T$ は整数型 (``int``, ``long long`` など) で，``numeric_limits<T>::max()`` が定義されている．
+- $G$ の辺の重みの型 $T$ は整数型 (``int``, ``long long`` など) で，``numeric_limits<T>::max()`` が定義されている．
 - $G$ の辺の重みは非負
 
 #### Complexity

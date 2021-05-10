@@ -20,9 +20,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
     title: Dijkstra's Algorithm
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/graph.hpp
     title: Graph
+  - icon: ':heavy_check_mark:'
+    path: library/graph/tree_diameter.hpp
+    title: Diameter of a Tree
   - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
@@ -51,6 +54,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.2.test.cpp
     title: verify/graph/Dijkstra.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tree_diameter.1.test.cpp
+    title: verify/graph/tree_diameter.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tree_diameter.2.test.cpp
+    title: verify/graph/tree_diameter.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/string/z.1.test.cpp
     title: verify/string/z.1.test.cpp
@@ -185,6 +194,7 @@ data:
   path: library/template.hpp
   requiredBy:
   - library/string/z.hpp
+  - library/graph/tree_diameter.hpp
   - library/graph/wgraph.hpp
   - library/graph/Bellman-Ford.hpp
   - library/graph/Dijkstra.hpp
@@ -198,9 +208,11 @@ data:
   verifiedWith:
   - verify/string/z.2.test.cpp
   - verify/string/z.1.test.cpp
+  - verify/graph/tree_diameter.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
+  - verify/graph/tree_diameter.2.test.cpp
   - verify/data_structure/Fenwick_tree.test.cpp
   - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/union-find.test.cpp

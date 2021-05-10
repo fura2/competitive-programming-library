@@ -4,11 +4,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graph/tree_diameter.hpp
+    title: Diameter of a Tree
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tree_diameter.1.test.cpp
+    title: verify/graph/tree_diameter.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tree_diameter.2.test.cpp
+    title: verify/graph/tree_diameter.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
@@ -30,10 +39,13 @@ data:
   - library/template.hpp
   isVerificationFile: false
   path: library/graph/graph.hpp
-  requiredBy: []
+  requiredBy:
+  - library/graph/tree_diameter.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/graph/tree_diameter.1.test.cpp
+  - verify/graph/tree_diameter.2.test.cpp
 documentation_of: library/graph/graph.hpp
 layout: document
 title: Graph

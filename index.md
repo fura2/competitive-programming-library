@@ -111,7 +111,7 @@ data:
     - icon: ':warning:'
       path: library/graph/functional_graph.hpp
       title: library/graph/functional_graph.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/graph.hpp
       title: Graph
     - icon: ':warning:'
@@ -129,9 +129,9 @@ data:
     - icon: ':warning:'
       path: library/graph/topological_order.hpp
       title: library/graph/topological_order.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/tree_diameter.hpp
-      title: library/graph/tree_diameter.hpp
+      title: Diameter of a Tree
     - icon: ':warning:'
       path: library/graph/two_coloring.hpp
       title: library/graph/two_coloring.hpp
@@ -331,6 +331,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.2.test.cpp
       title: verify/graph/Dijkstra.2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/tree_diameter.1.test.cpp
+      title: verify/graph/tree_diameter.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/tree_diameter.2.test.cpp
+      title: verify/graph/tree_diameter.2.test.cpp
   - name: verify/string
     pages:
     - icon: ':heavy_check_mark:'

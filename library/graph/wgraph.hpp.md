@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
     title: Dijkstra's Algorithm
+  - icon: ':heavy_check_mark:'
+    path: library/graph/tree_diameter.hpp
+    title: Diameter of a Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/graph/Bellman-Ford.test.cpp
@@ -21,6 +24,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.2.test.cpp
     title: verify/graph/Dijkstra.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tree_diameter.1.test.cpp
+    title: verify/graph/tree_diameter.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tree_diameter.2.test.cpp
+    title: verify/graph/tree_diameter.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -51,14 +60,17 @@ data:
   isVerificationFile: false
   path: library/graph/wgraph.hpp
   requiredBy:
+  - library/graph/tree_diameter.hpp
   - library/graph/Bellman-Ford.hpp
   - library/graph/Dijkstra.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/graph/tree_diameter.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
+  - verify/graph/tree_diameter.2.test.cpp
 documentation_of: library/graph/wgraph.hpp
 layout: document
 title: Weighted Graph
