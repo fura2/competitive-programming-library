@@ -1,12 +1,3 @@
-/*
-	Starry Sky tree
-		区間 add と区間 max 取得ができる segment tree
-		T は int, lint, double のいずれかを想定している
-	参考
-		https://qnighy.github.io/informatics-olympiad/joi2009-day4-starry_sky-comment.html
-		https://rsk0315.hatenablog.com/entry/2019/06/21/174953
-*/
-
 template<class T>
 class starry_sky_tree{
 	int sz;
@@ -28,7 +19,9 @@ class starry_sky_tree{
 		return std::max(lmax,rmax);
 	}
 public:
-	starry_sky_tree(int n){
+	starry_sky_tree()=default;
+	starry_sky_tree(int n){ build(n); }
+	void build(int n){
 		for(sz=1;sz<n;sz<<=1);
 		seg.assign(2*sz,T());
 	}

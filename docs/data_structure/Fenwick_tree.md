@@ -58,7 +58,7 @@ G sum(int l, int r)
 $a_l+a_{l+1}+\cdots+a_{r-1}$ を求める
 
 #### Constraints
-- $0\le l\le r\lt n$
+- $0\le l\le r\le n$
 
 #### Complexity
 - $O(\log n)$

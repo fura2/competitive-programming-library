@@ -72,7 +72,7 @@ M product(int l, int r)
 $a_l\ast a_{l+1}\ast\cdots\ast a_{r-1}$ を求める
 
 #### Constraints
-- $0\le l\le r\lt n$
+- $0\le l\le r\le n$
 
 #### Complexity
 - $O(\log n)$
@@ -87,7 +87,7 @@ $M$ における積の計算量が大きく，$N$ における積と $f$ を作�
 #### Constraints
 - $(N,\ast)$ はモノイド (デフォルトコンストラクタが $N$ の単位元を生成する)
 - $f:M\to N$ はモノイドの準同型
-- $0\le l\le r\lt n$
+- $0\le l\le r\le n$
 
 #### Complexity
 - $O(\log n)$ ($N$ の演算とインスタンスの生成，および，$f$ を作用させる計算量が $O(1)$ であることを仮定)
