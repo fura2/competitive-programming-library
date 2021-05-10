@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/Bellman-Ford.hpp
     title: Bellman-Ford Algorithm
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []

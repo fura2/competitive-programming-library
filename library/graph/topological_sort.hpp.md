@@ -1,26 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/graph.hpp
     title: Graph
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/graph/topological_sort.1.test.cpp
-    title: verify/graph/topological_sort.1.test.cpp
-  - icon: ':x:'
-    path: verify/graph/topological_sort.2.test.cpp
-    title: verify/graph/topological_sort.2.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
@@ -68,10 +62,8 @@ data:
   path: library/graph/topological_sort.hpp
   requiredBy: []
   timestamp: '2021-05-10 18:20:26+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/graph/topological_sort.1.test.cpp
-  - verify/graph/topological_sort.2.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/graph/topological_sort.hpp
 layout: document
 title: Topological Sort

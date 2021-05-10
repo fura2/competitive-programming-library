@@ -111,7 +111,7 @@ data:
     - icon: ':warning:'
       path: library/graph/functional_graph.hpp
       title: library/graph/functional_graph.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/graph.hpp
       title: Graph
     - icon: ':warning:'
@@ -126,7 +126,7 @@ data:
     - icon: ':warning:'
       path: library/graph/tecc.hpp
       title: library/graph/tecc.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/graph/topological_sort.hpp
       title: Topological Sort
     - icon: ':heavy_check_mark:'
@@ -135,7 +135,7 @@ data:
     - icon: ':warning:'
       path: library/graph/two_coloring.hpp
       title: library/graph/two_coloring.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/wgraph.hpp
       title: Weighted Graph
   - name: library/linear_algebra
@@ -302,7 +302,7 @@ data:
       title: Z Algorithm
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/template.hpp
       title: library/template.hpp
   verificationCategories:
@@ -331,12 +331,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.2.test.cpp
       title: verify/graph/Dijkstra.2.test.cpp
-    - icon: ':x:'
-      path: verify/graph/topological_sort.1.test.cpp
-      title: verify/graph/topological_sort.1.test.cpp
-    - icon: ':x:'
-      path: verify/graph/topological_sort.2.test.cpp
-      title: verify/graph/topological_sort.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter.1.test.cpp
       title: verify/graph/tree_diameter.1.test.cpp

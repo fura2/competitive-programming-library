@@ -1,32 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/graph/topological_sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
     path: library/graph/tree_diameter.hpp
     title: Diameter of a Tree
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/graph/topological_sort.1.test.cpp
-    title: verify/graph/topological_sort.1.test.cpp
-  - icon: ':x:'
-    path: verify/graph/topological_sort.2.test.cpp
-    title: verify/graph/topological_sort.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter.1.test.cpp
     title: verify/graph/tree_diameter.1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter.2.test.cpp
     title: verify/graph/tree_diameter.2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
@@ -52,12 +46,10 @@ data:
   - library/graph/tree_diameter.hpp
   - library/graph/topological_sort.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/tree_diameter.1.test.cpp
-  - verify/graph/topological_sort.1.test.cpp
   - verify/graph/tree_diameter.2.test.cpp
-  - verify/graph/topological_sort.2.test.cpp
 documentation_of: library/graph/graph.hpp
 layout: document
 title: Graph
