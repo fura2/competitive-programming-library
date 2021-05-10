@@ -6,7 +6,7 @@ data:
     title: Segment Tree
   - icon: ':heavy_check_mark:'
     path: library/monoid/min_monoid.hpp
-    title: library/monoid/min_monoid.hpp
+    title: Minimum Monoid
   - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
@@ -72,7 +72,7 @@ data:
     \ scanf(\"%d%d\",&n,&q);\n\n\tsegment_tree<min_monoid<int>> S(n);\n\trep(_,q){\n\
     \t\tint type,x,y; scanf(\"%d%d%d\",&type,&x,&y);\n\t\tif(type==0){\n\t\t\tS.update(x,y);\n\
     \t\t}\n\t\telse{\n\t\t\ty++;\n\t\t\tprintf(\"%d\\n\",S.product(x,y).get());\n\t\
-    \t}\n\t}\n\n\treturn 0;\n}"
+    \t}\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
   - library/template.hpp
   - library/data_structure/segment_tree.hpp
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/segment_tree.1.test.cpp
   requiredBy: []
-  timestamp: '2021-05-10 19:36:11+09:00'
+  timestamp: '2021-05-10 20:24:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/segment_tree.1.test.cpp

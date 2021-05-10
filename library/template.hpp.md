@@ -37,7 +37,7 @@ data:
     title: Weighted Graph
   - icon: ':heavy_check_mark:'
     path: library/monoid/min_monoid.hpp
-    title: library/monoid/min_monoid.hpp
+    title: Minimum Monoid
   - icon: ':heavy_check_mark:'
     path: library/string/z.hpp
     title: Z Algorithm

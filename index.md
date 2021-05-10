@@ -244,7 +244,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: library/monoid/min_monoid.hpp
-      title: library/monoid/min_monoid.hpp
+      title: Minimum Monoid
     - icon: ':warning:'
       path: library/monoid/monoid.hpp
       title: library/monoid/monoid.hpp
