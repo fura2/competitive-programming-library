@@ -4,17 +4,21 @@ documentation_of: ../../library/data_structure/sparse_table.hpp
 ---
 
 ## Description
-数列 $a_0,\ldots,a_{n-1}$ に対して，[RMQ](https://en.wikipedia.org/wiki/Range_minimum_query) を構築 $O(n\log n)$ / 区間 min クエリ $O(1)$ で処理するデータ構造．\\
-素直に [band](https://en.wikipedia.org/wiki/Band_(algebra)) (冪等半群) の元の列に一般化できるが，ここでは RMQ に特化した形で実装した．
+[冪等半群](https://en.wikipedia.org/wiki/Band_(algebra)) $B$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，前処理を $O(n\log n)$ で，区間積を $O(1)$ で処理するデータ構造．\\
+$B$ の可換性は要求しない．
+以下では，$B$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
 
 ### (constructor)
 ```
-sparse_table<T>(const vector<T>& a = vector<T>())
+(1) sparse_table<B>()
+(2) sparse_table<B>(const vector<T>& a)
 ```
-- $a$ で初期化する
+- (1) 空の列で初期化する
+- (2) $a$ で初期化する
 
 #### Constraints
-- $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
+- $(B,\ast)$ は冪等半群 ($B$ 上の結合的な二項演算 $\ast$ が定義されていて，すべての $a\in B$ に対して $a\ast a=a$)
+- (2) $T$ は $B$ にキャストできる ($T$ と $B$ が一致していなくてもよい)
 
 #### Complexity
 - $O(n\log n)$
@@ -26,16 +30,16 @@ void build(const vector<T>& a)
 - $a$ で初期化する
 
 #### Constraints
-- なし
+- $T$ は $B$ にキャストできる ($T$ と $B$ が一致していなくてもよい)
 
 #### Complexity
 - $O(n\log n)$
 
-### fold
+### product
 ```
-T fold(int l, int r)
+B product(int l, int r)
 ```
-$\min\lbrace a_l,a_{l+1},\ldots,a_{r-1}\rbrace$ を求める
+$a_l\ast a_{l+1}\ast\ldots\ast a_{r-1}$ を求める
 
 #### Constraints
 - $0\le l\lt r\le n$

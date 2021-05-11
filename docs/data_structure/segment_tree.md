@@ -18,7 +18,7 @@ documentation_of: ../../library/data_structure/segment_tree.hpp
 #### Constraints
 - $(M,\ast)$ はモノイド (デフォルトコンストラクタが $M$ の単位元を生成する)
 - (1) $n\ge0$
-- (2) $T$ は $M$ にキャストできる ($T$ と $M$ が一致していなくてもよい)．
+- (2) $T$ は $M$ にキャストできる ($T$ と $M$ が一致していなくてもよい)
 
 #### Complexity
 - $O(n)$
@@ -33,7 +33,7 @@ documentation_of: ../../library/data_structure/segment_tree.hpp
 
 #### Constraints
 - (1) $n\ge0$
-- (2) $T$ は $M$ にキャストできる ($T$ と $M$ が一致していなくてもよい)．
+- (2) $T$ は $M$ にキャストできる ($T$ と $M$ が一致していなくてもよい)
 
 #### Complexity
 - $O(n)$
