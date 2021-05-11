@@ -2,50 +2,6 @@
 #include "../template.hpp"
 #include "graph.hpp"
 
-/*
-[ constructor ]
-	引数
-		G : 有向グラフ
-	制約
-		なし
-	計算量
-		O(V+E)
-	備考
-		G には多重辺, 自己ループがあってもよい
-		G は連結でなくてもよい
-
-[ operator[] ]
-	説明
-		u が含まれる強連結成分の番号
-	引数
-		u : G の頂点
-	制約
-		0 <= u < |V(G)|
-	計算量
-		O(1)
-	備考
-		強連結成分の個数を K とすると, 強連結成分は DAG のトポロジカル順序にしたがって 0, 1, ..., K-1 で番号づけられている
-
-component
-	説明
-		i 番目の強連結成分を返す
-	引数
-		i : 強連結成分の番号
-	制約
-		0 <= i < 強連結成分の個数
-	計算量
-		O(1)
-
-DAG
-	説明
-		G 強連結成分を縮約して得られる DAG を返す
-		G に多重辺がなくても DAG には多重辺が含まれうる
-	計算量
-		O(1)
-	備考
-		強連結成分の個数を K とすると, 0, 1, ..., K-1 はこの DAG のトポロジカル順序になっている
-*/
-
 class strongly_connected_components{
 	vector<int> id;
 	vector<vector<int>> Comp;

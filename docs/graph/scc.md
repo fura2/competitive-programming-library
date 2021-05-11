@@ -35,10 +35,10 @@ void build(const graph& G)
 int operator[](int u)
 ```
 $G$ の頂点 $u$ が属する強連結成分の番号を求める．\\
-$G$ の強連結成分の個数を $K$ として，強連結成分は DAG のトポロジカル順序にしたがって $0,1,\ldots,K-1$ と番号づけられている．
+強連結成分の個数を $K$ として，強連結成分は DAG のトポロジカル順序にしたがって $0,1,\ldots,K-1$ と番号づけられている．
 
 #### Constraints
-- $0\le u\lt n$
+- $0\le u\lt V$
 
 #### Complexity
 - $O(1)$
@@ -47,7 +47,7 @@ $G$ の強連結成分の個数を $K$ として，強連結成分は DAG のト
 ```
 const vector<int>& component(int i)
 ```
-$G$ の強連結成分 $i$ を求める．\\
+$G$ の強連結成分 $i$ を求める．
 戻り値の ``vector`` に含まれる頂点は番号の昇順に並んでいる．
 
 #### Constraints
@@ -60,7 +60,7 @@ $G$ の強連結成分 $i$ を求める．\\
 ```
 const graph& DAG()
 ```
-$G$ の強連結成分を縮約して得られる DAG を求める．\\
+$G$ の強連結成分を縮約して得られる DAG を求める．
 この DAG は多重辺を持つことがある．
 
 #### Constraints
