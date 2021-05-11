@@ -73,7 +73,7 @@ vector<T> Dijkstra(const weighted_graph<T>& G, int s)
 $s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()`` となる．
 
 #### Constraints
-- $0\le s\lt n$
+- $0\le s\lt V$
 - $G$ の辺の重みの型 $T$ は整数型 (``int``, ``long long`` など) で，``numeric_limits<T>::max()`` が定義されている．
 - $G$ の辺の重みは非負
 
