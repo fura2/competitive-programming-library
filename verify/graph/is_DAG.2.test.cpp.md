@@ -5,25 +5,26 @@ data:
     path: library/graph/graph.hpp
     title: Graph
   - icon: ':heavy_check_mark:'
+    path: library/graph/is_DAG.hpp
+    title: DAG Detection
+  - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
   - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/graph/is_DAG.1.test.cpp
-    title: verify/graph/is_DAG.1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/graph/is_DAG.2.test.cpp
-    title: verify/graph/is_DAG.2.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
+    links:
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
+  bundledCode: "#line 1 \"verify/graph/is_DAG.2.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
+    \n\n#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
@@ -48,45 +49,30 @@ data:
     \ for(const auto& e:G[u]) deg[e.to]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\trep(u,n)\
     \ if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\
     \t\tcnt++;\n\t\tfor(const auto& e:G[u]) if(--deg[e.to]==0) Q.emplace(e.to);\n\t\
-    }\n\treturn cnt==n;\n}\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n#include \"graph.hpp\"\n#include\
-    \ \"wgraph.hpp\"\n\nbool is_DAG(const graph& G){\n\tint n=G.size();\n\tvector<int>\
-    \ deg(n);\n\trep(u,n) for(int v:G[u]) deg[v]++;\n\n\tint cnt=0;\n\tqueue<int>\
-    \ Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front();\
-    \ Q.pop();\n\t\tcnt++;\n\t\tfor(int v:G[u]) if(--deg[v]==0) Q.emplace(v);\n\t\
-    }\n\treturn cnt==n;\n}\n\ntemplate<class T>\nbool is_DAG(const weighted_graph<T>&\
-    \ G){\n\tint n=G.size();\n\tvector<int> deg(n);\n\trep(u,n) for(const auto& e:G[u])\
-    \ deg[e.to]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\
-    \twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tcnt++;\n\t\tfor(const\
-    \ auto& e:G[u]) if(--deg[e.to]==0) Q.emplace(e.to);\n\t}\n\treturn cnt==n;\n}\n"
+    }\n\treturn cnt==n;\n}\n#line 5 \"verify/graph/is_DAG.2.test.cpp\"\n\nint main(){\n\
+    \tint n,m; scanf(\"%d%d\",&n,&m);\n\tweighted_graph<int> G(n);\n\trep(i,m){\n\t\
+    \tint u,v; scanf(\"%d%d\",&u,&v);\n\t\tadd_directed_edge(G,u,v,1);\n\t}\n\n\t\
+    puts(is_DAG(G)?\"0\":\"1\");\n\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
+    \n\n#include \"../../library/template.hpp\"\n#include \"../../library/graph/is_DAG.hpp\"\
+    \n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\tweighted_graph<int> G(n);\n\
+    \trep(i,m){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\t\tadd_directed_edge(G,u,v,1);\n\
+    \t}\n\n\tputs(is_DAG(G)?\"0\":\"1\");\n\n\treturn 0;\n}\n"
   dependsOn:
   - library/template.hpp
+  - library/graph/is_DAG.hpp
   - library/graph/graph.hpp
   - library/graph/wgraph.hpp
-  isVerificationFile: false
-  path: library/graph/is_DAG.hpp
+  isVerificationFile: true
+  path: verify/graph/is_DAG.2.test.cpp
   requiredBy: []
   timestamp: '2021-05-11 20:07:31+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/graph/is_DAG.1.test.cpp
-  - verify/graph/is_DAG.2.test.cpp
-documentation_of: library/graph/is_DAG.hpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: verify/graph/is_DAG.2.test.cpp
 layout: document
-title: DAG Detection
+redirect_from:
+- /verify/verify/graph/is_DAG.2.test.cpp
+- /verify/verify/graph/is_DAG.2.test.cpp.html
+title: verify/graph/is_DAG.2.test.cpp
 ---
-
-## Description
-有向グラフが DAG かどうかの判定
-```
-(1) bool is_DAG(const graph& G)
-(2) bool is_DAG(const weighted_graph<T>& G)
-```
-- (1) 有向グラフ $G$ が DAG かどうかを判定する
-- (2) 重みつき有向グラフ $G$ が DAG かどうかを判定する
-
-#### Constraints
-- なし
-
-#### Complexity
-- $O(V+E)$

@@ -114,9 +114,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/graph.hpp
       title: Graph
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/is_DAG.hpp
-      title: library/graph/is_DAG.hpp
+      title: DAG Detection
     - icon: ':warning:'
       path: library/graph/odd_cycle.hpp
       title: library/graph/odd_cycle.hpp
@@ -358,6 +358,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.2.test.cpp
       title: verify/graph/Dijkstra.2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/is_DAG.1.test.cpp
+      title: verify/graph/is_DAG.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/is_DAG.2.test.cpp
+      title: verify/graph/is_DAG.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter.1.test.cpp
       title: verify/graph/tree_diameter.1.test.cpp
