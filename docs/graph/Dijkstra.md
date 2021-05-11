@@ -1,5 +1,5 @@
 ---
-title: Dijkstra's Algorithm
+title: Single-Source Shortest Path (Dijkstra's Algorithm)
 documentation_of: ../../library/graph/Dijkstra.hpp
 ---
 

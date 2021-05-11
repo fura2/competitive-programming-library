@@ -1,4 +1,7 @@
-/* 強連結成分分解 */
+#pragma once
+#include "../template.hpp"
+#include "graph.hpp"
+
 /*
 [ constructor ]
 	引数
@@ -49,8 +52,9 @@ class strongly_connected_components{
 	graph D;
 
 public:
-	strongly_connected_components(){}
-	strongly_connected_components(const graph& G){
+	strongly_connected_components(const graph& G=graph()){ build(G); }
+
+	void build(const graph& G){
 		int n=G.size();
 		graph G_rev(n);
 		rep(u,n) for(int v:G[u]) add_directed_edge(G_rev,v,u);

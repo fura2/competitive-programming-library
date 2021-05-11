@@ -1,5 +1,5 @@
 ---
-title: Bellman-Ford Algorithm
+title: Single-Source Shortest Path (Bellman-Ford Algorithm)
 documentation_of: ../../library/graph/Bellman-Ford.hpp
 ---
 
