@@ -22,28 +22,29 @@ data:
     #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
     \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
     using lint=long long;\n#line 3 \"library/data_structure/sparse_table.hpp\"\n\n\
-    template<class T>\nclass sparse_table{\n\tvector<vector<T>> st;\n\tvector<int>\
-    \ h;\npublic:\n\tsparse_table(const vector<T>& a=vector<T>()){ build(a); }\n\t\
-    void build(const vector<T>& a){\n\t\tint n=a.size();\n\t\th.assign(n+1,0);\n\t\
-    \tfor(int i=2;i<=n;i++) h[i]=h[i>>1]+1;\n\t\tst.resize(h[n]+1);\n\t\tst[0]=a;\n\
-    \t\tfor(int i=1;i<h[n]+1;i++){\n\t\t\tst[i].resize(n-(1<<i)+1);\n\t\t\trep(j,n-(1<<i)+1)\
-    \ st[i][j]=min(st[i-1][j],st[i-1][j+(1<<(i-1))]);\n\t\t}\n\t}\n\tT fold(int l,int\
-    \ r)const{\n\t\tint i=h[r-l];\n\t\treturn min(st[i][l],st[i][r-(1<<i)]);\n\t}\n\
-    };\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class T>\nclass sparse_table{\n\
-    \tvector<vector<T>> st;\n\tvector<int> h;\npublic:\n\tsparse_table(const vector<T>&\
-    \ a=vector<T>()){ build(a); }\n\tvoid build(const vector<T>& a){\n\t\tint n=a.size();\n\
-    \t\th.assign(n+1,0);\n\t\tfor(int i=2;i<=n;i++) h[i]=h[i>>1]+1;\n\t\tst.resize(h[n]+1);\n\
-    \t\tst[0]=a;\n\t\tfor(int i=1;i<h[n]+1;i++){\n\t\t\tst[i].resize(n-(1<<i)+1);\n\
-    \t\t\trep(j,n-(1<<i)+1) st[i][j]=min(st[i-1][j],st[i-1][j+(1<<(i-1))]);\n\t\t\
-    }\n\t}\n\tT fold(int l,int r)const{\n\t\tint i=h[r-l];\n\t\treturn min(st[i][l],st[i][r-(1<<i)]);\n\
+    template<class B>\nclass sparse_table{\n\tvector<vector<B>> st;\n\tvector<int>\
+    \ h;\npublic:\n\tsparse_table()=default;\n\ttemplate<class T>\n\tsparse_table(const\
+    \ vector<T>& a){ build(a); }\n\n\ttemplate<class T>\n\tvoid build(const vector<T>&\
+    \ a){\n\t\tint n=a.size();\n\t\th.assign(n+1,0);\n\t\tfor(int i=2;i<=n;i++) h[i]=h[i>>1]+1;\n\
+    \t\tst.resize(h[n]+1);\n\t\tst[0].resize(n);\n\t\trep(i,n) st[0][i]=a[i];\n\t\t\
+    for(int i=1;i<h[n]+1;i++){\n\t\t\tst[i].resize(n-(1<<i)+1);\n\t\t\trep(j,n-(1<<i)+1)\
+    \ st[i][j]=st[i-1][j]*st[i-1][j+(1<<(i-1))];\n\t\t}\n\t}\n\n\tB product(int l,int\
+    \ r)const{\n\t\tint i=h[r-l];\n\t\treturn st[i][l]*st[i][r-(1<<i)];\n\t}\n};\n"
+  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class B>\nclass sparse_table{\n\
+    \tvector<vector<B>> st;\n\tvector<int> h;\npublic:\n\tsparse_table()=default;\n\
+    \ttemplate<class T>\n\tsparse_table(const vector<T>& a){ build(a); }\n\n\ttemplate<class\
+    \ T>\n\tvoid build(const vector<T>& a){\n\t\tint n=a.size();\n\t\th.assign(n+1,0);\n\
+    \t\tfor(int i=2;i<=n;i++) h[i]=h[i>>1]+1;\n\t\tst.resize(h[n]+1);\n\t\tst[0].resize(n);\n\
+    \t\trep(i,n) st[0][i]=a[i];\n\t\tfor(int i=1;i<h[n]+1;i++){\n\t\t\tst[i].resize(n-(1<<i)+1);\n\
+    \t\t\trep(j,n-(1<<i)+1) st[i][j]=st[i-1][j]*st[i-1][j+(1<<(i-1))];\n\t\t}\n\t\
+    }\n\n\tB product(int l,int r)const{\n\t\tint i=h[r-l];\n\t\treturn st[i][l]*st[i][r-(1<<i)];\n\
     \t}\n};\n"
   dependsOn:
   - library/template.hpp
   isVerificationFile: false
   path: library/data_structure/sparse_table.hpp
   requiredBy: []
-  timestamp: '2021-05-11 00:34:53+09:00'
+  timestamp: '2021-05-11 19:34:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/sparse_table.test.cpp
@@ -53,17 +54,21 @@ title: Sparse Table
 ---
 
 ## Description
-数列 $a_0,\ldots,a_{n-1}$ に対して，[RMQ](https://en.wikipedia.org/wiki/Range_minimum_query) を構築 $O(n\log n)$ / 区間 min クエリ $O(1)$ で処理するデータ構造．\\
-素直に [band](https://en.wikipedia.org/wiki/Band_(algebra)) (冪等半群) の元の列に一般化できるが，ここでは RMQ に特化した形で実装した．
+[冪等半群](https://en.wikipedia.org/wiki/Band_(algebra)) $B$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，前処理を $O(n\log n)$ で，区間積を $O(1)$ で処理するデータ構造．\\
+$B$ の可換性は要求しない．
+以下では，$B$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
 
 ### (constructor)
 ```
-sparse_table<T>(const vector<T>& a = vector<T>())
+(1) sparse_table<B>()
+(2) sparse_table<B>(const vector<T>& a)
 ```
-- $a$ で初期化する
+- (1) 空の列で初期化する
+- (2) $a$ で初期化する
 
 #### Constraints
-- $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
+- $(B,\ast)$ は冪等半群 ($B$ 上の結合的な二項演算 $\ast$ が定義されていて，すべての $a\in B$ に対して $a\ast a=a$)
+- (2) $T$ は $B$ にキャストできる ($T$ と $B$ が一致していなくてもよい)
 
 #### Complexity
 - $O(n\log n)$
@@ -75,16 +80,16 @@ void build(const vector<T>& a)
 - $a$ で初期化する
 
 #### Constraints
-- なし
+- $T$ は $B$ にキャストできる ($T$ と $B$ が一致していなくてもよい)
 
 #### Complexity
 - $O(n\log n)$
 
-### fold
+### product
 ```
-T fold(int l, int r)
+B product(int l, int r)
 ```
-$\min\lbrace a_l,a_{l+1},\ldots,a_{r-1}\rbrace$ を求める
+$a_l\ast a_{l+1}\ast\ldots\ast a_{r-1}$ を求める
 
 #### Constraints
 - $0\le l\lt r\le n$
