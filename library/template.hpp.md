@@ -19,16 +19,19 @@ data:
     title: Union-Find
   - icon: ':heavy_check_mark:'
     path: library/graph/Bellman-Ford.hpp
-    title: Bellman-Ford Algorithm
+    title: Single-Source Shortest Path (Bellman-Ford Algorithm)
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
-    title: Dijkstra's Algorithm
+    title: Single-Source Shortest Path (Dijkstra's Algorithm)
   - icon: ':heavy_check_mark:'
     path: library/graph/graph.hpp
     title: Graph
   - icon: ':heavy_check_mark:'
     path: library/graph/is_DAG.hpp
     title: DAG Detection
+  - icon: ':heavy_check_mark:'
+    path: library/graph/scc.hpp
+    title: Strongly Connected Components Decomposition (Kosaraju's Algorithm)
   - icon: ':warning:'
     path: library/graph/topological_sort.hpp
     title: Topological Sort
@@ -96,6 +99,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/is_DAG.2.test.cpp
     title: verify/graph/is_DAG.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/scc.1.test.cpp
+    title: verify/graph/scc.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/scc.2.test.cpp
+    title: verify/graph/scc.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter.1.test.cpp
     title: verify/graph/tree_diameter.1.test.cpp
@@ -243,6 +252,7 @@ data:
   - library/graph/graph.hpp
   - library/graph/is_DAG.hpp
   - library/graph/topological_sort.hpp
+  - library/graph/scc.hpp
   - library/monoid/max_monoid.hpp
   - library/monoid/min_monoid.hpp
   - library/monoid/add_monoid.hpp
@@ -258,6 +268,8 @@ data:
   - verify/string/z.1.test.cpp
   - verify/graph/tree_diameter.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
+  - verify/graph/scc.1.test.cpp
+  - verify/graph/scc.2.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
   - verify/graph/tree_diameter.2.test.cpp

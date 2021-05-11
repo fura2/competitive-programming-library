@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
-    title: Dijkstra's Algorithm
+    title: Single-Source Shortest Path (Dijkstra's Algorithm)
   - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph

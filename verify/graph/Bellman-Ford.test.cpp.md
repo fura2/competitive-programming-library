@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/Bellman-Ford.hpp
-    title: Bellman-Ford Algorithm
+    title: Single-Source Shortest Path (Bellman-Ford Algorithm)
   - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph

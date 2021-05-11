@@ -7,10 +7,10 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/graph/Bellman-Ford.hpp
-    title: Bellman-Ford Algorithm
+    title: Single-Source Shortest Path (Bellman-Ford Algorithm)
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
-    title: Dijkstra's Algorithm
+    title: Single-Source Shortest Path (Dijkstra's Algorithm)
   - icon: ':heavy_check_mark:'
     path: library/graph/is_DAG.hpp
     title: DAG Detection

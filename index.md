@@ -86,10 +86,10 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: library/graph/Bellman-Ford.hpp
-      title: Bellman-Ford Algorithm
+      title: Single-Source Shortest Path (Bellman-Ford Algorithm)
     - icon: ':heavy_check_mark:'
       path: library/graph/Dijkstra.hpp
-      title: Dijkstra's Algorithm
+      title: Single-Source Shortest Path (Dijkstra's Algorithm)
     - icon: ':warning:'
       path: library/graph/Euler_tour_path.hpp
       title: library/graph/Euler_tour_path.hpp
@@ -120,9 +120,9 @@ data:
     - icon: ':warning:'
       path: library/graph/odd_cycle.hpp
       title: library/graph/odd_cycle.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/scc.hpp
-      title: library/graph/scc.hpp
+      title: Strongly Connected Components Decomposition (Kosaraju's Algorithm)
     - icon: ':warning:'
       path: library/graph/tecc.hpp
       title: library/graph/tecc.hpp
@@ -364,6 +364,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/is_DAG.2.test.cpp
       title: verify/graph/is_DAG.2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/scc.1.test.cpp
+      title: verify/graph/scc.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/scc.2.test.cpp
+      title: verify/graph/scc.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter.1.test.cpp
       title: verify/graph/tree_diameter.1.test.cpp

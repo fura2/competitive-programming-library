@@ -60,7 +60,7 @@ data:
   - verify/graph/Dijkstra.2.test.cpp
 documentation_of: library/graph/Dijkstra.hpp
 layout: document
-title: Dijkstra's Algorithm
+title: Single-Source Shortest Path (Dijkstra's Algorithm)
 ---
 
 ## Description

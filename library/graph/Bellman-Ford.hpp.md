@@ -60,7 +60,7 @@ data:
   - verify/graph/Bellman-Ford.test.cpp
 documentation_of: library/graph/Bellman-Ford.hpp
 layout: document
-title: Bellman-Ford Algorithm
+title: Single-Source Shortest Path (Bellman-Ford Algorithm)
 ---
 
 ## Description
