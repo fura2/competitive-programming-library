@@ -17,10 +17,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
-  bundledCode: "#line 1 \"verify/graph/Prim.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A
+  bundledCode: "#line 1 \"verify/graph/Prim.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A\"\
     \n\n#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
@@ -45,13 +45,13 @@ data:
     \ [v,wt]:G[u]){\n\t\t\t\tif(!vis[v] && d[v]>wt){\n\t\t\t\t\td[v]=wt;\n\t\t\t\t\
     \tpre[v]=u;\n\t\t\t\t\tQ.emplace(d[v],v);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\t\
     return {total,MSF};\n}\n#line 5 \"verify/graph/Prim.test.cpp\"\n\nint main(){\n\
-    \tint n,m; scanf(\"%d%d\",&n,&m);\n\tweighted_graph<int> G(n);\n\trep(i,m){\n\t\
-    \tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\t\tadd_undirected_edge(G,u,v,c);\n\t\
-    }\n\n\tprintf(\"%d\\n\",Prim(G).first);\n\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
+    \tint n; scanf(\"%d\",&n);\n\tweighted_graph<int> G(n);\n\trep(u,n) rep(v,n) {\n\
+    \t\tint c; scanf(\"%d\",&c);\n\t\tif(u<v && c!=-1) add_undirected_edge(G,u,v,c);\n\
+    \t}\n\n\tprintf(\"%d\\n\",Prim(G).first);\n\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A\"\
     \n\n#include \"../../library/template.hpp\"\n#include \"../../library/graph/Prim.hpp\"\
-    \n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\tweighted_graph<int> G(n);\n\
-    \trep(i,m){\n\t\tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\t\tadd_undirected_edge(G,u,v,c);\n\
+    \n\nint main(){\n\tint n; scanf(\"%d\",&n);\n\tweighted_graph<int> G(n);\n\trep(u,n)\
+    \ rep(v,n) {\n\t\tint c; scanf(\"%d\",&c);\n\t\tif(u<v && c!=-1) add_undirected_edge(G,u,v,c);\n\
     \t}\n\n\tprintf(\"%d\\n\",Prim(G).first);\n\n\treturn 0;\n}\n"
   dependsOn:
   - library/template.hpp
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: verify/graph/Prim.test.cpp
   requiredBy: []
-  timestamp: '2021-05-12 18:21:00+09:00'
+  timestamp: '2021-05-12 18:24:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/Prim.test.cpp
