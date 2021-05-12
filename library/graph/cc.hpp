@@ -1,4 +1,6 @@
-// 無向グラフの連結成分を求める
+#pragma once
+#include "../template.hpp"
+#include "graph.hpp"
 
 vector<vector<int>> connected_components(const graph& G){
 	int n=G.size();
