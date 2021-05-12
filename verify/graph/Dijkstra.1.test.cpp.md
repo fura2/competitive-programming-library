@@ -38,10 +38,10 @@ data:
     \ weighted_graph<T>& G,int s){\n\tconstexpr T INF=numeric_limits<T>::max();\n\t\
     int n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
     \ Q;\n\tQ.emplace(0,s);\n\twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\
-    \t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const auto& e:G[u]){\n\t\t\t\
-    int v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\t\t\t\tQ.emplace(d[v],v);\n\
-    \t\t\t}\n\t\t}\n\t}\n\treturn d;\n}\n#line 5 \"verify/graph/Dijkstra.1.test.cpp\"\
-    \n\nint main(){\n\tint n,m,s; scanf(\"%d%d%d\",&n,&m,&s);\n\tweighted_graph<int>\
+    \t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const auto& [v,wt]:G[u]){\n\t\
+    \t\tif(d[v]>d[u]+wt){\n\t\t\t\td[v]=d[u]+wt;\n\t\t\t\tQ.emplace(d[v],v);\n\t\t\
+    \t}\n\t\t}\n\t}\n\treturn d;\n}\n#line 5 \"verify/graph/Dijkstra.1.test.cpp\"\n\
+    \nint main(){\n\tint n,m,s; scanf(\"%d%d%d\",&n,&m,&s);\n\tweighted_graph<int>\
     \ G(n);\n\trep(i,m){\n\t\tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\t\tadd_directed_edge(G,u,v,c);\n\
     \t}\n\n\tfor(auto d:Dijkstra(G,s)){\n\t\tif(d<INT_MAX) printf(\"%d\\n\",d);\n\t\
     \telse          puts(\"INF\");\n\t}\n\n\treturn 0;\n}\n"
@@ -58,7 +58,7 @@ data:
   isVerificationFile: true
   path: verify/graph/Dijkstra.1.test.cpp
   requiredBy: []
-  timestamp: '2021-05-10 16:28:04+09:00'
+  timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/Dijkstra.1.test.cpp

@@ -50,9 +50,9 @@ data:
     \t}\n\treverse(P.begin(),P.end());\n\n\treturn {diam,P};\n}\n\ntemplate<class\
     \ W>\npair<W,vector<int>> tree_diameter(const weighted_graph<W>& T){\n\tint n=T.size();\n\
     \tvector<int> pre(n,-1);\n\n\tauto dfs=[&](auto&& dfs,int u,int p)->pair<W,int>{\n\
-    \t\tint g=u;\n\t\tW d_max=0;\n\t\tfor(auto e:T[u]) if(e.to!=p) {\n\t\t\tauto [d,v]=dfs(dfs,e.to,u);\n\
-    \t\t\tif(d+e.wt>d_max){\n\t\t\t\td_max=d+e.wt;\n\t\t\t\tg=v;\n\t\t\t}\n\t\t\t\
-    pre[e.to]=u;\n\t\t}\n\t\treturn {d_max,g};\n\t};\n\tint u0=dfs(dfs,0,-1).second;\n\
+    \t\tint g=u;\n\t\tW d_max=0;\n\t\tfor(const auto& [v,wt]:T[u]) if(v!=p) {\n\t\t\
+    \tauto [d,w]=dfs(dfs,v,u);\n\t\t\tif(d+wt>d_max){\n\t\t\t\td_max=d+wt;\n\t\t\t\
+    \tg=w;\n\t\t\t}\n\t\t\tpre[v]=u;\n\t\t}\n\t\treturn {d_max,g};\n\t};\n\tint u0=dfs(dfs,0,-1).second;\n\
     \tauto [diam,u1]=dfs(dfs,u0,-1);\n\n\tvector<int> P={u1};\n\tfor(int u=u1;u!=u0;u=pre[u]){\n\
     \t\tP.emplace_back(pre[u]);\n\t}\n\treverse(P.begin(),P.end());\n\n\treturn {diam,P};\n\
     }\n#line 5 \"verify/graph/tree_diameter.2.test.cpp\"\n\nint main(){\n\tint n;\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: verify/graph/tree_diameter.2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-10 17:57:03+09:00'
+  timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/tree_diameter.2.test.cpp

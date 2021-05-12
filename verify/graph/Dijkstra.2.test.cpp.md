@@ -39,10 +39,10 @@ data:
     \ T>\nvector<T> Dijkstra(const weighted_graph<T>& G,int s){\n\tconstexpr T INF=numeric_limits<T>::max();\n\
     \tint n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
     \ Q;\n\tQ.emplace(0,s);\n\twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\
-    \t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const auto& e:G[u]){\n\t\t\t\
-    int v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt){\n\t\t\t\td[v]=d[u]+e.wt;\n\t\t\t\tQ.emplace(d[v],v);\n\
-    \t\t\t}\n\t\t}\n\t}\n\treturn d;\n}\n#line 6 \"verify/graph/Dijkstra.2.test.cpp\"\
-    \n\n// T \u304C double \u578B\u306E\u30B1\u30FC\u30B9\n// \u30E9\u30A4\u30D6\u30E9\
+    \t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const auto& [v,wt]:G[u]){\n\t\
+    \t\tif(d[v]>d[u]+wt){\n\t\t\t\td[v]=d[u]+wt;\n\t\t\t\tQ.emplace(d[v],v);\n\t\t\
+    \t}\n\t\t}\n\t}\n\treturn d;\n}\n#line 6 \"verify/graph/Dijkstra.2.test.cpp\"\n\
+    \n// T \u304C double \u578B\u306E\u30B1\u30FC\u30B9\n// \u30E9\u30A4\u30D6\u30E9\
     \u30EA\u306E\u8981\u4EF6\u3092\u6E80\u305F\u3057\u3066\u3044\u306A\u3044\u304C\
     \u5B9F\u7528\u4E0A\u554F\u984C\u306A\u304F\u52D5\u304F\n\nint main(){\n\tint n,m,s,t;\
     \ scanf(\"%d%d%d%d\",&n,&m,&s,&t); s--; t--;\n\tvector<double> x(n),y(n);\n\t\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: verify/graph/Dijkstra.2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-10 17:31:54+09:00'
+  timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/Dijkstra.2.test.cpp

@@ -38,18 +38,18 @@ data:
     \n\ntemplate<class T>\nvector<T> Bellman_Ford(const weighted_graph<T>& G,int s){\n\
     \tconst T INF=numeric_limits<T>::max();\n\tconst T NINF=numeric_limits<T>::min();\n\
     \n\tint n=G.size();\n\tvector<T> d(n,INF);\n\td[s]=0;\n\trep(_,n){\n\t\tbool upd=false;\n\
-    \t\trep(u,n) if(d[u]<INF) for(const auto& e:G[u]) {\n\t\t\tint v=e.to;\n\t\t\t\
-    if(d[v]>d[u]+e.wt) d[v]=d[u]+e.wt, upd=true;\n\t\t}\n\t\tif(!upd) return d;\n\t\
-    }\n\n\tqueue<int> Q;\n\trep(u,n) if(d[u]<INF) Q.emplace(u);\n\twhile(!Q.empty()){\n\
-    \t\tint u=Q.front(); Q.pop();\n\t\tfor(const auto& e:G[u]){\n\t\t\tint v=e.to;\n\
-    \t\t\tif(d[v]>NINF && (d[u]==NINF || d[v]>d[u]+e.wt)) d[v]=NINF, Q.emplace(v);\n\
-    \t\t}\n\t}\n\treturn d;\n}\n#line 5 \"verify/graph/Bellman-Ford.test.cpp\"\n\n\
-    int main(){\n\tint n,m,s; scanf(\"%d%d%d\",&n,&m,&s);\n\tweighted_graph<int> G(n);\n\
-    \trep(i,m){\n\t\tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\t\tadd_directed_edge(G,u,v,c);\n\
-    \t}\n\n\tauto d=Bellman_Ford(G,s);\n\tif(count(d.begin(),d.end(),INT_MIN)>0){\n\
-    \t\tputs(\"NEGATIVE CYCLE\");\n\t}\n\telse{\n\t\trep(u,n){\n\t\t\tif(d[u]<INT_MAX)\
-    \ printf(\"%d\\n\",d[u]);\n\t\t\telse             puts(\"INF\");\n\t\t}\n\t}\n\
-    \n\treturn 0;\n}\n"
+    \t\trep(u,n) if(d[u]<INF) for(const auto& [v,wt]:G[u]) {\n\t\t\tif(d[v]>d[u]+wt)\
+    \ d[v]=d[u]+wt, upd=true;\n\t\t}\n\t\tif(!upd) return d;\n\t}\n\n\tqueue<int>\
+    \ Q;\n\trep(u,n) if(d[u]<INF) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front();\
+    \ Q.pop();\n\t\tfor(const auto& [v,wt]:G[u]){\n\t\t\tif(d[v]>NINF && (d[u]==NINF\
+    \ || d[v]>d[u]+wt)) d[v]=NINF, Q.emplace(v);\n\t\t}\n\t}\n\treturn d;\n}\n#line\
+    \ 5 \"verify/graph/Bellman-Ford.test.cpp\"\n\nint main(){\n\tint n,m,s; scanf(\"\
+    %d%d%d\",&n,&m,&s);\n\tweighted_graph<int> G(n);\n\trep(i,m){\n\t\tint u,v,c;\
+    \ scanf(\"%d%d%d\",&u,&v,&c);\n\t\tadd_directed_edge(G,u,v,c);\n\t}\n\n\tauto\
+    \ d=Bellman_Ford(G,s);\n\tif(count(d.begin(),d.end(),INT_MIN)>0){\n\t\tputs(\"\
+    NEGATIVE CYCLE\");\n\t}\n\telse{\n\t\trep(u,n){\n\t\t\tif(d[u]<INT_MAX) printf(\"\
+    %d\\n\",d[u]);\n\t\t\telse             puts(\"INF\");\n\t\t}\n\t}\n\n\treturn\
+    \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \n\n#include \"../../library/template.hpp\"\n#include \"../../library/graph/Bellman-Ford.hpp\"\
     \n\nint main(){\n\tint n,m,s; scanf(\"%d%d%d\",&n,&m,&s);\n\tweighted_graph<int>\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: verify/graph/Bellman-Ford.test.cpp
   requiredBy: []
-  timestamp: '2021-05-10 17:31:54+09:00'
+  timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/Bellman-Ford.test.cpp

@@ -4,7 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graph/Kruskal.hpp
+    title: Minimum Spanning Forest (Kruskal's Algorithm)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/union-find.test.1.cpp
@@ -12,6 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/union-find.test.2.cpp
     title: verify/data_structure/union-find.test.2.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/Kruskal.1.test.cpp
+    title: verify/graph/Kruskal.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/Kruskal.2.test.cpp
+    title: verify/graph/Kruskal.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -43,10 +52,13 @@ data:
   - library/template.hpp
   isVerificationFile: false
   path: library/data_structure/union-find.hpp
-  requiredBy: []
+  requiredBy:
+  - library/graph/Kruskal.hpp
   timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/graph/Kruskal.2.test.cpp
+  - verify/graph/Kruskal.1.test.cpp
   - verify/data_structure/union-find.test.1.cpp
   - verify/data_structure/union-find.test.2.cpp
 documentation_of: library/data_structure/union-find.hpp

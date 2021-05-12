@@ -99,9 +99,9 @@ data:
     - icon: ':warning:'
       path: library/graph/Hamltonian_path.hpp
       title: library/graph/Hamltonian_path.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/Kruskal.hpp
-      title: library/graph/Kruskal.hpp
+      title: Minimum Spanning Forest (Kruskal's Algorithm)
     - icon: ':heavy_check_mark:'
       path: library/graph/cc.hpp
       title: Connected Components Decomposition
@@ -361,6 +361,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.2.test.cpp
       title: verify/graph/Dijkstra.2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/Kruskal.1.test.cpp
+      title: verify/graph/Kruskal.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/Kruskal.2.test.cpp
+      title: verify/graph/Kruskal.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/cc.test.cpp
       title: verify/graph/cc.test.cpp

@@ -39,10 +39,11 @@ data:
     \twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tres.emplace_back(u);\n\
     \t\tfor(int v:D[u]) if(--deg[v]==0) Q.emplace(v);\n\t}\n\treturn res;\n}\n\ntemplate<class\
     \ T>\nvector<int> topological_sort(const weighted_graph<T>& D){\n\tint n=D.size();\n\
-    \tvector<int> deg(n);\n\trep(u,n) for(const auto& e:D[u]) deg[e.to]++;\n\n\tvector<int>\
-    \ res;\n\tqueue<int> Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\
-    \t\tint u=Q.front(); Q.pop();\n\t\tres.emplace_back(u);\n\t\tfor(const auto& e:D[u])\
-    \ if(--deg[e.to]==0) Q.emplace(e.to);\n\t}\n\treturn res;\n}\n"
+    \tvector<int> deg(n);\n\trep(u,n) for(const auto& [v,wt]:D[u]) deg[v]++;\n\n\t\
+    vector<int> res;\n\tqueue<int> Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\t\
+    while(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tres.emplace_back(u);\n\t\
+    \tfor(const auto& [v,wt]:D[u]) if(--deg[v]==0) Q.emplace(v);\n\t}\n\treturn res;\n\
+    }\n"
   code: "#pragma once\n#include \"../template.hpp\"\n#include \"graph.hpp\"\n#include\
     \ \"wgraph.hpp\"\n\nvector<int> topological_sort(const graph& D){\n\tint n=D.size();\n\
     \tvector<int> deg(n);\n\trep(u,n) for(int v:D[u]) deg[v]++;\n\n\tvector<int> res;\n\
@@ -50,10 +51,10 @@ data:
     \t\tint u=Q.front(); Q.pop();\n\t\tres.emplace_back(u);\n\t\tfor(int v:D[u]) if(--deg[v]==0)\
     \ Q.emplace(v);\n\t}\n\treturn res;\n}\n\ntemplate<class T>\nvector<int> topological_sort(const\
     \ weighted_graph<T>& D){\n\tint n=D.size();\n\tvector<int> deg(n);\n\trep(u,n)\
-    \ for(const auto& e:D[u]) deg[e.to]++;\n\n\tvector<int> res;\n\tqueue<int> Q;\n\
+    \ for(const auto& [v,wt]:D[u]) deg[v]++;\n\n\tvector<int> res;\n\tqueue<int> Q;\n\
     \trep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front();\
-    \ Q.pop();\n\t\tres.emplace_back(u);\n\t\tfor(const auto& e:D[u]) if(--deg[e.to]==0)\
-    \ Q.emplace(e.to);\n\t}\n\treturn res;\n}\n"
+    \ Q.pop();\n\t\tres.emplace_back(u);\n\t\tfor(const auto& [v,wt]:D[u]) if(--deg[v]==0)\
+    \ Q.emplace(v);\n\t}\n\treturn res;\n}\n"
   dependsOn:
   - library/template.hpp
   - library/graph/graph.hpp
@@ -61,7 +62,7 @@ data:
   isVerificationFile: false
   path: library/graph/topological_sort.hpp
   requiredBy: []
-  timestamp: '2021-05-10 18:20:26+09:00'
+  timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/topological_sort.hpp

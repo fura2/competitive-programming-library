@@ -46,10 +46,10 @@ data:
     \t\tint u=Q.front(); Q.pop();\n\t\tcnt++;\n\t\tfor(int v:G[u]) if(--deg[v]==0)\
     \ Q.emplace(v);\n\t}\n\treturn cnt==n;\n}\n\ntemplate<class T>\nbool is_DAG(const\
     \ weighted_graph<T>& G){\n\tint n=G.size();\n\tvector<int> deg(n);\n\trep(u,n)\
-    \ for(const auto& e:G[u]) deg[e.to]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\trep(u,n)\
-    \ if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\
-    \t\tcnt++;\n\t\tfor(const auto& e:G[u]) if(--deg[e.to]==0) Q.emplace(e.to);\n\t\
-    }\n\treturn cnt==n;\n}\n#line 5 \"verify/graph/is_DAG.1.test.cpp\"\n\nint main(){\n\
+    \ for(const auto& [v,wt]:G[u]) deg[v]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\t\
+    rep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front();\
+    \ Q.pop();\n\t\tcnt++;\n\t\tfor(const auto& [v,wt]:G[u]) if(--deg[v]==0) Q.emplace(v);\n\
+    \t}\n\treturn cnt==n;\n}\n#line 5 \"verify/graph/is_DAG.1.test.cpp\"\n\nint main(){\n\
     \tint n,m; scanf(\"%d%d\",&n,&m);\n\tgraph G(n);\n\trep(i,m){\n\t\tint u,v; scanf(\"\
     %d%d\",&u,&v);\n\t\tadd_directed_edge(G,u,v);\n\t}\n\n\tputs(is_DAG(G)?\"0\":\"\
     1\");\n\n\treturn 0;\n}\n"
@@ -66,7 +66,7 @@ data:
   isVerificationFile: true
   path: verify/graph/is_DAG.1.test.cpp
   requiredBy: []
-  timestamp: '2021-05-11 20:07:31+09:00'
+  timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/is_DAG.1.test.cpp

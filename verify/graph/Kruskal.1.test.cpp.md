@@ -5,25 +5,26 @@ data:
     path: library/data_structure/union-find.hpp
     title: Union-Find
   - icon: ':heavy_check_mark:'
+    path: library/graph/Kruskal.hpp
+    title: Minimum Spanning Forest (Kruskal's Algorithm)
+  - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
   - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/graph/Kruskal.1.test.cpp
-    title: verify/graph/Kruskal.1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/graph/Kruskal.2.test.cpp
-    title: verify/graph/Kruskal.2.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
+    links:
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
+  bundledCode: "#line 1 \"verify/graph/Kruskal.1.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
+    \n\n#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
@@ -53,50 +54,31 @@ data:
     \t}\n\n\tsort(E.begin(),E.end(),[](const auto& e,const auto& f){\n\t\treturn get<2>(e)<get<2>(f);\n\
     \t});\n\n\tT total{};\n\tweighted_graph<T> MSF(n);\n\tunion_find U(n);\n\tfor(const\
     \ auto& [u,v,wt]:E){\n\t\tif(!U.is_same(u,v)){\n\t\t\tU.unite(u,v);\n\t\t\ttotal+=wt;\n\
-    \t\t\tadd_undirected_edge(MSF,u,v,wt);\n\t\t}\n\t}\n\treturn {total,MSF};\n}\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n#include \"wgraph.hpp\"\n#include\
-    \ \"../data_structure/union-find.hpp\"\n\ntemplate<class T>\nT Kruskal(int n,vector<tuple<int,int,T>>\
-    \ E){\n\tsort(E.begin(),E.end(),[](const auto& e,const auto& f){\n\t\treturn get<2>(e)<get<2>(f);\n\
-    \t});\n\n\tT total{};\n\tunion_find U(n);\n\tfor(const auto& [u,v,wt]:E){\n\t\t\
-    if(!U.is_same(u,v)){\n\t\t\tU.unite(u,v);\n\t\t\ttotal+=wt;\n\t\t}\n\t}\n\treturn\
-    \ total;\n}\n\ntemplate<class T>\npair<T,weighted_graph<T>> Kruskal(const weighted_graph<T>&\
-    \ G){\n\tint n=G.size();\n\tvector<tuple<int,int,T>> E;\n\trep(u,n) for(const\
-    \ auto& [v,wt]:G[u]) {\n\t\tif(u<v) E.emplace_back(u,v,wt);\n\t}\n\n\tsort(E.begin(),E.end(),[](const\
-    \ auto& e,const auto& f){\n\t\treturn get<2>(e)<get<2>(f);\n\t});\n\n\tT total{};\n\
-    \tweighted_graph<T> MSF(n);\n\tunion_find U(n);\n\tfor(const auto& [u,v,wt]:E){\n\
-    \t\tif(!U.is_same(u,v)){\n\t\t\tU.unite(u,v);\n\t\t\ttotal+=wt;\n\t\t\tadd_undirected_edge(MSF,u,v,wt);\n\
-    \t\t}\n\t}\n\treturn {total,MSF};\n}\n"
+    \t\t\tadd_undirected_edge(MSF,u,v,wt);\n\t\t}\n\t}\n\treturn {total,MSF};\n}\n\
+    #line 5 \"verify/graph/Kruskal.1.test.cpp\"\n\nint main(){\n\tint n,m; scanf(\"\
+    %d%d\",&n,&m);\n\tvector<tuple<int,int,int>> E(m);\n\trep(i,m){\n\t\tint u,v,c;\
+    \ scanf(\"%d%d%d\",&u,&v,&c);\n\t\tE[i]=tie(u,v,c);\n\t}\n\n\tprintf(\"%d\\n\"\
+    ,Kruskal(n,E));\n\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
+    \n\n#include \"../../library/template.hpp\"\n#include \"../../library/graph/Kruskal.hpp\"\
+    \n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\tvector<tuple<int,int,int>>\
+    \ E(m);\n\trep(i,m){\n\t\tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\t\tE[i]=tie(u,v,c);\n\
+    \t}\n\n\tprintf(\"%d\\n\",Kruskal(n,E));\n\n\treturn 0;\n}\n"
   dependsOn:
   - library/template.hpp
+  - library/graph/Kruskal.hpp
   - library/graph/wgraph.hpp
   - library/data_structure/union-find.hpp
-  isVerificationFile: false
-  path: library/graph/Kruskal.hpp
+  isVerificationFile: true
+  path: verify/graph/Kruskal.1.test.cpp
   requiredBy: []
   timestamp: '2021-05-12 17:41:17+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/graph/Kruskal.2.test.cpp
-  - verify/graph/Kruskal.1.test.cpp
-documentation_of: library/graph/Kruskal.hpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: verify/graph/Kruskal.1.test.cpp
 layout: document
-title: Minimum Spanning Forest (Kruskal's Algorithm)
+redirect_from:
+- /verify/verify/graph/Kruskal.1.test.cpp
+- /verify/verify/graph/Kruskal.1.test.cpp.html
+title: verify/graph/Kruskal.1.test.cpp
 ---
-
-## Description
-重みつき無向グラフの最小全域森を求める Dijkstra のアルゴリズム
-```
-(1) T Kruskal(int n, vector<tuple<int,int,T>> E)
-(2) pair<T,weighted_graph<T>> Kruskal(const weighted_graph<T>& G)
-```
-重みつき無向グラフ $G$ の最小全域森 $F$ を求める．
-- (1) $G$ の頂点数と辺集合を入力とし，$F$ の辺の重みの総和を返す．
-- (2) $G$ 自身を入力とし，$F$ の辺の重みの総和と $F$ 自身のペアを返す．
-
-#### Constraints
-- $G$ は重みつき無向グラフ
-- $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
-- (1) $n\ge0$
-
-#### Complexity
-- $O(V+E(\alpha(V)+\log E))$

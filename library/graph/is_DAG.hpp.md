@@ -45,20 +45,20 @@ data:
     \t\tint u=Q.front(); Q.pop();\n\t\tcnt++;\n\t\tfor(int v:G[u]) if(--deg[v]==0)\
     \ Q.emplace(v);\n\t}\n\treturn cnt==n;\n}\n\ntemplate<class T>\nbool is_DAG(const\
     \ weighted_graph<T>& G){\n\tint n=G.size();\n\tvector<int> deg(n);\n\trep(u,n)\
-    \ for(const auto& e:G[u]) deg[e.to]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\trep(u,n)\
-    \ if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\
-    \t\tcnt++;\n\t\tfor(const auto& e:G[u]) if(--deg[e.to]==0) Q.emplace(e.to);\n\t\
-    }\n\treturn cnt==n;\n}\n"
+    \ for(const auto& [v,wt]:G[u]) deg[v]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\t\
+    rep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front();\
+    \ Q.pop();\n\t\tcnt++;\n\t\tfor(const auto& [v,wt]:G[u]) if(--deg[v]==0) Q.emplace(v);\n\
+    \t}\n\treturn cnt==n;\n}\n"
   code: "#pragma once\n#include \"../template.hpp\"\n#include \"graph.hpp\"\n#include\
     \ \"wgraph.hpp\"\n\nbool is_DAG(const graph& G){\n\tint n=G.size();\n\tvector<int>\
     \ deg(n);\n\trep(u,n) for(int v:G[u]) deg[v]++;\n\n\tint cnt=0;\n\tqueue<int>\
     \ Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front();\
     \ Q.pop();\n\t\tcnt++;\n\t\tfor(int v:G[u]) if(--deg[v]==0) Q.emplace(v);\n\t\
     }\n\treturn cnt==n;\n}\n\ntemplate<class T>\nbool is_DAG(const weighted_graph<T>&\
-    \ G){\n\tint n=G.size();\n\tvector<int> deg(n);\n\trep(u,n) for(const auto& e:G[u])\
-    \ deg[e.to]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\
+    \ G){\n\tint n=G.size();\n\tvector<int> deg(n);\n\trep(u,n) for(const auto& [v,wt]:G[u])\
+    \ deg[v]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\
     \twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tcnt++;\n\t\tfor(const\
-    \ auto& e:G[u]) if(--deg[e.to]==0) Q.emplace(e.to);\n\t}\n\treturn cnt==n;\n}\n"
+    \ auto& [v,wt]:G[u]) if(--deg[v]==0) Q.emplace(v);\n\t}\n\treturn cnt==n;\n}\n"
   dependsOn:
   - library/template.hpp
   - library/graph/graph.hpp
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: library/graph/is_DAG.hpp
   requiredBy: []
-  timestamp: '2021-05-11 20:07:31+09:00'
+  timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/is_DAG.1.test.cpp

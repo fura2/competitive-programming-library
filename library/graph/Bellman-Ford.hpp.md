@@ -34,27 +34,27 @@ data:
     \ Bellman_Ford(const weighted_graph<T>& G,int s){\n\tconst T INF=numeric_limits<T>::max();\n\
     \tconst T NINF=numeric_limits<T>::min();\n\n\tint n=G.size();\n\tvector<T> d(n,INF);\n\
     \td[s]=0;\n\trep(_,n){\n\t\tbool upd=false;\n\t\trep(u,n) if(d[u]<INF) for(const\
-    \ auto& e:G[u]) {\n\t\t\tint v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt) d[v]=d[u]+e.wt,\
-    \ upd=true;\n\t\t}\n\t\tif(!upd) return d;\n\t}\n\n\tqueue<int> Q;\n\trep(u,n)\
-    \ if(d[u]<INF) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\
-    \t\tfor(const auto& e:G[u]){\n\t\t\tint v=e.to;\n\t\t\tif(d[v]>NINF && (d[u]==NINF\
-    \ || d[v]>d[u]+e.wt)) d[v]=NINF, Q.emplace(v);\n\t\t}\n\t}\n\treturn d;\n}\n"
+    \ auto& [v,wt]:G[u]) {\n\t\t\tif(d[v]>d[u]+wt) d[v]=d[u]+wt, upd=true;\n\t\t}\n\
+    \t\tif(!upd) return d;\n\t}\n\n\tqueue<int> Q;\n\trep(u,n) if(d[u]<INF) Q.emplace(u);\n\
+    \twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tfor(const auto& [v,wt]:G[u]){\n\
+    \t\t\tif(d[v]>NINF && (d[u]==NINF || d[v]>d[u]+wt)) d[v]=NINF, Q.emplace(v);\n\
+    \t\t}\n\t}\n\treturn d;\n}\n"
   code: "#pragma once\n#include \"../template.hpp\"\n#include \"wgraph.hpp\"\n\ntemplate<class\
     \ T>\nvector<T> Bellman_Ford(const weighted_graph<T>& G,int s){\n\tconst T INF=numeric_limits<T>::max();\n\
     \tconst T NINF=numeric_limits<T>::min();\n\n\tint n=G.size();\n\tvector<T> d(n,INF);\n\
     \td[s]=0;\n\trep(_,n){\n\t\tbool upd=false;\n\t\trep(u,n) if(d[u]<INF) for(const\
-    \ auto& e:G[u]) {\n\t\t\tint v=e.to;\n\t\t\tif(d[v]>d[u]+e.wt) d[v]=d[u]+e.wt,\
-    \ upd=true;\n\t\t}\n\t\tif(!upd) return d;\n\t}\n\n\tqueue<int> Q;\n\trep(u,n)\
-    \ if(d[u]<INF) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\
-    \t\tfor(const auto& e:G[u]){\n\t\t\tint v=e.to;\n\t\t\tif(d[v]>NINF && (d[u]==NINF\
-    \ || d[v]>d[u]+e.wt)) d[v]=NINF, Q.emplace(v);\n\t\t}\n\t}\n\treturn d;\n}\n"
+    \ auto& [v,wt]:G[u]) {\n\t\t\tif(d[v]>d[u]+wt) d[v]=d[u]+wt, upd=true;\n\t\t}\n\
+    \t\tif(!upd) return d;\n\t}\n\n\tqueue<int> Q;\n\trep(u,n) if(d[u]<INF) Q.emplace(u);\n\
+    \twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tfor(const auto& [v,wt]:G[u]){\n\
+    \t\t\tif(d[v]>NINF && (d[u]==NINF || d[v]>d[u]+wt)) d[v]=NINF, Q.emplace(v);\n\
+    \t\t}\n\t}\n\treturn d;\n}\n"
   dependsOn:
   - library/template.hpp
   - library/graph/wgraph.hpp
   isVerificationFile: false
   path: library/graph/Bellman-Ford.hpp
   requiredBy: []
-  timestamp: '2021-05-10 17:31:54+09:00'
+  timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/Bellman-Ford.test.cpp
