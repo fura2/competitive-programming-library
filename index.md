@@ -103,6 +103,9 @@ data:
       path: library/graph/Kruskal.hpp
       title: Minimum Spanning Forest (Kruskal's Algorithm)
     - icon: ':heavy_check_mark:'
+      path: library/graph/Prim.hpp
+      title: Minimum Spanning Forest (Prim's Algorithm)
+    - icon: ':heavy_check_mark:'
       path: library/graph/cc.hpp
       title: Connected Components Decomposition
     - icon: ':heavy_check_mark:'
@@ -367,6 +370,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Kruskal.2.test.cpp
       title: verify/graph/Kruskal.2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/Prim.test.cpp
+      title: verify/graph/Prim.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/cc.test.cpp
       title: verify/graph/cc.test.cpp

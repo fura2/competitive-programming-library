@@ -37,8 +37,8 @@ data:
     \ T>\nvoid add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\t\
     G[u].emplace_back(v,wt);\n}\n#line 4 \"library/graph/Dijkstra.hpp\"\n\ntemplate<class\
     \ T>\nvector<T> Dijkstra(const weighted_graph<T>& G,int s){\n\tconstexpr T INF=numeric_limits<T>::max();\n\
-    \tint n=G.size();\n\tvector<T> d(n,INF); d[s]=0;\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
-    \ Q;\n\tQ.emplace(0,s);\n\twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\
+    \n\tint n=G.size();\n\tvector<T> d(n,INF); d[s]=T{};\n\tpriority_queue<pair<T,int>,vector<pair<T,int>>,greater<>>\
+    \ Q;\n\tQ.emplace(T{},s);\n\twhile(!Q.empty()){\n\t\tT d0;\n\t\tint u; tie(d0,u)=Q.top();\n\
     \t\tQ.pop();\n\t\tif(d0>d[u]) continue;\n\t\tfor(const auto& [v,wt]:G[u]){\n\t\
     \t\tif(d[v]>d[u]+wt){\n\t\t\t\td[v]=d[u]+wt;\n\t\t\t\tQ.emplace(d[v],v);\n\t\t\
     \t}\n\t\t}\n\t}\n\treturn d;\n}\n#line 6 \"verify/graph/Dijkstra.2.test.cpp\"\n\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: verify/graph/Dijkstra.2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-12 17:41:17+09:00'
+  timestamp: '2021-05-12 18:21:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/Dijkstra.2.test.cpp

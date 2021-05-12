@@ -91,8 +91,8 @@ title: Diameter of a Tree
 ## Description
 木の直径
 ```
-(1) pair<int,vector<int>> tree_diameter(const graph& T)
-(2) pair<W,vector<int>> tree_diameter(const weighted_graph<W>& T)
+(1) pair<int, vector<int>> tree_diameter(const graph& T)
+(2) pair<W, vector<int>> tree_diameter(const weighted_graph<W>& T)
 ```
 - (1) 木 $T$ の直径と，直径を達成するパスの一つを求める．
 - (2) 重みつき木 $T$ の直径と，直径を達成するパスの一つを求める．

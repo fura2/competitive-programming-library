@@ -33,7 +33,7 @@ data:
     }\n#line 4 \"library/graph/Bellman-Ford.hpp\"\n\ntemplate<class T>\nvector<T>\
     \ Bellman_Ford(const weighted_graph<T>& G,int s){\n\tconst T INF=numeric_limits<T>::max();\n\
     \tconst T NINF=numeric_limits<T>::min();\n\n\tint n=G.size();\n\tvector<T> d(n,INF);\n\
-    \td[s]=0;\n\trep(_,n){\n\t\tbool upd=false;\n\t\trep(u,n) if(d[u]<INF) for(const\
+    \td[s]=T{};\n\trep(_,n){\n\t\tbool upd=false;\n\t\trep(u,n) if(d[u]<INF) for(const\
     \ auto& [v,wt]:G[u]) {\n\t\t\tif(d[v]>d[u]+wt) d[v]=d[u]+wt, upd=true;\n\t\t}\n\
     \t\tif(!upd) return d;\n\t}\n\n\tqueue<int> Q;\n\trep(u,n) if(d[u]<INF) Q.emplace(u);\n\
     \twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tfor(const auto& [v,wt]:G[u]){\n\
@@ -42,7 +42,7 @@ data:
   code: "#pragma once\n#include \"../template.hpp\"\n#include \"wgraph.hpp\"\n\ntemplate<class\
     \ T>\nvector<T> Bellman_Ford(const weighted_graph<T>& G,int s){\n\tconst T INF=numeric_limits<T>::max();\n\
     \tconst T NINF=numeric_limits<T>::min();\n\n\tint n=G.size();\n\tvector<T> d(n,INF);\n\
-    \td[s]=0;\n\trep(_,n){\n\t\tbool upd=false;\n\t\trep(u,n) if(d[u]<INF) for(const\
+    \td[s]=T{};\n\trep(_,n){\n\t\tbool upd=false;\n\t\trep(u,n) if(d[u]<INF) for(const\
     \ auto& [v,wt]:G[u]) {\n\t\t\tif(d[v]>d[u]+wt) d[v]=d[u]+wt, upd=true;\n\t\t}\n\
     \t\tif(!upd) return d;\n\t}\n\n\tqueue<int> Q;\n\trep(u,n) if(d[u]<INF) Q.emplace(u);\n\
     \twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tfor(const auto& [v,wt]:G[u]){\n\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/graph/Bellman-Ford.hpp
   requiredBy: []
-  timestamp: '2021-05-12 17:41:17+09:00'
+  timestamp: '2021-05-12 18:21:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/Bellman-Ford.test.cpp

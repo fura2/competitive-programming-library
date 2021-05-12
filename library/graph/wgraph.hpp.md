@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/Kruskal.hpp
     title: Minimum Spanning Forest (Kruskal's Algorithm)
+  - icon: ':heavy_check_mark:'
+    path: library/graph/Prim.hpp
+    title: Minimum Spanning Forest (Prim's Algorithm)
   - icon: ':warning:'
     path: library/graph/distance_01.hpp
     title: library/graph/distance_01.hpp
@@ -42,6 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/Kruskal.2.test.cpp
     title: verify/graph/Kruskal.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/Prim.test.cpp
+    title: verify/graph/Prim.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/is_DAG.1.test.cpp
     title: verify/graph/is_DAG.1.test.cpp
@@ -86,6 +92,7 @@ data:
   requiredBy:
   - library/graph/Kruskal.hpp
   - library/graph/tree_diameter.hpp
+  - library/graph/Prim.hpp
   - library/graph/Bellman-Ford.hpp
   - library/graph/Dijkstra.hpp
   - library/graph/is_DAG.hpp
@@ -98,6 +105,7 @@ data:
   - verify/graph/tree_diameter.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
+  - verify/graph/Prim.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
   - verify/graph/tree_diameter.2.test.cpp
   - verify/graph/is_DAG.1.test.cpp
