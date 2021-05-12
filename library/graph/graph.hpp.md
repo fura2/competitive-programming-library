@@ -6,6 +6,9 @@ data:
     title: library/template.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: library/graph/cc.hpp
+    title: Connected Components Decomposition
+  - icon: ':heavy_check_mark:'
     path: library/graph/distance.hpp
     title: Single-Source Shortest Path (Unweighted Graph)
   - icon: ':heavy_check_mark:'
@@ -21,6 +24,9 @@ data:
     path: library/graph/tree_diameter.hpp
     title: Diameter of a Tree
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/cc.test.cpp
+    title: verify/graph/cc.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/distance.test.cpp
     title: verify/graph/distance.test.cpp
@@ -67,6 +73,7 @@ data:
   isVerificationFile: false
   path: library/graph/graph.hpp
   requiredBy:
+  - library/graph/cc.hpp
   - library/graph/tree_diameter.hpp
   - library/graph/distance.hpp
   - library/graph/is_DAG.hpp
@@ -79,6 +86,7 @@ data:
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp
+  - verify/graph/cc.test.cpp
   - verify/graph/tree_diameter.2.test.cpp
   - verify/graph/is_DAG.1.test.cpp
   - verify/graph/is_DAG.2.test.cpp

@@ -24,6 +24,9 @@ data:
     path: library/graph/Dijkstra.hpp
     title: Single-Source Shortest Path (Dijkstra's Algorithm)
   - icon: ':heavy_check_mark:'
+    path: library/graph/cc.hpp
+    title: Connected Components Decomposition
+  - icon: ':heavy_check_mark:'
     path: library/graph/distance.hpp
     title: Single-Source Shortest Path (Unweighted Graph)
   - icon: ':warning:'
@@ -99,6 +102,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.2.test.cpp
     title: verify/graph/Dijkstra.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/cc.test.cpp
+    title: verify/graph/cc.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/distance.test.cpp
     title: verify/graph/distance.test.cpp
@@ -254,6 +260,7 @@ data:
   path: library/template.hpp
   requiredBy:
   - library/string/z.hpp
+  - library/graph/cc.hpp
   - library/graph/tree_diameter.hpp
   - library/graph/wgraph.hpp
   - library/graph/Bellman-Ford.hpp
@@ -282,6 +289,7 @@ data:
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp
+  - verify/graph/cc.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
   - verify/graph/tree_diameter.2.test.cpp

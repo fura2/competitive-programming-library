@@ -75,8 +75,8 @@ $s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()
 このようなケースは，$G$ において $s$ から到達できる負閉路が存在する場合に起こりうる．
 
 #### Constraints
-- $0\le s\lt V$
 - $G$ の辺の重みの型 $T$ は整数型 (``int``, ``long long`` など) で，``numeric_limits<T>::max()`` および ``numeric_limits<T>::min()`` が定義されている．
+- $0\le s\lt V$
 
 #### Complexity
 - $O(V(V+E))$
