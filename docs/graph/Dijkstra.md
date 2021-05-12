@@ -18,4 +18,4 @@ $s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()
 - $0\le s\lt V$
 
 #### Complexity
-- $O((V+E)\log E)$
+- $O(V+E\log E)$
