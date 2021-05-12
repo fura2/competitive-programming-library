@@ -12,6 +12,7 @@
 "verify/graph/Bellman-Ford.test.cpp": "2021-05-10 17:31:54 +0900",
 "verify/graph/Dijkstra.1.test.cpp": "2021-05-10 16:28:04 +0900",
 "verify/graph/Dijkstra.2.test.cpp": "2021-05-10 17:31:54 +0900",
+"verify/graph/cc.test.cpp": "2021-05-12 11:09:47 +0900",
 "verify/graph/distance.test.cpp": "2021-05-12 10:49:10 +0900",
 "verify/graph/is_DAG.1.test.cpp": "2021-05-11 20:07:31 +0900",
 "verify/graph/is_DAG.2.test.cpp": "2021-05-11 20:07:31 +0900",
