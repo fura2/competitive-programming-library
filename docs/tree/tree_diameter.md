@@ -1,6 +1,6 @@
 ---
 title: Diameter of a Tree
-documentation_of: ../../library/graph/tree_diameter.hpp
+documentation_of: ../../library/tree/tree_diameter.hpp
 ---
 
 ## Description

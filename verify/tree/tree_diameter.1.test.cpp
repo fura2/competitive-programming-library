@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A"
 
 #include "../../library/template.hpp"
-#include "../../library/graph/tree_diameter.hpp"
+#include "../../library/tree/tree_diameter.hpp"
 
 int main(){
 	int n; scanf("%d",&n);

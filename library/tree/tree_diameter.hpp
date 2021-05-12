@@ -1,7 +1,7 @@
 #pragma once
 #include "../template.hpp"
-#include "graph.hpp"
-#include "wgraph.hpp"
+#include "../graph/graph.hpp"
+#include "../graph/wgraph.hpp"
 
 pair<int,vector<int>> tree_diameter(const graph& T){
 	int n=T.size();
