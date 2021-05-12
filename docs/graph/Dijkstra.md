@@ -10,7 +10,8 @@ documentation_of: ../../library/graph/Dijkstra.hpp
 vector<T> Dijkstra(const weighted_graph<T>& G, int s)
 ```
 重みつきグラフ $G$ において，頂点 $s$ から各頂点 $u$ までの最短距離 $d(u)$ を求める．\\
-$s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()`` となる．
+$s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()`` となる．\\
+適切な前処理によって計算量を $O(V+E\log V)$ に改善できるが，現行のもので実用上十分なので実装していない．
 
 #### Constraints
 - $G$ の辺の重みの型 $T$ は整数型 (``int``, ``long long`` など) で，``numeric_limits<T>::max()`` が定義されている．
@@ -18,4 +19,4 @@ $s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()
 - $0\le s\lt V$
 
 #### Complexity
-- $O(V+E\log E)$
+- $O(V+E\log E)$ (priority queue への push, pop が高々 $E$ 回ずつしか起こらないことから示せる)
