@@ -9,7 +9,7 @@ data:
   attributes:
     links:
     - https://null-mn.hatenablog.com/entry/2020/04/14/124151
-  bundledCode: "#line 1 \"library/misc/rerooting.hpp\"\n/*\n\t\u5168\u65B9\u4F4D\u6728\
+  bundledCode: "#line 1 \"library/tree/rerooting.hpp\"\n/*\n\t\u5168\u65B9\u4F4D\u6728\
     \ DP\n\t\tT = (V, E) : \u6728\n\t\t(M, *) : \u30E2\u30CE\u30A4\u30C9\n\t\tf :\
     \ M \xD7 V \u2192 M\n\t\tg : M \xD7 V \u2192 M\n\n\t\t\u6839\u3092\u4EFB\u610F\
     \u306B\u56FA\u5B9A\u3057\u3066 T \u3092\u6839\u3064\u304D\u6728\u3068\u307F\u306A\
@@ -132,15 +132,15 @@ data:
     }\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/misc/rerooting.hpp
+  path: library/tree/rerooting.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
+  timestamp: '2021-05-12 18:45:31+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/misc/rerooting.hpp
+documentation_of: library/tree/rerooting.hpp
 layout: document
 redirect_from:
-- /library/library/misc/rerooting.hpp
-- /library/library/misc/rerooting.hpp.html
-title: library/misc/rerooting.hpp
+- /library/library/tree/rerooting.hpp
+- /library/library/tree/rerooting.hpp.html
+title: library/tree/rerooting.hpp
 ---

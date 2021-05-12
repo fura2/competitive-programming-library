@@ -51,9 +51,6 @@ data:
     path: library/graph/topological_sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
-    path: library/graph/tree_diameter.hpp
-    title: Diameter of a Tree
-  - icon: ':heavy_check_mark:'
     path: library/graph/wgraph.hpp
     title: Weighted Graph
   - icon: ':heavy_check_mark:'
@@ -68,6 +65,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/string/z.hpp
     title: Z Algorithm
+  - icon: ':heavy_check_mark:'
+    path: library/tree/tree_diameter.hpp
+    title: Diameter of a Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/Fenwick_tree.1.test.cpp
@@ -136,17 +136,17 @@ data:
     path: verify/graph/scc.2.test.cpp
     title: verify/graph/scc.2.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/graph/tree_diameter.1.test.cpp
-    title: verify/graph/tree_diameter.1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/graph/tree_diameter.2.test.cpp
-    title: verify/graph/tree_diameter.2.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/string/z.1.test.cpp
     title: verify/string/z.1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/string/z.2.test.cpp
     title: verify/string/z.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/tree_diameter.1.test.cpp
+    title: verify/tree/tree_diameter.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/tree_diameter.2.test.cpp
+    title: verify/tree/tree_diameter.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -274,10 +274,10 @@ data:
   isVerificationFile: false
   path: library/template.hpp
   requiredBy:
+  - library/tree/tree_diameter.hpp
   - library/string/z.hpp
   - library/graph/Kruskal.hpp
   - library/graph/cc.hpp
-  - library/graph/tree_diameter.hpp
   - library/graph/wgraph.hpp
   - library/graph/Prim.hpp
   - library/graph/Bellman-Ford.hpp
@@ -299,10 +299,11 @@ data:
   timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/tree/tree_diameter.1.test.cpp
+  - verify/tree/tree_diameter.2.test.cpp
   - verify/string/z.2.test.cpp
   - verify/string/z.1.test.cpp
   - verify/graph/Kruskal.2.test.cpp
-  - verify/graph/tree_diameter.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
@@ -311,7 +312,6 @@ data:
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Prim.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
-  - verify/graph/tree_diameter.2.test.cpp
   - verify/graph/is_DAG.1.test.cpp
   - verify/graph/is_DAG.2.test.cpp
   - verify/graph/Kruskal.1.test.cpp

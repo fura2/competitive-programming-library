@@ -21,7 +21,7 @@ data:
     path: library/graph/topological_sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
-    path: library/graph/tree_diameter.hpp
+    path: library/tree/tree_diameter.hpp
     title: Diameter of a Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -43,11 +43,11 @@ data:
     path: verify/graph/scc.2.test.cpp
     title: verify/graph/scc.2.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/graph/tree_diameter.1.test.cpp
-    title: verify/graph/tree_diameter.1.test.cpp
+    path: verify/tree/tree_diameter.1.test.cpp
+    title: verify/tree/tree_diameter.1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/graph/tree_diameter.2.test.cpp
-    title: verify/graph/tree_diameter.2.test.cpp
+    path: verify/tree/tree_diameter.2.test.cpp
+    title: verify/tree/tree_diameter.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -73,8 +73,8 @@ data:
   isVerificationFile: false
   path: library/graph/graph.hpp
   requiredBy:
+  - library/tree/tree_diameter.hpp
   - library/graph/cc.hpp
-  - library/graph/tree_diameter.hpp
   - library/graph/distance.hpp
   - library/graph/is_DAG.hpp
   - library/graph/topological_sort.hpp
@@ -82,12 +82,12 @@ data:
   timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/tree_diameter.1.test.cpp
+  - verify/tree/tree_diameter.1.test.cpp
+  - verify/tree/tree_diameter.2.test.cpp
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp
   - verify/graph/cc.test.cpp
-  - verify/graph/tree_diameter.2.test.cpp
   - verify/graph/is_DAG.1.test.cpp
   - verify/graph/is_DAG.2.test.cpp
 documentation_of: library/graph/graph.hpp

@@ -13,11 +13,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/graph/tree_diameter.1.test.cpp
-    title: verify/graph/tree_diameter.1.test.cpp
+    path: verify/tree/tree_diameter.1.test.cpp
+    title: verify/tree/tree_diameter.1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/graph/tree_diameter.2.test.cpp
-    title: verify/graph/tree_diameter.2.test.cpp
+    path: verify/tree/tree_diameter.2.test.cpp
+    title: verify/tree/tree_diameter.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
     \ T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\
     \tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class T>\n\
     void add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
-    }\n#line 5 \"library/graph/tree_diameter.hpp\"\n\npair<int,vector<int>> tree_diameter(const\
+    }\n#line 5 \"library/tree/tree_diameter.hpp\"\n\npair<int,vector<int>> tree_diameter(const\
     \ graph& T){\n\tint n=T.size();\n\tvector<int> pre(n,-1);\n\n\tauto dfs=[&](auto&&\
     \ dfs,int u,int p)->pair<int,int>{\n\t\tint g=u,d_max=0;\n\t\tfor(int v:T[u])\
     \ if(v!=p) {\n\t\t\tauto [d,w]=dfs(dfs,v,u);\n\t\t\tif(d+1>d_max){\n\t\t\t\td_max=d+1;\n\
@@ -55,35 +55,36 @@ data:
     \tauto [diam,u1]=dfs(dfs,u0,-1);\n\n\tvector<int> P={u1};\n\tfor(int u=u1;u!=u0;u=pre[u]){\n\
     \t\tP.emplace_back(pre[u]);\n\t}\n\treverse(P.begin(),P.end());\n\n\treturn {diam,P};\n\
     }\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n#include \"graph.hpp\"\n#include\
-    \ \"wgraph.hpp\"\n\npair<int,vector<int>> tree_diameter(const graph& T){\n\tint\
-    \ n=T.size();\n\tvector<int> pre(n,-1);\n\n\tauto dfs=[&](auto&& dfs,int u,int\
-    \ p)->pair<int,int>{\n\t\tint g=u,d_max=0;\n\t\tfor(int v:T[u]) if(v!=p) {\n\t\
-    \t\tauto [d,w]=dfs(dfs,v,u);\n\t\t\tif(d+1>d_max){\n\t\t\t\td_max=d+1;\n\t\t\t\
+  code: "#pragma once\n#include \"../template.hpp\"\n#include \"../graph/graph.hpp\"\
+    \n#include \"../graph/wgraph.hpp\"\n\npair<int,vector<int>> tree_diameter(const\
+    \ graph& T){\n\tint n=T.size();\n\tvector<int> pre(n,-1);\n\n\tauto dfs=[&](auto&&\
+    \ dfs,int u,int p)->pair<int,int>{\n\t\tint g=u,d_max=0;\n\t\tfor(int v:T[u])\
+    \ if(v!=p) {\n\t\t\tauto [d,w]=dfs(dfs,v,u);\n\t\t\tif(d+1>d_max){\n\t\t\t\td_max=d+1;\n\
+    \t\t\t\tg=w;\n\t\t\t}\n\t\t\tpre[v]=u;\n\t\t}\n\t\treturn {d_max,g};\n\t};\n\t\
+    int u0=dfs(dfs,0,-1).second;\n\tauto [diam,u1]=dfs(dfs,u0,-1);\n\n\tvector<int>\
+    \ P={u1};\n\tfor(int u=u1;u!=u0;u=pre[u]){\n\t\tP.emplace_back(pre[u]);\n\t}\n\
+    \treverse(P.begin(),P.end());\n\n\treturn {diam,P};\n}\n\ntemplate<class W>\n\
+    pair<W,vector<int>> tree_diameter(const weighted_graph<W>& T){\n\tint n=T.size();\n\
+    \tvector<int> pre(n,-1);\n\n\tauto dfs=[&](auto&& dfs,int u,int p)->pair<W,int>{\n\
+    \t\tint g=u;\n\t\tW d_max=0;\n\t\tfor(const auto& [v,wt]:T[u]) if(v!=p) {\n\t\t\
+    \tauto [d,w]=dfs(dfs,v,u);\n\t\t\tif(d+wt>d_max){\n\t\t\t\td_max=d+wt;\n\t\t\t\
     \tg=w;\n\t\t\t}\n\t\t\tpre[v]=u;\n\t\t}\n\t\treturn {d_max,g};\n\t};\n\tint u0=dfs(dfs,0,-1).second;\n\
     \tauto [diam,u1]=dfs(dfs,u0,-1);\n\n\tvector<int> P={u1};\n\tfor(int u=u1;u!=u0;u=pre[u]){\n\
     \t\tP.emplace_back(pre[u]);\n\t}\n\treverse(P.begin(),P.end());\n\n\treturn {diam,P};\n\
-    }\n\ntemplate<class W>\npair<W,vector<int>> tree_diameter(const weighted_graph<W>&\
-    \ T){\n\tint n=T.size();\n\tvector<int> pre(n,-1);\n\n\tauto dfs=[&](auto&& dfs,int\
-    \ u,int p)->pair<W,int>{\n\t\tint g=u;\n\t\tW d_max=0;\n\t\tfor(const auto& [v,wt]:T[u])\
-    \ if(v!=p) {\n\t\t\tauto [d,w]=dfs(dfs,v,u);\n\t\t\tif(d+wt>d_max){\n\t\t\t\t\
-    d_max=d+wt;\n\t\t\t\tg=w;\n\t\t\t}\n\t\t\tpre[v]=u;\n\t\t}\n\t\treturn {d_max,g};\n\
-    \t};\n\tint u0=dfs(dfs,0,-1).second;\n\tauto [diam,u1]=dfs(dfs,u0,-1);\n\n\tvector<int>\
-    \ P={u1};\n\tfor(int u=u1;u!=u0;u=pre[u]){\n\t\tP.emplace_back(pre[u]);\n\t}\n\
-    \treverse(P.begin(),P.end());\n\n\treturn {diam,P};\n}\n"
+    }\n"
   dependsOn:
   - library/template.hpp
   - library/graph/graph.hpp
   - library/graph/wgraph.hpp
   isVerificationFile: false
-  path: library/graph/tree_diameter.hpp
+  path: library/tree/tree_diameter.hpp
   requiredBy: []
-  timestamp: '2021-05-12 17:41:17+09:00'
+  timestamp: '2021-05-12 18:45:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/tree_diameter.1.test.cpp
-  - verify/graph/tree_diameter.2.test.cpp
-documentation_of: library/graph/tree_diameter.hpp
+  - verify/tree/tree_diameter.1.test.cpp
+  - verify/tree/tree_diameter.2.test.cpp
+documentation_of: library/tree/tree_diameter.hpp
 layout: document
 title: Diameter of a Tree
 ---

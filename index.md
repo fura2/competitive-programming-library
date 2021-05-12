@@ -135,9 +135,6 @@ data:
     - icon: ':warning:'
       path: library/graph/topological_sort.hpp
       title: Topological Sort
-    - icon: ':heavy_check_mark:'
-      path: library/graph/tree_diameter.hpp
-      title: Diameter of a Tree
     - icon: ':warning:'
       path: library/graph/two_coloring.hpp
       title: library/graph/two_coloring.hpp
@@ -235,9 +232,6 @@ data:
       path: library/misc/rational_reconstruction.hpp
       title: library/misc/rational_reconstruction.hpp
     - icon: ':warning:'
-      path: library/misc/rerooting.hpp
-      title: library/misc/rerooting.hpp
-    - icon: ':warning:'
       path: library/misc/rle.hpp
       title: library/misc/rle.hpp
     - icon: ':warning:'
@@ -320,6 +314,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/template.hpp
       title: library/template.hpp
+  - name: library/tree
+    pages:
+    - icon: ':warning:'
+      path: library/tree/rerooting.hpp
+      title: library/tree/rerooting.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/tree/tree_diameter.hpp
+      title: Diameter of a Tree
   verificationCategories:
   - name: verify/data_structure
     pages:
@@ -391,12 +393,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/scc.2.test.cpp
       title: verify/graph/scc.2.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/graph/tree_diameter.1.test.cpp
-      title: verify/graph/tree_diameter.1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/graph/tree_diameter.2.test.cpp
-      title: verify/graph/tree_diameter.2.test.cpp
   - name: verify/string
     pages:
     - icon: ':heavy_check_mark:'
@@ -405,6 +401,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/string/z.2.test.cpp
       title: verify/string/z.2.test.cpp
+  - name: verify/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/tree/tree_diameter.1.test.cpp
+      title: verify/tree/tree_diameter.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/tree/tree_diameter.2.test.cpp
+      title: verify/tree/tree_diameter.2.test.cpp
 layout: toppage
 ---
 [![fura2](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Ffura2)](https://atcoder.jp/users/fura2)
