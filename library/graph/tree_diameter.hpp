@@ -39,13 +39,13 @@ pair<W,vector<int>> tree_diameter(const weighted_graph<W>& T){
 	auto dfs=[&](auto&& dfs,int u,int p)->pair<W,int>{
 		int g=u;
 		W d_max=0;
-		for(auto e:T[u]) if(e.to!=p) {
-			auto [d,v]=dfs(dfs,e.to,u);
-			if(d+e.wt>d_max){
-				d_max=d+e.wt;
-				g=v;
+		for(const auto& [v,wt]:T[u]) if(v!=p) {
+			auto [d,w]=dfs(dfs,v,u);
+			if(d+wt>d_max){
+				d_max=d+wt;
+				g=w;
 			}
-			pre[e.to]=u;
+			pre[v]=u;
 		}
 		return {d_max,g};
 	};

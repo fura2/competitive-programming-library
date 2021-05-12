@@ -23,7 +23,7 @@ template<class T>
 vector<int> topological_sort(const weighted_graph<T>& D){
 	int n=D.size();
 	vector<int> deg(n);
-	rep(u,n) for(const auto& e:D[u]) deg[e.to]++;
+	rep(u,n) for(const auto& [v,wt]:D[u]) deg[v]++;
 
 	vector<int> res;
 	queue<int> Q;
@@ -31,7 +31,7 @@ vector<int> topological_sort(const weighted_graph<T>& D){
 	while(!Q.empty()){
 		int u=Q.front(); Q.pop();
 		res.emplace_back(u);
-		for(const auto& e:D[u]) if(--deg[e.to]==0) Q.emplace(e.to);
+		for(const auto& [v,wt]:D[u]) if(--deg[v]==0) Q.emplace(v);
 	}
 	return res;
 }

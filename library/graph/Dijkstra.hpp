@@ -14,10 +14,9 @@ vector<T> Dijkstra(const weighted_graph<T>& G,int s){
 		int u; tie(d0,u)=Q.top();
 		Q.pop();
 		if(d0>d[u]) continue;
-		for(const auto& e:G[u]){
-			int v=e.to;
-			if(d[v]>d[u]+e.wt){
-				d[v]=d[u]+e.wt;
+		for(const auto& [v,wt]:G[u]){
+			if(d[v]>d[u]+wt){
+				d[v]=d[u]+wt;
 				Q.emplace(d[v],v);
 			}
 		}

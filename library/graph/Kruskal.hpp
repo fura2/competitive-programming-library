@@ -1,42 +1,46 @@
-/* 最小全域森 (Kruskal) */
-/*
-	引数
-		G : 重みつき無向グラフ
-	戻り値
-		(MSF の辺の重みの和, MSF)
-	制約
-		なし
-	計算量
-		O(E log E)
-	備考
-		グラフが連結のときは最小全域木が求まる.
-		辺の重みは負でもいい.
-*/
+#pragma once
+#include "../template.hpp"
+#include "wgraph.hpp"
+#include "../data_structure/union-find.hpp"
+
+template<class T>
+T Kruskal(int n,vector<tuple<int,int,T>> E){
+	sort(E.begin(),E.end(),[](const auto& e,const auto& f){
+		return get<2>(e)<get<2>(f);
+	});
+
+	T total{};
+	union_find U(n);
+	for(const auto& [u,v,wt]:E){
+		if(!U.is_same(u,v)){
+			U.unite(u,v);
+			total+=wt;
+		}
+	}
+	return total;
+}
 
 template<class T>
 pair<T,weighted_graph<T>> Kruskal(const weighted_graph<T>& G){
 	int n=G.size();
-	vector<tuple<T,int,int>> E;
-	rep(u,n) for(const auto& e:G[u]) {
-		int v=e.to;
-		if(u<v) E.emplace_back(e.wt,u,v);
+	vector<tuple<int,int,T>> E;
+	rep(u,n) for(const auto& [v,wt]:G[u]) {
+		if(u<v) E.emplace_back(u,v,wt);
 	}
 
-	sort(E.begin(),E.end());
+	sort(E.begin(),E.end(),[](const auto& e,const auto& f){
+		return get<2>(e)<get<2>(f);
+	});
 
-	T ans{};
-	weighted_graph<T> Res(n);
+	T total{};
+	weighted_graph<T> MSF(n);
 	union_find U(n);
-	for(const auto& e:E){
-		if(U.size()==1) break;
-		T wt;
-		int u,v; tie(wt,u,v)=e;
+	for(const auto& [u,v,wt]:E){
 		if(!U.is_same(u,v)){
 			U.unite(u,v);
-			ans+=wt;
-			Res[u].emplace_back(v,wt);
-			Res[v].emplace_back(u,wt);
+			total+=wt;
+			add_undirected_edge(MSF,u,v,wt);
 		}
 	}
-	return {ans,Res};
+	return {total,MSF};
 }

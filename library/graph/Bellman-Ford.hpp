@@ -12,9 +12,8 @@ vector<T> Bellman_Ford(const weighted_graph<T>& G,int s){
 	d[s]=0;
 	rep(_,n){
 		bool upd=false;
-		rep(u,n) if(d[u]<INF) for(const auto& e:G[u]) {
-			int v=e.to;
-			if(d[v]>d[u]+e.wt) d[v]=d[u]+e.wt, upd=true;
+		rep(u,n) if(d[u]<INF) for(const auto& [v,wt]:G[u]) {
+			if(d[v]>d[u]+wt) d[v]=d[u]+wt, upd=true;
 		}
 		if(!upd) return d;
 	}
@@ -23,9 +22,8 @@ vector<T> Bellman_Ford(const weighted_graph<T>& G,int s){
 	rep(u,n) if(d[u]<INF) Q.emplace(u);
 	while(!Q.empty()){
 		int u=Q.front(); Q.pop();
-		for(const auto& e:G[u]){
-			int v=e.to;
-			if(d[v]>NINF && (d[u]==NINF || d[v]>d[u]+e.wt)) d[v]=NINF, Q.emplace(v);
+		for(const auto& [v,wt]:G[u]){
+			if(d[v]>NINF && (d[u]==NINF || d[v]>d[u]+wt)) d[v]=NINF, Q.emplace(v);
 		}
 	}
 	return d;
