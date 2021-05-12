@@ -5,10 +5,11 @@
 template<class T>
 vector<T> Dijkstra(const weighted_graph<T>& G,int s){
 	constexpr T INF=numeric_limits<T>::max();
+
 	int n=G.size();
-	vector<T> d(n,INF); d[s]=0;
+	vector<T> d(n,INF); d[s]=T{};
 	priority_queue<pair<T,int>,vector<pair<T,int>>,greater<>> Q;
-	Q.emplace(0,s);
+	Q.emplace(T{},s);
 	while(!Q.empty()){
 		T d0;
 		int u; tie(d0,u)=Q.top();

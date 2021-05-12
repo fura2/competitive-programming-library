@@ -9,7 +9,7 @@ vector<T> Bellman_Ford(const weighted_graph<T>& G,int s){
 
 	int n=G.size();
 	vector<T> d(n,INF);
-	d[s]=0;
+	d[s]=T{};
 	rep(_,n){
 		bool upd=false;
 		rep(u,n) if(d[u]<INF) for(const auto& [v,wt]:G[u]) {
