@@ -6,6 +6,9 @@ data:
     title: library/template.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: library/graph/distance.hpp
+    title: Single-Source Shortest Path (Unweighted Graph)
+  - icon: ':heavy_check_mark:'
     path: library/graph/is_DAG.hpp
     title: DAG Detection
   - icon: ':heavy_check_mark:'
@@ -18,6 +21,9 @@ data:
     path: library/graph/tree_diameter.hpp
     title: Diameter of a Tree
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/distance.test.cpp
+    title: verify/graph/distance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/is_DAG.1.test.cpp
     title: verify/graph/is_DAG.1.test.cpp
@@ -62,6 +68,7 @@ data:
   path: library/graph/graph.hpp
   requiredBy:
   - library/graph/tree_diameter.hpp
+  - library/graph/distance.hpp
   - library/graph/is_DAG.hpp
   - library/graph/topological_sort.hpp
   - library/graph/scc.hpp
@@ -69,6 +76,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/tree_diameter.1.test.cpp
+  - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp
   - verify/graph/tree_diameter.2.test.cpp

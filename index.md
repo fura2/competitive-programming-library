@@ -105,9 +105,12 @@ data:
     - icon: ':warning:'
       path: library/graph/cc.hpp
       title: library/graph/cc.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/distance.hpp
-      title: library/graph/distance.hpp
+      title: Single-Source Shortest Path (Unweighted Graph)
+    - icon: ':warning:'
+      path: library/graph/distance_01.hpp
+      title: library/graph/distance_01.hpp
     - icon: ':warning:'
       path: library/graph/functional_graph.hpp
       title: library/graph/functional_graph.hpp
@@ -358,6 +361,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.2.test.cpp
       title: verify/graph/Dijkstra.2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/distance.test.cpp
+      title: verify/graph/distance.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/is_DAG.1.test.cpp
       title: verify/graph/is_DAG.1.test.cpp

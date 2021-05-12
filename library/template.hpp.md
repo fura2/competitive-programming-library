@@ -24,6 +24,12 @@ data:
     path: library/graph/Dijkstra.hpp
     title: Single-Source Shortest Path (Dijkstra's Algorithm)
   - icon: ':heavy_check_mark:'
+    path: library/graph/distance.hpp
+    title: Single-Source Shortest Path (Unweighted Graph)
+  - icon: ':warning:'
+    path: library/graph/distance_01.hpp
+    title: library/graph/distance_01.hpp
+  - icon: ':heavy_check_mark:'
     path: library/graph/graph.hpp
     title: Graph
   - icon: ':heavy_check_mark:'
@@ -93,6 +99,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.2.test.cpp
     title: verify/graph/Dijkstra.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/distance.test.cpp
+    title: verify/graph/distance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/is_DAG.1.test.cpp
     title: verify/graph/is_DAG.1.test.cpp
@@ -248,11 +257,13 @@ data:
   - library/graph/tree_diameter.hpp
   - library/graph/wgraph.hpp
   - library/graph/Bellman-Ford.hpp
+  - library/graph/distance.hpp
   - library/graph/Dijkstra.hpp
   - library/graph/graph.hpp
   - library/graph/is_DAG.hpp
   - library/graph/topological_sort.hpp
   - library/graph/scc.hpp
+  - library/graph/distance_01.hpp
   - library/monoid/max_monoid.hpp
   - library/monoid/min_monoid.hpp
   - library/monoid/add_monoid.hpp
@@ -268,6 +279,7 @@ data:
   - verify/string/z.1.test.cpp
   - verify/graph/tree_diameter.1.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
+  - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp
   - verify/graph/Dijkstra.2.test.cpp

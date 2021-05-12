@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.hpp
     title: Single-Source Shortest Path (Dijkstra's Algorithm)
+  - icon: ':warning:'
+    path: library/graph/distance_01.hpp
+    title: library/graph/distance_01.hpp
   - icon: ':heavy_check_mark:'
     path: library/graph/is_DAG.hpp
     title: DAG Detection
@@ -77,6 +80,7 @@ data:
   - library/graph/Dijkstra.hpp
   - library/graph/is_DAG.hpp
   - library/graph/topological_sort.hpp
+  - library/graph/distance_01.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
