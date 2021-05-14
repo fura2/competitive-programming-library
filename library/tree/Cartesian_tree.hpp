@@ -1,16 +1,6 @@
 #pragma once
 #include "../template.hpp"
 
-/*
-	Cartesian tree
-		最小の要素が根になる
-		頂点の番号で tie break
-		parent, left, right はそれぞれ親, 左の子, 右の子の頂点番号 (存在しない場合は -1)
-		頂点 u に格納されたデータは [u] でアクセスできる
-
-	計算量 O(n)
-*/
-
 template<class T>
 class Cartesian_tree{
 	vector<T> a;
