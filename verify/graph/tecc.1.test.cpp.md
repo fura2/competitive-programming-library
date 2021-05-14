@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/graph.hpp
     title: Graph
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/tecc.hpp
     title: Two-Edge Connected Components
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_edge_connected_components
     links:
     - https://judge.yosupo.jp/problem/two_edge_connected_components
-  bundledCode: "#line 1 \"verify/graph/tecc.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/two_edge_connected_components\"\
+  bundledCode: "#line 1 \"verify/graph/tecc.1.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/two_edge_connected_components\"\
     \n\n#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
@@ -49,9 +49,9 @@ data:
     \t}\n\n\tint operator[](int i)const{ return id[i]; }\n\n\tconst vector<int>& component(int\
     \ i)const{ return Comp[i]; }\n\tconst vector<pair<int,int>>& bridges()const{ return\
     \ B; }\n\tconst graph& bridge_block_forest()const{ return BBF; }\n};\n#line 5\
-    \ \"verify/graph/tecc.test.cpp\"\n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\
+    \ \"verify/graph/tecc.1.test.cpp\"\n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\
     \tgraph G(n);\n\trep(i,m){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\t\tadd_undirected_edge(G,u,v);\n\
-    \t}\n\n\ttwo_edge_connected_components TECC(G);\n\n\tint k=TECC.bridge_block_tree().size();\n\
+    \t}\n\n\ttwo_edge_connected_components TECC(G);\n\n\tint k=TECC.bridge_block_forest().size();\n\
     \tprintf(\"%d\\n\",k);\n\trep(i,k){\n\t\tconst auto& C=TECC.component(i);\n\t\t\
     printf(\"%lu \",C.size());\n\t\trep(j,C.size()) printf(\"%d%c\",C[j],j+1<C.size()?'\
     \ ':'\\n');\n\t}\n\n\treturn 0;\n}\n"
@@ -59,7 +59,7 @@ data:
     \n\n#include \"../../library/template.hpp\"\n#include \"../../library/graph/tecc.hpp\"\
     \n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\tgraph G(n);\n\trep(i,m){\n\
     \t\tint u,v; scanf(\"%d%d\",&u,&v);\n\t\tadd_undirected_edge(G,u,v);\n\t}\n\n\t\
-    two_edge_connected_components TECC(G);\n\n\tint k=TECC.bridge_block_tree().size();\n\
+    two_edge_connected_components TECC(G);\n\n\tint k=TECC.bridge_block_forest().size();\n\
     \tprintf(\"%d\\n\",k);\n\trep(i,k){\n\t\tconst auto& C=TECC.component(i);\n\t\t\
     printf(\"%lu \",C.size());\n\t\trep(j,C.size()) printf(\"%d%c\",C[j],j+1<C.size()?'\
     \ ':'\\n');\n\t}\n\n\treturn 0;\n}\n"
@@ -68,15 +68,15 @@ data:
   - library/graph/tecc.hpp
   - library/graph/graph.hpp
   isVerificationFile: true
-  path: verify/graph/tecc.test.cpp
+  path: verify/graph/tecc.1.test.cpp
   requiredBy: []
-  timestamp: '2021-05-14 20:10:05+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-05-14 20:18:08+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/graph/tecc.test.cpp
+documentation_of: verify/graph/tecc.1.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/graph/tecc.test.cpp
-- /verify/verify/graph/tecc.test.cpp.html
-title: verify/graph/tecc.test.cpp
+- /verify/verify/graph/tecc.1.test.cpp
+- /verify/verify/graph/tecc.1.test.cpp.html
+title: verify/graph/tecc.1.test.cpp
 ---

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data_structure/starry_sky_tree.hpp
     title: Starry Sky Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []

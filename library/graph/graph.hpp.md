@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy:
@@ -17,7 +17,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/scc.hpp
     title: Strongly Connected Components (Kosaraju's Algorithm)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/tecc.hpp
     title: Two-Edge Connected Components
   - icon: ':warning:'
@@ -45,18 +45,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/scc.2.test.cpp
     title: verify/graph/scc.2.test.cpp
-  - icon: ':x:'
-    path: verify/graph/tecc.test.cpp
-    title: verify/graph/tecc.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tecc.1.test.cpp
+    title: verify/graph/tecc.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tecc.2.test.cpp
+    title: verify/graph/tecc.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.1.test.cpp
     title: verify/tree/tree_diameter.1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.2.test.cpp
     title: verify/tree/tree_diameter.2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
@@ -87,16 +90,17 @@ data:
   - library/graph/topological_sort.hpp
   - library/graph/scc.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/tree/tree_diameter.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
-  - verify/graph/tecc.test.cpp
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp
   - verify/graph/cc.test.cpp
   - verify/graph/is_DAG.1.test.cpp
+  - verify/graph/tecc.1.test.cpp
+  - verify/graph/tecc.2.test.cpp
   - verify/graph/is_DAG.2.test.cpp
 documentation_of: library/graph/graph.hpp
 layout: document

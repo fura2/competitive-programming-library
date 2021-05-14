@@ -1,20 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/graph.hpp
     title: Graph
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/graph/tecc.test.cpp
-    title: verify/graph/tecc.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tecc.1.test.cpp
+    title: verify/graph/tecc.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tecc.2.test.cpp
+    title: verify/graph/tecc.2.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
@@ -71,9 +74,10 @@ data:
   path: library/graph/tecc.hpp
   requiredBy: []
   timestamp: '2021-05-14 20:10:05+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/tecc.test.cpp
+  - verify/graph/tecc.1.test.cpp
+  - verify/graph/tecc.2.test.cpp
 documentation_of: library/graph/tecc.hpp
 layout: document
 title: Two-Edge Connected Components
@@ -89,7 +93,7 @@ two_edge_connected_components(const graph& G = graph())
 - 無向グラフ $G$ を二辺連結成分分解する
 
 #### Constraints
-- なし
+- $G$ は無向グラフ
 
 #### Complexity
 - $O(V+E)$
@@ -101,7 +105,7 @@ void build(const graph& G)
 - 無向グラフ $G$ を二辺連結成分分解する
 
 #### Constraints
-- なし
+- $G$ は無向グラフ
 
 #### Complexity
 - $O(V+E)$
@@ -136,7 +140,7 @@ $G$ の二辺連結成分 $i$ を求める．
 ```
 const vector<pair<int, int>>& bridges()
 ```
-$G$ の橋の集合を求める
+$G$ の橋の集合を求める．
 
 #### Constraints
 - なし

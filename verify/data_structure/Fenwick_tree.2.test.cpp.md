@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data_structure/Fenwick_tree.hpp
     title: Fenwick Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []

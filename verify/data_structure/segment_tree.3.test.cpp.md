@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/monoid/add_monoid.hpp
     title: Additive Monoid
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []

@@ -38,7 +38,7 @@ data:
   - icon: ':warning:'
     path: library/graph/distance_01.hpp
     title: library/graph/distance_01.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/graph.hpp
     title: Graph
   - icon: ':heavy_check_mark:'
@@ -47,7 +47,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/scc.hpp
     title: Strongly Connected Components (Kosaraju's Algorithm)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/tecc.hpp
     title: Two-Edge Connected Components
   - icon: ':warning:'
@@ -138,9 +138,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/scc.2.test.cpp
     title: verify/graph/scc.2.test.cpp
-  - icon: ':x:'
-    path: verify/graph/tecc.test.cpp
-    title: verify/graph/tecc.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tecc.1.test.cpp
+    title: verify/graph/tecc.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tecc.2.test.cpp
+    title: verify/graph/tecc.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/string/z.1.test.cpp
     title: verify/string/z.1.test.cpp
@@ -153,9 +156,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.2.test.cpp
     title: verify/tree/tree_diameter.2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 2 "library/template.hpp"
@@ -304,14 +307,13 @@ data:
   - library/data_structure/sparse_table.hpp
   - library/data_structure/segment_tree.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/tree/tree_diameter.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
   - verify/string/z.2.test.cpp
   - verify/string/z.1.test.cpp
   - verify/graph/Kruskal.2.test.cpp
-  - verify/graph/tecc.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
@@ -321,6 +323,8 @@ data:
   - verify/graph/Prim.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
   - verify/graph/is_DAG.1.test.cpp
+  - verify/graph/tecc.1.test.cpp
+  - verify/graph/tecc.2.test.cpp
   - verify/graph/is_DAG.2.test.cpp
   - verify/graph/Kruskal.1.test.cpp
   - verify/data_structure/sparse_table.test.cpp

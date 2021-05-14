@@ -117,7 +117,7 @@ data:
     - icon: ':warning:'
       path: library/graph/functional_graph.hpp
       title: library/graph/functional_graph.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/graph.hpp
       title: Graph
     - icon: ':heavy_check_mark:'
@@ -129,7 +129,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/scc.hpp
       title: Strongly Connected Components (Kosaraju's Algorithm)
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/tecc.hpp
       title: Two-Edge Connected Components
     - icon: ':warning:'
@@ -311,7 +311,7 @@ data:
       title: Z Algorithm
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/template.hpp
       title: library/template.hpp
   - name: library/tree
@@ -393,9 +393,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/scc.2.test.cpp
       title: verify/graph/scc.2.test.cpp
-    - icon: ':x:'
-      path: verify/graph/tecc.test.cpp
-      title: verify/graph/tecc.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/tecc.1.test.cpp
+      title: verify/graph/tecc.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/tecc.2.test.cpp
+      title: verify/graph/tecc.2.test.cpp
   - name: verify/string
     pages:
     - icon: ':heavy_check_mark:'
