@@ -18,7 +18,7 @@ int main(){
 	rep(i,k){
 		auto res=SCC.component(i);
 		printf("%ld ",res.size());
-		rep(i,res.size()) printf("%d%c",res[i],i+1<res.size()?' ':'\n');
+		rep(j,res.size()) printf("%d%c",res[j],j+1<res.size()?' ':'\n');
 	}
 
 	return 0;

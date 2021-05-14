@@ -1,5 +1,5 @@
 ---
-title: Connected Components Decomposition
+title: Connected Components
 documentation_of: ../../library/graph/cc.hpp
 ---
 

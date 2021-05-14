@@ -19,3 +19,6 @@ Z algorithm は数列 $z=(z_0,\ldots,z_{n-1})$ を $O(n)$ で求めるアルゴ�
 
 #### Complexity
 - $O(n)$
+
+## References
+- [Z Algorithm - paladin8's blog](https://codeforces.com/blog/entry/3107)

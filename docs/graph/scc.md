@@ -1,5 +1,5 @@
 ---
-title: Strongly Connected Components Decomposition (Kosaraju's Algorithm)
+title: Strongly Connected Components (Kosaraju's Algorithm)
 documentation_of: ../../library/graph/scc.hpp
 ---
 
