@@ -13,7 +13,7 @@ two_edge_connected_components(const graph& G = graph())
 - 無向グラフ $G$ を二辺連結成分分解する
 
 #### Constraints
-- なし
+- $G$ は無向グラフ
 
 #### Complexity
 - $O(V+E)$
@@ -25,7 +25,7 @@ void build(const graph& G)
 - 無向グラフ $G$ を二辺連結成分分解する
 
 #### Constraints
-- なし
+- $G$ は無向グラフ
 
 #### Complexity
 - $O(V+E)$
@@ -60,7 +60,7 @@ $G$ の二辺連結成分 $i$ を求める．
 ```
 const vector<pair<int, int>>& bridges()
 ```
-$G$ の橋の集合を求める
+$G$ の橋の集合を求める．
 
 #### Constraints
 - なし

@@ -13,7 +13,7 @@ int main(){
 
 	two_edge_connected_components TECC(G);
 
-	int k=TECC.bridge_block_tree().size();
+	int k=TECC.bridge_block_forest().size();
 	printf("%d\n",k);
 	rep(i,k){
 		const auto& C=TECC.component(i);
