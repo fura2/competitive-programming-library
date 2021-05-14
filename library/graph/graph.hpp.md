@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/graph/cc.hpp
-    title: Connected Components Decomposition
+    title: Connected Components
   - icon: ':heavy_check_mark:'
     path: library/graph/distance.hpp
     title: Single-Source Shortest Path (Unweighted Graph)
@@ -16,7 +16,10 @@ data:
     title: DAG Detection
   - icon: ':heavy_check_mark:'
     path: library/graph/scc.hpp
-    title: Strongly Connected Components Decomposition (Kosaraju's Algorithm)
+    title: Strongly Connected Components (Kosaraju's Algorithm)
+  - icon: ':x:'
+    path: library/graph/tecc.hpp
+    title: Two-Edge Connected Components
   - icon: ':warning:'
     path: library/graph/topological_sort.hpp
     title: Topological Sort
@@ -42,15 +45,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/scc.2.test.cpp
     title: verify/graph/scc.2.test.cpp
+  - icon: ':x:'
+    path: verify/graph/tecc.test.cpp
+    title: verify/graph/tecc.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.1.test.cpp
     title: verify/tree/tree_diameter.1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.2.test.cpp
     title: verify/tree/tree_diameter.2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
@@ -75,15 +81,17 @@ data:
   requiredBy:
   - library/tree/tree_diameter.hpp
   - library/graph/cc.hpp
+  - library/graph/tecc.hpp
   - library/graph/distance.hpp
   - library/graph/is_DAG.hpp
   - library/graph/topological_sort.hpp
   - library/graph/scc.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/tree/tree_diameter.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
+  - verify/graph/tecc.test.cpp
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp

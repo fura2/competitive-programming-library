@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/graph.hpp
     title: Graph
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
@@ -53,7 +53,7 @@ data:
   - verify/graph/cc.test.cpp
 documentation_of: library/graph/cc.hpp
 layout: document
-title: Connected Components Decomposition
+title: Connected Components
 ---
 
 ## Description

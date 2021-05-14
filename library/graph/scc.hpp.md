@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/graph.hpp
     title: Graph
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
@@ -74,7 +74,7 @@ data:
   - verify/graph/scc.2.test.cpp
 documentation_of: library/graph/scc.hpp
 layout: document
-title: Strongly Connected Components Decomposition (Kosaraju's Algorithm)
+title: Strongly Connected Components (Kosaraju's Algorithm)
 ---
 
 ## Description

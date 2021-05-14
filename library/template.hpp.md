@@ -31,14 +31,14 @@ data:
     title: Minimum Spanning Forest (Prim's Algorithm)
   - icon: ':heavy_check_mark:'
     path: library/graph/cc.hpp
-    title: Connected Components Decomposition
+    title: Connected Components
   - icon: ':heavy_check_mark:'
     path: library/graph/distance.hpp
     title: Single-Source Shortest Path (Unweighted Graph)
   - icon: ':warning:'
     path: library/graph/distance_01.hpp
     title: library/graph/distance_01.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/graph.hpp
     title: Graph
   - icon: ':heavy_check_mark:'
@@ -46,7 +46,10 @@ data:
     title: DAG Detection
   - icon: ':heavy_check_mark:'
     path: library/graph/scc.hpp
-    title: Strongly Connected Components Decomposition (Kosaraju's Algorithm)
+    title: Strongly Connected Components (Kosaraju's Algorithm)
+  - icon: ':x:'
+    path: library/graph/tecc.hpp
+    title: Two-Edge Connected Components
   - icon: ':warning:'
     path: library/graph/topological_sort.hpp
     title: Topological Sort
@@ -135,6 +138,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/scc.2.test.cpp
     title: verify/graph/scc.2.test.cpp
+  - icon: ':x:'
+    path: verify/graph/tecc.test.cpp
+    title: verify/graph/tecc.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/string/z.1.test.cpp
     title: verify/string/z.1.test.cpp
@@ -147,9 +153,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.2.test.cpp
     title: verify/tree/tree_diameter.2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 2 "library/template.hpp"
@@ -281,6 +287,7 @@ data:
   - library/graph/wgraph.hpp
   - library/graph/Prim.hpp
   - library/graph/Bellman-Ford.hpp
+  - library/graph/tecc.hpp
   - library/graph/distance.hpp
   - library/graph/Dijkstra.hpp
   - library/graph/graph.hpp
@@ -297,13 +304,14 @@ data:
   - library/data_structure/sparse_table.hpp
   - library/data_structure/segment_tree.hpp
   timestamp: '2021-05-09 03:26:47+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/tree/tree_diameter.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
   - verify/string/z.2.test.cpp
   - verify/string/z.1.test.cpp
   - verify/graph/Kruskal.2.test.cpp
+  - verify/graph/tecc.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp

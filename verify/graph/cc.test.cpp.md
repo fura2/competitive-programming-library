@@ -3,11 +3,11 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/cc.hpp
-    title: Connected Components Decomposition
-  - icon: ':heavy_check_mark:'
+    title: Connected Components
+  - icon: ':question:'
     path: library/graph/graph.hpp
     title: Graph
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []

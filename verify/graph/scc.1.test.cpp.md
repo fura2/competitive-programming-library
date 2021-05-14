@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/graph.hpp
     title: Graph
   - icon: ':heavy_check_mark:'
     path: library/graph/scc.hpp
-    title: Strongly Connected Components Decomposition (Kosaraju's Algorithm)
-  - icon: ':heavy_check_mark:'
+    title: Strongly Connected Components (Kosaraju's Algorithm)
+  - icon: ':question:'
     path: library/template.hpp
     title: library/template.hpp
   _extendedRequiredBy: []
@@ -49,14 +49,14 @@ data:
     \ scanf(\"%d%d\",&n,&m);\n\tgraph G(n);\n\trep(i,m){\n\t\tint u,v; scanf(\"%d%d\"\
     ,&u,&v);\n\t\tadd_directed_edge(G,u,v);\n\t}\n\n\tstrongly_connected_components\
     \ SCC(G);\n\n\tint k=SCC.DAG().size();\n\tprintf(\"%d\\n\",k);\n\trep(i,k){\n\t\
-    \tauto res=SCC.component(i);\n\t\tprintf(\"%ld \",res.size());\n\t\trep(i,res.size())\
-    \ printf(\"%d%c\",res[i],i+1<res.size()?' ':'\\n');\n\t}\n\n\treturn 0;\n}\n"
+    \tauto res=SCC.component(i);\n\t\tprintf(\"%ld \",res.size());\n\t\trep(j,res.size())\
+    \ printf(\"%d%c\",res[j],j+1<res.size()?' ':'\\n');\n\t}\n\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include \"../../library/template.hpp\"\
     \n#include \"../../library/graph/scc.hpp\"\n\nint main(){\n\tint n,m; scanf(\"\
     %d%d\",&n,&m);\n\tgraph G(n);\n\trep(i,m){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\
     \t\tadd_directed_edge(G,u,v);\n\t}\n\n\tstrongly_connected_components SCC(G);\n\
     \n\tint k=SCC.DAG().size();\n\tprintf(\"%d\\n\",k);\n\trep(i,k){\n\t\tauto res=SCC.component(i);\n\
-    \t\tprintf(\"%ld \",res.size());\n\t\trep(i,res.size()) printf(\"%d%c\",res[i],i+1<res.size()?'\
+    \t\tprintf(\"%ld \",res.size());\n\t\trep(j,res.size()) printf(\"%d%c\",res[j],j+1<res.size()?'\
     \ ':'\\n');\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
   - library/template.hpp
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: verify/graph/scc.1.test.cpp
   requiredBy: []
-  timestamp: '2021-05-11 21:09:26+09:00'
+  timestamp: '2021-05-14 20:10:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/scc.1.test.cpp

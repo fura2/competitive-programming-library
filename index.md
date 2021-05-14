@@ -107,7 +107,7 @@ data:
       title: Minimum Spanning Forest (Prim's Algorithm)
     - icon: ':heavy_check_mark:'
       path: library/graph/cc.hpp
-      title: Connected Components Decomposition
+      title: Connected Components
     - icon: ':heavy_check_mark:'
       path: library/graph/distance.hpp
       title: Single-Source Shortest Path (Unweighted Graph)
@@ -117,7 +117,7 @@ data:
     - icon: ':warning:'
       path: library/graph/functional_graph.hpp
       title: library/graph/functional_graph.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/graph/graph.hpp
       title: Graph
     - icon: ':heavy_check_mark:'
@@ -128,10 +128,10 @@ data:
       title: library/graph/odd_cycle.hpp
     - icon: ':heavy_check_mark:'
       path: library/graph/scc.hpp
-      title: Strongly Connected Components Decomposition (Kosaraju's Algorithm)
-    - icon: ':warning:'
+      title: Strongly Connected Components (Kosaraju's Algorithm)
+    - icon: ':x:'
       path: library/graph/tecc.hpp
-      title: library/graph/tecc.hpp
+      title: Two-Edge Connected Components
     - icon: ':warning:'
       path: library/graph/topological_sort.hpp
       title: Topological Sort
@@ -311,7 +311,7 @@ data:
       title: Z Algorithm
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/template.hpp
       title: library/template.hpp
   - name: library/tree
@@ -393,6 +393,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/scc.2.test.cpp
       title: verify/graph/scc.2.test.cpp
+    - icon: ':x:'
+      path: verify/graph/tecc.test.cpp
+      title: verify/graph/tecc.test.cpp
   - name: verify/string
     pages:
     - icon: ':heavy_check_mark:'
