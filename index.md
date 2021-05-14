@@ -108,9 +108,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/distance.hpp
       title: Single-Source Shortest Path (Unweighted Graph)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/distance_01.hpp
-      title: library/graph/distance_01.hpp
+      title: Single-Source Shortest Path ($01$-BFS)
     - icon: ':warning:'
       path: library/graph/functional_graph.hpp
       title: library/graph/functional_graph.hpp
@@ -381,6 +381,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/distance.test.cpp
       title: verify/graph/distance.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/distance_01.test.cpp
+      title: verify/graph/distance_01.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/is_DAG.1.test.cpp
       title: verify/graph/is_DAG.1.test.cpp

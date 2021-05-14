@@ -35,9 +35,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/distance.hpp
     title: Single-Source Shortest Path (Unweighted Graph)
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/distance_01.hpp
-    title: library/graph/distance_01.hpp
+    title: Single-Source Shortest Path ($01$-BFS)
   - icon: ':heavy_check_mark:'
     path: library/graph/graph.hpp
     title: Graph
@@ -129,6 +129,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/distance.test.cpp
     title: verify/graph/distance.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/distance_01.test.cpp
+    title: verify/graph/distance_01.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/is_DAG.1.test.cpp
     title: verify/graph/is_DAG.1.test.cpp
@@ -335,6 +338,7 @@ data:
   - verify/graph/tecc.2.test.cpp
   - verify/graph/is_DAG.2.test.cpp
   - verify/graph/Kruskal.1.test.cpp
+  - verify/graph/distance_01.test.cpp
   - verify/data_structure/sparse_table.test.cpp
   - verify/data_structure/Fenwick_tree.1.test.cpp
   - verify/data_structure/starry_sky_tree.test.cpp
