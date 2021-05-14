@@ -8,7 +8,7 @@ documentation_of: ../../library/graph/scc.hpp
 
 ### (constructor)
 ```
-strongly_connected_components(const graph& G = graph())
+strongly_connected_components(const graph& G = {})
 ```
 - 有向グラフ $G$ を強連結成分分解する
 

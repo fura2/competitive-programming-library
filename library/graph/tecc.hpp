@@ -9,7 +9,7 @@ class two_edge_connected_components{
 	graph BBF;
 
 public:
-	two_edge_connected_components(const graph& G=graph()){ build(G); }
+	two_edge_connected_components(const graph& G={}){ build(G); }
 
 	void build(const graph& G){
 		int n=G.size(),idx;

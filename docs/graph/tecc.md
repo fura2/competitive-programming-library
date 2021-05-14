@@ -8,7 +8,7 @@ documentation_of: ../../library/graph/tecc.hpp
 
 ### (constructor)
 ```
-two_edge_connected_components(const graph& G = graph())
+two_edge_connected_components(const graph& G = {})
 ```
 - 無向グラフ $G$ を二辺連結成分分解する
 
@@ -60,7 +60,7 @@ $G$ の二辺連結成分 $i$ を求める．
 ```
 const vector<pair<int, int>>& bridges()
 ```
-$G$ の橋の集合を求める．
+$G$ の橋の集合を求める
 
 #### Constraints
 - なし

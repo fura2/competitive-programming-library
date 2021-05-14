@@ -1,3 +1,6 @@
+#pragma once
+#include "../template.hpp"
+
 /*
 	Cartesian tree
 		最小の要素が根になる
@@ -14,7 +17,10 @@ class Cartesian_tree{
 	int rt;
 	vector<int> p,l,r;
 public:
-	Cartesian_tree(const vector<T>& a):a(a){
+	Cartesian_tree(const vector<T>& a={}){ build(a); }
+
+	void build(const vector<T>& a){
+		this->a=a;
 		int n=a.size();
 		rt=0;
 		p.assign(n,-1);

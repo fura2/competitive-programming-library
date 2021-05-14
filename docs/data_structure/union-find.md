@@ -14,7 +14,7 @@ union by size と path compression を実装している．
 ```
 union_find(int n = 0)
 ```
-- 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
+互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
 
 #### Constraints
 - $n\ge0$
@@ -26,7 +26,7 @@ union_find(int n = 0)
 ```
 void build(int n)
 ```
-- 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
+互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ で初期化する
 
 #### Constraints
 - $n\ge0$

@@ -8,7 +8,7 @@ class strongly_connected_components{
 	graph D;
 
 public:
-	strongly_connected_components(const graph& G=graph()){ build(G); }
+	strongly_connected_components(const graph& G={}){ build(G); }
 
 	void build(const graph& G){
 		int n=G.size();
