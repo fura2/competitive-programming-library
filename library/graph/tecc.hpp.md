@@ -32,11 +32,11 @@ data:
     G[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph& G,int u,int v){\n\t\
     G[u].emplace_back(v);\n}\n#line 4 \"library/graph/tecc.hpp\"\n\nclass two_edge_connected_components{\n\
     \tvector<int> id;\n\tvector<vector<int>> Comp;\n\tvector<pair<int,int>> B;\n\t\
-    graph BBF;\n\npublic:\n\ttwo_edge_connected_components(const graph& G=graph()){\
-    \ build(G); }\n\n\tvoid build(const graph& G){\n\t\tint n=G.size(),idx;\n\t\t\
-    vector<int> ord(n,-1),low(n,-1);\n\n\t\tauto dfs1=[&](auto&& dfs1,int u,int p)->void{\n\
-    \t\t\tord[u]=low[u]=idx++;\n\t\t\tbool f=true;\n\t\t\tfor(int v:G[u]){\n\t\t\t\
-    \tif(v==p && f){ f=false; continue; }\n\t\t\t\tif(ord[v]==-1){\n\t\t\t\t\tdfs1(dfs1,v,u);\n\
+    graph BBF;\n\npublic:\n\ttwo_edge_connected_components(const graph& G={}){ build(G);\
+    \ }\n\n\tvoid build(const graph& G){\n\t\tint n=G.size(),idx;\n\t\tvector<int>\
+    \ ord(n,-1),low(n,-1);\n\n\t\tauto dfs1=[&](auto&& dfs1,int u,int p)->void{\n\t\
+    \t\tord[u]=low[u]=idx++;\n\t\t\tbool f=true;\n\t\t\tfor(int v:G[u]){\n\t\t\t\t\
+    if(v==p && f){ f=false; continue; }\n\t\t\t\tif(ord[v]==-1){\n\t\t\t\t\tdfs1(dfs1,v,u);\n\
     \t\t\t\t\tlow[u]=min(low[u],low[v]);\n\t\t\t\t}\n\t\t\t\telse{\n\t\t\t\t\tlow[u]=min(low[u],ord[v]);\n\
     \t\t\t\t}\n\t\t\t}\n\t\t};\n\n\t\tauto dfs2=[&](auto&& dfs2,int u,int p)->void{\n\
     \t\t\tif(p==-1 || ord[p]<low[u]){\n\t\t\t\tid[u]=idx++;\n\t\t\t\tif(p!=-1) B.emplace_back(minmax(p,u));\n\
@@ -51,7 +51,7 @@ data:
   code: "#pragma once\n#include \"../template.hpp\"\n#include \"graph.hpp\"\n\nclass\
     \ two_edge_connected_components{\n\tvector<int> id;\n\tvector<vector<int>> Comp;\n\
     \tvector<pair<int,int>> B;\n\tgraph BBF;\n\npublic:\n\ttwo_edge_connected_components(const\
-    \ graph& G=graph()){ build(G); }\n\n\tvoid build(const graph& G){\n\t\tint n=G.size(),idx;\n\
+    \ graph& G={}){ build(G); }\n\n\tvoid build(const graph& G){\n\t\tint n=G.size(),idx;\n\
     \t\tvector<int> ord(n,-1),low(n,-1);\n\n\t\tauto dfs1=[&](auto&& dfs1,int u,int\
     \ p)->void{\n\t\t\tord[u]=low[u]=idx++;\n\t\t\tbool f=true;\n\t\t\tfor(int v:G[u]){\n\
     \t\t\t\tif(v==p && f){ f=false; continue; }\n\t\t\t\tif(ord[v]==-1){\n\t\t\t\t\
@@ -73,7 +73,7 @@ data:
   isVerificationFile: false
   path: library/graph/tecc.hpp
   requiredBy: []
-  timestamp: '2021-05-14 20:10:05+09:00'
+  timestamp: '2021-05-14 23:31:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/tecc.1.test.cpp
@@ -88,7 +88,7 @@ title: Two-Edge Connected Components
 
 ### (constructor)
 ```
-two_edge_connected_components(const graph& G = graph())
+two_edge_connected_components(const graph& G = {})
 ```
 - 無向グラフ $G$ を二辺連結成分分解する
 
@@ -140,7 +140,7 @@ $G$ の二辺連結成分 $i$ を求める．
 ```
 const vector<pair<int, int>>& bridges()
 ```
-$G$ の橋の集合を求める．
+$G$ の橋の集合を求める
 
 #### Constraints
 - なし

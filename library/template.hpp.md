@@ -69,6 +69,9 @@ data:
     path: library/string/z.hpp
     title: Z Algorithm
   - icon: ':heavy_check_mark:'
+    path: library/tree/Cartesian_tree.hpp
+    title: Cartesian Tree
+  - icon: ':heavy_check_mark:'
     path: library/tree/tree_diameter.hpp
     title: Diameter of a Tree
   _extendedVerifiedWith:
@@ -150,6 +153,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/string/z.2.test.cpp
     title: verify/string/z.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/Cartesian_tree.test.cpp
+    title: verify/tree/Cartesian_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.1.test.cpp
     title: verify/tree/tree_diameter.1.test.cpp
@@ -284,6 +290,7 @@ data:
   path: library/template.hpp
   requiredBy:
   - library/tree/tree_diameter.hpp
+  - library/tree/Cartesian_tree.hpp
   - library/string/z.hpp
   - library/graph/Kruskal.hpp
   - library/graph/cc.hpp
@@ -311,6 +318,7 @@ data:
   verifiedWith:
   - verify/tree/tree_diameter.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
+  - verify/tree/Cartesian_tree.test.cpp
   - verify/string/z.2.test.cpp
   - verify/string/z.1.test.cpp
   - verify/graph/Kruskal.2.test.cpp

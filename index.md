@@ -3,9 +3,6 @@ data:
   libraryCategories:
   - name: library/data_structure
     pages:
-    - icon: ':warning:'
-      path: library/data_structure/Cartesian_tree.hpp
-      title: library/data_structure/Cartesian_tree.hpp
     - icon: ':heavy_check_mark:'
       path: library/data_structure/Fenwick_tree.hpp
       title: Fenwick Tree
@@ -316,6 +313,9 @@ data:
       title: library/template.hpp
   - name: library/tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: library/tree/Cartesian_tree.hpp
+      title: Cartesian Tree
     - icon: ':warning:'
       path: library/tree/rerooting.hpp
       title: library/tree/rerooting.hpp
@@ -409,6 +409,9 @@ data:
       title: verify/string/z.2.test.cpp
   - name: verify/tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/tree/Cartesian_tree.test.cpp
+      title: verify/tree/Cartesian_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/tree/tree_diameter.1.test.cpp
       title: verify/tree/tree_diameter.1.test.cpp
