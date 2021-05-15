@@ -117,6 +117,7 @@ $\mathrm{dp}:V\to M$ を根から再帰的に
 
 <h4>$T$ が重みありのとき</h4>
 
+$T$ の辺には型 $W$ の重みがついているとする．
 $(M,\ast)$ を可換モノイド，$f:M\times W\times V\to M,\ g:M\times V\to M$ とする．\\
 $T$ を $r$ を根とする根つき木と見なす．
 $\mathrm{dp}:V\to M$ を根から再帰的に
@@ -127,8 +128,8 @@ $\mathrm{dp}:V\to M$ を根から再帰的に
 ここで，頂点 $u$ の子を $v_1,\ldots,v_k$ と，有向辺 $(u,v_i)$ の重みを $w_i$ とおいた．
 
 ```
-(1) vector<M> rerooting(const graph& T, const F& f, const G& g)
-(2) vector<M> rerooting(const weighted_graph<W>& T, const F& f, const G& g)
+(1) vector<M> rerooting<M>(const graph& T, const F& f, const G& g)
+(2) vector<M> rerooting<M>(const weighted_graph<W>& T, const F& f, const G& g)
 ```
 - (1) 木 $T$ の各頂点 $r$ について $\mathrm{dp}(r)$ を求める
 - (2) 重みつき木 $T$ の各頂点 $r$ について $\mathrm{dp}(r)$ を求める
