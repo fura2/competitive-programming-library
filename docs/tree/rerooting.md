@@ -19,7 +19,7 @@ $\mathrm{dp}:V\to M$ を根から再帰的に
 
 <h4>$T$ が重みありのとき</h4>
 
-$T$ の辺には型 $W$ の重みがついているとする．
+$T$ の辺には型 $W$ の重みがついているとする．\\
 $(M,\ast)$ を可換モノイド，$f:M\times W\times V\to M,\ g:M\times V\to M$ とする．\\
 $T$ を $r$ を根とする根つき木と見なす．
 $\mathrm{dp}:V\to M$ を根から再帰的に
@@ -27,7 +27,7 @@ $\mathrm{dp}:V\to M$ を根から再帰的に
 	$$\mathrm{dp}(u)=g(f(\mathrm{dp}(v_1),w_1,v_1)\ast f(\mathrm{dp}(v_2),w_2,v_2)\ast\cdots\ast f(\mathrm{dp}(v_k),w_k,v_k),u)$$
 </div>
 と定める．
-ここで，頂点 $u$ の子を $v_1,\ldots,v_k$ と，有向辺 $(u,v_i)$ の重みを $w_i$ とおいた．
+ここで，頂点 $u$ の子を $v_1,\ldots,v_k$，有向辺 $(u,v_i)$ の重みを $w_i$ とおいた．
 
 ```
 (1) vector<M> rerooting<M>(const graph& T, const F& f, const G& g)
