@@ -21,8 +21,8 @@ int main(){
 	}
 
 	using monoid=top2_monoid;
-	auto f=[](monoid m,edge<int> e)->monoid{
-		return {m.a+e.wt,m.b+e.wt};
+	auto f=[](monoid m,int wt,int v)->monoid{
+		return {m.a+wt,m.b+wt};
 	};
 	auto g=[](monoid m,int u)->monoid{
 		return m;

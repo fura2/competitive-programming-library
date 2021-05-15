@@ -50,9 +50,9 @@ vector<M> rerooting(const weighted_graph<W>& T,const F& f,const G& g){
 	vector<M> dp1(n),dp2(n);
 
 	auto dfs1=[&](auto&& dfs1,int u,int p)->void{
-		for(const auto& e:T[u]) if(e.to!=p) {
-			dfs1(dfs1,e.to,u);
-			dp1[u]=dp1[u]*f(dp1[e.to],e);
+		for(const auto& [v,wt]:T[u]) if(v!=p) {
+			dfs1(dfs1,v,u);
+			dp1[u]=dp1[u]*f(dp1[v],wt,v);
 		}
 		dp1[u]=g(dp1[u],u);
 	};
@@ -62,8 +62,8 @@ vector<M> rerooting(const weighted_graph<W>& T,const F& f,const G& g){
 
 		vector<M> lcum(k+1),rcum(k+1);
 		rep(i,k){
-			const auto& e=T[u][i];
-			lcum[i+1]=rcum[i]=f(e.to==p?dp_par:dp1[e.to],e);
+			const auto& [v,wt]=T[u][i];
+			lcum[i+1]=rcum[i]=f(v==p?dp_par:dp1[v],wt,v);
 		}
 		rep(i,k){
 			lcum[i+1]=lcum[i+1]*lcum[i];

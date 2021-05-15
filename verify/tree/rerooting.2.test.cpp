@@ -13,8 +13,8 @@ int main(){
 	}
 
 	using monoid=max_monoid<int>;
-	auto f=[](monoid m,edge<int> e)->monoid{
-		return m.get()+e.wt;
+	auto f=[](monoid m,int wt,int v)->monoid{
+		return m.get()+wt;
 	};
 	auto g=[](monoid m,int u)->monoid{
 		return m*0;
