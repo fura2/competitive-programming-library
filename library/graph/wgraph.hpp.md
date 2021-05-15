@@ -27,6 +27,9 @@ data:
     path: library/graph/topological_sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
+    path: library/tree/rerooting.hpp
+    title: Rerooting
+  - icon: ':heavy_check_mark:'
     path: library/tree/tree_diameter.hpp
     title: Diameter of a Tree
   _extendedVerifiedWith:
@@ -57,6 +60,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/is_DAG.2.test.cpp
     title: verify/graph/is_DAG.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/rerooting.1.test.cpp
+    title: verify/tree/rerooting.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/rerooting.2.test.cpp
+    title: verify/tree/rerooting.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.1.test.cpp
     title: verify/tree/tree_diameter.1.test.cpp
@@ -94,6 +103,7 @@ data:
   path: library/graph/wgraph.hpp
   requiredBy:
   - library/tree/tree_diameter.hpp
+  - library/tree/rerooting.hpp
   - library/graph/Kruskal.hpp
   - library/graph/Prim.hpp
   - library/graph/Bellman-Ford.hpp
@@ -105,7 +115,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/tree/tree_diameter.1.test.cpp
+  - verify/tree/rerooting.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
+  - verify/tree/rerooting.2.test.cpp
   - verify/graph/Kruskal.2.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp

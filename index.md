@@ -316,9 +316,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/tree/Cartesian_tree.hpp
       title: Cartesian Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/rerooting.hpp
-      title: library/tree/rerooting.hpp
+      title: Rerooting
     - icon: ':heavy_check_mark:'
       path: library/tree/tree_diameter.hpp
       title: Diameter of a Tree
@@ -415,6 +415,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/tree/Cartesian_tree.test.cpp
       title: verify/tree/Cartesian_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/tree/rerooting.1.test.cpp
+      title: verify/tree/rerooting.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/tree/rerooting.2.test.cpp
+      title: verify/tree/rerooting.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/tree/tree_diameter.1.test.cpp
       title: verify/tree/tree_diameter.1.test.cpp

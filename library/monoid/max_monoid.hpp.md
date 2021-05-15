@@ -9,6 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/segment_tree.2.test.cpp
     title: verify/data_structure/segment_tree.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/rerooting.1.test.cpp
+    title: verify/tree/rerooting.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/rerooting.2.test.cpp
+    title: verify/tree/rerooting.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -37,6 +43,8 @@ data:
   timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/tree/rerooting.1.test.cpp
+  - verify/tree/rerooting.2.test.cpp
   - verify/data_structure/segment_tree.2.test.cpp
 documentation_of: library/monoid/max_monoid.hpp
 layout: document

@@ -24,6 +24,9 @@ data:
     path: library/graph/topological_sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
+    path: library/tree/rerooting.hpp
+    title: Rerooting
+  - icon: ':heavy_check_mark:'
     path: library/tree/tree_diameter.hpp
     title: Diameter of a Tree
   _extendedVerifiedWith:
@@ -51,6 +54,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/tecc.2.test.cpp
     title: verify/graph/tecc.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/rerooting.1.test.cpp
+    title: verify/tree/rerooting.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/rerooting.2.test.cpp
+    title: verify/tree/rerooting.2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/tree/tree_diameter.1.test.cpp
     title: verify/tree/tree_diameter.1.test.cpp
@@ -83,6 +92,7 @@ data:
   path: library/graph/graph.hpp
   requiredBy:
   - library/tree/tree_diameter.hpp
+  - library/tree/rerooting.hpp
   - library/graph/cc.hpp
   - library/graph/tecc.hpp
   - library/graph/distance.hpp
@@ -93,7 +103,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/tree/tree_diameter.1.test.cpp
+  - verify/tree/rerooting.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
+  - verify/tree/rerooting.2.test.cpp
   - verify/graph/distance.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp

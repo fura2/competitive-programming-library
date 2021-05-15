@@ -1,63 +1,55 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/graph/graph.hpp
+    title: Graph
+  - icon: ':heavy_check_mark:'
+    path: library/graph/wgraph.hpp
+    title: Weighted Graph
+  - icon: ':heavy_check_mark:'
+    path: library/template.hpp
+    title: library/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/rerooting.1.test.cpp
+    title: verify/tree/rerooting.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/rerooting.2.test.cpp
+    title: verify/tree/rerooting.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links:
-    - https://null-mn.hatenablog.com/entry/2020/04/14/124151
-  bundledCode: "#line 1 \"library/tree/rerooting.hpp\"\n/*\n\t\u5168\u65B9\u4F4D\u6728\
-    \ DP\n\t\tT = (V, E) : \u6728\n\t\t(M, *) : \u30E2\u30CE\u30A4\u30C9\n\t\tf :\
-    \ M \xD7 V \u2192 M\n\t\tg : M \xD7 V \u2192 M\n\n\t\t\u6839\u3092\u4EFB\u610F\
-    \u306B\u56FA\u5B9A\u3057\u3066 T \u3092\u6839\u3064\u304D\u6728\u3068\u307F\u306A\
-    \u3057, dp : V \u2192 M \u3092\n\t\t\tdp[u] = g(f(dp[v_1], v_1) * f(dp[v_2], v_2)\
-    \ * ... * f(dp[v_k], v_k), u)\n\t\t\u3068\u5B9A\u3081\u308B. \u3053\u3053\u3067\
-    , \u9802\u70B9 u \u306E\u5B50\u3092 v_1, ..., v_k \u3068\u3059\u308B.\n\t\tf,\
-    \ g \u306E\u7B2C 2 \u5F15\u6570\u306F\u4F7F\u308F\u306A\u3044\u3053\u3068\u3082\
-    \u591A\u3044 (\u9802\u70B9\u306B\u91CD\u307F\u304C\u3064\u3044\u3066\u3044\u308B\
-    \u3068\u304D\u306A\u3069\u306B\u6709\u52B9).\n\n\t\t\u5404\u9802\u70B9 u \u306B\
-    \u5BFE\u3057\u3066, u \u3092\u6839\u3068\u3057\u305F\u3068\u304D\u306E dp[u] \u306E\
-    \u5024\u3092\u6C42\u3081\u308B.\n\t\t\u8A08\u7B97\u91CF\u306F O(|V|) \u3068\u306A\
-    \u308B.\n\n\t\t\u4F7F\u3046\u3068\u304D\u306F\u6B21\u306E\u3088\u3046\u306B\u66F8\
-    \u304F (\u5FC5\u8981\u306B\u5FDC\u3058\u3066 [] \u306F [&] \u306B\u66F8\u304D\u63DB\
-    \u3048\u308B).\n\n\t\tauto f=[](monoid m,int u)->monoid{\n\t\t\treturn ***;\n\t\
-    \t};\n\t\tauto g=[](monoid m,int u)->monoid{\n\t\t\treturn ***;\n\t\t};\n\t\t\
-    auto res=rerooting<monoid>(T,f,g);\n\n\t\t\u53C2\u8003 : https://null-mn.hatenablog.com/entry/2020/04/14/124151\n\
-    */\n\ntemplate<class M,class F,class G>\nvector<M> rerooting(const graph& T,const\
-    \ F& f,const G& g){\n\tint n=T.size();\n\tvector<M> dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&&\
-    \ dfs1,int u,int p)->void{\n\t\tfor(int v:T[u]) if(v!=p) {\n\t\t\tdfs1(dfs1,v,u);\n\
-    \t\t\tdp1[u]=dp1[u]*f(dp1[v],v);\n\t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\t};\n\n\tauto\
-    \ dfs2=[&](auto&& dfs2,int u,int p,const M& dp_par)->void{\n\t\tint k=T[u].size();\n\
-    \n\t\tvector<M> lcum(k+1),rcum(k+1);\n\t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\
-    \tlcum[i+1]=rcum[i]=(v==p?f(dp_par,p):f(dp1[v],v));\n\t\t}\n\t\trep(i,k){\n\t\t\
-    \tlcum[i+1]=lcum[i+1]*lcum[i];\n\t\t\trcum[k-i-1]=rcum[k-i-1]*rcum[k-i];\n\t\t\
-    }\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\tif(v!=p){\n\
-    \t\t\t\tdfs2(dfs2,v,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t}\n\t\t}\n\t};\n\n\tdfs1(dfs1,0,-1);\n\
-    \tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n}\n\n/*\n\t\u5168\u65B9\u4F4D\u6728 DP\n\
-    \t\tT = (V, E) : \u8FBA\u306B\u91CD\u307F\u304C\u3064\u3044\u305F\u6728\n\t\t\
-    W : \u8FBA\u306E\u91CD\u307F\u306E\u578B\n\t\t\t\u5B9F\u88C5\u4E0A, T \u306E\u8FBA\
-    \u306F 2 \u672C\u306E\u6709\u5411\u8FBA\u3067\u8868\u3055\u308C\u308B\n\t\t\t\u3053\
-    \u306E\u3068\u304D, \u3053\u308C\u3089 2 \u672C\u306E\u6709\u5411\u8FBA\u306E\u91CD\
-    \u307F\u306F\u7570\u306A\u3063\u3066\u3044\u3066\u3082\u3088\u3044\n\t\t(M, *)\
-    \ : \u30E2\u30CE\u30A4\u30C9\n\t\tf : M \xD7 E \u2192 M\n\t\tg : M \xD7 V \u2192\
-    \ M\n\n\t\t\u6839\u3092\u4EFB\u610F\u306B\u56FA\u5B9A\u3057\u3066 T \u3092\u6839\
-    \u3064\u304D\u6728\u3068\u307F\u306A\u3057, dp : V \u2192 M \u3092\n\t\t\tdp[u]\
-    \ = g(f(dp[v_1], e_1) * f(dp[v_2], e_2) * ... * f(dp[v_k], e_k), u)\n\t\t\u3068\
-    \u5B9A\u3081\u308B. \u3053\u3053\u3067, \u9802\u70B9 u \u306E\u5B50\u3092 v_1,\
-    \ ..., v_k \u3068, u \u304B\u3089 v_i \u3078\u306E\u6709\u5411\u8FBA\u3092 e_i\
-    \ \u3068\u304A\u304F.\n\t\tg \u306E\u7B2C 2 \u5F15\u6570\u306F\u4F7F\u308F\u306A\
-    \u3044\u3053\u3068\u3082\u591A\u3044 (\u9802\u70B9\u306B\u91CD\u307F\u304C\u3064\
-    \u3044\u3066\u3044\u308B\u3068\u304D\u306A\u3069\u306B\u6709\u52B9).\n\n\t\t\u5404\
-    \u9802\u70B9 u \u306B\u5BFE\u3057\u3066, u \u3092\u6839\u3068\u3057\u305F\u3068\
-    \u304D\u306E dp[u] \u306E\u5024\u3092\u6C42\u3081\u308B.\n\t\t\u8A08\u7B97\u91CF\
-    \u306F O(|V|) \u3068\u306A\u308B.\n\n\t\t\u4F7F\u3046\u3068\u304D\u306F\u6B21\u306E\
-    \u3088\u3046\u306B\u66F8\u304F (\u5FC5\u8981\u306B\u5FDC\u3058\u3066 [] \u306F\
-    \ [&] \u306B\u66F8\u304D\u63DB\u3048\u308B).\n\n\t\tauto f=[](monoid m,edge<int>\
-    \ e)->monoid{\n\t\t\treturn ***;\n\t\t};\n\t\tauto g=[](monoid m,int u)->monoid{\n\
-    \t\t\treturn ***;\n\t\t};\n\t\tauto res=rerooting<monoid>(T,f,g);\n*/\n\ntemplate<class\
+    links: []
+  bundledCode: "#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
+    #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
+    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
+    \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
+    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
+    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
+    using lint=long long;\n#line 3 \"library/graph/graph.hpp\"\n\nusing graph=vector<vector<int>>;\n\
+    \nvoid add_undirected_edge(graph& G,int u,int v){\n\tG[u].emplace_back(v);\n\t\
+    G[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph& G,int u,int v){\n\t\
+    G[u].emplace_back(v);\n}\n#line 3 \"library/graph/wgraph.hpp\"\n\ntemplate<class\
+    \ T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n\
+    };\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class\
+    \ T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\
+    \tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class T>\n\
+    void add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
+    }\n#line 5 \"library/tree/rerooting.hpp\"\n\ntemplate<class M,class F,class G>\n\
+    vector<M> rerooting(const graph& T,const F& f,const G& g){\n\tint n=T.size();\n\
+    \tvector<M> dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&& dfs1,int u,int p)->void{\n\
+    \t\tfor(int v:T[u]) if(v!=p) {\n\t\t\tdfs1(dfs1,v,u);\n\t\t\tdp1[u]=dp1[u]*f(dp1[v],v);\n\
+    \t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\t};\n\n\tauto dfs2=[&](auto&& dfs2,int u,int\
+    \ p,const M& dp_par)->void{\n\t\tint k=T[u].size();\n\n\t\tvector<M> lcum(k+1),rcum(k+1);\n\
+    \t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=(v==p?f(dp_par,p):f(dp1[v],v));\n\
+    \t\t}\n\t\trep(i,k){\n\t\t\tlcum[i+1]=lcum[i+1]*lcum[i];\n\t\t\trcum[k-i-1]=rcum[k-i-1]*rcum[k-i];\n\
+    \t\t}\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\t\
+    if(v!=p){\n\t\t\t\tdfs2(dfs2,v,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t}\n\t\t}\n\t\
+    };\n\n\tdfs1(dfs1,0,-1);\n\tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n}\n\ntemplate<class\
     \ M,class W,class F,class G>\nvector<M> rerooting(const weighted_graph<W>& T,const\
     \ F& f,const G& g){\n\tint n=T.size();\n\tvector<M> dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&&\
     \ dfs1,int u,int p)->void{\n\t\tfor(const auto& e:T[u]) if(e.to!=p) {\n\t\t\t\
@@ -66,81 +58,84 @@ data:
     int k=T[u].size();\n\n\t\tvector<M> lcum(k+1),rcum(k+1);\n\t\trep(i,k){\n\t\t\t\
     const auto& e=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=f(e.to==p?dp_par:dp1[e.to],e);\n\
     \t\t}\n\t\trep(i,k){\n\t\t\tlcum[i+1]=lcum[i+1]*lcum[i];\n\t\t\trcum[k-i-1]=rcum[k-i-1]*rcum[k-i];\n\
-    \t\t}\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tconst auto& e=T[u][i];\n\
-    \t\t\tif(e.to!=p){\n\t\t\t\tdfs2(dfs2,e.to,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t\
-    }\n\t\t}\n\t};\n\n\tdfs1(dfs1,0,-1);\n\tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n\
-    }\n"
-  code: "/*\n\t\u5168\u65B9\u4F4D\u6728 DP\n\t\tT = (V, E) : \u6728\n\t\t(M, *) :\
-    \ \u30E2\u30CE\u30A4\u30C9\n\t\tf : M \xD7 V \u2192 M\n\t\tg : M \xD7 V \u2192\
-    \ M\n\n\t\t\u6839\u3092\u4EFB\u610F\u306B\u56FA\u5B9A\u3057\u3066 T \u3092\u6839\
-    \u3064\u304D\u6728\u3068\u307F\u306A\u3057, dp : V \u2192 M \u3092\n\t\t\tdp[u]\
-    \ = g(f(dp[v_1], v_1) * f(dp[v_2], v_2) * ... * f(dp[v_k], v_k), u)\n\t\t\u3068\
-    \u5B9A\u3081\u308B. \u3053\u3053\u3067, \u9802\u70B9 u \u306E\u5B50\u3092 v_1,\
-    \ ..., v_k \u3068\u3059\u308B.\n\t\tf, g \u306E\u7B2C 2 \u5F15\u6570\u306F\u4F7F\
-    \u308F\u306A\u3044\u3053\u3068\u3082\u591A\u3044 (\u9802\u70B9\u306B\u91CD\u307F\
-    \u304C\u3064\u3044\u3066\u3044\u308B\u3068\u304D\u306A\u3069\u306B\u6709\u52B9\
-    ).\n\n\t\t\u5404\u9802\u70B9 u \u306B\u5BFE\u3057\u3066, u \u3092\u6839\u3068\u3057\
-    \u305F\u3068\u304D\u306E dp[u] \u306E\u5024\u3092\u6C42\u3081\u308B.\n\t\t\u8A08\
-    \u7B97\u91CF\u306F O(|V|) \u3068\u306A\u308B.\n\n\t\t\u4F7F\u3046\u3068\u304D\u306F\
-    \u6B21\u306E\u3088\u3046\u306B\u66F8\u304F (\u5FC5\u8981\u306B\u5FDC\u3058\u3066\
-    \ [] \u306F [&] \u306B\u66F8\u304D\u63DB\u3048\u308B).\n\n\t\tauto f=[](monoid\
-    \ m,int u)->monoid{\n\t\t\treturn ***;\n\t\t};\n\t\tauto g=[](monoid m,int u)->monoid{\n\
-    \t\t\treturn ***;\n\t\t};\n\t\tauto res=rerooting<monoid>(T,f,g);\n\n\t\t\u53C2\
-    \u8003 : https://null-mn.hatenablog.com/entry/2020/04/14/124151\n*/\n\ntemplate<class\
-    \ M,class F,class G>\nvector<M> rerooting(const graph& T,const F& f,const G& g){\n\
-    \tint n=T.size();\n\tvector<M> dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&& dfs1,int\
-    \ u,int p)->void{\n\t\tfor(int v:T[u]) if(v!=p) {\n\t\t\tdfs1(dfs1,v,u);\n\t\t\
-    \tdp1[u]=dp1[u]*f(dp1[v],v);\n\t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\t};\n\n\tauto dfs2=[&](auto&&\
-    \ dfs2,int u,int p,const M& dp_par)->void{\n\t\tint k=T[u].size();\n\n\t\tvector<M>\
-    \ lcum(k+1),rcum(k+1);\n\t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=(v==p?f(dp_par,p):f(dp1[v],v));\n\
+    \t\t}\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tconst auto& [v,wt]=T[u][i];\n\
+    \t\t\tif(v!=p){\n\t\t\t\tdfs2(dfs2,v,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t}\n\t\t\
+    }\n\t};\n\n\tdfs1(dfs1,0,-1);\n\tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n}\n"
+  code: "#pragma once\n#include \"../template.hpp\"\n#include \"../graph/graph.hpp\"\
+    \n#include \"../graph/wgraph.hpp\"\n\ntemplate<class M,class F,class G>\nvector<M>\
+    \ rerooting(const graph& T,const F& f,const G& g){\n\tint n=T.size();\n\tvector<M>\
+    \ dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&& dfs1,int u,int p)->void{\n\t\tfor(int\
+    \ v:T[u]) if(v!=p) {\n\t\t\tdfs1(dfs1,v,u);\n\t\t\tdp1[u]=dp1[u]*f(dp1[v],v);\n\
+    \t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\t};\n\n\tauto dfs2=[&](auto&& dfs2,int u,int\
+    \ p,const M& dp_par)->void{\n\t\tint k=T[u].size();\n\n\t\tvector<M> lcum(k+1),rcum(k+1);\n\
+    \t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=(v==p?f(dp_par,p):f(dp1[v],v));\n\
     \t\t}\n\t\trep(i,k){\n\t\t\tlcum[i+1]=lcum[i+1]*lcum[i];\n\t\t\trcum[k-i-1]=rcum[k-i-1]*rcum[k-i];\n\
     \t\t}\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\t\
     if(v!=p){\n\t\t\t\tdfs2(dfs2,v,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t}\n\t\t}\n\t\
-    };\n\n\tdfs1(dfs1,0,-1);\n\tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n}\n\n/*\n\t\
-    \u5168\u65B9\u4F4D\u6728 DP\n\t\tT = (V, E) : \u8FBA\u306B\u91CD\u307F\u304C\u3064\
-    \u3044\u305F\u6728\n\t\tW : \u8FBA\u306E\u91CD\u307F\u306E\u578B\n\t\t\t\u5B9F\
-    \u88C5\u4E0A, T \u306E\u8FBA\u306F 2 \u672C\u306E\u6709\u5411\u8FBA\u3067\u8868\
-    \u3055\u308C\u308B\n\t\t\t\u3053\u306E\u3068\u304D, \u3053\u308C\u3089 2 \u672C\
-    \u306E\u6709\u5411\u8FBA\u306E\u91CD\u307F\u306F\u7570\u306A\u3063\u3066\u3044\
-    \u3066\u3082\u3088\u3044\n\t\t(M, *) : \u30E2\u30CE\u30A4\u30C9\n\t\tf : M \xD7\
-    \ E \u2192 M\n\t\tg : M \xD7 V \u2192 M\n\n\t\t\u6839\u3092\u4EFB\u610F\u306B\u56FA\
-    \u5B9A\u3057\u3066 T \u3092\u6839\u3064\u304D\u6728\u3068\u307F\u306A\u3057, dp\
-    \ : V \u2192 M \u3092\n\t\t\tdp[u] = g(f(dp[v_1], e_1) * f(dp[v_2], e_2) * ...\
-    \ * f(dp[v_k], e_k), u)\n\t\t\u3068\u5B9A\u3081\u308B. \u3053\u3053\u3067, \u9802\
-    \u70B9 u \u306E\u5B50\u3092 v_1, ..., v_k \u3068, u \u304B\u3089 v_i \u3078\u306E\
-    \u6709\u5411\u8FBA\u3092 e_i \u3068\u304A\u304F.\n\t\tg \u306E\u7B2C 2 \u5F15\u6570\
-    \u306F\u4F7F\u308F\u306A\u3044\u3053\u3068\u3082\u591A\u3044 (\u9802\u70B9\u306B\
-    \u91CD\u307F\u304C\u3064\u3044\u3066\u3044\u308B\u3068\u304D\u306A\u3069\u306B\
-    \u6709\u52B9).\n\n\t\t\u5404\u9802\u70B9 u \u306B\u5BFE\u3057\u3066, u \u3092\u6839\
-    \u3068\u3057\u305F\u3068\u304D\u306E dp[u] \u306E\u5024\u3092\u6C42\u3081\u308B\
-    .\n\t\t\u8A08\u7B97\u91CF\u306F O(|V|) \u3068\u306A\u308B.\n\n\t\t\u4F7F\u3046\
-    \u3068\u304D\u306F\u6B21\u306E\u3088\u3046\u306B\u66F8\u304F (\u5FC5\u8981\u306B\
-    \u5FDC\u3058\u3066 [] \u306F [&] \u306B\u66F8\u304D\u63DB\u3048\u308B).\n\n\t\t\
-    auto f=[](monoid m,edge<int> e)->monoid{\n\t\t\treturn ***;\n\t\t};\n\t\tauto\
-    \ g=[](monoid m,int u)->monoid{\n\t\t\treturn ***;\n\t\t};\n\t\tauto res=rerooting<monoid>(T,f,g);\n\
-    */\n\ntemplate<class M,class W,class F,class G>\nvector<M> rerooting(const weighted_graph<W>&\
-    \ T,const F& f,const G& g){\n\tint n=T.size();\n\tvector<M> dp1(n),dp2(n);\n\n\
-    \tauto dfs1=[&](auto&& dfs1,int u,int p)->void{\n\t\tfor(const auto& e:T[u]) if(e.to!=p)\
-    \ {\n\t\t\tdfs1(dfs1,e.to,u);\n\t\t\tdp1[u]=dp1[u]*f(dp1[e.to],e);\n\t\t}\n\t\t\
-    dp1[u]=g(dp1[u],u);\n\t};\n\n\tauto dfs2=[&](auto&& dfs2,int u,int p,const M&\
-    \ dp_par)->void{\n\t\tint k=T[u].size();\n\n\t\tvector<M> lcum(k+1),rcum(k+1);\n\
-    \t\trep(i,k){\n\t\t\tconst auto& e=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=f(e.to==p?dp_par:dp1[e.to],e);\n\
+    };\n\n\tdfs1(dfs1,0,-1);\n\tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n}\n\ntemplate<class\
+    \ M,class W,class F,class G>\nvector<M> rerooting(const weighted_graph<W>& T,const\
+    \ F& f,const G& g){\n\tint n=T.size();\n\tvector<M> dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&&\
+    \ dfs1,int u,int p)->void{\n\t\tfor(const auto& e:T[u]) if(e.to!=p) {\n\t\t\t\
+    dfs1(dfs1,e.to,u);\n\t\t\tdp1[u]=dp1[u]*f(dp1[e.to],e);\n\t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\
+    \t};\n\n\tauto dfs2=[&](auto&& dfs2,int u,int p,const M& dp_par)->void{\n\t\t\
+    int k=T[u].size();\n\n\t\tvector<M> lcum(k+1),rcum(k+1);\n\t\trep(i,k){\n\t\t\t\
+    const auto& e=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=f(e.to==p?dp_par:dp1[e.to],e);\n\
     \t\t}\n\t\trep(i,k){\n\t\t\tlcum[i+1]=lcum[i+1]*lcum[i];\n\t\t\trcum[k-i-1]=rcum[k-i-1]*rcum[k-i];\n\
-    \t\t}\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tconst auto& e=T[u][i];\n\
-    \t\t\tif(e.to!=p){\n\t\t\t\tdfs2(dfs2,e.to,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t\
-    }\n\t\t}\n\t};\n\n\tdfs1(dfs1,0,-1);\n\tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n\
-    }\n"
-  dependsOn: []
+    \t\t}\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tconst auto& [v,wt]=T[u][i];\n\
+    \t\t\tif(v!=p){\n\t\t\t\tdfs2(dfs2,v,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t}\n\t\t\
+    }\n\t};\n\n\tdfs1(dfs1,0,-1);\n\tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n}\n"
+  dependsOn:
+  - library/template.hpp
+  - library/graph/graph.hpp
+  - library/graph/wgraph.hpp
   isVerificationFile: false
   path: library/tree/rerooting.hpp
   requiredBy: []
-  timestamp: '2021-05-12 18:45:31+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-05-15 16:38:24+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/tree/rerooting.1.test.cpp
+  - verify/tree/rerooting.2.test.cpp
 documentation_of: library/tree/rerooting.hpp
 layout: document
-redirect_from:
-- /library/library/tree/rerooting.hpp
-- /library/library/tree/rerooting.hpp.html
-title: library/tree/rerooting.hpp
+title: Rerooting
 ---
+
+## Description
+全方位木 DP (rerooting) は，木 $T=(V,E)$ の各頂点 $r$ に対して次で定義される値 $\mathrm{dp}(r)$ を求めるアルゴリズム．
+
+<h4>$T$ が重みなしのとき</h4>
+$(M,\ast)$ を可換モノイド，$f:M\times V\to M,\ g:M\times V\to M$ とする．\\
+$T$ を $r$ を根とする根つき木と見なす．
+$\mathrm{dp}:V\to M$ を根から再帰的に
+<div style="text-align:center">
+	$$\mathrm{dp}(u)=g(f(\mathrm{dp}(v_1),v_1)\ast f(\mathrm{dp}(v_2),v_2)\ast\cdots\ast f(\mathrm{dp}(v_k),v_k),u)$$
+</div>
+と定める．
+ここで，頂点 $u$ の子を $v_1,\ldots,v_k$ とおいた．
+
+<h4>$T$ が重みありのとき</h4>
+$(M,\ast)$ を可換モノイド，$f:M\times E\to M,\ g:M\times V\to M$ とする．\\
+$T$ を $r$ を根とする根つき木と見なす．
+$\mathrm{dp}:V\to M$ を根から再帰的に
+<div style="text-align:center">
+	$$\mathrm{dp}(u)=g(f(\mathrm{dp}(v_1),e_1)\ast f(\mathrm{dp}(v_2),e_2)\ast\cdots\ast f(\mathrm{dp}(v_k),e_k),u)$$
+</div>
+と定める．
+ここで，頂点 $u$ の子を $v_1,\ldots,v_k$ と，$u$ から $v_i$ への有向辺を $e_i$ とおいた．
+
+```
+(1) vector<M> rerooting(const graph& T, const F& f, const G& g)
+(2) vector<M> rerooting(const weighted_graph<W>& T, const F& f, const G& g)
+```
+- (1) 木 $T$ の各頂点 $r$ について $\mathrm{dp}(r)$ を求める
+- (2) 重みつき木 $T$ の各頂点 $r$ について $\mathrm{dp}(r)$ を求める
+
+#### Constraints
+- $T$ は木
+
+#### Complexity
+- $O(V)$ ($f,g$ の計算が $O(1)$ でできることを仮定)
+
+## References
+- [全方位木DP(ReRooting)の抽象化について - メモ帳](https://null-mn.hatenablog.com/entry/2020/04/14/124151)
