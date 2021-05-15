@@ -56,11 +56,11 @@ data:
     };\n\n\tdfs1(dfs1,0,-1);\n\tdfs2(dfs2,0,-1,M());\n\n\treturn dp2;\n}\n\ntemplate<class\
     \ M,class W,class F,class G>\nvector<M> rerooting(const weighted_graph<W>& T,const\
     \ F& f,const G& g){\n\tint n=T.size();\n\tvector<M> dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&&\
-    \ dfs1,int u,int p)->void{\n\t\tfor(const auto& e:T[u]) if(e.to!=p) {\n\t\t\t\
-    dfs1(dfs1,e.to,u);\n\t\t\tdp1[u]=dp1[u]*f(dp1[e.to],e);\n\t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\
+    \ dfs1,int u,int p)->void{\n\t\tfor(const auto& [v,wt]:T[u]) if(v!=p) {\n\t\t\t\
+    dfs1(dfs1,v,u);\n\t\t\tdp1[u]=dp1[u]*f(dp1[v],wt,v);\n\t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\
     \t};\n\n\tauto dfs2=[&](auto&& dfs2,int u,int p,const M& dp_par)->void{\n\t\t\
     int k=T[u].size();\n\n\t\tvector<M> lcum(k+1),rcum(k+1);\n\t\trep(i,k){\n\t\t\t\
-    const auto& e=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=f(e.to==p?dp_par:dp1[e.to],e);\n\
+    const auto& [v,wt]=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=f(v==p?dp_par:dp1[v],wt,v);\n\
     \t\t}\n\t\trep(i,k){\n\t\t\tlcum[i+1]=lcum[i+1]*lcum[i];\n\t\t\trcum[k-i-1]=rcum[k-i-1]*rcum[k-i];\n\
     \t\t}\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tconst auto& [v,wt]=T[u][i];\n\
     \t\t\tif(v!=p){\n\t\t\t\tdfs2(dfs2,v,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t}\n\t\t\
@@ -72,7 +72,7 @@ data:
     verify/tree/rerooting.2.test.cpp\"\n\nint main(){\n\tint n; scanf(\"%d\",&n);\n\
     \tweighted_graph<int> T(n);\n\trep(i,n-1){\n\t\tint u,v,c; scanf(\"%d%d%d\",&u,&v,&c);\n\
     \t\tadd_undirected_edge(T,u,v,c);\n\t}\n\n\tusing monoid=max_monoid<int>;\n\t\
-    auto f=[](monoid m,edge<int> e)->monoid{\n\t\treturn m.get()+e.wt;\n\t};\n\tauto\
+    auto f=[](monoid m,int wt,int v)->monoid{\n\t\treturn m.get()+wt;\n\t};\n\tauto\
     \ g=[](monoid m,int u)->monoid{\n\t\treturn m*0;\n\t};\n\tfor(auto m:rerooting<monoid>(T,f,g)){\n\
     \t\tprintf(\"%d\\n\",m.get());\n\t}\n\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_B\"\
@@ -80,7 +80,7 @@ data:
     \n#include \"../../library/monoid/max_monoid.hpp\"\n\nint main(){\n\tint n; scanf(\"\
     %d\",&n);\n\tweighted_graph<int> T(n);\n\trep(i,n-1){\n\t\tint u,v,c; scanf(\"\
     %d%d%d\",&u,&v,&c);\n\t\tadd_undirected_edge(T,u,v,c);\n\t}\n\n\tusing monoid=max_monoid<int>;\n\
-    \tauto f=[](monoid m,edge<int> e)->monoid{\n\t\treturn m.get()+e.wt;\n\t};\n\t\
+    \tauto f=[](monoid m,int wt,int v)->monoid{\n\t\treturn m.get()+wt;\n\t};\n\t\
     auto g=[](monoid m,int u)->monoid{\n\t\treturn m*0;\n\t};\n\tfor(auto m:rerooting<monoid>(T,f,g)){\n\
     \t\tprintf(\"%d\\n\",m.get());\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
@@ -92,7 +92,7 @@ data:
   isVerificationFile: true
   path: verify/tree/rerooting.2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-15 16:38:24+09:00'
+  timestamp: '2021-05-15 16:57:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/tree/rerooting.2.test.cpp
