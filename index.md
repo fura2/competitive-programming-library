@@ -13,9 +13,6 @@ data:
       path: library/data_structure/bit_vector.hpp
       title: library/data_structure/bit_vector.hpp
     - icon: ':warning:'
-      path: library/data_structure/lca.hpp
-      title: library/data_structure/lca.hpp
-    - icon: ':warning:'
       path: library/data_structure/persistent_union-find.hpp
       title: library/data_structure/persistent_union-find.hpp
     - icon: ':heavy_check_mark:'
@@ -317,6 +314,9 @@ data:
       path: library/tree/Cartesian_tree.hpp
       title: Cartesian Tree
     - icon: ':heavy_check_mark:'
+      path: library/tree/lca.hpp
+      title: Lowest Common Ancestor
+    - icon: ':heavy_check_mark:'
       path: library/tree/rerooting.hpp
       title: Rerooting
     - icon: ':heavy_check_mark:'
@@ -415,6 +415,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/tree/Cartesian_tree.test.cpp
       title: verify/tree/Cartesian_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/tree/lca.1.test.cpp
+      title: verify/tree/lca.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/tree/lca.2.test.cpp
+      title: verify/tree/lca.2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/tree/lca.3.test.cpp
+      title: verify/tree/lca.3.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/tree/rerooting.1.test.cpp
       title: verify/tree/rerooting.1.test.cpp

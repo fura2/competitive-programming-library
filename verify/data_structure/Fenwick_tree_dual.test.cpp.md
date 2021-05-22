@@ -23,10 +23,10 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/data_structure/Fenwick_tree_dual.hpp\"\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/Fenwick_tree_dual.hpp\"\
     \n\ntemplate<class G>\nclass Fenwick_tree_dual{\n\tvector<G> a;\npublic:\n\tFenwick_tree_dual(int\
     \ n=0){ build(n); }\n\tFenwick_tree_dual(const vector<G>& a){ build(a); }\n\t\
     void build(int n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>& a){\n\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/Fenwick_tree_dual.test.cpp
   requiredBy: []
-  timestamp: '2021-05-11 00:34:53+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/Fenwick_tree_dual.test.cpp

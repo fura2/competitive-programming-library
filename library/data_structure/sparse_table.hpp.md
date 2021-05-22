@@ -18,11 +18,11 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/data_structure/sparse_table.hpp\"\n\n\
-    template<class B>\nclass sparse_table{\n\tvector<vector<B>> st;\n\tvector<int>\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/sparse_table.hpp\"\
+    \n\ntemplate<class B>\nclass sparse_table{\n\tvector<vector<B>> st;\n\tvector<int>\
     \ h;\npublic:\n\tsparse_table()=default;\n\ttemplate<class T>\n\tsparse_table(const\
     \ vector<T>& a){ build(a); }\n\n\ttemplate<class T>\n\tvoid build(const vector<T>&\
     \ a){\n\t\tint n=a.size();\n\t\th.assign(n+1,0);\n\t\tfor(int i=2;i<=n;i++) h[i]=h[i>>1]+1;\n\
@@ -44,7 +44,7 @@ data:
   isVerificationFile: false
   path: library/data_structure/sparse_table.hpp
   requiredBy: []
-  timestamp: '2021-05-11 19:34:09+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/sparse_table.test.cpp

@@ -21,17 +21,17 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/graph/wgraph.hpp\"\n\ntemplate<class\
-    \ T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n\
-    };\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class\
-    \ T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\
-    \tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class T>\n\
-    void add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
-    }\n#line 4 \"library/graph/Bellman-Ford.hpp\"\n\ntemplate<class T>\nvector<T>\
-    \ Bellman_Ford(const weighted_graph<T>& G,int s){\n\tconst T INF=numeric_limits<T>::max();\n\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/graph/wgraph.hpp\"\
+    \n\ntemplate<class T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T&\
+    \ wt):to(to),wt(wt){}\n};\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\
+    \ntemplate<class T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const\
+    \ T& wt){\n\tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class\
+    \ T>\nvoid add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\t\
+    G[u].emplace_back(v,wt);\n}\n#line 4 \"library/graph/Bellman-Ford.hpp\"\n\ntemplate<class\
+    \ T>\nvector<T> Bellman_Ford(const weighted_graph<T>& G,int s){\n\tconst T INF=numeric_limits<T>::max();\n\
     \tconst T NINF=numeric_limits<T>::min();\n\n\tint n=G.size();\n\tvector<T> d(n,INF);\n\
     \td[s]=T{};\n\trep(_,n){\n\t\tbool upd=false;\n\t\trep(u,n) if(d[u]<INF) for(const\
     \ auto& [v,wt]:G[u]) {\n\t\t\tif(d[v]>d[u]+wt) d[v]=d[u]+wt, upd=true;\n\t\t}\n\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/graph/Bellman-Ford.hpp
   requiredBy: []
-  timestamp: '2021-05-12 18:21:00+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/Bellman-Ford.test.cpp

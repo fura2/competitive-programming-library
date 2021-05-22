@@ -27,6 +27,9 @@ data:
     path: library/graph/topological_sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
+    path: library/tree/lca.hpp
+    title: Lowest Common Ancestor
+  - icon: ':heavy_check_mark:'
     path: library/tree/rerooting.hpp
     title: Rerooting
   - icon: ':heavy_check_mark:'
@@ -61,6 +64,15 @@ data:
     path: verify/graph/is_DAG.2.test.cpp
     title: verify/graph/is_DAG.2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.1.test.cpp
+    title: verify/tree/lca.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.2.test.cpp
+    title: verify/tree/lca.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.3.test.cpp
+    title: verify/tree/lca.3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/tree/rerooting.1.test.cpp
     title: verify/tree/rerooting.1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,16 +93,16 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/graph/wgraph.hpp\"\n\ntemplate<class\
-    \ T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n\
-    };\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class\
-    \ T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\
-    \tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class T>\n\
-    void add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
-    }\n"
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/graph/wgraph.hpp\"\
+    \n\ntemplate<class T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T&\
+    \ wt):to(to),wt(wt){}\n};\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\
+    \ntemplate<class T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const\
+    \ T& wt){\n\tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class\
+    \ T>\nvoid add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\t\
+    G[u].emplace_back(v,wt);\n}\n"
   code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class T> struct edge{\n\
     \tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n};\ntemplate<class\
     \ T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class T>\nvoid\
@@ -104,6 +116,7 @@ data:
   requiredBy:
   - library/tree/rerooting.hpp
   - library/tree/tree_diameter.hpp
+  - library/tree/lca.hpp
   - library/graph/distance_01.hpp
   - library/graph/Dijkstra.hpp
   - library/graph/Prim.hpp
@@ -111,13 +124,16 @@ data:
   - library/graph/topological_sort.hpp
   - library/graph/Bellman-Ford.hpp
   - library/graph/is_DAG.hpp
-  timestamp: '2021-05-09 03:26:47+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/tree/lca.2.test.cpp
   - verify/tree/rerooting.2.test.cpp
   - verify/tree/tree_diameter.1.test.cpp
+  - verify/tree/lca.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
   - verify/tree/rerooting.1.test.cpp
+  - verify/tree/lca.3.test.cpp
   - verify/graph/Kruskal.1.test.cpp
   - verify/graph/is_DAG.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp

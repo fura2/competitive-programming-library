@@ -72,6 +72,9 @@ data:
     path: library/tree/Cartesian_tree.hpp
     title: Cartesian Tree
   - icon: ':heavy_check_mark:'
+    path: library/tree/lca.hpp
+    title: Lowest Common Ancestor
+  - icon: ':heavy_check_mark:'
     path: library/tree/rerooting.hpp
     title: Rerooting
   - icon: ':heavy_check_mark:'
@@ -163,6 +166,15 @@ data:
     path: verify/tree/Cartesian_tree.test.cpp
     title: verify/tree/Cartesian_tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.1.test.cpp
+    title: verify/tree/lca.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.2.test.cpp
+    title: verify/tree/lca.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.3.test.cpp
+    title: verify/tree/lca.3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/tree/rerooting.1.test.cpp
     title: verify/tree/rerooting.1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -214,6 +226,8 @@ data:
     #include <numeric>
 
     #include <queue>
+
+    #include <random>
 
     #include <set>
 
@@ -274,6 +288,8 @@ data:
 
     #include <queue>
 
+    #include <random>
+
     #include <set>
 
     #include <sstream>
@@ -313,6 +329,7 @@ data:
   - library/tree/rerooting.hpp
   - library/tree/tree_diameter.hpp
   - library/tree/Cartesian_tree.hpp
+  - library/tree/lca.hpp
   - library/graph/graph.hpp
   - library/graph/distance_01.hpp
   - library/graph/Dijkstra.hpp
@@ -326,7 +343,7 @@ data:
   - library/graph/distance.hpp
   - library/graph/is_DAG.hpp
   - library/graph/scc.hpp
-  timestamp: '2021-05-09 03:26:47+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/string/z.1.test.cpp
@@ -341,11 +358,14 @@ data:
   - verify/data_structure/starry_sky_tree.test.cpp
   - verify/data_structure/segment_tree.2.test.cpp
   - verify/data_structure/Fenwick_tree_dual.test.cpp
+  - verify/tree/lca.2.test.cpp
   - verify/tree/rerooting.2.test.cpp
   - verify/tree/tree_diameter.1.test.cpp
+  - verify/tree/lca.1.test.cpp
   - verify/tree/Cartesian_tree.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
   - verify/tree/rerooting.1.test.cpp
+  - verify/tree/lca.3.test.cpp
   - verify/graph/Kruskal.1.test.cpp
   - verify/graph/scc.2.test.cpp
   - verify/graph/scc.1.test.cpp

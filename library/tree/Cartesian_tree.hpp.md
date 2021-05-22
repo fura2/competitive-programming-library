@@ -18,15 +18,15 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/tree/Cartesian_tree.hpp\"\n\ntemplate<class\
-    \ T>\nclass Cartesian_tree{\n\tvector<T> a;\n\tint rt;\n\tvector<int> p,l,r;\n\
-    public:\n\tCartesian_tree(const vector<T>& a={}){ build(a); }\n\n\tvoid build(const\
-    \ vector<T>& a){\n\t\tthis->a=a;\n\t\tint n=a.size();\n\t\trt=0;\n\t\tp.assign(n,-1);\n\
-    \t\tl.assign(n,-1);\n\t\tr.assign(n,-1);\n\n\t\tfor(int u=1;u<n;u++){\n\t\t\t\
-    int v=u-1;\n\t\t\tbool top=false;\n\t\t\twhile(a[v]>a[u]){\n\t\t\t\tif(p[v]==-1){\n\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/tree/Cartesian_tree.hpp\"\
+    \n\ntemplate<class T>\nclass Cartesian_tree{\n\tvector<T> a;\n\tint rt;\n\tvector<int>\
+    \ p,l,r;\npublic:\n\tCartesian_tree(const vector<T>& a={}){ build(a); }\n\n\t\
+    void build(const vector<T>& a){\n\t\tthis->a=a;\n\t\tint n=a.size();\n\t\trt=0;\n\
+    \t\tp.assign(n,-1);\n\t\tl.assign(n,-1);\n\t\tr.assign(n,-1);\n\n\t\tfor(int u=1;u<n;u++){\n\
+    \t\t\tint v=u-1;\n\t\t\tbool top=false;\n\t\t\twhile(a[v]>a[u]){\n\t\t\t\tif(p[v]==-1){\n\
     \t\t\t\t\ttop=true;\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t\tv=p[v];\n\t\t\t}\n\t\
     \t\tif(top){\n\t\t\t\tp[v]=u;\n\t\t\t\tl[u]=v;\n\t\t\t\trt=u;\n\t\t\t}\n\t\t\t\
     else{\n\t\t\t\tp[u]=v;\n\t\t\t\tif(r[v]!=-1) p[r[v]]=u;\n\t\t\t\tl[u]=r[v];\n\t\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: library/tree/Cartesian_tree.hpp
   requiredBy: []
-  timestamp: '2021-05-14 23:45:48+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/tree/Cartesian_tree.test.cpp

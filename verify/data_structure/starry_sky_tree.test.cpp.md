@@ -23,12 +23,12 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 1 \"library/data_structure/starry_sky_tree.hpp\"\n\
-    template<class T>\nclass starry_sky_tree{\n\tint sz;\n\tvector<T> seg;\n\n\tvoid\
-    \ maintain(int u){\n\t\tif(1<=u && u<sz){\n\t\t\tT mx=std::max(seg[2*u],seg[2*u+1]);\n\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 1 \"library/data_structure/starry_sky_tree.hpp\"\
+    \ntemplate<class T>\nclass starry_sky_tree{\n\tint sz;\n\tvector<T> seg;\n\n\t\
+    void maintain(int u){\n\t\tif(1<=u && u<sz){\n\t\t\tT mx=std::max(seg[2*u],seg[2*u+1]);\n\
     \t\t\tseg[u]+=mx;\n\t\t\tseg[2*u  ]-=mx;\n\t\t\tseg[2*u+1]-=mx;\n\t\t}\n\t}\n\t\
     T max(int l,int r,int a,int b,int u,T cum)const{\n\t\tif(b<=l || r<=a) return\
     \ numeric_limits<T>::min();\n\t\tif(l<=a && b<=r) return cum+seg[u];\n\t\tT lmax=max(l,r,a,(a+b)/2,2*u\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/starry_sky_tree.test.cpp
   requiredBy: []
-  timestamp: '2021-05-11 00:34:53+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/starry_sky_tree.test.cpp

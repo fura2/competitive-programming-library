@@ -24,6 +24,9 @@ data:
     path: library/graph/topological_sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
+    path: library/tree/lca.hpp
+    title: Lowest Common Ancestor
+  - icon: ':heavy_check_mark:'
     path: library/tree/rerooting.hpp
     title: Rerooting
   - icon: ':heavy_check_mark:'
@@ -55,6 +58,15 @@ data:
     path: verify/graph/tecc.2.test.cpp
     title: verify/graph/tecc.2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.1.test.cpp
+    title: verify/tree/lca.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.2.test.cpp
+    title: verify/tree/lca.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/tree/lca.3.test.cpp
+    title: verify/tree/lca.3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/tree/rerooting.1.test.cpp
     title: verify/tree/rerooting.1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -75,13 +87,13 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/graph/graph.hpp\"\n\nusing graph=vector<vector<int>>;\n\
-    \nvoid add_undirected_edge(graph& G,int u,int v){\n\tG[u].emplace_back(v);\n\t\
-    G[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph& G,int u,int v){\n\t\
-    G[u].emplace_back(v);\n}\n"
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/graph/graph.hpp\"\
+    \n\nusing graph=vector<vector<int>>;\n\nvoid add_undirected_edge(graph& G,int\
+    \ u,int v){\n\tG[u].emplace_back(v);\n\tG[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph&\
+    \ G,int u,int v){\n\tG[u].emplace_back(v);\n}\n"
   code: "#pragma once\n#include \"../template.hpp\"\n\nusing graph=vector<vector<int>>;\n\
     \nvoid add_undirected_edge(graph& G,int u,int v){\n\tG[u].emplace_back(v);\n\t\
     G[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph& G,int u,int v){\n\t\
@@ -93,19 +105,23 @@ data:
   requiredBy:
   - library/tree/rerooting.hpp
   - library/tree/tree_diameter.hpp
+  - library/tree/lca.hpp
   - library/graph/cc.hpp
   - library/graph/topological_sort.hpp
   - library/graph/tecc.hpp
   - library/graph/distance.hpp
   - library/graph/is_DAG.hpp
   - library/graph/scc.hpp
-  timestamp: '2021-05-09 03:26:47+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/tree/lca.2.test.cpp
   - verify/tree/rerooting.2.test.cpp
   - verify/tree/tree_diameter.1.test.cpp
+  - verify/tree/lca.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
   - verify/tree/rerooting.1.test.cpp
+  - verify/tree/lca.3.test.cpp
   - verify/graph/scc.2.test.cpp
   - verify/graph/scc.1.test.cpp
   - verify/graph/is_DAG.1.test.cpp

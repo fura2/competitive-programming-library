@@ -27,26 +27,26 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/graph/graph.hpp\"\n\nusing graph=vector<vector<int>>;\n\
-    \nvoid add_undirected_edge(graph& G,int u,int v){\n\tG[u].emplace_back(v);\n\t\
-    G[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph& G,int u,int v){\n\t\
-    G[u].emplace_back(v);\n}\n#line 3 \"library/graph/wgraph.hpp\"\n\ntemplate<class\
-    \ T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n\
-    };\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class\
-    \ T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\
-    \tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class T>\n\
-    void add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
-    }\n#line 5 \"library/graph/is_DAG.hpp\"\n\nbool is_DAG(const graph& G){\n\tint\
-    \ n=G.size();\n\tvector<int> deg(n);\n\trep(u,n) for(int v:G[u]) deg[v]++;\n\n\
-    \tint cnt=0;\n\tqueue<int> Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\
-    \t\tint u=Q.front(); Q.pop();\n\t\tcnt++;\n\t\tfor(int v:G[u]) if(--deg[v]==0)\
-    \ Q.emplace(v);\n\t}\n\treturn cnt==n;\n}\n\ntemplate<class T>\nbool is_DAG(const\
-    \ weighted_graph<T>& G){\n\tint n=G.size();\n\tvector<int> deg(n);\n\trep(u,n)\
-    \ for(const auto& [v,wt]:G[u]) deg[v]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\t\
-    rep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front();\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/graph/graph.hpp\"\
+    \n\nusing graph=vector<vector<int>>;\n\nvoid add_undirected_edge(graph& G,int\
+    \ u,int v){\n\tG[u].emplace_back(v);\n\tG[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph&\
+    \ G,int u,int v){\n\tG[u].emplace_back(v);\n}\n#line 3 \"library/graph/wgraph.hpp\"\
+    \n\ntemplate<class T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T&\
+    \ wt):to(to),wt(wt){}\n};\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\
+    \ntemplate<class T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const\
+    \ T& wt){\n\tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class\
+    \ T>\nvoid add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\t\
+    G[u].emplace_back(v,wt);\n}\n#line 5 \"library/graph/is_DAG.hpp\"\n\nbool is_DAG(const\
+    \ graph& G){\n\tint n=G.size();\n\tvector<int> deg(n);\n\trep(u,n) for(int v:G[u])\
+    \ deg[v]++;\n\n\tint cnt=0;\n\tqueue<int> Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\
+    \twhile(!Q.empty()){\n\t\tint u=Q.front(); Q.pop();\n\t\tcnt++;\n\t\tfor(int v:G[u])\
+    \ if(--deg[v]==0) Q.emplace(v);\n\t}\n\treturn cnt==n;\n}\n\ntemplate<class T>\n\
+    bool is_DAG(const weighted_graph<T>& G){\n\tint n=G.size();\n\tvector<int> deg(n);\n\
+    \trep(u,n) for(const auto& [v,wt]:G[u]) deg[v]++;\n\n\tint cnt=0;\n\tqueue<int>\
+    \ Q;\n\trep(u,n) if(deg[u]==0) Q.emplace(u);\n\twhile(!Q.empty()){\n\t\tint u=Q.front();\
     \ Q.pop();\n\t\tcnt++;\n\t\tfor(const auto& [v,wt]:G[u]) if(--deg[v]==0) Q.emplace(v);\n\
     \t}\n\treturn cnt==n;\n}\n"
   code: "#pragma once\n#include \"../template.hpp\"\n#include \"graph.hpp\"\n#include\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: library/graph/is_DAG.hpp
   requiredBy: []
-  timestamp: '2021-05-12 17:41:17+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/is_DAG.1.test.cpp

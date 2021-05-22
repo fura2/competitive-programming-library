@@ -27,9 +27,9 @@ data:
     \ <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include <ctime>\n#include\
     \ <algorithm>\n#include <deque>\n#include <functional>\n#include <iostream>\n\
     #include <limits>\n#include <map>\n#include <numeric>\n#include <queue>\n#include\
-    \ <set>\n#include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n\
-    #include <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\
-    \nusing namespace std;\nusing lint=long long;\n#line 3 \"library/graph/wgraph.hpp\"\
+    \ <random>\n#include <set>\n#include <sstream>\n#include <stack>\n#include <string>\n\
+    #include <tuple>\n#include <utility>\n#include <vector>\n\n#define rep(i,n) for(int\
+    \ i=0;i<(n);i++)\n\nusing namespace std;\nusing lint=long long;\n#line 3 \"library/graph/wgraph.hpp\"\
     \n\ntemplate<class T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T&\
     \ wt):to(to),wt(wt){}\n};\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\
     \ntemplate<class T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: verify/graph/Dijkstra.2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-12 18:21:00+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/Dijkstra.2.test.cpp

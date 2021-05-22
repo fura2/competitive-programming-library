@@ -30,17 +30,17 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/data_structure/union-find.hpp\"\n\nclass\
-    \ union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find(int n=0){ build(n);\
-    \ }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\t}\n\tint find(int\
-    \ u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int v){\n\t\tu=find(u);\
-    \ v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\t\t\tp[u]+=p[v];\
-    \ p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return find(u)==find(v);\
-    \ }\n\tint size()const{ return n; }\n\tint size(int u){ return -p[find(u)]; }\n\
-    };\n"
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/union-find.hpp\"\
+    \n\nclass union_find{\n\tint n;\n\tvector<int> p;\npublic:\n\tunion_find(int n=0){\
+    \ build(n); }\n\tvoid build(int n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\t}\n\
+    \tint find(int u){ return p[u]<0?u:p[u]=find(p[u]); }\n\tvoid unite(int u,int\
+    \ v){\n\t\tu=find(u); v=find(v);\n\t\tif(u!=v){\n\t\t\tif(p[v]<p[u]) swap(u,v);\n\
+    \t\t\tp[u]+=p[v]; p[v]=u; n--;\n\t\t}\n\t}\n\tbool is_same(int u,int v){ return\
+    \ find(u)==find(v); }\n\tint size()const{ return n; }\n\tint size(int u){ return\
+    \ -p[find(u)]; }\n};\n"
   code: "#pragma once\n#include \"../template.hpp\"\n\nclass union_find{\n\tint n;\n\
     \tvector<int> p;\npublic:\n\tunion_find(int n=0){ build(n); }\n\tvoid build(int\
     \ n){\n\t\tthis->n=n;\n\t\tp.assign(n,-1);\n\t}\n\tint find(int u){ return p[u]<0?u:p[u]=find(p[u]);\
@@ -54,7 +54,7 @@ data:
   path: library/data_structure/union-find.hpp
   requiredBy:
   - library/graph/Kruskal.hpp
-  timestamp: '2021-05-11 00:34:53+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/union-find.test.2.cpp

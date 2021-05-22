@@ -21,11 +21,11 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/data_structure/Fenwick_tree.hpp\"\n\n\
-    template<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree(int\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/data_structure/Fenwick_tree.hpp\"\
+    \n\ntemplate<class G>\nclass Fenwick_tree{\n\tvector<G> a;\npublic:\n\tFenwick_tree(int\
     \ n=0){ build(n); }\n\tFenwick_tree(const vector<G>& a){ build(a); }\n\tvoid build(int\
     \ n){\n\t\ta.assign(n,G{});\n\t}\n\tvoid build(const vector<G>& a){\n\t\tthis->a=a;\n\
     \t\tfor(int i=1;i<=a.size();i++) if(i+(i&-i)<=a.size()) (this->a)[i+(i&-i)-1]+=(this->a)[i-1];\n\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: library/data_structure/Fenwick_tree.hpp
   requiredBy: []
-  timestamp: '2021-05-11 00:34:53+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/Fenwick_tree.1.test.cpp

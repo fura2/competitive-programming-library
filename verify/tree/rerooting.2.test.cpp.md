@@ -31,25 +31,25 @@ data:
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
     \ <deque>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <sstream>\n\
-    #include <stack>\n#include <string>\n#include <tuple>\n#include <utility>\n#include\
-    \ <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\nusing namespace std;\n\
-    using lint=long long;\n#line 3 \"library/graph/graph.hpp\"\n\nusing graph=vector<vector<int>>;\n\
-    \nvoid add_undirected_edge(graph& G,int u,int v){\n\tG[u].emplace_back(v);\n\t\
-    G[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph& G,int u,int v){\n\t\
-    G[u].emplace_back(v);\n}\n#line 3 \"library/graph/wgraph.hpp\"\n\ntemplate<class\
-    \ T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T& wt):to(to),wt(wt){}\n\
-    };\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\ntemplate<class\
-    \ T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\
-    \tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class T>\n\
-    void add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\tG[u].emplace_back(v,wt);\n\
-    }\n#line 5 \"library/tree/rerooting.hpp\"\n\ntemplate<class M,class F,class G>\n\
-    vector<M> rerooting(const graph& T,const F& f,const G& g){\n\tint n=T.size();\n\
-    \tvector<M> dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&& dfs1,int u,int p)->void{\n\
-    \t\tfor(int v:T[u]) if(v!=p) {\n\t\t\tdfs1(dfs1,v,u);\n\t\t\tdp1[u]=dp1[u]*f(dp1[v],v);\n\
-    \t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\t};\n\n\tauto dfs2=[&](auto&& dfs2,int u,int\
-    \ p,const M& dp_par)->void{\n\t\tint k=T[u].size();\n\n\t\tvector<M> lcum(k+1),rcum(k+1);\n\
-    \t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=(v==p?f(dp_par,p):f(dp1[v],v));\n\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
+    \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/graph/graph.hpp\"\
+    \n\nusing graph=vector<vector<int>>;\n\nvoid add_undirected_edge(graph& G,int\
+    \ u,int v){\n\tG[u].emplace_back(v);\n\tG[v].emplace_back(u);\n}\n\nvoid add_directed_edge(graph&\
+    \ G,int u,int v){\n\tG[u].emplace_back(v);\n}\n#line 3 \"library/graph/wgraph.hpp\"\
+    \n\ntemplate<class T> struct edge{\n\tint to;\n\tT wt;\n\tedge(int to,const T&\
+    \ wt):to(to),wt(wt){}\n};\ntemplate<class T> using weighted_graph=vector<vector<edge<T>>>;\n\
+    \ntemplate<class T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const\
+    \ T& wt){\n\tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class\
+    \ T>\nvoid add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\t\
+    G[u].emplace_back(v,wt);\n}\n#line 5 \"library/tree/rerooting.hpp\"\n\ntemplate<class\
+    \ M,class F,class G>\nvector<M> rerooting(const graph& T,const F& f,const G& g){\n\
+    \tint n=T.size();\n\tvector<M> dp1(n),dp2(n);\n\n\tauto dfs1=[&](auto&& dfs1,int\
+    \ u,int p)->void{\n\t\tfor(int v:T[u]) if(v!=p) {\n\t\t\tdfs1(dfs1,v,u);\n\t\t\
+    \tdp1[u]=dp1[u]*f(dp1[v],v);\n\t\t}\n\t\tdp1[u]=g(dp1[u],u);\n\t};\n\n\tauto dfs2=[&](auto&&\
+    \ dfs2,int u,int p,const M& dp_par)->void{\n\t\tint k=T[u].size();\n\n\t\tvector<M>\
+    \ lcum(k+1),rcum(k+1);\n\t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\tlcum[i+1]=rcum[i]=(v==p?f(dp_par,p):f(dp1[v],v));\n\
     \t\t}\n\t\trep(i,k){\n\t\t\tlcum[i+1]=lcum[i+1]*lcum[i];\n\t\t\trcum[k-i-1]=rcum[k-i-1]*rcum[k-i];\n\
     \t\t}\n\n\t\tdp2[u]=g(lcum[k],u);\n\t\trep(i,k){\n\t\t\tint v=T[u][i];\n\t\t\t\
     if(v!=p){\n\t\t\t\tdfs2(dfs2,v,u,g(lcum[i]*rcum[i+1],u));\n\t\t\t}\n\t\t}\n\t\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: true
   path: verify/tree/rerooting.2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-15 16:57:12+09:00'
+  timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/tree/rerooting.2.test.cpp
