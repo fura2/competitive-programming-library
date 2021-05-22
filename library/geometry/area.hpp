@@ -1,3 +1,9 @@
+/* 三角形の面積 */
+
+double area(const point &a,const point &b,const point &c){
+	return abs(cross(b-a,c-a)/2);
+}
+
 /* 多角形の面積 */
 /*
 	引数
