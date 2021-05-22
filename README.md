@@ -9,4 +9,4 @@ fura2 の競技プログラミングライブラリです．
 g++ (C++17) で動作します．
 一部のライブラリでは GNU 拡張 (``__int128``) を使用しています．
 
-[ドキュメント](https://fura2.github.io/competitive-programming-library/)は [Online Judge Verification Helper](https://github.com/online-judge-tools/verification-helper) によって生成されています．
+[ドキュメント](https://fura2.github.io/competitive-programming-library/)

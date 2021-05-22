@@ -15,16 +15,18 @@ documentation_of: ../../library/tree/lca.hpp
 
 ### (constructor)
 ```
-(A1)(B1) lowest_common_ancestor()
+(A1) lowest_common_ancestor<graph>()
 (A2) lowest_common_ancestor(const graph& T, int root)
+(B1) lowest_common_ancestor<weighted_graph<W>>()
 (B2) lowest_common_ancestor(const weighted_graph<W>& T, int root)
 ```
-- (A1)(B1) 空の木で初期化する
-- (A2) ``root`` を根とする木 $T$ で初期化する
-- (B2) ``root`` を根とする重みつき木 $T$ で初期化する
+- (A1) 空の木で初期化する
+- (A2) $\mathrm{root}$ を根とする木 $T$ で初期化する
+- (B1) 空の重みつき木で初期化する
+- (B2) $\mathrm{root}$ を根とする重みつき木 $T$ で初期化する
 
 #### Constraints
-- (B) 辺の重みの型 $W$ は整数型または実数型 (``int, long long, double, long doube`` など)
+- (B) 辺の重みの型 $W$ は整数型または実数型 (``int, long long, double, long double`` など)
 
 #### Complexity
 - $O(V\log V)$
@@ -34,8 +36,8 @@ documentation_of: ../../library/tree/lca.hpp
 (A) void build(const graph& G)
 (B) void build(const weighted_graph<W>& G)
 ```
-- (A) ``root`` を根とする木 $T$ で初期化する
-- (B) ``root`` を根とする重みつき木 $T$ で初期化する
+- (A) $\mathrm{root}$ を根とする木 $T$ で初期化する
+- (B) $\mathrm{root}$ を根とする重みつき木 $T$ で初期化する
 
 #### Constraints
 - なし

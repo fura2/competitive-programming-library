@@ -3,42 +3,6 @@
 #include "../graph/graph.hpp"
 #include "../graph/wgraph.hpp"
 
-/* 最小共通先祖 */
-/*
-[ constructor ]
-	引数
-		T : 木
-		root : 根
-	制約
-		T は木
-		0 <= root < n
-	計算量
-		O(E + V log V)
-	備考
-		dep[u] := (u の根からの距離)
-		par[i][u] := (u の 2^i 個上の頂点 (根より上なら -1))
-
-[ lca ]
-	説明
-		u と v の最小共通先祖を求める
-	引数
-		u, v : 頂点
-	制約
-		0 <= u, v < n
-	計算量
-		O(log V)
-
-[ distance ]
-	説明
-		u と v の距離を求める
-	引数
-		u, v : 頂点
-	制約
-		0 <= u, v < n
-	計算量
-		O(log V)
-*/
-
 template<class T>
 class lowest_common_ancestor{ lowest_common_ancestor(const T&,int)=delete; };
 
