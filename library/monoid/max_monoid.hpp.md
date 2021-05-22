@@ -43,9 +43,9 @@ data:
   timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/tree/rerooting.1.test.cpp
-  - verify/tree/rerooting.2.test.cpp
   - verify/data_structure/segment_tree.2.test.cpp
+  - verify/tree/rerooting.2.test.cpp
+  - verify/tree/rerooting.1.test.cpp
 documentation_of: library/monoid/max_monoid.hpp
 layout: document
 title: Maximum Monoid

@@ -57,10 +57,10 @@ data:
   timestamp: '2021-05-11 00:34:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/Kruskal.2.test.cpp
-  - verify/graph/Kruskal.1.test.cpp
-  - verify/data_structure/union-find.test.1.cpp
   - verify/data_structure/union-find.test.2.cpp
+  - verify/data_structure/union-find.test.1.cpp
+  - verify/graph/Kruskal.1.test.cpp
+  - verify/graph/Kruskal.2.test.cpp
 documentation_of: library/data_structure/union-find.hpp
 layout: document
 title: Union-Find

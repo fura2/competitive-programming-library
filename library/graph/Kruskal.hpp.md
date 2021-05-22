@@ -76,8 +76,8 @@ data:
   timestamp: '2021-05-12 17:41:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/Kruskal.2.test.cpp
   - verify/graph/Kruskal.1.test.cpp
+  - verify/graph/Kruskal.2.test.cpp
 documentation_of: library/graph/Kruskal.hpp
 layout: document
 title: Minimum Spanning Forest (Kruskal's Algorithm)

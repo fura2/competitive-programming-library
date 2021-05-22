@@ -56,8 +56,8 @@ data:
   timestamp: '2021-05-12 18:21:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/Dijkstra.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
+  - verify/graph/Dijkstra.1.test.cpp
 documentation_of: library/graph/Dijkstra.hpp
 layout: document
 title: Single-Source Shortest Path (Dijkstra's Algorithm)
