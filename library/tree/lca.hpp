@@ -1,3 +1,8 @@
+#pragma once
+#include "../template.hpp"
+#include "../graph/graph.hpp"
+#include "../graph/wgraph.hpp"
+
 /* 最小共通先祖 */
 /*
 [ constructor ]
@@ -34,12 +39,19 @@
 		O(log V)
 */
 
-class lowest_common_ancestor{
+template<class T>
+class lowest_common_ancestor{ lowest_common_ancestor(const T&,int)=delete; };
+
+template<>
+class lowest_common_ancestor<graph>{
 	vector<int> dep;
 	vector<vector<int>> par;
 
 public:
-	lowest_common_ancestor(const graph& T,int root){
+	lowest_common_ancestor(){}
+	lowest_common_ancestor(const graph& T,int root){ build(T,root); }
+
+	void build(const graph& T,int root){
 		int n=T.size(),h;
 		for(h=1;(1<<h)<n;h++);
 
@@ -72,31 +84,30 @@ public:
 	int distance(int u,int v)const{ return dep[u]+dep[v]-2*dep[lca(u,v)]; }
 };
 
-
-
-// 重みつきバージョン (辺の重みの和を距離とした. 和でなくても可換かつ結合的な演算ならよい.)
-
-template<class T>
-class lowest_common_ancestor{
+template<class W>
+class lowest_common_ancestor<weighted_graph<W>>{
 	vector<int> dep;
 	vector<vector<int>> par;
-	vector<vector<T>> dist;
+	vector<vector<W>> dist;
 
 public:
-	lowest_common_ancestor(const weighted_graph<T>& Tr,int root){
-		int n=Tr.size(),h;
+	lowest_common_ancestor(){}
+	lowest_common_ancestor(const weighted_graph<W>& T,int root){ build(T,root); }
+
+	void build(const weighted_graph<W>& T,int root){
+		int n=T.size(),h;
 		for(h=1;(1<<h)<n;h++);
 
 		dep.assign(n,0);
 		par.assign(h,vector<int>(n,-1));
-		dist.assign(h,vector<T>(n));
+		dist.assign(h,vector<W>(n));
 
 		auto dfs=[&](auto&& dfs,int u,int p)->void{
-			for(const auto& e:Tr[u]) if(e.to!=p) {
-				dep[e.to]=dep[u]+1;
-				par[0][e.to]=u;
-				dist[0][e.to]=e.wt;
-				dfs(dfs,e.to,u);
+			for(const auto& [v,wt]:T[u]) if(v!=p) {
+				dep[v]=dep[u]+1;
+				par[0][v]=u;
+				dist[0][v]=wt;
+				dfs(dfs,v,u);
 			}
 		};
 
@@ -118,9 +129,9 @@ public:
 		return par[0][u];
 	}
 
-	T distance(int u,int v)const{
+	W distance(int u,int v)const{
 		int h=par.size();
-		T res=0;
+		W res=0;
 		int w=lca(u,v);
 		rep(i,h){
 			if((dep[u]-dep[w])>>i&1) res+=dist[i][u], u=par[i][u];
