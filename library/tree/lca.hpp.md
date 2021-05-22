@@ -42,59 +42,7 @@ data:
     \ntemplate<class T>\nvoid add_undirected_edge(weighted_graph<T>& G,int u,int v,const\
     \ T& wt){\n\tG[u].emplace_back(v,wt);\n\tG[v].emplace_back(u,wt);\n}\n\ntemplate<class\
     \ T>\nvoid add_directed_edge(weighted_graph<T>& G,int u,int v,const T& wt){\n\t\
-    G[u].emplace_back(v,wt);\n}\n#line 5 \"library/tree/lca.hpp\"\n\n/* \u6700\u5C0F\
-    \u5171\u901A\u5148\u7956 */\n/*\n[ constructor ]\n\t\u5F15\u6570\n\t\tT : \u6728\
-    \n\t\troot : \u6839\n\t\u5236\u7D04\n\t\tT \u306F\u6728\n\t\t0 <= root < n\n\t\
-    \u8A08\u7B97\u91CF\n\t\tO(E + V log V)\n\t\u5099\u8003\n\t\tdep[u] := (u \u306E\
-    \u6839\u304B\u3089\u306E\u8DDD\u96E2)\n\t\tpar[i][u] := (u \u306E 2^i \u500B\u4E0A\
-    \u306E\u9802\u70B9 (\u6839\u3088\u308A\u4E0A\u306A\u3089 -1))\n\n[ lca ]\n\t\u8AAC\
-    \u660E\n\t\tu \u3068 v \u306E\u6700\u5C0F\u5171\u901A\u5148\u7956\u3092\u6C42\u3081\
-    \u308B\n\t\u5F15\u6570\n\t\tu, v : \u9802\u70B9\n\t\u5236\u7D04\n\t\t0 <= u, v\
-    \ < n\n\t\u8A08\u7B97\u91CF\n\t\tO(log V)\n\n[ distance ]\n\t\u8AAC\u660E\n\t\t\
-    u \u3068 v \u306E\u8DDD\u96E2\u3092\u6C42\u3081\u308B\n\t\u5F15\u6570\n\t\tu,\
-    \ v : \u9802\u70B9\n\t\u5236\u7D04\n\t\t0 <= u, v < n\n\t\u8A08\u7B97\u91CF\n\t\
-    \tO(log V)\n*/\n\ntemplate<class T>\nclass lowest_common_ancestor{ lowest_common_ancestor(const\
-    \ T&,int)=delete; };\n\ntemplate<>\nclass lowest_common_ancestor<graph>{\n\tvector<int>\
-    \ dep;\n\tvector<vector<int>> par;\n\npublic:\n\tlowest_common_ancestor(){}\n\t\
-    lowest_common_ancestor(const graph& T,int root){ build(T,root); }\n\n\tvoid build(const\
-    \ graph& T,int root){\n\t\tint n=T.size(),h;\n\t\tfor(h=1;(1<<h)<n;h++);\n\n\t\
-    \tdep.assign(n,0);\n\t\tpar.assign(h,vector<int>(n,-1));\n\n\t\tauto dfs=[&](auto&&\
-    \ dfs,int u,int p)->void{\n\t\t\tfor(int v:T[u]) if(v!=p) {\n\t\t\t\tdep[v]=dep[u]+1;\n\
-    \t\t\t\tpar[0][v]=u;\n\t\t\t\tdfs(dfs,v,u);\n\t\t\t}\n\t\t};\n\n\t\tdfs(dfs,root,-1);\n\
-    \t\trep(i,h-1) rep(u,n) if(par[i][u]!=-1) par[i+1][u]=par[i][par[i][u]];\n\t}\n\
-    \n\tint lca(int u,int v)const{\n\t\tint h=par.size();\n\n\t\tif(dep[u]>dep[v])\
-    \ swap(u,v);\n\t\trep(i,h) if((dep[v]-dep[u])>>i&1) v=par[i][v];\n\t\tif(u==v)\
-    \ return u;\n\n\t\tfor(int i=h-1;i>=0;i--) if(par[i][u]!=par[i][v]) u=par[i][u],\
-    \ v=par[i][v];\n\t\treturn par[0][u];\n\t}\n\n\tint distance(int u,int v)const{\
-    \ return dep[u]+dep[v]-2*dep[lca(u,v)]; }\n};\n\ntemplate<class W>\nclass lowest_common_ancestor<weighted_graph<W>>{\n\
-    \tvector<int> dep;\n\tvector<vector<int>> par;\n\tvector<vector<W>> dist;\n\n\
-    public:\n\tlowest_common_ancestor(){}\n\tlowest_common_ancestor(const weighted_graph<W>&\
-    \ T,int root){ build(T,root); }\n\n\tvoid build(const weighted_graph<W>& T,int\
-    \ root){\n\t\tint n=T.size(),h;\n\t\tfor(h=1;(1<<h)<n;h++);\n\n\t\tdep.assign(n,0);\n\
-    \t\tpar.assign(h,vector<int>(n,-1));\n\t\tdist.assign(h,vector<W>(n));\n\n\t\t\
-    auto dfs=[&](auto&& dfs,int u,int p)->void{\n\t\t\tfor(const auto& [v,wt]:T[u])\
-    \ if(v!=p) {\n\t\t\t\tdep[v]=dep[u]+1;\n\t\t\t\tpar[0][v]=u;\n\t\t\t\tdist[0][v]=wt;\n\
-    \t\t\t\tdfs(dfs,v,u);\n\t\t\t}\n\t\t};\n\n\t\tdfs(dfs,root,-1);\n\t\trep(i,h-1)\
-    \ rep(u,n) if(par[i][u]!=-1) {\n\t\t\tpar[i+1][u]=par[i][par[i][u]];\n\t\t\tdist[i+1][u]=dist[i][u]+dist[i][par[i][u]];\n\
-    \t\t}\n\t}\n\n\tint lca(int u,int v)const{\n\t\tint h=par.size();\n\n\t\tif(dep[u]>dep[v])\
-    \ swap(u,v);\n\t\trep(i,h) if((dep[v]-dep[u])>>i&1) v=par[i][v];\n\t\tif(u==v)\
-    \ return u;\n\n\t\tfor(int i=h-1;i>=0;i--) if(par[i][u]!=par[i][v]) u=par[i][u],\
-    \ v=par[i][v];\n\t\treturn par[0][u];\n\t}\n\n\tW distance(int u,int v)const{\n\
-    \t\tint h=par.size();\n\t\tW res=0;\n\t\tint w=lca(u,v);\n\t\trep(i,h){\n\t\t\t\
-    if((dep[u]-dep[w])>>i&1) res+=dist[i][u], u=par[i][u];\n\t\t\tif((dep[v]-dep[w])>>i&1)\
-    \ res+=dist[i][v], v=par[i][v];\n\t\t}\n\t\treturn res;\n\t}\n};\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n#include \"../graph/graph.hpp\"\
-    \n#include \"../graph/wgraph.hpp\"\n\n/* \u6700\u5C0F\u5171\u901A\u5148\u7956\
-    \ */\n/*\n[ constructor ]\n\t\u5F15\u6570\n\t\tT : \u6728\n\t\troot : \u6839\n\
-    \t\u5236\u7D04\n\t\tT \u306F\u6728\n\t\t0 <= root < n\n\t\u8A08\u7B97\u91CF\n\t\
-    \tO(E + V log V)\n\t\u5099\u8003\n\t\tdep[u] := (u \u306E\u6839\u304B\u3089\u306E\
-    \u8DDD\u96E2)\n\t\tpar[i][u] := (u \u306E 2^i \u500B\u4E0A\u306E\u9802\u70B9 (\u6839\
-    \u3088\u308A\u4E0A\u306A\u3089 -1))\n\n[ lca ]\n\t\u8AAC\u660E\n\t\tu \u3068 v\
-    \ \u306E\u6700\u5C0F\u5171\u901A\u5148\u7956\u3092\u6C42\u3081\u308B\n\t\u5F15\
-    \u6570\n\t\tu, v : \u9802\u70B9\n\t\u5236\u7D04\n\t\t0 <= u, v < n\n\t\u8A08\u7B97\
-    \u91CF\n\t\tO(log V)\n\n[ distance ]\n\t\u8AAC\u660E\n\t\tu \u3068 v \u306E\u8DDD\
-    \u96E2\u3092\u6C42\u3081\u308B\n\t\u5F15\u6570\n\t\tu, v : \u9802\u70B9\n\t\u5236\
-    \u7D04\n\t\t0 <= u, v < n\n\t\u8A08\u7B97\u91CF\n\t\tO(log V)\n*/\n\ntemplate<class\
+    G[u].emplace_back(v,wt);\n}\n#line 5 \"library/tree/lca.hpp\"\n\ntemplate<class\
     \ T>\nclass lowest_common_ancestor{ lowest_common_ancestor(const T&,int)=delete;\
     \ };\n\ntemplate<>\nclass lowest_common_ancestor<graph>{\n\tvector<int> dep;\n\
     \tvector<vector<int>> par;\n\npublic:\n\tlowest_common_ancestor(){}\n\tlowest_common_ancestor(const\
@@ -125,6 +73,37 @@ data:
     \t\tint h=par.size();\n\t\tW res=0;\n\t\tint w=lca(u,v);\n\t\trep(i,h){\n\t\t\t\
     if((dep[u]-dep[w])>>i&1) res+=dist[i][u], u=par[i][u];\n\t\t\tif((dep[v]-dep[w])>>i&1)\
     \ res+=dist[i][v], v=par[i][v];\n\t\t}\n\t\treturn res;\n\t}\n};\n"
+  code: "#pragma once\n#include \"../template.hpp\"\n#include \"../graph/graph.hpp\"\
+    \n#include \"../graph/wgraph.hpp\"\n\ntemplate<class T>\nclass lowest_common_ancestor{\
+    \ lowest_common_ancestor(const T&,int)=delete; };\n\ntemplate<>\nclass lowest_common_ancestor<graph>{\n\
+    \tvector<int> dep;\n\tvector<vector<int>> par;\n\npublic:\n\tlowest_common_ancestor(){}\n\
+    \tlowest_common_ancestor(const graph& T,int root){ build(T,root); }\n\n\tvoid\
+    \ build(const graph& T,int root){\n\t\tint n=T.size(),h;\n\t\tfor(h=1;(1<<h)<n;h++);\n\
+    \n\t\tdep.assign(n,0);\n\t\tpar.assign(h,vector<int>(n,-1));\n\n\t\tauto dfs=[&](auto&&\
+    \ dfs,int u,int p)->void{\n\t\t\tfor(int v:T[u]) if(v!=p) {\n\t\t\t\tdep[v]=dep[u]+1;\n\
+    \t\t\t\tpar[0][v]=u;\n\t\t\t\tdfs(dfs,v,u);\n\t\t\t}\n\t\t};\n\n\t\tdfs(dfs,root,-1);\n\
+    \t\trep(i,h-1) rep(u,n) if(par[i][u]!=-1) par[i+1][u]=par[i][par[i][u]];\n\t}\n\
+    \n\tint lca(int u,int v)const{\n\t\tint h=par.size();\n\n\t\tif(dep[u]>dep[v])\
+    \ swap(u,v);\n\t\trep(i,h) if((dep[v]-dep[u])>>i&1) v=par[i][v];\n\t\tif(u==v)\
+    \ return u;\n\n\t\tfor(int i=h-1;i>=0;i--) if(par[i][u]!=par[i][v]) u=par[i][u],\
+    \ v=par[i][v];\n\t\treturn par[0][u];\n\t}\n\n\tint distance(int u,int v)const{\
+    \ return dep[u]+dep[v]-2*dep[lca(u,v)]; }\n};\n\ntemplate<class W>\nclass lowest_common_ancestor<weighted_graph<W>>{\n\
+    \tvector<int> dep;\n\tvector<vector<int>> par;\n\tvector<vector<W>> dist;\n\n\
+    public:\n\tlowest_common_ancestor(){}\n\tlowest_common_ancestor(const weighted_graph<W>&\
+    \ T,int root){ build(T,root); }\n\n\tvoid build(const weighted_graph<W>& T,int\
+    \ root){\n\t\tint n=T.size(),h;\n\t\tfor(h=1;(1<<h)<n;h++);\n\n\t\tdep.assign(n,0);\n\
+    \t\tpar.assign(h,vector<int>(n,-1));\n\t\tdist.assign(h,vector<W>(n));\n\n\t\t\
+    auto dfs=[&](auto&& dfs,int u,int p)->void{\n\t\t\tfor(const auto& [v,wt]:T[u])\
+    \ if(v!=p) {\n\t\t\t\tdep[v]=dep[u]+1;\n\t\t\t\tpar[0][v]=u;\n\t\t\t\tdist[0][v]=wt;\n\
+    \t\t\t\tdfs(dfs,v,u);\n\t\t\t}\n\t\t};\n\n\t\tdfs(dfs,root,-1);\n\t\trep(i,h-1)\
+    \ rep(u,n) if(par[i][u]!=-1) {\n\t\t\tpar[i+1][u]=par[i][par[i][u]];\n\t\t\tdist[i+1][u]=dist[i][u]+dist[i][par[i][u]];\n\
+    \t\t}\n\t}\n\n\tint lca(int u,int v)const{\n\t\tint h=par.size();\n\n\t\tif(dep[u]>dep[v])\
+    \ swap(u,v);\n\t\trep(i,h) if((dep[v]-dep[u])>>i&1) v=par[i][v];\n\t\tif(u==v)\
+    \ return u;\n\n\t\tfor(int i=h-1;i>=0;i--) if(par[i][u]!=par[i][v]) u=par[i][u],\
+    \ v=par[i][v];\n\t\treturn par[0][u];\n\t}\n\n\tW distance(int u,int v)const{\n\
+    \t\tint h=par.size();\n\t\tW res=0;\n\t\tint w=lca(u,v);\n\t\trep(i,h){\n\t\t\t\
+    if((dep[u]-dep[w])>>i&1) res+=dist[i][u], u=par[i][u];\n\t\t\tif((dep[v]-dep[w])>>i&1)\
+    \ res+=dist[i][v], v=par[i][v];\n\t\t}\n\t\treturn res;\n\t}\n};\n"
   dependsOn:
   - library/template.hpp
   - library/graph/graph.hpp
@@ -132,7 +111,7 @@ data:
   isVerificationFile: false
   path: library/tree/lca.hpp
   requiredBy: []
-  timestamp: '2021-05-23 04:03:50+09:00'
+  timestamp: '2021-05-23 04:23:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/tree/lca.2.test.cpp
@@ -155,16 +134,18 @@ title: Lowest Common Ancestor
 
 ### (constructor)
 ```
-(A1)(B1) lowest_common_ancestor()
+(A1) lowest_common_ancestor<graph>()
 (A2) lowest_common_ancestor(const graph& T, int root)
+(B1) lowest_common_ancestor<weighted_graph<W>>()
 (B2) lowest_common_ancestor(const weighted_graph<W>& T, int root)
 ```
-- (A1)(B1) 空の木で初期化する
-- (A2) ``root`` を根とする木 $T$ で初期化する
-- (B2) ``root`` を根とする重みつき木 $T$ で初期化する
+- (A1) 空の木で初期化する
+- (A2) $\mathrm{root}$ を根とする木 $T$ で初期化する
+- (B1) 空の重みつき木で初期化する
+- (B2) $\mathrm{root}$ を根とする重みつき木 $T$ で初期化する
 
 #### Constraints
-- (B) 辺の重みの型 $W$ は整数型または実数型 (``int, long long, double, long doube`` など)
+- (B) 辺の重みの型 $W$ は整数型または実数型 (``int, long long, double, long double`` など)
 
 #### Complexity
 - $O(V\log V)$
@@ -174,8 +155,8 @@ title: Lowest Common Ancestor
 (A) void build(const graph& G)
 (B) void build(const weighted_graph<W>& G)
 ```
-- (A) ``root`` を根とする木 $T$ で初期化する
-- (B) ``root`` を根とする重みつき木 $T$ で初期化する
+- (A) $\mathrm{root}$ を根とする木 $T$ で初期化する
+- (B) $\mathrm{root}$ を根とする重みつき木 $T$ で初期化する
 
 #### Constraints
 - なし
