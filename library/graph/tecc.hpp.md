@@ -91,7 +91,7 @@ title: Two-Edge Connected Components
 ```
 two_edge_connected_components(const graph& G = {})
 ```
-- 無向グラフ $G$ を二辺連結成分分解する
+無向グラフ $G$ を二辺連結成分分解する
 
 #### Constraints
 - $G$ は無向グラフ
@@ -103,7 +103,7 @@ two_edge_connected_components(const graph& G = {})
 ```
 void build(const graph& G)
 ```
-- 無向グラフ $G$ を二辺連結成分分解する
+無向グラフ $G$ を二辺連結成分分解する
 
 #### Constraints
 - $G$ は無向グラフ

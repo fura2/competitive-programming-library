@@ -81,6 +81,7 @@ Cartesian_tree(const vector<T>& a = {})
 ```
 void build(const vector<T>& a)
 ```
+数列 $a$ の Cartesian tree を構築する
 
 #### Constraints
 - なし

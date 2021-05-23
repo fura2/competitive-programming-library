@@ -52,7 +52,7 @@ $T$ の元全体を台集合とし，積を $a\ast b=a+b$ と定めることで�
 ```
 add_monoid<T>(const T& val = T())
 ```
-- $\mathrm{val}$ で初期化する
+$\mathrm{val}$ で初期化する
 
 #### Constraints
 - $T$ 上の結合的な二項演算 $+$ が定義されている
@@ -65,7 +65,7 @@ add_monoid<T>(const T& val = T())
 ```
 add_monoid operator*(const add_monoid& x)
 ```
-- モノイドの積
+モノイドの積
 
 #### Constraints
 - なし

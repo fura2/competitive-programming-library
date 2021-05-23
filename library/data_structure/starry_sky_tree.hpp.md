@@ -58,7 +58,7 @@ title: Starry Sky Tree
 ```
 starry_sky_tree<T>(int n = 0)
 ```
-- $0$ のみからなる長さ $n$ の列で初期化する
+$0$ のみからなる長さ $n$ の列で初期化する
 
 #### Constraints
 - $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
@@ -71,7 +71,7 @@ starry_sky_tree<T>(int n = 0)
 ```
 void build(int n)
 ```
-- $0$ のみからなる長さ $n$ の列で初期化する
+$0$ のみからなる長さ $n$ の列で初期化する
 
 #### Constraints
 - $n\ge0$
