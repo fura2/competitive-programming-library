@@ -4,7 +4,7 @@ documentation_of: ../../library/graph/tecc.hpp
 ---
 
 ## Description
-無向グラフを二辺連結成分分解する
+無向グラフの二辺連結成分分解
 
 ### (constructor)
 ```

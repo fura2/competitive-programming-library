@@ -4,7 +4,7 @@ documentation_of: ../../library/graph/cc.hpp
 ---
 
 ## Description
-無向グラフを連結成分分解する
+無向グラフの連結成分分解
 ```
 vector<vector<int>> connected_components(const graph& G)
 ```
