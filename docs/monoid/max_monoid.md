@@ -11,7 +11,7 @@ $T$ の元全体を台集合とし，積を $a\ast b=\max\lbrace a,b\rbrace$ と
 ```
 max_monoid<T>(const T& val = numeric_limits<T>::min())
 ```
-- $\mathrm{val}$ で初期化する
+$\mathrm{val}$ で初期化する
 
 #### Constraints
 - $T$ 上の比較演算子 $<$ が定義されていて，これについて $T$ は全順序集合
@@ -24,7 +24,7 @@ max_monoid<T>(const T& val = numeric_limits<T>::min())
 ```
 max_monoid operator*(const max_monoid& x)
 ```
-- モノイドの積
+モノイドの積
 
 #### Constraints
 - なし

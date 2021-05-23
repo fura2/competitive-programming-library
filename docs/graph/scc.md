@@ -6,19 +6,19 @@ documentation_of: ../../library/graph/scc.hpp
 ## Description
 有向グラフを強連結成分分解する Kosaraju のアルゴリズム
 ```
-(A) strongly_connected_components<graph>
-(B) strongly_connected_components<weighted_graph<W>>
+(1) strongly_connected_components<graph>
+(2) strongly_connected_components<weighted_graph<W>>
 ```
-- (A) 有向グラフ $G$ が重みなしのとき
-- (B) 有向グラフ $G$ の辺に型 $W$ の重みがついているとき
+- (1) 有向グラフ $G$ が重みなしのとき
+- (2) 有向グラフ $G$ の辺に型 $W$ の重みがついているとき
 
 ### (constructor)
 ```
-(A) strongly_connected_components(const graph& G = {})
-(B) strongly_connected_components(const weighted_graph<W>& G = {})
+(1) strongly_connected_components(const graph& G = {})
+(2) strongly_connected_components(const weighted_graph<W>& G = {})
 ```
-- (A) 有向グラフ $G$ を強連結成分分解する
-- (B) 重みつき有向グラフ $G$ を強連結成分分解する
+- (1) 有向グラフ $G$ を強連結成分分解する
+- (2) 重みつき有向グラフ $G$ を強連結成分分解する
 
 #### Constraints
 - なし
@@ -28,11 +28,11 @@ documentation_of: ../../library/graph/scc.hpp
 
 ### build
 ```
-(A) void build(const graph& G)
-(B) void build(const weighted_graph<W>& G)
+(1) void build(const graph& G)
+(2) void build(const weighted_graph<W>& G)
 ```
-- (A) 有向グラフ $G$ を強連結成分分解する
-- (B) 重みつき有向グラフ $G$ を強連結成分分解する
+- (1) 有向グラフ $G$ を強連結成分分解する
+- (2) 重みつき有向グラフ $G$ を強連結成分分解する
 
 #### Constraints
 - なし
@@ -68,8 +68,8 @@ $G$ の強連結成分 $i$ を求める．
 
 ### DAG
 ```
-(A) const graph& DAG()
-(B) const weighted_graph<W>& DAG()
+(1) const graph& DAG()
+(2) const weighted_graph<W>& DAG()
 ```
 $G$ の強連結成分を縮約して得られる DAG を求める．
 この DAG は多重辺を持つことがある．
