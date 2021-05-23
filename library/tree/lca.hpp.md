@@ -123,7 +123,7 @@ title: Lowest Common Ancestor
 ---
 
 ## Description
-木の最小共通先祖をダブリングを用いて求める．
+ダブリングで木の最小共通先祖を求める．
 前処理 $O(V\log V)$，クエリ $O(\log V)$．
 ```
 (A) lowest_common_ancestor<graph>
@@ -168,7 +168,7 @@ title: Lowest Common Ancestor
 ```
 int lca(int u, int v)
 ```
-- 頂点 $u$ と $v$ の最小共通先祖を求める
+頂点 $u$ と $v$ の最小共通先祖を求める
 
 #### Constraints
 - $0\lt u,v\lt V$
@@ -181,7 +181,7 @@ int lca(int u, int v)
 (A) int distance(int u, int v)
 (B) W distance(int u, int v)
 ```
-- 頂点 $u$ と $v$ の距離を求める
+頂点 $u$ と $v$ の距離を求める
 
 #### Constraints
 - $0\lt u,v\lt V$

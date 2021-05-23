@@ -397,6 +397,9 @@ data:
       path: verify/graph/scc.2.test.cpp
       title: verify/graph/scc.2.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/graph/scc.3.test.cpp
+      title: verify/graph/scc.3.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/graph/tecc.1.test.cpp
       title: verify/graph/tecc.1.test.cpp
     - icon: ':heavy_check_mark:'

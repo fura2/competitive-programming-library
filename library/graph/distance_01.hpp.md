@@ -60,7 +60,7 @@ title: Single-Source Shortest Path ($01$-BFS)
 ---
 
 ## Description
-辺の重みが $0$ または $1$ である有向グラフの単一始点最短路を求める
+辺の重みが $0$ または $1$ である有向グラフの単一始点最短路
 ```
 vector<int> distance_01(const weighted_graph<int>& G,　int s)
 ```

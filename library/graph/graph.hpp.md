@@ -52,6 +52,9 @@ data:
     path: verify/graph/scc.2.test.cpp
     title: verify/graph/scc.2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/graph/scc.3.test.cpp
+    title: verify/graph/scc.3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/graph/tecc.1.test.cpp
     title: verify/graph/tecc.1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -128,6 +131,7 @@ data:
   - verify/graph/tecc.1.test.cpp
   - verify/graph/tecc.2.test.cpp
   - verify/graph/is_DAG.2.test.cpp
+  - verify/graph/scc.3.test.cpp
   - verify/graph/distance.test.cpp
   - verify/graph/cc.test.cpp
 documentation_of: library/graph/graph.hpp

@@ -20,10 +20,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/scc
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
     links:
-    - https://judge.yosupo.jp/problem/scc
-  bundledCode: "#line 1 \"verify/graph/scc.1.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
+  bundledCode: "#line 1 \"verify/graph/scc.3.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
     \n\n#line 2 \"library/template.hpp\"\n#include <cassert>\n#include <cctype>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <algorithm>\n#include\
@@ -72,34 +72,33 @@ data:
     \ if(id[u]!=id[v]) add_directed_edge(D,id[u],id[v],wt);\n\t\t}\n\t}\n\n\tint operator[](int\
     \ u)const{ return id[u]; }\n\n\tconst vector<int>& component(int i)const{ return\
     \ Comp[i]; }\n\tconst weighted_graph<W>& DAG()const{ return D; }\n};\n#line 5\
-    \ \"verify/graph/scc.1.test.cpp\"\n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\
-    \tgraph G(n);\n\trep(i,m){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\t\tadd_directed_edge(G,u,v);\n\
-    \t}\n\n\tstrongly_connected_components SCC(G);\n\n\tint k=SCC.DAG().size();\n\t\
-    printf(\"%d\\n\",k);\n\trep(i,k){\n\t\tauto res=SCC.component(i);\n\t\tprintf(\"\
-    %ld \",res.size());\n\t\trep(j,res.size()) printf(\"%d%c\",res[j],j+1<res.size()?'\
-    \ ':'\\n');\n\t}\n\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include \"../../library/template.hpp\"\
-    \n#include \"../../library/graph/scc.hpp\"\n\nint main(){\n\tint n,m; scanf(\"\
-    %d%d\",&n,&m);\n\tgraph G(n);\n\trep(i,m){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\
-    \t\tadd_directed_edge(G,u,v);\n\t}\n\n\tstrongly_connected_components SCC(G);\n\
-    \n\tint k=SCC.DAG().size();\n\tprintf(\"%d\\n\",k);\n\trep(i,k){\n\t\tauto res=SCC.component(i);\n\
-    \t\tprintf(\"%ld \",res.size());\n\t\trep(j,res.size()) printf(\"%d%c\",res[j],j+1<res.size()?'\
-    \ ':'\\n');\n\t}\n\n\treturn 0;\n}\n"
+    \ \"verify/graph/scc.3.test.cpp\"\n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\
+    \tweighted_graph<int> G(n);\n\trep(i,m){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\
+    \t\tadd_directed_edge(G,u,v,1);\n\t}\n\n\tstrongly_connected_components SCC(G);\n\
+    \n\tint q; scanf(\"%d\",&q);\n\trep(_,q){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\
+    \t\tputs(SCC[u]==SCC[v]?\"1\":\"0\");\n\t}\n\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
+    \n\n#include \"../../library/template.hpp\"\n#include \"../../library/graph/scc.hpp\"\
+    \n\nint main(){\n\tint n,m; scanf(\"%d%d\",&n,&m);\n\tweighted_graph<int> G(n);\n\
+    \trep(i,m){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\t\tadd_directed_edge(G,u,v,1);\n\
+    \t}\n\n\tstrongly_connected_components SCC(G);\n\n\tint q; scanf(\"%d\",&q);\n\
+    \trep(_,q){\n\t\tint u,v; scanf(\"%d%d\",&u,&v);\n\t\tputs(SCC[u]==SCC[v]?\"1\"\
+    :\"0\");\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
   - library/template.hpp
   - library/graph/scc.hpp
   - library/graph/graph.hpp
   - library/graph/wgraph.hpp
   isVerificationFile: true
-  path: verify/graph/scc.1.test.cpp
+  path: verify/graph/scc.3.test.cpp
   requiredBy: []
   timestamp: '2021-05-23 16:12:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/graph/scc.1.test.cpp
+documentation_of: verify/graph/scc.3.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/graph/scc.1.test.cpp
-- /verify/verify/graph/scc.1.test.cpp.html
-title: verify/graph/scc.1.test.cpp
+- /verify/verify/graph/scc.3.test.cpp
+- /verify/verify/graph/scc.3.test.cpp.html
+title: verify/graph/scc.3.test.cpp
 ---

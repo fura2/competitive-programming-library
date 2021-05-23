@@ -23,6 +23,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/is_DAG.hpp
     title: DAG Detection
+  - icon: ':heavy_check_mark:'
+    path: library/graph/scc.hpp
+    title: Strongly Connected Components (Kosaraju's Algorithm)
   - icon: ':warning:'
     path: library/graph/topological_sort.hpp
     title: Topological Sort
@@ -63,6 +66,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/is_DAG.2.test.cpp
     title: verify/graph/is_DAG.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/scc.1.test.cpp
+    title: verify/graph/scc.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/scc.2.test.cpp
+    title: verify/graph/scc.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/scc.3.test.cpp
+    title: verify/graph/scc.3.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/tree/lca.1.test.cpp
     title: verify/tree/lca.1.test.cpp
@@ -124,6 +136,7 @@ data:
   - library/graph/topological_sort.hpp
   - library/graph/Bellman-Ford.hpp
   - library/graph/is_DAG.hpp
+  - library/graph/scc.hpp
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -135,6 +148,8 @@ data:
   - verify/tree/rerooting.1.test.cpp
   - verify/tree/lca.3.test.cpp
   - verify/graph/Kruskal.1.test.cpp
+  - verify/graph/scc.2.test.cpp
+  - verify/graph/scc.1.test.cpp
   - verify/graph/is_DAG.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Prim.test.cpp
@@ -143,6 +158,7 @@ data:
   - verify/graph/is_DAG.2.test.cpp
   - verify/graph/distance_01.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
+  - verify/graph/scc.3.test.cpp
 documentation_of: library/graph/wgraph.hpp
 layout: document
 title: Weighted Graph
