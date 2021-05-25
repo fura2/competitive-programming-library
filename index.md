@@ -190,6 +190,9 @@ data:
       path: library/misc/binomial_parity.hpp
       title: library/misc/binomial_parity.hpp
     - icon: ':warning:'
+      path: library/misc/binomial_table.hpp
+      title: library/misc/binomial_table.hpp
+    - icon: ':warning:'
       path: library/misc/bint.hpp
       title: library/misc/bint.hpp
     - icon: ':warning:'
