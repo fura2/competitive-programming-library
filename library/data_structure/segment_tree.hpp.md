@@ -102,6 +102,9 @@ title: Segment Tree
 ## Description
 モノイド $(M,\ast)$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点更新と区間積を $O(\log n)$ で処理するデータ構造．\\
 以下では，$M$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
+```
+segment_tree<M>
+```
 
 ### (constructor)
 ```

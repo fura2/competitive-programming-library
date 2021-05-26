@@ -51,6 +51,9 @@ title: Minimum Monoid
 ## Description
 $T$ の元全体を台集合とし，積を $a\ast b=\min\lbrace a,b\rbrace$ と定めることで得られるモノイド．\\
 ``numeric_limits<T>::max()`` が単位元となる．
+```
+min_monoid<T>
+```
 
 ### (constructor)
 ```

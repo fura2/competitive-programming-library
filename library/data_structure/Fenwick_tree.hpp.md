@@ -69,6 +69,9 @@ title: Fenwick Tree
 ## Description
 Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，一点加算と区間和を $O(\log n)$ で処理するデータ構造．\\
 以下では，$G$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
+```
+Fenwick_tree<G>
+```
 
 ### (constructor)
 ```

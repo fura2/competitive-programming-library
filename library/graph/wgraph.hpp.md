@@ -168,6 +168,10 @@ title: Weighted Graph
 辺に重みがついた無向または有向グラフ．
 隣接リストとして管理する．
 重みの型を $T$ で表す．
+```
+edge<T>
+weighted_graph<T>
+```
 
 ### add_undirected_edge
 ```

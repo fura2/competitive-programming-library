@@ -57,6 +57,9 @@ title: Sparse Table
 [冪等半群](https://en.wikipedia.org/wiki/Band_(algebra)) $(B,\ast)$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，前処理を $O(n\log n)$ で，区間積を $O(1)$ で処理するデータ構造．\\
 $B$ の演算の可換性は要求しない．
 以下では，$B$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
+```
+sparse_table<B>
+```
 
 ### (constructor)
 ```

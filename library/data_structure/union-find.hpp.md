@@ -70,6 +70,9 @@ title: Union-Find
 互いに素な $n$ 個の一点集合 $\lbrace0\rbrace,\ldots,\lbrace n-1\rbrace$ がある状態から始めて，次の操作を amortized $O(\alpha(n))$ で処理するデータ構造 ([素集合データ構造](https://en.wikipedia.org/wiki/Disjoint-set_data_structure))．
 - 要素がどの集合に属するかを求める
 - 二つの集合をマージする
+```
+union_find
+```
 
 union by size と path compression を実装している．
 

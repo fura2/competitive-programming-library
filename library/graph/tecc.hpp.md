@@ -86,6 +86,9 @@ title: Two-Edge Connected Components
 
 ## Description
 無向グラフの二辺連結成分分解
+```
+two_edge_connected_components
+```
 
 ### (constructor)
 ```

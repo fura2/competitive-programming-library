@@ -142,6 +142,9 @@ title: Graph
 ## Description
 重みなしの無向または有向グラフ．
 隣接リストとして管理する．
+```
+graph
+```
 
 ### add_undirected_edge
 ```
