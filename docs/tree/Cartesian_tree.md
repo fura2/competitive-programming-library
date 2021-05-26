@@ -7,6 +7,7 @@ documentation_of: ../../library/tree/Cartesian_tree.hpp
 数列 $a=(a_0,\ldots,a_{n-1})$ に対して，次の手順で得られる $n$ 頂点の二分木を [Cartesian tree](https://en.wikipedia.org/wiki/Cartesian_tree) と呼ぶ．
 - $i_\mathrm{min}$ を $\displaystyle a_{i_\mathrm{min}}=\min_{0\le i\lt n}a_i$ (複数ある場合は番号が最小のもの) となるように定め，頂点 $i_\mathrm{min}$ を根とする．
 - 数列 $(a_0,\ldots,a_{i_\mathrm{min}-1})$ と $(a_{i_\mathrm{min}+1},\ldots,a_{n-1})$ についてそれぞれ再帰的に Cartesian tree を構築し，それらの根を頂点 $i_\mathrm{min}$ の左, 右の子とする．
+
 ```
 Cartesian_tree<T>
 ```
