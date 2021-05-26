@@ -6,6 +6,9 @@ documentation_of: ../../library/monoid/add_monoid.hpp
 ## Description
 $T$ の元全体を台集合とし，積を $a\ast b=a+b$ と定めることで得られるモノイド．\\
 ``T()`` が単位元となる．
+```
+add_monoid<T>
+```
 
 ### (constructor)
 ```

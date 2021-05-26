@@ -5,6 +5,9 @@ documentation_of: ../../library/data_structure/starry_sky_tree.hpp
 
 ## Description
 数列 $a_0,\ldots,a_{n-1}$ に対して，区間加算と区間 max を $O(\log n)$ で処理するデータ構造
+```
+starry_sky_tree<T>
+```
 
 ### (constructor)
 ```

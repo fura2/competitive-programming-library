@@ -6,6 +6,9 @@ documentation_of: ../../library/data_structure/Fenwick_tree_dual.hpp
 ## Description
 Abel 群 $G$ の元の列 $a_0,\ldots,a_{n-1}$ に対して，区間加算と一点取得を $O(\log n)$ で処理するデータ構造．\\
 以下では，$G$ の演算やインスタンスの生成が $O(1)$ でできることを仮定している．
+```
+Fenwick_tree_dual<G>
+```
 
 ### (constructor)
 ```
