@@ -79,4 +79,4 @@ $s$ から $u$ に到達できない場合は $d(u)=$ ``numeric_limits<T>::max()
 - $0\le s\lt V$
 
 #### Complexity
-- $O(V+E\log E)$ (priority queue への push, pop が高々 $E$ 回ずつしか起こらないことから示せる)
+- $O(V+E\log E)$
