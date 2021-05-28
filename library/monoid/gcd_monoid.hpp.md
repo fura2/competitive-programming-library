@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/data_structure/segment_tree.3.test.cpp
-    title: verify/data_structure/segment_tree.3.test.cpp
+    path: verify/data_structure/sparse_table.2.test.cpp
+    title: verify/data_structure/sparse_table.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -21,51 +21,51 @@ data:
     \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
     #include <sstream>\n#include <stack>\n#include <string>\n#include <tuple>\n#include\
     \ <utility>\n#include <vector>\n\n#define rep(i,n) for(int i=0;i<(n);i++)\n\n\
-    using namespace std;\nusing lint=long long;\n#line 3 \"library/monoid/add_monoid.hpp\"\
-    \n\ntemplate<class T>\nclass add_monoid{\n\tT a;\npublic:\n\tadd_monoid(const\
-    \ T& val=T()):a(val){}\n\tadd_monoid operator*(const add_monoid& x)const{\n\t\t\
-    return a+x.a;\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{ return a;\
-    \ }\n};\n"
-  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class T>\nclass add_monoid{\n\
-    \tT a;\npublic:\n\tadd_monoid(const T& val=T()):a(val){}\n\tadd_monoid operator*(const\
-    \ add_monoid& x)const{\n\t\treturn a+x.a;\n\t}\n\tT& get(){ return a; }\n\tconst\
-    \ T& get()const{ return a; }\n};\n"
+    using namespace std;\nusing lint=long long;\n#line 3 \"library/monoid/gcd_monoid.hpp\"\
+    \n\ntemplate<class T>\nclass gcd_monoid{\n\tT a;\npublic:\n\tgcd_monoid(const\
+    \ T& val=T()):a(val){}\n\tgcd_monoid operator*(const gcd_monoid& x)const{\n\t\t\
+    return gcd(a,x.a);\n\t}\n\tT& get(){ return a; }\n\tconst T& get()const{ return\
+    \ a; }\n};\n"
+  code: "#pragma once\n#include \"../template.hpp\"\n\ntemplate<class T>\nclass gcd_monoid{\n\
+    \tT a;\npublic:\n\tgcd_monoid(const T& val=T()):a(val){}\n\tgcd_monoid operator*(const\
+    \ gcd_monoid& x)const{\n\t\treturn gcd(a,x.a);\n\t}\n\tT& get(){ return a; }\n\
+    \tconst T& get()const{ return a; }\n};\n"
   dependsOn:
   - library/template.hpp
   isVerificationFile: false
-  path: library/monoid/add_monoid.hpp
+  path: library/monoid/gcd_monoid.hpp
   requiredBy: []
-  timestamp: '2021-05-23 04:03:50+09:00'
+  timestamp: '2021-05-28 17:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/data_structure/segment_tree.3.test.cpp
-documentation_of: library/monoid/add_monoid.hpp
+  - verify/data_structure/sparse_table.2.test.cpp
+documentation_of: library/monoid/gcd_monoid.hpp
 layout: document
-title: Additive Monoid
+title: GCD Monoid
 ---
 
 ## Description
-$T$ の元全体を台集合とし，積を $a\ast b=a+b$ と定めることで得られるモノイド．\\
+$T$ の元全体を台集合とし，積を $a\ast b=\mathrm{gcd}$ と定めることで得られるモノイド．\\
 ``T()`` が単位元となる．
 ```
-add_monoid<T>
+gcd_monoid<T>
 ```
 
 ### (constructor)
 ```
-add_monoid<T>(const T& val = T())
+gcd_monoid<T>(const T& val = T())
 ```
 $\mathrm{val}$ で初期化する
 
 #### Constraints
-- $(T,+)$ はモノイド ($+$ は結合的で, デフォルトコンストラクタが $T$ の単位元を生成)
+- $T$ は $\mathrm{gcd}:T\times T\to T$ が定義された環 ([参考](https://en.wikipedia.org/wiki/GCD_domain)) で, デフォルトコンストラクタが $T$ の零元を生成する
 
 #### Complexity
 - $O(1)$
 
 ### operator*
 ```
-add_monoid operator*(const add_monoid& x)
+gcd_monoid operator*(const gcd_monoid& x)
 ```
 モノイドの積
 
@@ -73,7 +73,7 @@ add_monoid operator*(const add_monoid& x)
 - なし
 
 #### Complexity
-- $O(1)$ ($T$ の演算 $+$ が $O(1)$ でできることを仮定)
+- GCD の計算を $O(1)$ 回おこなう
 
 ### get
 ```

@@ -20,8 +20,8 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
     - https://judge.yosupo.jp/problem/staticrmq
-  bundledCode: "#line 1 \"verify/data_structure/sparse_table.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 2 \"library/template.hpp\"\
+  bundledCode: "#line 1 \"verify/data_structure/sparse_table.1.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 2 \"library/template.hpp\"\
     \n#include <cassert>\n#include <cctype>\n#include <chrono>\n#include <climits>\n\
     #include <cmath>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n\
     #include <ctime>\n#include <algorithm>\n#include <deque>\n#include <functional>\n\
@@ -41,7 +41,7 @@ data:
     \t\trep(i,n) st[0][i]=a[i];\n\t\tfor(int i=1;i<h[n]+1;i++){\n\t\t\tst[i].resize(n-(1<<i)+1);\n\
     \t\t\trep(j,n-(1<<i)+1) st[i][j]=st[i-1][j]*st[i-1][j+(1<<(i-1))];\n\t\t}\n\t\
     }\n\n\tB product(int l,int r)const{\n\t\tint i=h[r-l];\n\t\treturn st[i][l]*st[i][r-(1<<i)];\n\
-    \t}\n};\n#line 6 \"verify/data_structure/sparse_table.test.cpp\"\n\nint main(){\n\
+    \t}\n};\n#line 6 \"verify/data_structure/sparse_table.1.test.cpp\"\n\nint main(){\n\
     \tint n,q; scanf(\"%d%d\",&n,&q);\n\tvector<int> a(n);\n\trep(i,n) scanf(\"%d\"\
     ,&a[i]);\n\n\tsparse_table<min_monoid<int>> ST(a);\n\trep(_,q){\n\t\tint l,r;\
     \ scanf(\"%d%d\",&l,&r);\n\t\tprintf(\"%d\\n\",ST.product(l,r).get());\n\t}\n\n\
@@ -58,15 +58,15 @@ data:
   - library/monoid/min_monoid.hpp
   - library/data_structure/sparse_table.hpp
   isVerificationFile: true
-  path: verify/data_structure/sparse_table.test.cpp
+  path: verify/data_structure/sparse_table.1.test.cpp
   requiredBy: []
-  timestamp: '2021-05-23 04:03:50+09:00'
+  timestamp: '2021-05-28 17:41:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/data_structure/sparse_table.test.cpp
+documentation_of: verify/data_structure/sparse_table.1.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/data_structure/sparse_table.test.cpp
-- /verify/verify/data_structure/sparse_table.test.cpp.html
-title: verify/data_structure/sparse_table.test.cpp
+- /verify/verify/data_structure/sparse_table.1.test.cpp
+- /verify/verify/data_structure/sparse_table.1.test.cpp.html
+title: verify/data_structure/sparse_table.1.test.cpp
 ---

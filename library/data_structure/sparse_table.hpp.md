@@ -7,8 +7,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/data_structure/sparse_table.test.cpp
-    title: verify/data_structure/sparse_table.test.cpp
+    path: verify/data_structure/sparse_table.1.test.cpp
+    title: verify/data_structure/sparse_table.1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/sparse_table.2.test.cpp
+    title: verify/data_structure/sparse_table.2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -47,7 +50,8 @@ data:
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/data_structure/sparse_table.test.cpp
+  - verify/data_structure/sparse_table.1.test.cpp
+  - verify/data_structure/sparse_table.2.test.cpp
 documentation_of: library/data_structure/sparse_table.hpp
 layout: document
 title: Sparse Table
@@ -70,7 +74,7 @@ sparse_table<B>
 - (2) $a$ で初期化する
 
 #### Constraints
-- $(B,\ast)$ は冪等半群 ($B$ 上の結合的な二項演算 $\ast$ が定義されていて，すべての $a\in B$ に対して $a\ast a=a$)
+- $(B,\ast)$ は冪等半群 ($\ast$ は結合的で，すべての $a\in B$ に対して $a\ast a=a$)
 - (2) $T$ は $B$ にキャストできる ($T$ と $B$ が一致していなくてもよい)
 
 #### Complexity

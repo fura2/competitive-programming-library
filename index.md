@@ -243,6 +243,9 @@ data:
       path: library/monoid/add_monoid.hpp
       title: Additive Monoid
     - icon: ':heavy_check_mark:'
+      path: library/monoid/gcd_monoid.hpp
+      title: GCD Monoid
+    - icon: ':heavy_check_mark:'
       path: library/monoid/max_monoid.hpp
       title: Maximum Monoid
     - icon: ':heavy_check_mark:'
@@ -347,8 +350,11 @@ data:
       path: verify/data_structure/segment_tree.3.test.cpp
       title: verify/data_structure/segment_tree.3.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/data_structure/sparse_table.test.cpp
-      title: verify/data_structure/sparse_table.test.cpp
+      path: verify/data_structure/sparse_table.1.test.cpp
+      title: verify/data_structure/sparse_table.1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/sparse_table.2.test.cpp
+      title: verify/data_structure/sparse_table.2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/starry_sky_tree.test.cpp
       title: verify/data_structure/starry_sky_tree.test.cpp
