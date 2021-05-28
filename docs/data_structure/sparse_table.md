@@ -20,7 +20,7 @@ sparse_table<B>
 - (2) $a$ で初期化する
 
 #### Constraints
-- $(B,\ast)$ は冪等半群 ($B$ 上の結合的な二項演算 $\ast$ が定義されていて，すべての $a\in B$ に対して $a\ast a=a$)
+- $(B,\ast)$ は冪等半群 ($\ast$ は結合的で，すべての $a\in B$ に対して $a\ast a=a$)
 - (2) $T$ は $B$ にキャストできる ($T$ と $B$ が一致していなくてもよい)
 
 #### Complexity
