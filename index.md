@@ -295,6 +295,9 @@ data:
     - icon: ':warning:'
       path: library/number_theory/prime_factorize.hpp
       title: library/number_theory/prime_factorize.hpp
+    - icon: ':warning:'
+      path: library/number_theory/primitive_root.hpp
+      title: library/number_theory/primitive_root.hpp
   - name: library/string
     pages:
     - icon: ':warning:'
