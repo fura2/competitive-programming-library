@@ -43,7 +43,7 @@ data:
     \n\t\tcapa_t res=0;\n\t\twhile(make_layer(s,t)){\n\t\t\tcur.assign(n,0);\n\t\t\
     \tfor(capa_t water=1;water>0;res+=water){\n\t\t\t\twater=augment(s,t,numeric_limits<capa_t>::max());\n\
     \t\t\t}\n\t\t}\n\t\treturn res;\n\t}\n\n\tvector<int> minimum_cut(int s){\n\t\t\
-    int n=G.size();\n\t\tvector<int> res;\n\t\tvector vis(n,false);\n\t\tvis[s]=true;\n\
+    int n=G.size();\n\t\tvector<int> res;\n\t\tvector<bool> vis(n);\n\t\tvis[s]=true;\n\
     \t\tqueue<int> Q;\n\t\tQ.emplace(s);\n\t\twhile(!Q.empty()){\n\t\t\tint u=Q.front();\
     \ Q.pop();\n\t\t\tres.emplace_back(u);\n\t\t\tfor(const edge& e:G[u]) if(!vis[e.to]\
     \ && e.capa-e.flow>0) {\n\t\t\t\tvis[e.to]=true;\n\t\t\t\tQ.emplace(e.to);\n\t\
@@ -83,7 +83,7 @@ data:
     \n\t\tcapa_t res=0;\n\t\twhile(make_layer(s,t)){\n\t\t\tcur.assign(n,0);\n\t\t\
     \tfor(capa_t water=1;water>0;res+=water){\n\t\t\t\twater=augment(s,t,numeric_limits<capa_t>::max());\n\
     \t\t\t}\n\t\t}\n\t\treturn res;\n\t}\n\n\tvector<int> minimum_cut(int s){\n\t\t\
-    int n=G.size();\n\t\tvector<int> res;\n\t\tvector vis(n,false);\n\t\tvis[s]=true;\n\
+    int n=G.size();\n\t\tvector<int> res;\n\t\tvector<bool> vis(n);\n\t\tvis[s]=true;\n\
     \t\tqueue<int> Q;\n\t\tQ.emplace(s);\n\t\twhile(!Q.empty()){\n\t\t\tint u=Q.front();\
     \ Q.pop();\n\t\t\tres.emplace_back(u);\n\t\t\tfor(const edge& e:G[u]) if(!vis[e.to]\
     \ && e.capa-e.flow>0) {\n\t\t\t\tvis[e.to]=true;\n\t\t\t\tQ.emplace(e.to);\n\t\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: false
   path: library/flow/Dinic.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
+  timestamp: '2021-06-08 20:37:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/flow/Dinic.hpp
