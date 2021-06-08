@@ -117,7 +117,7 @@ public:
 	vector<int> minimum_cut(int s){
 		int n=G.size();
 		vector<int> res;
-		vector vis(n,false);
+		vector<bool> vis(n);
 		vis[s]=true;
 		queue<int> Q;
 		Q.emplace(s);
