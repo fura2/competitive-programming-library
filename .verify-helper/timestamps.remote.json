@@ -21,6 +21,7 @@
 "verify/graph/distance_01.test.cpp": "2021-05-23 04:03:50 +0900",
 "verify/graph/is_DAG.1.test.cpp": "2021-05-23 04:03:50 +0900",
 "verify/graph/is_DAG.2.test.cpp": "2021-05-23 04:03:50 +0900",
+"verify/graph/offline_reachability.test.cpp": "2021-06-27 17:33:42 +0900",
 "verify/graph/scc.1.test.cpp": "2021-05-23 16:12:04 +0900",
 "verify/graph/scc.2.test.cpp": "2021-05-23 16:12:04 +0900",
 "verify/graph/scc.3.test.cpp": "2021-05-23 16:12:04 +0900",
