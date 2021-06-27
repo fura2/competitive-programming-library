@@ -82,8 +82,8 @@ data:
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/tree/tree_diameter.1.test.cpp
   - verify/tree/tree_diameter.2.test.cpp
+  - verify/tree/tree_diameter.1.test.cpp
 documentation_of: library/tree/tree_diameter.hpp
 layout: document
 title: Diameter of a Tree

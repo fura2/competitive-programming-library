@@ -121,6 +121,9 @@ data:
       path: library/graph/odd_cycle.hpp
       title: library/graph/odd_cycle.hpp
     - icon: ':heavy_check_mark:'
+      path: library/graph/offline_reachability.hpp
+      title: Offline Reachability for Directed Graphs
+    - icon: ':heavy_check_mark:'
       path: library/graph/scc.hpp
       title: Strongly Connected Components (Kosaraju's Algorithm)
     - icon: ':heavy_check_mark:'
@@ -403,6 +406,9 @@ data:
       path: verify/graph/is_DAG.2.test.cpp
       title: verify/graph/is_DAG.2.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/graph/offline_reachability.test.cpp
+      title: verify/graph/offline_reachability.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/graph/scc.1.test.cpp
       title: verify/graph/scc.1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -457,4 +463,4 @@ layout: toppage
 
 fura2 の競技プログラミングライブラリです．\\
 g++ (C++17) で動作します．
-一部のライブラリでは GNU 拡張 (``__int128``) を使用しています．
+一部のライブラリでは GNU 拡張を使用しています．

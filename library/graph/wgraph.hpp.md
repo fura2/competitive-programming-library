@@ -24,6 +24,9 @@ data:
     path: library/graph/is_DAG.hpp
     title: DAG Detection
   - icon: ':heavy_check_mark:'
+    path: library/graph/offline_reachability.hpp
+    title: Offline Reachability for Directed Graphs
+  - icon: ':heavy_check_mark:'
     path: library/graph/scc.hpp
     title: Strongly Connected Components (Kosaraju's Algorithm)
   - icon: ':warning:'
@@ -66,6 +69,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/is_DAG.2.test.cpp
     title: verify/graph/is_DAG.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/offline_reachability.test.cpp
+    title: verify/graph/offline_reachability.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/scc.1.test.cpp
     title: verify/graph/scc.1.test.cpp
@@ -126,39 +132,41 @@ data:
   isVerificationFile: false
   path: library/graph/wgraph.hpp
   requiredBy:
-  - library/tree/rerooting.hpp
-  - library/tree/tree_diameter.hpp
-  - library/tree/lca.hpp
-  - library/graph/distance_01.hpp
-  - library/graph/Dijkstra.hpp
   - library/graph/Prim.hpp
-  - library/graph/Kruskal.hpp
-  - library/graph/topological_sort.hpp
-  - library/graph/Bellman-Ford.hpp
-  - library/graph/is_DAG.hpp
+  - library/graph/Dijkstra.hpp
   - library/graph/scc.hpp
+  - library/graph/topological_sort.hpp
+  - library/graph/Kruskal.hpp
+  - library/graph/distance_01.hpp
+  - library/graph/offline_reachability.hpp
+  - library/graph/is_DAG.hpp
+  - library/graph/Bellman-Ford.hpp
+  - library/tree/rerooting.hpp
+  - library/tree/lca.hpp
+  - library/tree/tree_diameter.hpp
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/tree/lca.2.test.cpp
-  - verify/tree/rerooting.2.test.cpp
-  - verify/tree/tree_diameter.1.test.cpp
-  - verify/tree/lca.1.test.cpp
-  - verify/tree/tree_diameter.2.test.cpp
-  - verify/tree/rerooting.1.test.cpp
-  - verify/tree/lca.3.test.cpp
-  - verify/graph/Kruskal.1.test.cpp
-  - verify/graph/scc.2.test.cpp
+  - verify/graph/scc.3.test.cpp
+  - verify/graph/distance_01.test.cpp
   - verify/graph/scc.1.test.cpp
+  - verify/graph/offline_reachability.test.cpp
+  - verify/graph/Prim.test.cpp
   - verify/graph/is_DAG.1.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
-  - verify/graph/Prim.test.cpp
   - verify/graph/Kruskal.2.test.cpp
+  - verify/graph/scc.2.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
-  - verify/graph/is_DAG.2.test.cpp
-  - verify/graph/distance_01.test.cpp
+  - verify/graph/Kruskal.1.test.cpp
   - verify/graph/Bellman-Ford.test.cpp
-  - verify/graph/scc.3.test.cpp
+  - verify/graph/is_DAG.2.test.cpp
+  - verify/tree/lca.3.test.cpp
+  - verify/tree/rerooting.1.test.cpp
+  - verify/tree/tree_diameter.2.test.cpp
+  - verify/tree/rerooting.2.test.cpp
+  - verify/tree/lca.1.test.cpp
+  - verify/tree/lca.2.test.cpp
+  - verify/tree/tree_diameter.1.test.cpp
 documentation_of: library/graph/wgraph.hpp
 layout: document
 title: Weighted Graph

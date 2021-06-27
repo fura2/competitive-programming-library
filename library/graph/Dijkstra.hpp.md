@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/Dijkstra.2.test.cpp
     title: verify/graph/Dijkstra.2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/offline_reachability.test.cpp
+    title: verify/graph/offline_reachability.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -56,6 +59,7 @@ data:
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/graph/offline_reachability.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
 documentation_of: library/graph/Dijkstra.hpp

@@ -10,8 +10,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/template.hpp
     title: library/template.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graph/offline_reachability.hpp
+    title: Offline Reachability for Directed Graphs
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/offline_reachability.test.cpp
+    title: verify/graph/offline_reachability.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/scc.1.test.cpp
     title: verify/graph/scc.1.test.cpp
@@ -112,13 +118,15 @@ data:
   - library/graph/wgraph.hpp
   isVerificationFile: false
   path: library/graph/scc.hpp
-  requiredBy: []
+  requiredBy:
+  - library/graph/offline_reachability.hpp
   timestamp: '2021-05-23 16:12:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/scc.2.test.cpp
-  - verify/graph/scc.1.test.cpp
   - verify/graph/scc.3.test.cpp
+  - verify/graph/scc.1.test.cpp
+  - verify/graph/offline_reachability.test.cpp
+  - verify/graph/scc.2.test.cpp
 documentation_of: library/graph/scc.hpp
 layout: document
 title: Strongly Connected Components (Kosaraju's Algorithm)

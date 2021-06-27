@@ -58,7 +58,7 @@ gcd_monoid<T>(const T& val = T())
 $\mathrm{val}$ で初期化する
 
 #### Constraints
-- $T$ は $\mathrm{gcd}:T\times T\to T$ が定義された環 ([参考](https://en.wikipedia.org/wiki/GCD_domain)) で, デフォルトコンストラクタが $T$ の零元を生成する
+- $T$ は $\mathrm{gcd}:T\times T\to T$ が定義された環 ([参考](https://en.wikipedia.org/wiki/GCD_domain)) で，デフォルトコンストラクタが $T$ の零元を生成する．
 
 #### Complexity
 - $O(1)$

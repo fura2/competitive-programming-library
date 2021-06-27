@@ -52,8 +52,8 @@ data:
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/string/z.1.test.cpp
   - verify/string/z.2.test.cpp
+  - verify/string/z.1.test.cpp
 documentation_of: library/string/z.hpp
 layout: document
 title: Z Algorithm

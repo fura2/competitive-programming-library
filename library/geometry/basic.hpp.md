@@ -26,7 +26,7 @@ data:
     \ p.x*q.y-p.y*q.x; }\n\nReal abs (const point& p){ return sqrt(p.x*p.x+p.y*p.y);\
     \ }\nReal abs2(const point& p){ return p.x*p.x+p.y*p.y; }\n\npoint rot(const point&\
     \ p,const Real& theta){\n\treturn {p.x*cos(theta)-p.y*sin(theta),p.x*sin(theta)+p.y*cos(theta)};\n\
-    }\n\nReal arg(const point& v){ Real t=atan2(v.y,v.x); return t<0?t+2*PI:t; }\n\
+    }\n\nReal angle(const point& v){ Real t=atan2(v.y,v.x); return t<0?t+2*PI:t; }\n\
     \nclass line{\npublic:\n\tpoint a,b;\n\tline(){}\n\tline(const point& a,const\
     \ point& b):a(a),b(b){}\n\tbool operator==(const line& L)const{\n\t\treturn sgn(cross(b-a,L.b-L.a))==0\
     \ && sgn(cross(L.a-a,L.b-a))==0;\n\t}\n\tbool operator!=(const line& L)const{\
@@ -53,7 +53,7 @@ data:
     \ point& p,const point& q){ return p.x*q.y-p.y*q.x; }\n\nReal abs (const point&\
     \ p){ return sqrt(p.x*p.x+p.y*p.y); }\nReal abs2(const point& p){ return p.x*p.x+p.y*p.y;\
     \ }\n\npoint rot(const point& p,const Real& theta){\n\treturn {p.x*cos(theta)-p.y*sin(theta),p.x*sin(theta)+p.y*cos(theta)};\n\
-    }\n\nReal arg(const point& v){ Real t=atan2(v.y,v.x); return t<0?t+2*PI:t; }\n\
+    }\n\nReal angle(const point& v){ Real t=atan2(v.y,v.x); return t<0?t+2*PI:t; }\n\
     \nclass line{\npublic:\n\tpoint a,b;\n\tline(){}\n\tline(const point& a,const\
     \ point& b):a(a),b(b){}\n\tbool operator==(const line& L)const{\n\t\treturn sgn(cross(b-a,L.b-L.a))==0\
     \ && sgn(cross(L.a-a,L.b-a))==0;\n\t}\n\tbool operator!=(const line& L)const{\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: false
   path: library/geometry/basic.hpp
   requiredBy: []
-  timestamp: '2021-05-08 15:01:24+09:00'
+  timestamp: '2021-06-27 17:33:42+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/geometry/basic.hpp
