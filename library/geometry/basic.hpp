@@ -35,7 +35,7 @@ point rot(const point& p,const Real& theta){
 	return {p.x*cos(theta)-p.y*sin(theta),p.x*sin(theta)+p.y*cos(theta)};
 }
 
-Real arg(const point& v){ Real t=atan2(v.y,v.x); return t<0?t+2*PI:t; }
+Real angle(const point& v){ Real t=atan2(v.y,v.x); return t<0?t+2*PI:t; }
 
 class line{
 public:

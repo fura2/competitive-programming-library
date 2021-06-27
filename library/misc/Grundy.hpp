@@ -11,7 +11,7 @@
 */
 
 vector<int> Grundy(const graph& D){
-	auto ord=topological_order(D);
+	auto ord=topological_sort(D);
 
 	int n=D.size(),m=0;
 	rep(u,n) m=max(m,int(D[u].size()));

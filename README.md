@@ -7,6 +7,6 @@
 fura2 の競技プログラミングライブラリです．
 
 g++ (C++17) で動作します．
-一部のライブラリでは GNU 拡張 (``__int128``) を使用しています．
+一部のライブラリでは GNU 拡張を使用しています．
 
 [ドキュメント](https://fura2.github.io/competitive-programming-library/)
