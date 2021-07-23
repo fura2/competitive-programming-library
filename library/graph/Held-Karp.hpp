@@ -5,6 +5,8 @@ template<class T>
 T Held_Karp(const vector<vector<T>>& d){
 	constexpr T INF=numeric_limits<T>::max();
 	int n=d.size();
+	if(n==1) return T();
+
 	vector dp(1<<n,vector(n,INF));
 	dp[1<<0][0]=T();
 	rep(S,1<<n) rep(u,n) if(S>>u&1 && dp[S][u]<INF) {
