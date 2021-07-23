@@ -1,3 +1,6 @@
+#pragma once
+#include "../template.hpp"
+
 /*
 	辺に重みがついた有向グラフ G のハミルトン路 (の重み) を求める
 	求めるハミルトン路の始点と終点は任意
@@ -8,18 +11,20 @@
 */
 
 template<class T>
-T Hamiltonian_path(const vector<vector<T>>& A){
+T Held_Karp(const vector<vector<T>>& d){
 	constexpr T INF=numeric_limits<T>::max();
-	int n=A.size();
+	int n=d.size();
 	vector dp(1<<n,vector(n,INF));
-	rep(u,n) dp[1<<u][u]=0;
+	dp[1<<0][0]=T();
 	rep(S,1<<n) rep(u,n) if(S>>u&1 && dp[S][u]<INF) {
-		rep(v,n) if(~S>>v&1 && A[u][v]<INF) {
-			dp[S|1<<v][v]=min(dp[S|1<<v][v],dp[S][u]+A[u][v]);
+		rep(v,n) if(~S>>v&1 && d[u][v]<INF) {
+			dp[S|1<<v][v]=min(dp[S|1<<v][v],dp[S][u]+d[u][v]);
 		}
 	}
 
 	T res=INF;
-	rep(u,n) res=min(res,dp[(1<<n)-1][u]);
+	rep(u,n) if(dp[(1<<n)-1][u]<INF && d[u][0]<INF) {
+		res=min(res,dp[(1<<n)-1][u]+d[u][0]);
+	}
 	return res;
 }

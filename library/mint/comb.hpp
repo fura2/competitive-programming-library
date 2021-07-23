@@ -4,7 +4,7 @@ mint pow(mint m,long long k){
 	return res;
 }
 
-mint fact(int n){
+mint factorial(int n){
 	static vector<mint> memo={1};
 	if(memo.size()<=n){
 		int k=memo.size();
@@ -14,12 +14,12 @@ mint fact(int n){
 	return memo[n];
 }
 
-mint fact_inverse(int n){
+mint factorial_inverse(int n){
 	static vector<mint> memo={1};
 	if(memo.size()<=n){
 		int k=memo.size();
 		memo.resize(n+1);
-		memo[n]=inverse(fact(n));
+		memo[n]=inverse(factorial(n));
 		for(int i=n;i>k;i--) memo[i-1]=memo[i]*i;
 	}
 	return memo[n];
@@ -29,11 +29,11 @@ mint choose(int n,int k,int type=0){
 	if(k==0) return 1;
 	if(n< k) return 0;
 	if(type==0){
-		return fact(n)*fact_inverse(k)*fact_inverse(n-k);
+		return factorial(n)*factorial_inverse(k)*factorial_inverse(n-k);
 	}
 	else{
 		if(k>n-k) k=n-k;
-		mint res=fact_inverse(k);
+		mint res=factorial_inverse(k);
 		rep(i,k) res*=n-i;
 		return res;
 	}

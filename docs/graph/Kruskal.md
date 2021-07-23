@@ -15,7 +15,7 @@ documentation_of: ../../library/graph/Kruskal.hpp
 
 #### Constraints
 - $G$ は重みつき無向グラフ
-- $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
+- $G$ の辺の重みの型 $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
 - (1) $n\ge0$
 
 #### Complexity
