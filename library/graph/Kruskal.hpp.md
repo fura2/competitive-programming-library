@@ -85,7 +85,7 @@ title: Minimum Spanning Forest (Kruskal's Algorithm)
 ---
 
 ## Description
-重みつき無向グラフの最小全域森を求める Kruskal のアルゴリズム
+重みつき無向グラフの最小全域森を求める Kruskal のアルゴリズム．
 ```
 (1) T Kruskal(int n, vector<tuple<int,int,T>> E)
 (2) pair<T, weighted_graph<T>> Kruskal(const weighted_graph<T>& G)
