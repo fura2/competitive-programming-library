@@ -77,7 +77,7 @@ $F$ の辺の重みの総和と $F$ 自身のペアを返す．
 
 #### Constraints
 - $G$ は重みつき無向グラフ
-- $T$ は整数型 (``int``, ``long long`` など) で，``numeric_limits<T>::max()`` が定義されている．
+- $G$ の辺の重みの型 $T$ は整数型 (``int``, ``long long`` など) で，``numeric_limits<T>::max()`` が定義されている．
 
 #### Complexity
 - $O(V+E\log E)$

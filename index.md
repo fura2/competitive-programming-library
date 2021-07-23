@@ -90,9 +90,9 @@ data:
     - icon: ':warning:'
       path: library/graph/Euler_tour_subtree.hpp
       title: library/graph/Euler_tour_subtree.hpp
-    - icon: ':warning:'
-      path: library/graph/Hamltonian_path.hpp
-      title: library/graph/Hamltonian_path.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/graph/Held-Karp.hpp
+      title: Travelling Salesman Problem (Held-Karp Algorithm)
     - icon: ':heavy_check_mark:'
       path: library/graph/Kruskal.hpp
       title: Minimum Spanning Forest (Kruskal's Algorithm)
@@ -381,6 +381,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.2.test.cpp
       title: verify/graph/Dijkstra.2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/Held-Karp.test.cpp
+      title: verify/graph/Held-Karp.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/Kruskal.1.test.cpp
       title: verify/graph/Kruskal.1.test.cpp

@@ -114,9 +114,9 @@ data:
   timestamp: '2021-05-23 04:23:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/tree/lca.2.test.cpp
   - verify/tree/lca.3.test.cpp
   - verify/tree/lca.1.test.cpp
-  - verify/tree/lca.2.test.cpp
 documentation_of: library/tree/lca.hpp
 layout: document
 title: Lowest Common Ancestor

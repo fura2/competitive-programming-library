@@ -59,8 +59,8 @@ data:
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/offline_reachability.test.cpp
   - verify/graph/Dijkstra.2.test.cpp
+  - verify/graph/offline_reachability.test.cpp
   - verify/graph/Dijkstra.1.test.cpp
 documentation_of: library/graph/Dijkstra.hpp
 layout: document

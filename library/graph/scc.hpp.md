@@ -123,10 +123,10 @@ data:
   timestamp: '2021-05-23 16:12:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/scc.3.test.cpp
   - verify/graph/scc.1.test.cpp
-  - verify/graph/offline_reachability.test.cpp
   - verify/graph/scc.2.test.cpp
+  - verify/graph/offline_reachability.test.cpp
+  - verify/graph/scc.3.test.cpp
 documentation_of: library/graph/scc.hpp
 layout: document
 title: Strongly Connected Components (Kosaraju's Algorithm)

@@ -50,8 +50,8 @@ data:
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/data_structure/sparse_table.2.test.cpp
   - verify/data_structure/sparse_table.1.test.cpp
+  - verify/data_structure/sparse_table.2.test.cpp
 documentation_of: library/data_structure/sparse_table.hpp
 layout: document
 title: Sparse Table

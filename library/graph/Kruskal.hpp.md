@@ -77,8 +77,8 @@ data:
   timestamp: '2021-05-23 04:03:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/Kruskal.2.test.cpp
   - verify/graph/Kruskal.1.test.cpp
+  - verify/graph/Kruskal.2.test.cpp
 documentation_of: library/graph/Kruskal.hpp
 layout: document
 title: Minimum Spanning Forest (Kruskal's Algorithm)
@@ -96,7 +96,7 @@ title: Minimum Spanning Forest (Kruskal's Algorithm)
 
 #### Constraints
 - $G$ は重みつき無向グラフ
-- $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
+- $G$ の辺の重みの型 $T$ は整数型または実数型 (``int``, ``long long``, ``double``, ``long double`` など)
 - (1) $n\ge0$
 
 #### Complexity
