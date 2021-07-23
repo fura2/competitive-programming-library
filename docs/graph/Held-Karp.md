@@ -4,7 +4,7 @@ documentation_of: ../../library/graph/Held-Karp.hpp
 ---
 
 ## Description
-巡回セールスマン問題を解く Bellman-Ford のアルゴリズム．
+巡回セールスマン問題を解く Held-Karp のアルゴリズム．
 ```
 T Held_Karp(const vector<vector<T>>& d)
 ```

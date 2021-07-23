@@ -1,15 +1,6 @@
 #pragma once
 #include "../template.hpp"
 
-/*
-	辺に重みがついた有向グラフ G のハミルトン路 (の重み) を求める
-	求めるハミルトン路の始点と終点は任意
-
-	T は重みの型
-	G は隣接行列 A で与えられ, 辺がない部分には T の最大値が入っていることを仮定する
-	G がハミルトン路をもたないときは T の最大値が返る
-*/
-
 template<class T>
 T Held_Karp(const vector<vector<T>>& d){
 	constexpr T INF=numeric_limits<T>::max();

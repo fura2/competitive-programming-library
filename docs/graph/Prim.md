@@ -4,7 +4,7 @@ documentation_of: ../../library/graph/Prim.hpp
 ---
 
 ## Description
-重みつき無向グラフの最小全域森を求める Prim のアルゴリズム
+重みつき無向グラフの最小全域森を求める Prim のアルゴリズム．
 ```
 pair<T, weighted_graph<T>> Prim(const weighted_graph<T>& G)
 ```
