@@ -125,8 +125,8 @@ data:
   verifiedWith:
   - verify/graph/scc.1.test.cpp
   - verify/graph/scc.2.test.cpp
-  - verify/graph/offline_reachability.test.cpp
   - verify/graph/scc.3.test.cpp
+  - verify/graph/offline_reachability.test.cpp
 documentation_of: library/graph/scc.hpp
 layout: document
 title: Strongly Connected Components (Kosaraju's Algorithm)
