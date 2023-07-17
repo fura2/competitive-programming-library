@@ -49,7 +49,7 @@ struct Setup {
 #ifdef LOCAL
 #include "template_local.hpp"
 #else
-#define show(...) ;
+#define show(...)
 #endif
 
 using lint = long long;
