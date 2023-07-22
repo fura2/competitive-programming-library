@@ -44,7 +44,7 @@ struct Setup {
         std::cin.tie(nullptr);
         std::cout << std::fixed << std::setprecision(11);
     }
-} _setup;
+} setup;
 
 #ifdef LOCAL
 #include "template_local.hpp"
