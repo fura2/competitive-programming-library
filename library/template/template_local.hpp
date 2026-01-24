@@ -22,6 +22,25 @@ std::ostream& operator<<(std::ostream& os, const std::pair<T, U>& p) {
     return os;
 }
 
+template<typename T, typename U>
+std::ostream& operator<<(std::ostream& os, const std::tuple<T, U>& t) {
+    os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ")";
+    return os;
+}
+
+template<typename T, typename U, typename V>
+std::ostream& operator<<(std::ostream& os, const std::tuple<T, U, V>& t) {
+    os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", " << std::get<2>(t) << ")";
+    return os;
+}
+
+template<typename T, typename U, typename V, typename W>
+std::ostream& operator<<(std::ostream& os, const std::tuple<T, U, V, W>& t) {
+    os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", " << std::get<2>(t) << ", " << std::get<3>(t)
+       << ")";
+    return os;
+}
+
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
     os << "[";
