@@ -16,6 +16,20 @@
                     std::clog << "\033[0m" << std::flush; }
 // clang-format on
 
+template<typename T, size_t N>
+    requires(!std::is_same_v<T, char>)
+std::ostream& operator<<(std::ostream& os, const T (&a)[N]) {
+    os << "[";
+    bool first = true;
+    for (const auto& e: a) {
+        if (!first) os << ", ";
+        first = false;
+        os << e;
+    }
+    os << "]";
+    return os;
+}
+
 template<typename T, typename U>
 std::ostream& operator<<(std::ostream& os, const std::pair<T, U>& p) {
     os << "(" << p.first << ", " << p.second << ")";
@@ -36,8 +50,8 @@ std::ostream& operator<<(std::ostream& os, const std::tuple<T, U, V>& t) {
 
 template<typename T, typename U, typename V, typename W>
 std::ostream& operator<<(std::ostream& os, const std::tuple<T, U, V, W>& t) {
-    os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", " << std::get<2>(t) << ", " << std::get<3>(t)
-       << ")";
+    os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", " << std::get<2>(t) << ", "
+       << std::get<3>(t) << ")";
     return os;
 }
 
@@ -46,6 +60,19 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
     os << "[";
     bool first = true;
     for (const auto& e: v) {
+        if (!first) os << ", ";
+        first = false;
+        os << e;
+    }
+    os << "]";
+    return os;
+}
+
+template<typename T, size_t N>
+std::ostream& operator<<(std::ostream& os, const std::array<T, N>& a) {
+    os << "[";
+    bool first = true;
+    for (const auto& e: a) {
         if (!first) os << ", ";
         first = false;
         os << e;
