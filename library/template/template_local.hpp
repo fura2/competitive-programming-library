@@ -4,6 +4,8 @@
 #include "template.hpp"
 
 // clang-format off
+#define impl_overload7(a, b, c, d, e, f, g, h, ...) h
+
 #define impl_show1(a) { std::clog << #a << " = " << (a) << endl; }
 #define impl_show2(a, ...) { std::clog << #a << " = " << (a) << ", "; impl_show1(__VA_ARGS__); }
 #define impl_show3(a, ...) { std::clog << #a << " = " << (a) << ", "; impl_show2(__VA_ARGS__); }
@@ -17,120 +19,134 @@
 // clang-format on
 
 template<typename T, size_t N>
-    requires(!std::is_same_v<T, char>)
+  requires(!std::is_same_v<T, char>)
 std::ostream& operator<<(std::ostream& os, const T (&a)[N]) {
-    os << "[";
-    bool first = true;
-    for (const auto& e: a) {
-        if (!first) os << ", ";
-        first = false;
-        os << e;
-    }
-    os << "]";
-    return os;
+  os << "[";
+  bool first = true;
+  for (const auto& e: a) {
+    if (!first) os << ", ";
+    first = false;
+    os << e;
+  }
+  os << "]";
+  return os;
 }
 
 template<typename T, typename U>
 std::ostream& operator<<(std::ostream& os, const std::pair<T, U>& p) {
-    os << "(" << p.first << ", " << p.second << ")";
-    return os;
+  os << "(" << p.first << ", " << p.second << ")";
+  return os;
 }
 
 template<typename T, typename U>
 std::ostream& operator<<(std::ostream& os, const std::tuple<T, U>& t) {
-    os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ")";
-    return os;
+  os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ")";
+  return os;
 }
 
 template<typename T, typename U, typename V>
 std::ostream& operator<<(std::ostream& os, const std::tuple<T, U, V>& t) {
-    os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", " << std::get<2>(t) << ")";
-    return os;
+  os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", "
+     << std::get<2>(t) << ")";
+  return os;
 }
 
 template<typename T, typename U, typename V, typename W>
 std::ostream& operator<<(std::ostream& os, const std::tuple<T, U, V, W>& t) {
-    os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", " << std::get<2>(t) << ", "
-       << std::get<3>(t) << ")";
-    return os;
+  os << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", "
+     << std::get<2>(t) << ", " << std::get<3>(t) << ")";
+  return os;
 }
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
-    os << "[";
-    bool first = true;
-    for (const auto& e: v) {
-        if (!first) os << ", ";
-        first = false;
-        os << e;
-    }
-    os << "]";
-    return os;
+  os << "[";
+  bool first = true;
+  for (const auto& e: v) {
+    if (!first) os << ", ";
+    first = false;
+    os << e;
+  }
+  os << "]";
+  return os;
 }
 
 template<typename T, size_t N>
 std::ostream& operator<<(std::ostream& os, const std::array<T, N>& a) {
-    os << "[";
-    bool first = true;
-    for (const auto& e: a) {
-        if (!first) os << ", ";
-        first = false;
-        os << e;
-    }
-    os << "]";
-    return os;
+  os << "[";
+  bool first = true;
+  for (const auto& e: a) {
+    if (!first) os << ", ";
+    first = false;
+    os << e;
+  }
+  os << "]";
+  return os;
+}
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const std::deque<T>& d) {
+  os << "[";
+  bool first = true;
+  for (const auto& e: d) {
+    if (!first) os << ", ";
+    first = false;
+    os << e;
+  }
+  os << "]";
+  return os;
 }
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const std::set<T>& s) {
-    os << "{";
-    bool first = true;
-    for (const auto& e: s) {
-        if (!first) os << ", ";
-        first = false;
-        os << e;
-    }
-    os << "}";
-    return os;
+  os << "{";
+  bool first = true;
+  for (const auto& e: s) {
+    if (!first) os << ", ";
+    first = false;
+    os << e;
+  }
+  os << "}";
+  return os;
 }
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const std::unordered_set<T>& s) {
-    os << "{";
-    bool first = true;
-    for (const auto& e: s) {
-        if (!first) os << ", ";
-        first = false;
-        os << e;
-    }
-    os << "}";
-    return os;
+  os << "{";
+  bool first = true;
+  for (const auto& e: s) {
+    if (!first) os << ", ";
+    first = false;
+    os << e;
+  }
+  os << "}";
+  return os;
 }
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const std::multiset<T>& s) {
-    os << "{";
-    bool first = true;
-    for (const auto& e: s) {
-        if (!first) os << ", ";
-        first = false;
-        os << e;
-    }
-    os << "}";
-    return os;
+  os << "{";
+  bool first = true;
+  for (const auto& e: s) {
+    if (!first) os << ", ";
+    first = false;
+    os << e;
+  }
+  os << "}";
+  return os;
 }
 
 template<typename T, typename U>
 std::ostream& operator<<(std::ostream& os, const std::map<T, U>& m) {
-    os << "{";
-    bool first = true;
-    for (const auto& [k, v]: m) {
-        if (!first) os << ", ";
-        first = false;
-        os << k << ": " << v;
-    }
-    os << "}";
-    return os;
+  os << "{";
+  bool first = true;
+  for (const auto& [k, v]: m) {
+    if (!first) os << ", ";
+    first = false;
+    os << k << ": " << v;
+  }
+  os << "}";
+  return os;
 }
 
 #endif // TEMPLATE_LOCAL_HPP

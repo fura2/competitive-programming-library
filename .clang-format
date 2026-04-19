@@ -1,0 +1,43 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+
+# Defined by myself
+AlignArrayOfStructures: Left
+AlignEscapedNewlines: Left
+AlignTrailingComments:
+  Kind: Leave
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
+BitFieldColonSpacing: After
+BraceWrapping:
+  BeforeCatch: true
+  BeforeElse: true
+BreakAfterAttributes: Always
+BreakBeforeBinaryOperators: All
+BreakBeforeBraces: Custom
+ColumnLimit: 80
+ForEachMacros:
+  - rep
+  - rrep
+IncludeCategories:
+  - Regex:           '.*'
+    Priority:        1
+    SortPriority:    0
+    CaseSensitive:   false
+IncludeIsMainRegex: ''
+IndentCaseLabels: true
+IndentExternBlock: Indent
+IndentGotoLabels: false
+InsertNewlineAtEOF: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+PackConstructorInitializers: NextLine
+PointerAlignment: Left
+SpaceAfterTemplateKeyword: false
+SpaceBeforeCtorInitializerColon: false
+SpaceBeforeInheritanceColon: false
+SpaceBeforeRangeBasedForLoopColon: false

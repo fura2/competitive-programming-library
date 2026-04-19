@@ -2,8 +2,8 @@
 // そのときは 6 行目を long long x; に書き換えればよい
 
 class mint{
-	static const int MOD=1e9+7;
-//	static const int MOD=998244353;
+	// static const int MOD=1e9+7;
+	static const int MOD=998244353;
 	int x;
 public:
 	mint():x(0){}
